@@ -1,0 +1,1591 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#F5F7FF;
+}
+
+/*==================================================
+                CONTENEDOR
+==================================================*/
+
+.contenedor{
+    width:100%;
+    height:100vh;
+    display:flex;
+}
+
+/*==================================================
+                SIDEBAR
+==================================================*/
+
+.sidebar{
+    width:290px;
+    background:#FFFFFF;
+    border-right:1px solid #ECEFF8;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    box-shadow:0 12px 35px rgba(40,50,90,.05);
+    position:relative;
+}
+
+/*==================================================
+                    LOGO
+==================================================*/
+
+.logo{
+    padding:28px 20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.logo img{
+    width:170px;
+    user-select:none;
+}
+
+/*==================================================
+                MENÚ
+==================================================*/
+.sidebar nav{
+    width:100%;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    width:calc(100% - 28px);
+    margin:7px 14px;
+    height:54px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:0 18px;
+    border-radius:15px;
+    color:#5B6480;
+    font-size:14px;
+    font-weight:500;
+    cursor:pointer;
+    transition:.30s;
+}
+
+.sidebar li i{
+    width:22px;
+    text-align:center;
+    color:#8B7DFF;
+    font-size:18px;
+}
+
+.sidebar li:hover{
+    background:#F3F0FF;
+    color:#5E46E8;
+}
+
+.sidebar li:hover i{
+    color:#5E46E8;
+}
+
+/*==================================================
+            OPCIÓN ACTIVA
+==================================================*/
+.sidebar li.activo{
+    background:linear-gradient(90deg,#7C69FF,#957FFF);
+    color:#FFFFFF;
+    font-weight:600;
+    box-shadow:0 10px 25px rgba(124,105,255,.30);
+}
+
+.sidebar li.activo i{
+    color:#FFFFFF;
+
+}
+
+/*==================================================
+                LÍNEA
+==================================================*/
+.sidebar hr{
+    width:82%;
+    margin:18px auto;
+    border:none;
+    border-top:1px solid #ECEFF8;
+}
+
+/*==================================================
+        IMAGEN INFERIOR
+==================================================*/
+.imagenInferior{
+    margin-top:auto;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    padding:20px;
+}
+
+.imagenInferior img{
+    width:210px;
+    user-select:none;
+}
+
+/*==================================================
+            CONTENIDO
+==================================================*/
+.contenido{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    background:#F7F9FD;
+}
+
+/*==================================================
+                HEADER
+==================================================*/
+
+header{
+    width:100%;
+    height:95px;
+    background:#FFFFFF;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 35px;
+    border-bottom:1px solid #ECEFF8;
+    box-shadow:0 5px 20px rgba(30,40,90,.04);
+}
+
+/*==================================================
+            TÍTULO DE LA PÁGINA
+==================================================*/
+.tituloPagina{
+    display:flex;
+    align-items:center;
+}
+
+.tituloPagina img{
+    height:60px;
+    object-fit:contain;
+    user-select:none;
+}
+
+/*==================================================
+                PERFIL
+==================================================*/
+.perfil{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.perfil img{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #E7E3FF;
+    cursor:pointer;
+    transition:.30s;
+    box-shadow:0 8px 20px rgba(124,105,255,.15);
+}
+
+.perfil img:hover{
+    transform:scale(1.06);
+}
+
+/*==================================================
+            PANTALLA PRINCIPAL
+==================================================*/
+.pantallaAgente{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    padding:28px;
+    gap:22px;
+    overflow:hidden;
+}
+
+/*==================================================
+        PRESENTACIÓN DEL AGENTE
+==================================================*/
+.presentacionIA{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.presentacionIA img{
+    width:100%;
+    max-width:980px;
+    border-radius:22px;
+    object-fit:cover;
+    box-shadow:0 15px 35px rgba(30,40,90,.08);
+}
+
+/*==================================================
+            OPCIONES IA
+==================================================*/
+.opcionesIA{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+/*==================================================
+            TARJETAS
+==================================================*/
+.opcion{
+    background:#FFFFFF;
+    border-radius:22px;
+    padding:25px;
+    box-shadow:0 10px 25px rgba(35,45,90,.05);
+    transition:.30s;
+    border:1px solid #EEF1FA;
+    cursor:pointer;
+}
+
+.opcion:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 18px 35px rgba(124,105,255,.15);
+
+}
+
+.opcion i{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:16px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#F1EEFF;
+
+    color:#7C69FF;
+
+    font-size:24px;
+
+    margin-bottom:18px;
+
+}
+
+.opcion h3{
+
+    color:#374151;
+
+    font-size:17px;
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+}
+
+.opcion p{
+
+    color:#7C869E;
+
+    font-size:14px;
+
+    line-height:24px;
+
+}
+
+/*==================================================
+                PANEL PRINCIPAL
+==================================================*/
+
+.panelIA{
+
+    flex:1;
+
+    display:grid;
+
+    grid-template-columns:2fr 370px;
+
+    gap:25px;
+
+    overflow:hidden;
+
+}
+
+/*==================================================
+                CHAT IA
+==================================================*/
+
+.chatIA{
+
+    background:#FFFFFF;
+
+    border-radius:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+    border:1px solid #ECEFF8;
+
+    box-shadow:0 15px 35px rgba(40,55,90,.05);
+
+}
+
+/*==================================================
+            CABECERA CHAT
+==================================================*/
+
+.chatHeader{
+
+    height:85px;
+
+    padding:0 28px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    border-bottom:1px solid #EEF2F8;
+
+    background:#FFFFFF;
+
+}
+
+.infoIA{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.infoIA img{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    background:#F2F5FF;
+
+    padding:6px;
+
+}
+
+.infoIA h2{
+
+    color:#344054;
+
+    font-size:19px;
+
+    font-weight:700;
+
+}
+
+.estado{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:5px;
+
+    color:#3DBE74;
+
+    font-size:13px;
+
+    font-weight:500;
+
+}
+
+.estado i{
+
+    font-size:10px;
+
+}
+
+/*==================================================
+            BOTONES HEADER
+==================================================*/
+
+.accionesChat{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+.accionesChat button{
+
+    width:44px;
+
+    height:44px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#F5F7FF;
+
+    color:#7B6DFF;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.accionesChat button:hover{
+
+    background:#ECE8FF;
+
+}
+
+/*==================================================
+            MENSAJES
+==================================================*/
+
+.mensajes{
+
+    flex:1;
+
+    padding:28px;
+
+    overflow-y:auto;
+
+    background:#FAFBFF;
+
+}
+
+/*==================================================
+            MENSAJE IA
+==================================================*/
+
+.mensajeIA{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+    margin-bottom:25px;
+
+}
+
+.mensajeIA img{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    background:#EEF3FF;
+
+    padding:5px;
+
+}
+
+.burbuja{
+
+    max-width:78%;
+
+    background:#F2F5FF;
+
+    color:#475467;
+
+    padding:18px 22px;
+
+    border-radius:20px;
+
+    line-height:28px;
+
+    font-size:15px;
+
+}
+
+/*==================================================
+            MENSAJE USUARIO
+==================================================*/
+
+.mensajeUsuario{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin-bottom:22px;
+
+}
+
+.mensajeUsuario .burbuja{
+
+    background:linear-gradient(135deg,#7868FF,#998BFF);
+
+    color:#FFFFFF;
+
+}
+
+/*==================================================
+            ESCRIBIR
+==================================================*/
+
+.escribir{
+
+    height:90px;
+
+    padding:18px 22px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    border-top:1px solid #EEF2F8;
+
+    background:#FFFFFF;
+
+}
+
+.escribir input{
+
+    flex:1;
+
+    height:56px;
+
+    border:none;
+
+    outline:none;
+
+    background:#F4F7FF;
+
+    border-radius:30px;
+
+    padding:0 24px;
+
+    font-size:15px;
+
+    color:#4A5568;
+
+}
+
+.escribir input::placeholder{
+
+    color:#9CA3AF;
+
+}
+
+/*==================================================
+            BOTONES CHAT
+==================================================*/
+
+.btnAdjuntar,
+.btnMicrofono,
+.btnEnviar{
+
+    width:54px;
+
+    height:54px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:.3s;
+
+}
+
+.btnAdjuntar{
+
+    background:#EEF2FF;
+
+    color:#7868FF;
+
+}
+
+.btnMicrofono{
+
+    background:#EEF2FF;
+
+    color:#7868FF;
+
+}
+
+.btnEnviar{
+
+    background:linear-gradient(135deg,#7868FF,#9A8BFF);
+
+    color:#FFFFFF;
+
+    box-shadow:0 8px 18px rgba(120,104,255,.30);
+
+}
+
+.btnAdjuntar:hover,
+.btnMicrofono:hover{
+
+    background:#E5DEFF;
+
+}
+
+.btnEnviar:hover{
+
+    transform:scale(1.06);
+
+}
+
+/*==================================================
+                PANEL DERECHO
+==================================================*/
+
+.panelDerecho{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+    overflow-y:auto;
+
+    padding-right:5px;
+
+}
+
+/*==================================================
+                TARJETAS
+==================================================*/
+
+.cardEstado,
+.cardAcciones,
+.cardConsejos{
+
+    background:#FFFFFF;
+
+    border-radius:24px;
+
+    padding:25px;
+
+    border:1px solid #EEF2F8;
+
+    box-shadow:0 12px 30px rgba(30,40,90,.05);
+
+}
+
+/*==================================================
+                ESTADO IA
+==================================================*/
+
+.cardEstado{
+
+    text-align:center;
+
+}
+
+.cardEstado img{
+
+    width:95px;
+
+    margin-bottom:15px;
+
+}
+
+.cardEstado h3{
+
+    color:#344054;
+
+    font-size:22px;
+
+    margin-bottom:8px;
+
+    font-weight:700;
+
+}
+
+.online{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#3DBE74;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    margin-bottom:15px;
+
+}
+
+.online i{
+
+    font-size:10px;
+
+}
+
+.cardEstado p{
+
+    color:#7C869E;
+
+    line-height:26px;
+
+    font-size:14px;
+
+}
+
+/*==================================================
+            ACCIONES RÁPIDAS
+==================================================*/
+
+.cardAcciones h3{
+
+    color:#344054;
+
+    margin-bottom:18px;
+
+    font-size:18px;
+
+}
+
+.accion{
+
+    width:100%;
+
+    height:52px;
+
+    margin-bottom:12px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#F4F6FF;
+
+    color:#5B6480;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:0 18px;
+
+    cursor:pointer;
+
+    transition:.30s;
+
+    font-size:14px;
+
+    font-weight:500;
+
+}
+
+.accion i{
+
+    color:#7A67FF;
+
+    width:20px;
+
+}
+
+.accion:hover{
+
+    background:#ECE7FF;
+
+    color:#5A47E8;
+
+    transform:translateX(5px);
+
+}
+
+/*==================================================
+            RECOMENDACIONES
+==================================================*/
+
+.cardConsejos h3{
+
+    color:#344054;
+
+    margin-bottom:18px;
+
+    font-size:18px;
+
+}
+
+.cardConsejos ul{
+
+    list-style:none;
+
+}
+
+.cardConsejos li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:15px;
+
+    color:#677489;
+
+    line-height:24px;
+
+    font-size:14px;
+
+}
+
+/*==================================================
+            EFECTOS
+==================================================*/
+
+.cardEstado:hover,
+.cardAcciones:hover,
+.cardConsejos:hover{
+
+    transform:translateY(-4px);
+
+    transition:.3s;
+
+    box-shadow:0 18px 35px rgba(124,105,255,.10);
+
+}
+
+/*==================================================
+            SCROLL
+==================================================*/
+
+.panelDerecho::-webkit-scrollbar{
+
+    width:7px;
+
+}
+
+.panelDerecho::-webkit-scrollbar-thumb{
+
+    background:#C9C1FF;
+
+    border-radius:10px;
+
+}
+
+.panelDerecho::-webkit-scrollbar-track{
+
+    background:#EEF2FF;
+
+}
+
+/*==================================================
+            RESPONSIVE
+==================================================*/
+
+@media(max-width:1300px){
+
+    .panelIA{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .panelDerecho{
+
+        display:none;
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .sidebar{
+
+        width:240px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .sidebar{
+
+        display:none;
+
+    }
+
+    .contenido{
+
+        width:100%;
+
+    }
+
+    .opcionesIA{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/*==================================================
+            ANIMACIONES GENERALES
+==================================================*/
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes aparecerLateral{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+@keyframes zoomEntrada{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/*==================================================
+            EFECTOS DE ENTRADA
+==================================================*/
+
+.sidebar{
+
+    animation:aparecerLateral .7s ease;
+
+}
+
+header{
+
+    animation:aparecer .7s ease;
+
+}
+
+.presentacionIA{
+
+    animation:aparecer .8s ease;
+
+}
+
+.chatIA{
+
+    animation:zoomEntrada .9s ease;
+
+}
+
+.panelDerecho{
+
+    animation:aparecer 1s ease;
+
+}
+
+.opcion{
+
+    animation:aparecer .8s ease;
+
+}
+
+/*==================================================
+            EFECTO BOTONES
+==================================================*/
+
+button{
+
+    transition:.25s;
+
+}
+
+button:active{
+
+    transform:scale(.95);
+
+}
+
+/*==================================================
+            EFECTO INPUT
+==================================================*/
+
+.escribir input{
+
+    transition:.30s;
+
+}
+
+.escribir input:focus{
+
+    background:#FFFFFF;
+
+    border:2px solid #8C7BFF;
+
+    box-shadow:0 0 15px rgba(140,123,255,.20);
+
+}
+
+/*==================================================
+            MENSAJES
+==================================================*/
+
+.mensajeIA,
+.mensajeUsuario{
+
+    animation:aparecer .35s ease;
+
+}
+
+.burbuja{
+
+    transition:.25s;
+
+}
+
+.burbuja:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/*==================================================
+            SCROLL CHAT
+==================================================*/
+
+.mensajes::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.mensajes::-webkit-scrollbar-track{
+
+    background:#EEF2FF;
+
+    border-radius:10px;
+
+}
+
+.mensajes::-webkit-scrollbar-thumb{
+
+    background:#B7AEFF;
+
+    border-radius:10px;
+
+}
+
+.mensajes::-webkit-scrollbar-thumb:hover{
+
+    background:#988BFF;
+
+}
+
+/*==================================================
+            EFECTO TARJETAS
+==================================================*/
+
+.opcion::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:22px;
+
+    opacity:0;
+
+    transition:.35s;
+
+    pointer-events:none;
+
+}
+
+.opcion{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.opcion:hover::before{
+
+    opacity:1;
+
+    background:linear-gradient(180deg,
+    rgba(124,105,255,.05),
+    transparent);
+
+}
+
+/*==================================================
+            EFECTO IMÁGENES
+==================================================*/
+
+.logo img,
+.presentacionIA img,
+.cardEstado img,
+.infoIA img,
+.perfil img,
+.imagenInferior img{
+
+    transition:.35s;
+
+}
+
+.logo img:hover{
+
+    transform:scale(1.05);
+
+}
+
+.presentacionIA img:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.cardEstado img:hover{
+
+    transform:rotate(-3deg) scale(1.05);
+
+}
+
+.perfil img:hover{
+
+    transform:scale(1.08);
+
+}
+
+.imagenInferior img:hover{
+
+    transform:translateY(-6px);
+
+}
+
+/*==================================================
+            EFECTO MENÚ
+==================================================*/
+
+.sidebar li{
+
+    position:relative;
+
+}
+
+.sidebar li::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:15%;
+
+    width:4px;
+
+    height:70%;
+
+    border-radius:20px;
+
+    background:#7D69FF;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+.sidebar li:hover::after{
+
+    opacity:1;
+
+}
+
+.sidebar li.activo::after{
+
+    background:#FFFFFF;
+
+    opacity:1;
+
+}
+
+/*==================================================
+            TRANSICIONES
+==================================================*/
+
+*{
+
+    scroll-behavior:smooth;
+
+}
+
+/*==================================================
+            ACABADOS FINALES
+==================================================*/
+
+/* Separación uniforme */
+
+.chatIA,
+.cardEstado,
+.cardAcciones,
+.cardConsejos,
+.opcion{
+
+    transition:all .30s ease;
+
+}
+
+/*=========================================
+        FONDO GENERAL
+=========================================*/
+
+body{
+
+    background:linear-gradient(
+        180deg,
+        #F8FAFF 0%,
+        #F3F6FD 100%
+    );
+
+}
+
+/*=========================================
+        TARJETAS
+=========================================*/
+
+.opcion,
+.cardEstado,
+.cardAcciones,
+.cardConsejos{
+
+    backdrop-filter:blur(10px);
+
+}
+
+/*=========================================
+        ICONOS
+=========================================*/
+
+.opcion i,
+.accion i{
+
+    transition:.30s;
+
+}
+
+.opcion:hover i{
+
+    transform:scale(1.12);
+
+}
+
+.accion:hover i{
+
+    transform:translateX(3px);
+
+}
+
+/*=========================================
+        CHAT
+=========================================*/
+
+.chatHeader{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:10;
+
+}
+
+.escribir{
+
+    position:sticky;
+
+    bottom:0;
+
+    z-index:10;
+
+}
+
+/*=========================================
+        MENSAJES
+=========================================*/
+
+.burbuja{
+
+    word-break:break-word;
+
+}
+
+.mensajeUsuario{
+
+    margin-left:auto;
+
+}
+
+.mensajeUsuario .burbuja{
+
+    border-bottom-right-radius:8px;
+
+}
+
+.mensajeIA .burbuja{
+
+    border-bottom-left-radius:8px;
+
+}
+
+/*=========================================
+        BOTÓN ENVIAR
+=========================================*/
+
+.btnEnviar{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.btnEnviar::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180%;
+
+    height:180%;
+
+    background:rgba(255,255,255,.15);
+
+    top:-150%;
+
+    left:-150%;
+
+    transform:rotate(45deg);
+
+    transition:.5s;
+
+}
+
+.btnEnviar:hover::after{
+
+    top:100%;
+
+    left:100%;
+
+}
+
+/*=========================================
+        PERFIL
+=========================================*/
+
+.perfil{
+
+    gap:15px;
+
+}
+
+.perfil img{
+
+    background:#FFFFFF;
+
+}
+
+/*=========================================
+        IMAGEN PRINCIPAL
+=========================================*/
+
+.presentacionIA{
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+}
+
+.presentacionIA img{
+
+    display:block;
+
+}
+
+/*=========================================
+        IMAGEN INFERIOR
+=========================================*/
+
+.imagenInferior{
+
+    overflow:hidden;
+
+}
+
+.imagenInferior img{
+
+    display:block;
+
+}
+
+/*=========================================
+        SCROLL GENERAL
+=========================================*/
+
+*::-webkit-scrollbar{
+
+    width:8px;
+
+    height:8px;
+
+}
+
+*::-webkit-scrollbar-thumb{
+
+    background:#C7BEFF;
+
+    border-radius:20px;
+
+}
+
+*::-webkit-scrollbar-thumb:hover{
+
+    background:#A99CFF;
+
+}
+
+*::-webkit-scrollbar-track{
+
+    background:#EEF2FF;
+
+}
+
+/*=========================================
+        SELECCIÓN DE TEXTO
+=========================================*/
+
+::selection{
+
+    background:#8C7BFF;
+
+    color:#FFFFFF;
+
+}
+
+/*=========================================
+        ENFOQUE
+=========================================*/
+
+button:focus,
+input:focus{
+
+    outline:none;
+
+}
+
+/*=========================================
+        IMÁGENES
+=========================================*/
+
+img{
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+/*=========================================
+        FIN DEL CSS
+=========================================*/

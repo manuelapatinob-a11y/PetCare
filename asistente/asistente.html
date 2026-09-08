@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> PetCare | Agente Inteligente</title>
+
+    <!-- Fuente -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="/Pantallas/css/asistente.css">
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<!--=====================================
+            SIDEBAR
+======================================-->
+
+<aside class="sidebar">
+
+    <!-- LOGO -->
+    <div class="logo">
+        <img src="/Pantallas/Recursos/logo.png" alt="PetCare">
+    </div>
+
+    <!-- MENU -->
+    <nav>
+        <ul>
+            <li>
+                <i class="fa-solid fa-house"></i>
+                <span>Inicio</span>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span>Salud y Bienestar</span>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-bowl-food"></i>
+                <span>Alimentación</span>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-person-running"></i>
+                <span>Actividad Física</span>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Entrenamiento y Comportamiento</span>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Ubicación y Seguridad</span>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-dollar-sign"></i>
+                <span>Finanzas</span>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <hr>
+
+    <nav>
+
+        <ul>
+
+            <li class="activo" id="btnAgente">
+
+                <i class="fa-solid fa-robot"></i>
+
+                <span>Agente Inteligente</span>
+
+            </li>
+
+            <li>
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>Configuración</span>
+                
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <!-- IMAGEN INFERIOR -->
+
+    <div class="imagenInferior">
+
+        <img src="/Pantallas/Recursos/mascotas.png" alt="Mascotas">
+
+    </div>
+
+</aside>
+
+<!--=====================================
+        CONTENIDO PRINCIPAL
+======================================-->
+
+<div class="contenido">
+
+<!--=====================================
+            BARRA SUPERIOR
+======================================-->
+
+<header>
+
+    <!-- TÍTULO -->
+
+    <div class="tituloPagina">
+
+        <img src="/Pantallas/Recursos/agente-titulo.png"
+             alt="Agente Inteligente">
+
+    </div>
+
+    <!-- PERFIL -->
+
+    <div class="perfil">
+
+        <img src="/Pantallas/Recursos/perfil.png"
+             alt="Perfil">
+
+    </div>
+
+</header>
+
+<!--=====================================
+        CONTENIDO AGENTE IA
+======================================-->
+
+<main class="pantallaAgente">
+
+    <!-- PRESENTACIÓN DEL AGENTE -->
+
+    <section class="presentacionIA">
+
+        <img src="/Pantallas/Recursos/agente-online.png"
+             alt="Agente Inteligente">
+
+    </section>
+
+    <!-- TARJETAS DE OPCIONES -->
+
+    <section class="opcionesIA">
+
+        <div class="opcion">
+
+            <i class="fa-solid fa-camera"></i>
+
+            <h3>Asistente Visual con IA</h3>
+
+            <p>
+                Analiza fotografías de tu mascota para detectar posibles
+                anomalías y ofrecer recomendaciones inteligentes.
+            </p>
+
+        </div>
+
+        <div class="opcion">
+
+            <i class="fa-solid fa-comments"></i>
+
+            <h3>Chat con IA</h3>
+
+            <p>
+                Conversa con el Agente Inteligente y recibe ayuda
+                personalizada para el cuidado de tu mascota.
+            </p>
+
+        </div>
+
+        <div class="opcion">
+
+            <i class="fa-solid fa-user-doctor"></i>
+
+            <h3>Chat con Veterinario</h3>
+
+            <p>
+                Contacta con un veterinario cuando necesites una
+                orientación profesional.
+            </p>
+
+        </div>
+
+        <div class="opcion">
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            <h3>Recomendaciones</h3>
+
+            <p>
+                Recibe recomendaciones inteligentes basadas en la
+                información de tu mascota.
+            </p>
+
+        </div>
+
+    </section>
+
+        <!--=====================================
+            PANEL PRINCIPAL
+    ======================================-->
+
+    <section class="panelIA">
+
+        <!--==============================
+                CHAT IA
+        ===============================-->
+
+        <div class="chatIA">
+
+            <!-- CABECERA DEL CHAT -->
+
+            <div class="chatHeader">
+
+                <div class="infoIA">
+
+                    <img src="/Pantallas/Recursos/agente-online.png"
+                         alt="Agente IA">
+
+                    <div>
+
+                        <h2>Agente Inteligente</h2>
+
+                        <span class="estado">
+
+                            <i class="fa-solid fa-circle"></i>
+
+                            En línea
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="accionesChat">
+
+                    <button>
+
+                        <i class="fa-solid fa-trash"></i>
+
+                    </button>
+
+                    <button>
+
+                        <i class="fa-solid fa-expand"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- MENSAJES -->
+
+            <div class="mensajes" id="mensajes">
+
+                <div class="mensajeIA">
+
+                    <img src="/Pantallas/Recursos/agente-online.png"
+                         alt="Robot">
+
+                    <div class="burbuja">
+
+                        ¡Hola! 👋
+
+                        Soy tu <strong>Agente Inteligente PetCare</strong>.
+
+                        Estoy preparado para ayudarte con:
+
+                        <br><br>
+
+                        🐶 Salud de mascotas
+
+                        <br>
+
+                        🍖 Alimentación
+
+                        <br>
+
+                        💉 Vacunas
+
+                        <br>
+
+                        🩺 Enfermedades
+
+                        <br>
+
+                        📅 Rutinas
+
+                        <br>
+
+                        ❤️ Cuidados diarios
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ESCRIBIR MENSAJE -->
+
+            <div class="escribir">
+
+                <button class="btnAdjuntar">
+
+                    <i class="fa-solid fa-paperclip"></i>
+
+                </button>
+
+                <input
+
+                    type="text"
+
+                    id="texto"
+
+                    placeholder="Escribe tu pregunta..."
+
+                >
+
+                <button class="btnMicrofono">
+
+                    <i class="fa-solid fa-microphone"></i>
+
+                </button>
+
+                <button
+
+                    id="enviar"
+
+                    class="btnEnviar">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!--=====================================
+                PANEL DERECHO
+        =====================================-->
+
+        <aside class="panelDerecho">
+
+            <!--==============================
+                    ESTADO IA
+            ==============================-->
+
+            <div class="cardEstado">
+
+                <img src="img/agente-online.png" alt="Agente IA">
+
+                <h3>Agente Inteligente</h3>
+
+                <span class="online">
+
+                    <i class="fa-solid fa-circle"></i>
+
+                    Disponible 24/7
+
+                </span>
+
+                <p>
+
+                    Tu asistente virtual especializado en el cuidado
+                    de mascotas.
+
+                </p>
+
+            </div>
+
+            <!--==============================
+                ACCIONES RÁPIDAS
+            ==============================-->
+
+            <div class="cardAcciones">
+
+                <h3>Acciones rápidas</h3>
+
+                <button class="accion">
+
+                    <i class="fa-solid fa-camera"></i>
+
+                    Analizar fotografía
+
+                </button>
+
+                <button class="accion">
+
+                    <i class="fa-solid fa-stethoscope"></i>
+
+                    Revisar síntomas
+
+                </button>
+
+                <button class="accion">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                    Crear rutina
+
+                </button>
+
+                <button class="accion">
+
+                    <i class="fa-solid fa-syringe"></i>
+
+                    Calendario de vacunas
+
+                </button>
+
+            </div>
+
+            <!--==============================
+                    RECOMENDACIONES
+            ==============================-->
+
+            <div class="cardConsejos">
+
+                <h3>
+
+                    Recomendaciones
+
+                </h3>
+
+                <ul>
+
+                    <li>
+
+                        💧 Mantén agua limpia disponible.
+
+                    </li>
+
+                    <li>
+
+                        🍖 Alimentación según la edad.
+
+                    </li>
+
+                    <li>
+
+                        🚶 Paseos diarios.
+
+                    </li>
+
+                    <li>
+
+                        💉 Vacunas al día.
+
+                    </li>
+
+                    <li>
+
+                        ❤️ Controles veterinarios.
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </aside>
+
+    </section>
+
+</main>
+
+    <!--=====================================
+            FIN DEL CONTENIDO
+    =====================================-->
+
+</div>
+
+<!--=====================================
+        SCRIPT PRINCIPAL
+======================================-->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+ <script>
+    import('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+ </script>

@@ -1,0 +1,324 @@
+body{
+    font-family:Arial,sans-serif;
+    background:#f8f9ff}
+
+.text-gradient {
+    background: linear-gradient(90deg, #b371e9, #8b5cf6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.logo-login{
+    width:150px;
+    margin-bottom:10px;
+}
+
+.hero{
+    padding:90px 0;
+    background:linear-gradient(135deg,#eef5ff,#f6efff)}
+
+.hero h1{
+    font-size:4rem;
+    font-weight:800;
+    color:#000000}
+
+.hero h1 span{
+    color:#a57be6}
+
+.hero p{
+    font-size:1.2rem;
+    color:#000000;
+    margin:25px 0}
+
+.hero-card{
+    background:#ffffff;
+    border-radius:30px;
+    padding:60px;
+    box-shadow:0 20px 50px rgba(0, 0, 0, 0.1)}
+
+.btn-primary{
+    background:#b362e9;border:none}
+
+.img{
+    height: 350px;
+    border-radius: 10px;
+}
+
+/*=========================================
+        ESTADÍSTICAS
+=========================================*/
+
+.statistics{
+background:linear-gradient(90deg,#9349e7,#8B5CF6);
+border-radius:35px;
+margin:70px auto;
+padding:50px 20px;
+position:relative;
+overflow:hidden;
+}
+
+/* Huellas decorativas */
+
+.statistics::before{
+content:"🐾";
+position:absolute;
+font-size:80px;
+opacity:.08;
+left:30px;
+top:20px;
+}
+
+.statistics::after{
+content:"🐾";
+position:absolute;
+font-size:90px;
+opacity:.08;
+right:40px;
+bottom:20px;
+}
+
+.stat-item{
+padding:20px;
+transition:.4s;
+}
+
+.stat-item:hover{
+transform:translateY(-10px);
+}
+
+.icon{
+width:70px;
+height:70px;
+margin:auto;
+border-radius:50%;
+background:rgb(212, 169, 252);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:32px;
+margin-bottom:20px;
+backdrop-filter:blur(10px);
+}
+
+.statistics h2{
+font-size:48px;
+font-weight:800;
+margin-bottom:10px;
+}z
+
+.statistics h5{
+font-weight:600;
+font-size:20px;
+}
+
+.statistics p{
+opacity:.85;
+font-size:15px;
+}
+
+/*=========================================
+            TESTIMONIOS
+=========================================*/
+
+.testimonials{
+background:#F8FAFF;
+padding:80px 0;
+}
+
+.section-subtitle{
+color:#8956db;
+font-weight:bold;
+letter-spacing:2px;
+}
+
+.section-title{
+font-size:42px;
+font-weight:700;
+margin-top:10px;
+}
+
+.section-title span{
+color:#9658d1;
+}
+
+.testimonial-card{
+background:white;
+padding:40px;
+border-radius:25px;
+max-width:700px;
+margin:auto;
+text-align:center;
+box-shadow:0 20px 40px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+.testimonial-card:hover{
+transform:translateY(-8px);
+}
+
+.testimonial-img{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+border:6px solid #9668ec;
+margin-bottom:20px;
+}
+
+.stars{
+font-size:24px;
+color:#FFC107;
+margin:20px 0;
+}
+
+.testimonial-card p{
+font-size:18px;
+color:#666;
+line-height:1.8;
+}
+
+.carousel-control-prev-icon,
+
+.carousel-control-next-icon{
+background-color:#030307;;
+padding:20px;
+border-radius:50%;
+}
+
+/*=========================================
+            CALL TO ACTION
+=========================================*/
+
+.cta-section{
+background:linear-gradient(135deg,#a172ec,#7B61FF,#A855F7);
+padding:100px 0;
+margin:100px 0;
+border-radius:40px;
+position:relative;
+overflow:hidden;
+}
+
+/* Círculos decorativos */
+
+.cta-section::before{
+content:"";
+width:300px;
+height:300px;
+background:rgba(255,255,255,.08);
+border-radius:50%;
+position:absolute;
+top:-120px;
+right:-120px;
+}
+
+.cta-section::after{
+content:"";
+width:220px;
+height:220px;
+background:rgba(255,255,255,.08);
+border-radius:50%;
+position:absolute;
+bottom:-90px;
+left:-90px;
+}
+
+.cta-subtitle{
+color:white;
+font-weight:700;
+letter-spacing:2px;
+font-size:15px;
+text-transform:uppercase;
+}
+
+.cta-title{
+color:white;
+font-size:52px;
+font-weight:800;
+margin:20px 0;
+line-height:1.2;
+}
+
+.cta-text{
+color:white;
+opacity:.9;
+font-size:20px;
+max-width:650px;
+line-height:1.8;
+}
+
+.cta-img{
+max-height:420px;
+animation:float 4s ease-in-out infinite;
+border-radius: 10px;
+}
+
+/* Botones */
+
+.cta-section .btn-light{
+background:white;
+color:#5050d3;
+font-weight:bold;
+border:none;
+transition:.3s;
+}
+
+.cta-section .btn-light:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 35px rgba(0,0,0,.2);
+}
+
+.cta-section .btn-outline-light{
+border:2px solid white;
+}
+
+.cta-section .btn-outline-light:hover{
+background:white;
+color:#5B5CF6;
+}
+
+/* Animación */
+
+@keyframes float{
+0%{
+
+transform:translateY(0px);
+}
+50%{
+
+transform:translateY(-15px);
+}
+100%{
+transform:translateY(0px);
+}
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+.cta-title{
+font-size:38px;
+text-align:center;
+}
+.cta-text{
+text-align:center;
+}
+
+.cta-subtitle{
+display:block;
+text-align:center;
+}
+
+.cta-section .btn{
+width:100%;
+margin-bottom:15px;
+}
+
+.cta-img{
+margin-top:40px;
+max-height:280px;
+}
+
+}
+

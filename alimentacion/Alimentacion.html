@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetCare | Alimentación</title>
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="Alimentacion.css">
+</head>
+
+<body>
+
+<!-- =========================================
+     CONTENEDOR PRINCIPAL
+========================================= -->
+<div class="app-container">
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================= -->
+    <aside class="sidebar">
+        <div class="logo-area">
+        <img src="/Pantallas/Recursos/logo.png" alt="" class="PetCare">
+        </div>
+
+        <!-- MENU -->
+        <nav class="menu">
+            <a href="/Pantallas/index.html">
+                <i class="bi bi-house"></i>
+                Inicio
+            </a>
+
+            <a href="/Pantallas/mismascotas.html">
+                <i class="bi bi-people"></i>
+                Mis Mascotas
+            </a>
+
+            <a href="/Pantallas/salud.html">
+                <i class="bi bi-heart-pulse"></i>
+                Salud
+            </a>
+
+            <a href="/Pantallas/Alimentacion.html" class="active">
+                <i class="bi bi-cup-hot"></i>
+                Alimentación
+            </a>
+
+            <a href="/Pantallas/recordatorios.html">
+                <i class="bi bi-bell"></i>
+                Recordatorios
+            </a>
+
+            <a href="/Pantallas/mapa.html">
+                <i class="bi bi-geo-alt"></i>
+                Mapa Pet Friendly
+            </a>
+
+            <a href="/Pantallas/servicios.html">
+                <i class="bi bi-shop"></i>
+                Servicios
+            </a>
+
+            <a href="/Pantallas/finanzas.html">
+                <i class="bi bi-wallet2"></i>
+                Finanzas
+
+           
+            <a href="/Pantallas/finanzas.html">
+                <i class="bi bi-wallet2"></i>
+                Finanzas
+            </a>
+
+            <a href="/Pantallas/perfil.html">
+                <i class="bi bi-person"></i>
+                Perfil
+            </a>
+
+            <a href="/Pantallas/configuracion.html">
+                <i class="bi bi-gear"></i>
+                Configuración
+            </a>
+
+        </nav>
+
+        <!-- AYUDA -->
+        <div class="help-box">
+            <h5>
+                ¿Necesitas ayuda?
+            </h5>
+
+            <p>
+                Nuestro asistente virtual está aquí para ayudarte.
+            </p>
+
+            <button>
+                Chatear ahora
+            </button>
+        </div>
+    </aside>
+
+    <!-- =========================================
+         CONTENIDO PRINCIPAL
+    ========================================= -->
+    <!-- =========================================
+         CONTENIDO PRINCIPAL
+    ========================================= -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="top-header">
+
+            <div>
+
+                <h1>
+
+                    <i class="bi bi-arrow-left"></i>
+
+                    Alimentación
+
+                </h1>
+
+                <p>
+
+                    Organiza y mejora la alimentación de tus mascotas.
+
+                </p>
+
+            </div>
+
+
+            <div class="user-area">
+
+                <i class="bi bi-bell notification"></i>
+
+                <div class="user-avatar">
+
+                    MP
+
+                </div>
+
+                <strong>
+
+                    Manuela P.
+
+                </strong>
+
+                <i class="bi bi-chevron-down"></i>
+
+            </div>
+
+        </header>
+    
+        <!-- =========================================
+             SELECTOR DE MASCOTAS
+        ========================================= -->
+        <section class="pet-selector">
+            <div class="section-header">
+                <h3>
+                    Selecciona una mascota
+                </h3>
+
+                <a href="#">
+                    Ver todas mis mascotas
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="pets-row">
+                <!-- TOBY -->
+                <div class="pet-option selected"
+                     onclick="seleccionarMascota('Toby')">
+                    <div class="pet-photo">
+                        🐶
+                    </div>
+                    <div>
+                        <h4>
+                            Toby
+                        </h4>
+
+                        <p>
+                            Golden Retriever
+                        </p>
+                    </div>
+                    <span class="status"></span>
+                </div>
+
+                <!-- LUNA -->
+                <div class="pet-option"
+                     onclick="seleccionarMascota('Luna')">
+                    <div class="pet-photo">
+                        🐱
+                    </div>
+
+                    <div>
+                        <h4>
+                            Luna
+                        </h4>
+                        <p>
+                            Gato
+                        </p>
+                    </div>
+                    <span class="status offline"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================
+             GRID PRINCIPAL
+        ========================================= -->
+        <div class="dashboard-grid">
+
+            <!-- =========================================
+                 MENU ALIMENTACIÓN
+            ========================================= -->
+
+            <div class="food-menu">
+
+                <div class="food-icon">
+                    🍽️
+                </div>
+
+                <h2>
+                    Alimentación
+                </h2>
+
+                <ul>
+                    <li class="active">
+                        <i class="bi bi-calendar-check"></i>
+                        Plan Alimenticio
+                    </li>
+
+                    <li>
+                        <i class="bi bi-clock"></i>
+                        Horarios de Comida
+                    </li>
+
+                    <li>
+                        <i class="bi bi-bar-chart"></i>
+                        Seguimiento de Alimentación
+                    </li>
+
+                    <li>
+                        <i class="bi bi-stars"></i>
+                        Recomendaciones
+                    </li>
+                </ul>
+            </div>
+
+            <!-- =========================================
+                 PLAN ALIMENTICIO
+            ========================================= -->
+            <div class="food-plan">
+                <div class="card-title">
+                    <h2>
+                        <i class="bi bi-calendar-heart"></i>
+                        Plan Alimenticio de <span id="petName">
+                        Toby
+                        </span>
+                    </h2>
+
+                    <button>
+                        Editar plan
+                    </button>
+                </div>
+
+                <div class="food-data">
+                    <div>
+                        <i class="bi bi-basket2"></i>
+                        <span>
+                            Porciones por día
+                        </span>
+
+                        <strong>
+                            2 porciones
+                        </strong>
+                    </div>
+
+                    <div>
+                        <i class="bi bi-cup"></i>
+                        <span>
+                            Cantidad por porción
+                        </span>
+
+                        <strong>
+
+                            1.5 tazas (150 g)
+
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="bi bi-fire"></i>
+
+                        <span>
+
+                            Calorías diarias aproximadas
+
+                        </span>
+
+                        <strong>
+
+                            1,200 kcal
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-alert">
+
+                    <i class="bi bi-info-circle"></i>
+
+                    Toby es un perro adulto con nivel de actividad moderado.
+                    Ajusta las porciones según su actividad y condición física.
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================================
+                 HORARIOS
+            ========================================= -->
+
+            <div class="schedule-card">
+
+                <div class="card-title">
+
+                    <h2>
+
+                        <i class="bi bi-clock"></i>
+
+                        Horarios de Comida
+
+                    </h2>
+
+                    <button>
+
+                        Editar
+
+                    </button>
+
+                </div>
+
+
+                <div class="meal">
+
+                    <span>
+
+                        ☀️
+
+                    </span>
+
+                    <div>
+
+                        <strong>
+
+                            Desayuno
+
+                        </strong>
+
+                        <small>
+
+                            08:00 AM
+
+                        </small>
+
+                    </div>
+
+                    <b>
+
+                        1.5 tazas
+
+                    </b>
+
+                </div>
+
+
+                <div class="meal">
+
+                    <span>
+
+                        🌤️
+
+                    </span>
+
+                    <div>
+
+                        <strong>
+
+                            Almuerzo
+
+                        </strong>
+
+                        <small>
+
+                            01:00 PM
+
+                        </small>
+
+                    </div>
+
+                    <b>
+
+                        1.5 tazas
+
+                    </b>
+
+                </div>
+
+
+                <div class="meal">
+
+                    <span>
+
+                        🌙
+
+                    </span>
+
+                    <div>
+
+                        <strong>
+
+                            Cena
+
+                        </strong>
+
+                        <small>
+
+                            08:00 PM
+
+                        </small>
+
+                    </div>
+
+                    <b>
+
+                        1.5 tazas
+
+                    </b>
+
+                </div>
+
+
+                <button class="reminder-btn">
+
+                    <i class="bi bi-bell"></i>
+
+                    Activar recordatorios
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =========================================
+                 SEGUIMIENTO
+            ========================================= -->
+
+            <div class="tracking-card">
+
+                <div class="card-title">
+
+                    <h2>
+
+                        <i class="bi bi-bar-chart-line"></i>
+
+                        Seguimiento de Alimentación
+
+                    </h2>
+
+                    <span>
+
+                        Esta semana
+
+                    </span>
+
+                </div>
+
+
+                <div class="progress-area">
+
+                    <div class="progress-circle">
+
+                        <strong>
+
+                            90%
+
+                        </strong>
+
+                        <span>
+
+                            Comidas completadas
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="stats">
+
+                        <p>
+
+                            Comidas programadas
+
+                            <strong>21</strong>
+
+                        </p>
+
+                        <p>
+
+                            Comidas completadas
+
+                            <strong>19</strong>
+
+                        </p>
+
+                        <p class="missed">
+
+                            Comidas omitidas
+
+                            <strong>2</strong>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="success-message">
+
+                    <i class="bi bi-check-circle"></i>
+
+                    ¡Excelente! Toby lleva una alimentación
+                    muy constante esta semana.
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================================
+                 TIPO DE CONCENTRADO
+            ========================================= -->
+
+            <div class="concentrate-card">
+
+                <h2>
+
+                    Tipo de Concentrado
+
+                </h2>
+
+
+                <div class="food-product">
+
+                    <div class="food-bag">
+
+                        🥣
+
+                    </div>
+
+                    <div>
+
+                        <h4>
+
+                            Royal Canin
+
+                        </h4>
+
+                        <strong>
+
+                            Golden Retriever Adult
+
+                        </strong>
+
+                        <ul>
+
+                            <li>
+
+                                Para perros adultos
+
+                            </li>
+
+                            <li>
+
+                                Fórmula para razas grandes
+
+                            </li>
+
+                            <li>
+
+                                Salud de piel y pelaje
+
+                            </li>
+
+                            <li>
+
+                                Salud digestiva
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <button class="change-food">
+
+                    Cambiar concentrado
+
+                </button>
+
+
+                <p class="food-info">
+
+                    Presentación actual: 15 kg
+
+                </p>
+
+            </div>
+
+
+
+            <!-- =========================================
+                 RECOMENDACIONES
+            ========================================= -->
+
+            <div class="recommendations-card">
+
+                <h2>
+
+                    Recomendaciones de Alimentos para Toby
+
+                </h2>
+
+
+                <div class="recommendation-grid">
+
+
+                    <!-- SALMÓN -->
+
+                    <div class="recommendation recommended">
+
+                        <span>
+
+                            ✓ Recomendado
+
+                        </span>
+
+                        <div class="food-image">
+
+                            🐟
+
+                        </div>
+
+                        <h4>
+
+                            Salmón
+
+                        </h4>
+
+                        <p>
+
+                            Fuente de proteínas de alta calidad,
+                            ideal para su piel y pelaje.
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- CAMOTE -->
+
+                    <div class="recommendation recommended">
+
+                        <span>
+
+                            ✓ Recomendado
+
+                        </span>
+
+                        <div class="food-image">
+
+                            🍠
+
+                        </div>
+
+                        <h4>
+
+                            Camote
+
+                        </h4>
+
+                        <p>
+
+                            Excelente fuente de fibra,
+                            vitaminas y energía.
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- ZANAHORIA -->
+
+                    <div class="recommendation occasional">
+
+                        <span>
+
+                            ⚠ Ocasional
+
+                        </span>
+
+                        <div class="food-image">
+
+                            🥕
+
+                        </div>
+
+                        <h4>
+
+                            Zanahoria
+
+                        </h4>
+
+                        <p>
+
+                            Buena para la vista y el
+                            sistema inmunológico.
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- CHOCOLATE -->
+
+                    <div class="recommendation avoid">
+
+                        <span>
+                            ✕ Evitar
+                        </span>
+
+                        <div class="food-image">
+                            🍫
+                        </div>
+                        <h4>
+                            Chocolate
+                        </h4>
+                        <p>
+                            Tóxico para los perros y puede
+                            causar daños graves.
+                        </p>
+                    </div>
+                </div>
+                <div class="vet-warning">
+                    <i class="bi bi-heart"></i>
+                    Consulta siempre con tu veterinario antes
+                    de hacer cambios importantes en su dieta.
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="alimentacion.js"></script>
+</body>
+</html>

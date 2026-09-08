@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PetCare | Salud y Bienestar</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Pantallas/css/salud.css">
+
+</head>
+
+
+<body>
+
+
+<div class="app-container">
+
+
+    <!-- =====================================
+         BARRA LATERAL
+    ====================================== -->
+
+    <aside class="sidebar">
+        <!-- LOGO -->
+        <div class="logo-area">
+            <img src="/Pantallas/Recursos/logo.png" alt="" class="PetCare">
+        </div>
+        <!-- MENÚ -->
+        <nav class="menu">
+            <a href="/Pantallas/index.html">
+                <i class="bi bi-house"></i>
+                Inicio
+            </a>
+
+            <a href="/Pantallas/mismascotas.html">
+                <i class="bi bi-people"></i>
+                Mis Mascotas
+            </a>
+
+            <a href="/Pantallas/salud.html">
+                <i class="bi bi-heart-pulse"></i>
+                Salud y Bienestar
+            </a>
+
+            <a href="/Pantallas/Alimentacion.html">
+                <i class="bi bi-cup-hot"></i>
+                Alimentación
+            </a>
+
+            <a href="/Pantallas/recordatorios.html">
+                <i class="bi bi-bell"></i>
+                Recordatorios
+            </a>
+
+            <a href="/Pantallas/mapa.html">
+                <i class="bi bi-geo-alt"></i>
+                Mapa Pet Friendly
+            </a>
+
+            <a href="#">
+                <i class="bi bi-shop"></i>
+                Servicios
+            </a>
+
+            <a href="/Pantallas/actividadfisica.html">
+                <i class="bi bi-person-walking"></i>
+                Actividad fisica
+            </a>
+
+            <a href="/Pantallas/finanzas.html">
+                <i class="bi bi-wallet2"></i>
+                Finanzas
+            </a>
+
+            <a href="#">
+                <i class="bi bi-person"></i>
+                Perfil
+            </a>
+
+            <a href="/Pantallas/configuracion.html">
+                <i class="bi bi-gear"></i>
+                Configuración
+            </a>
+
+        </nav>
+
+        <!-- AYUDA -->
+        <div class="help-box">
+            <h5>
+                ¿Necesitas ayuda?
+            </h5>
+
+            <p>
+                Nuestro asistente virtual está aquí para ayudarte.
+            </p>
+
+            <button>
+                Chatear ahora
+            </button>
+        </div>
+    </aside>
+
+    <!-- =====================================
+         CONTENIDO PRINCIPAL
+    ====================================== -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="top-header">
+            <div>
+                <h1>
+                    <i class="bi bi-heart-pulse"></i>
+                    Salud y Bienestar
+                </h1>
+
+                <p>
+                    Lleva el control de la salud y bienestar de tus mascotas.
+                </p>
+
+            </div>
+            <!-- USUARIO -->
+            <div class="dropdown">
+                <button
+                    class="user-dropdown"
+                    type="button"
+                    data-bs-toggle="dropdown">
+                    <i class="bi bi-bell notification"></i>
+                    <div class="user-avatar">
+                        MP
+                    </div>
+
+                    <strong>
+                        Manuela P.
+                    </strong>
+
+                    <i class="bi bi-chevron-down"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                        <a
+                            class="dropdown-item"
+                            href="#">
+
+                            <i class="bi bi-person"></i>
+
+                            Mi perfil
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a
+                            class="dropdown-item"
+                            href="#">
+
+                            <i class="bi bi-gear"></i>
+
+                            Configuración
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <hr class="dropdown-divider">
+
+                    </li>
+
+
+                    <li>
+
+                        <a
+                            class="dropdown-item text-danger"
+                            href="/Pantallas/login.html">
+
+                            <i class="bi bi-box-arrow-right"></i>
+
+                            Cerrar sesión
+
+                        </a>
+
+                    </li>
+
+
+                </ul>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =====================================
+             SELECTOR DE MASCOTA
+        ====================================== -->
+
+        <section class="pet-selector">
+
+
+            <div class="section-header">
+
+                <h3>
+
+                    Selecciona una mascota
+
+                </h3>
+
+
+                <a href="/Pantallas/mismascotas.html">
+
+                    Ver mis mascotas
+
+                    <i class="bi bi-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+            <div class="pets-row">
+
+
+                <!-- TOBY -->
+
+                <div
+                    class="pet-option selected"
+                    onclick="seleccionarMascota('Toby', this)">
+
+
+                    <div class="pet-photo">
+
+                        🐶
+
+                    </div>
+
+
+                    <div>
+
+                        <h4>
+
+                            Toby
+
+                        </h4>
+
+                        <p>
+
+                            Golden Retriever
+
+                        </p>
+
+                    </div>
+
+
+                    <span class="status"></span>
+
+
+                </div>
+
+
+
+                <!-- LUNA -->
+
+                <div
+                    class="pet-option"
+                    onclick="seleccionarMascota('Luna', this)">
+
+
+                    <div class="pet-photo">
+
+                        🐱
+
+                    </div>
+
+
+                    <div>
+
+                        <h4>
+
+                            Luna
+
+                        </h4>
+
+                        <p>
+
+                            Gato
+
+                        </p>
+
+                    </div>
+
+
+                    <span class="status offline"></span>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             TARJETAS PRINCIPALES
+        ====================================== -->
+
+        <section class="health-grid">
+
+
+            <!-- =================================
+                 MENÚ SALUD
+            ================================== -->
+
+            <div class="health-menu">
+
+
+                <div class="health-icon">
+
+                    ❤️
+
+                </div>
+
+
+                <h2>
+
+                    Salud y Bienestar
+
+                </h2>
+
+
+                <ul>
+
+
+                    <li class="active">
+
+                        <i class="bi bi-shield-check"></i>
+
+                        Vacunas
+
+                    </li>
+
+
+                    <li>
+
+                        <i class="bi bi-bug"></i>
+
+                        Desparasitación
+
+                    </li>
+
+
+                    <li>
+
+                        <i class="bi bi-hospital"></i>
+
+                        Control Veterinario
+
+                    </li>
+
+
+                    <li>
+
+                        <i class="bi bi-file-medical"></i>
+
+                        Historial Médico
+
+                    </li>
+
+
+                    <li>
+
+                        <i class="bi bi-search"></i>
+
+                        Diagnósticos
+
+                    </li>
+
+
+                    <li>
+
+                        <i class="bi bi-clipboard2-pulse"></i>
+
+                        Tratamientos
+
+                    </li>
+
+
+                    <li>
+
+                        <i class="bi bi-capsule"></i>
+
+                        Medicamentos
+
+                    </li>
+
+
+                </ul>
+
+
+            </div>
+
+
+
+            <!-- =================================
+                 ESTADO DE SALUD
+            ================================== -->
+
+            <div class="health-status">
+
+
+                <div class="card-title">
+
+
+                    <h2>
+
+                        <i class="bi bi-heart-pulse"></i>
+
+                        Estado de Salud de
+
+                        <span id="petName">
+
+                            Toby
+
+                        </span>
+
+                    </h2>
+
+
+                    <span class="healthy">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        Saludable
+
+                    </span>
+
+
+                </div>
+
+
+                <div class="health-summary">
+
+
+                    <div>
+
+                        <i class="bi bi-shield-check"></i>
+
+                        <span>
+
+                            Vacunas
+
+                        </span>
+
+                        <strong>
+
+                            5 / 5
+
+                        </strong>
+
+                        <small>
+
+                            Al día
+
+                        </small>
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="bi bi-bug"></i>
+
+                        <span>
+
+                            Desparasitación
+
+                        </span>
+
+                        <strong>
+
+                            Al día
+
+                        </strong>
+
+                        <small>
+
+                            Próxima: 20 Ago
+
+                        </small>
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="bi bi-hospital"></i>
+
+                        <span>
+
+                            Veterinario
+
+                        </span>
+
+                        <strong>
+
+                            Última visita
+
+                        </strong>
+
+                        <small>
+
+                            15 Jun 2026
+
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================
+                 VACUNAS
+            ================================== -->
+
+            <div class="vaccines-card">
+
+
+                <div class="card-title">
+
+
+                    <h2>
+
+                        <i class="bi bi-shield-plus"></i>
+
+                        Vacunas
+
+                    </h2>
+
+
+                    <button class="add-button">
+
+                        <i class="bi bi-plus"></i>
+
+                        Agregar vacuna
+
+                    </button>
+
+
+                </div>
+
+
+                <div class="vaccine-item">
+
+
+                    <div class="vaccine-icon">
+
+                        💉
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+
+                            Vacuna múltiple
+
+                        </strong>
+
+                        <small>
+
+                            Aplicada: 15 Mayo 2026
+
+                        </small>
+
+                    </div>
+
+
+                    <span class="badge-complete">
+
+                        Aplicada
+
+                    </span>
+
+
+                </div>
+
+
+                <div class="vaccine-item">
+
+
+                    <div class="vaccine-icon">
+
+                        💉
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+
+                            Rabia
+
+                        </strong>
+
+                        <small>
+
+                            Aplicada: 15 Mayo 2026
+
+                        </small>
+
+                    </div>
+
+
+                    <span class="badge-complete">
+
+                        Aplicada
+
+                    </span>
+
+
+                </div>
+
+
+                <div class="vaccine-item">
+
+
+                    <div class="vaccine-icon">
+
+                        💉
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+
+                            Bordetella
+
+                        </strong>
+
+                        <small>
+
+                            Próxima aplicación: 15 Mayo 2027
+
+                        </small>
+
+                    </div>
+
+
+                    <span class="badge-pending">
+
+                        Pendiente
+
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================
+                 PRÓXIMO CONTROL
+            ================================== -->
+
+            <div class="appointment-card">
+
+
+                <div class="card-title">
+
+
+                    <h2>
+
+                        <i class="bi bi-calendar-heart"></i>
+
+                        Próximo Control
+
+                    </h2>
+
+
+                    <i class="bi bi-three-dots"></i>
+
+                </div>
+
+
+                <div class="appointment">
+
+
+                    <div class="calendar-icon">
+
+                        <strong>
+
+                            20
+
+                        </strong>
+
+                        <small>
+
+                            AGO
+
+                        </small>
+
+                    </div>
+
+
+                    <div>
+
+                        <h4>
+
+                            Control veterinario
+
+                        </h4>
+
+                        <p>
+
+                            Clínica Veterinaria PetCare
+
+                        </p>
+
+                        <small>
+
+                            <i class="bi bi-clock"></i>
+
+                            10:30 AM
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <button class="appointment-button">
+
+                    Ver detalles
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =================================
+                 DESPARASITACIÓN
+            ================================== -->
+
+            <div class="deworming-card">
+
+
+                <div class="card-title">
+
+
+                    <h2>
+
+                        <i class="bi bi-bug"></i>
+
+                        Desparasitación
+
+                    </h2>
+
+
+                    <button class="add-button">
+
+                        Registrar
+
+                    </button>
+
+                </div>
+
+
+                <div class="deworming-content">
+
+
+                    <div class="deworming-circle">
+
+                        <strong>
+
+                            20
+
+                        </strong>
+
+                        <span>
+
+                            AGO
+
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <h4>
+
+                            Próxima desparasitación
+
+                        </h4>
+
+                        <p>
+
+                            Interna y externa
+
+                        </p>
+
+                        <span class="days">
+
+                            Faltan 16 días
+
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================
+                 HISTORIAL MÉDICO
+            ================================== -->
+
+            <div class="medical-history">
+
+
+                <div class="card-title">
+
+
+                    <h2>
+
+                        <i class="bi bi-file-medical"></i>
+
+                        Historial Médico
+
+                    </h2>
+
+
+                    <a href="#">
+
+                        Ver historial completo
+
+                    </a>
+
+                </div>
+
+
+                <div class="history-item">
+
+
+                    <div class="history-icon">
+
+                        <i class="bi bi-hospital"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+
+                            Consulta veterinaria
+
+                        </strong>
+
+                        <small>
+
+                            15 Junio 2026
+
+                        </small>
+
+                        <p>
+
+                            Revisión general y control de peso.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="history-item">
+
+
+                    <div class="history-icon">
+
+                        <i class="bi bi-capsule"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+
+                            Tratamiento registrado
+
+                        </strong>
+
+                        <small>
+
+                            10 Mayo 2026
+
+                        </small>
+
+                        <p>
+
+                            Tratamiento preventivo recomendado por el veterinario.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================
+                 RECORDATORIO
+            ================================== -->
+
+            <div class="reminder-card">
+
+
+                <i class="bi bi-bell-fill"></i>
+
+
+                <div>
+
+                    <h3>
+
+                        Próximos recordatorios
+
+                    </h3>
+
+                    <p>
+
+                        Tienes 2 eventos de salud próximos
+                        para Toby.
+
+                    </p>
+
+                </div>
+
+
+                <button>
+
+                    Ver recordatorios
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- Bootstrap JS -->
+
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- JavaScript -->
+
+<script src="salud.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PetCare | Mis Mascotas</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Pantallas/css/mismascotas.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo-area">
+            <img src="/Pantallas/Recursos/logo.png" class="logo" alt="PetCare">
+        </div>
+
+        <nav class="main-menu">
+
+            <a href="/Pantallas/index.html">
+                <i class="bi bi-house"></i>
+                Inicio
+            </a>
+
+            <a href="/Pantallas/mismascotas.html" class="active">
+                <i class="bi bi-people"></i>
+                Mis Mascotas
+            </a>
+
+            <a href="/Pantallas/salud.html">
+                <i class="bi bi-heart-pulse"></i>
+                Salud
+            </a>
+
+            <a href="/Pantallas/alimentacion.html">
+                <i class="bi bi-cup-hot"></i>
+                Alimentación
+            </a>
+
+            <a href="/Pantallas/recordatorios.html">
+                <i class="bi bi-bell"></i>
+                Recordatorios
+            </a>
+
+            <a href="/Pantallas/mapa.html">
+                <i class="bi bi-geo-alt"></i>
+                Mapa Pet Friendly
+            </a>
+
+            <a href="servicios.html">
+                <i class="bi bi-shop"></i>
+                Servicios
+            </a>
+
+            <a href="finanzas.html">
+                <i class="bi bi-wallet2"></i>
+                Finanzas
+            </a>
+
+            <a href="perfil.html">
+                <i class="bi bi-person"></i>
+                Perfil
+            </a>
+
+            <a href="/Pantallas/configuracion.html">
+                <i class="bi bi-gear"></i>
+                Configuración
+            </a>
+
+        </nav>
+
+        <!-- AYUDA -->
+
+        <div class="help-card">
+
+            <h5>¿Necesitas ayuda?</h5>
+
+            <p>
+                Nuestro asistente virtual está disponible para ayudarte.
+            </p>
+
+            <button>
+                Hablar con el asistente
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= CONTENIDO ================= -->
+
+    <main class="content">
+
+        <!-- HEADER -->
+
+        <header class="top-header">
+
+            <div class="page-title">
+
+                <a href="/Pantallas/index.html" class="back">
+                    <i class="bi bi-arrow-left"></i>
+                </a>
+
+                <div>
+                    <h2>Mis Mascotas</h2>
+
+                    <p>
+                        Administra y consulta la información de tus mascotas.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- USUARIO -->
+
+            <div class="user-area">
+
+                <button class="notification-btn">
+                    <i class="bi bi-bell"></i>
+                </button>
+
+                <div class="dropdown">
+
+                    <button
+                        class="user-button dropdown-toggle"
+                        data-bs-toggle="dropdown">
+
+                        <span class="avatar">MP</span>
+
+                        <strong>Manuela P.</strong>
+
+                    </button>
+
+                    <ul class="dropdown-menu dropdown-menu-end">
+
+                        <li>
+                            <a class="dropdown-item" href="perfil.html">
+                                <i class="bi bi-person"></i>
+                                Mi perfil
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="/Pantallas/configuracion.html">
+                                <i class="bi bi-gear"></i>
+                                Configuración
+                            </a>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="/Pantallas/login.html">
+                                <i class="bi bi-box-arrow-right"></i>
+                                Cerrar sesión
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= TÍTULO ================= -->
+
+        <section class="intro">
+
+            <div>
+                <h3>Tus mascotas 🐾</h3>
+
+                <p>
+                    Aquí puedes consultar y administrar la información
+                    de tus compañeros.
+                </p>
+            </div>
+
+            <button
+                class="btn-add"
+                data-bs-toggle="modal"
+                data-bs-target="#modalMascota">
+
+                <i class="bi bi-plus-lg"></i>
+
+                Agregar mascota
+
+            </button>
+
+        </section>
+
+
+        <!-- ================= MASCOTAS ================= -->
+
+        <section class="pets-grid">
+
+
+            <!-- TOBY -->
+
+            <article class="pet-card">
+
+                <div class="pet-image dog">
+
+                    <span class="status active-status">
+                        Activo
+                    </span>
+
+                    <div class="pet-photo">
+                        🐶
+                    </div>
+
+                </div>
+
+
+                <div class="pet-content">
+
+                    <div class="pet-heading">
+
+                        <div>
+
+                            <h4>Toby</h4>
+
+                            <span>
+                                Golden Retriever
+                            </span>
+
+                        </div>
+
+                        <button class="options">
+                            <i class="bi bi-three-dots"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="pet-data">
+
+                        <div>
+                            <i class="bi bi-calendar3"></i>
+
+                            <span>Edad</span>
+
+                            <strong>4 años</strong>
+                        </div>
+
+                        <div>
+                            <i class="bi bi-gender-male"></i>
+
+                            <span>Sexo</span>
+
+                            <strong>Macho</strong>
+                        </div>
+
+                        <div>
+                            <i class="bi bi-speedometer2"></i>
+
+                            <span>Peso</span>
+
+                            <strong>28 kg</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="pet-actions">
+
+                        <a href="salud.html">
+                            <i class="bi bi-heart-pulse"></i>
+                            Salud
+                        </a>
+
+                        <a href="alimentacion.html">
+                            <i class="bi bi-cup-hot"></i>
+                            Alimentación
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- LUNA -->
+
+            <article class="pet-card">
+
+                <div class="pet-image cat">
+
+                    <span class="status active-status">
+                        Activa
+                    </span>
+
+                    <div class="pet-photo">
+                        🐱
+                    </div>
+
+                </div>
+
+
+                <div class="pet-content">
+
+                    <div class="pet-heading">
+
+                        <div>
+
+                            <h4>Luna</h4>
+
+                            <span>
+                                Gato
+                            </span>
+
+                        </div>
+
+                        <button class="options">
+                            <i class="bi bi-three-dots"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="pet-data">
+
+                        <div>
+                            <i class="bi bi-calendar3"></i>
+
+                            <span>Edad</span>
+
+                            <strong>2 años</strong>
+                        </div>
+
+                        <div>
+                            <i class="bi bi-gender-female"></i>
+
+                            <span>Sexo</span>
+
+                            <strong>Hembra</strong>
+                        </div>
+
+                        <div>
+                            <i class="bi bi-speedometer2"></i>
+
+                            <span>Peso</span>
+
+                            <strong>4.5 kg</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="pet-actions">
+
+                        <a href="salud.html">
+                            <i class="bi bi-heart-pulse"></i>
+                            Salud
+                        </a>
+
+                        <a href="alimentacion.html">
+                            <i class="bi bi-cup-hot"></i>
+                            Alimentación
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- AGREGAR -->
+
+            <article
+                class="add-pet-card"
+                data-bs-toggle="modal"
+                data-bs-target="#modalMascota">
+
+                <div class="add-icon">
+                    <i class="bi bi-plus-lg"></i>
+                </div>
+
+                <h4>Agregar mascota</h4>
+
+                <p>
+                    Registra una nueva mascota
+                    en PetCare.
+                </p>
+
+            </article>
+
+
+        </section>
+
+
+        <!-- ================= RESUMEN ================= -->
+
+        <section class="summary">
+
+            <h3>Resumen de tus mascotas</h3>
+
+            <div class="summary-grid">
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        <i class="bi bi-heart"></i>
+                    </div>
+
+                    <div>
+                        <span>Mascotas registradas</span>
+                        <strong>2</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+
+                    <div>
+                        <span>Vacunas al día</span>
+                        <strong>2</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        <i class="bi bi-calendar-check"></i>
+                    </div>
+
+                    <div>
+                        <span>Próximas citas</span>
+                        <strong>1</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        <i class="bi bi-bell"></i>
+                    </div>
+
+                    <div>
+                        <span>Recordatorios</span>
+                        <strong>3</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<!-- ================= MODAL AGREGAR MASCOTA ================= -->
+
+<div
+    class="modal fade"
+    id="modalMascota"
+    tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+                    <i class="bi bi-heart"></i>
+                    Agregar mascota
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <form id="formMascota">
+
+                    <div class="mb-3">
+
+                        <label>
+                            Nombre de la mascota
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nombreMascota"
+                            class="form-control"
+                            placeholder="Ej: Max"
+                            required>
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label>
+                            Tipo de mascota
+                        </label>
+
+                        <select
+                            id="tipoMascota"
+                            class="form-select"
+                            required>
+
+                            <option value="">
+                                Selecciona una opción
+                            </option>
+
+                            <option value="Perro">
+                                🐶 Perro
+                            </option>
+
+                            <option value="Gato">
+                                🐱 Gato
+                            </option>
+
+                            <option value="Otro">
+                                🐾 Otro
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <label>
+                                Edad
+                            </label>
+
+                            <input
+                                type="number"
+                                class="form-control"
+                                placeholder="Años">
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label>
+                                Peso
+                            </label>
+
+                            <input
+                                type="number"
+                                class="form-control"
+                                placeholder="Kg">
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn-save">
+
+                        Guardar mascota
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Bootstrap JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<script src="/Pantallas/js/mismascotas.js"></script>
+
+</body>
+
+</html>

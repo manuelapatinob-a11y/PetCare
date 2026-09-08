@@ -1,0 +1,734 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f7f6fc;
+    color: #27233b;
+}
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+    width: 255px;
+    background: white;
+    border-right: 1px solid #eeeaf7;
+    padding: 25px 18px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+.logo-area {
+    text-align: center;
+    margin-bottom: 35px;
+    color: #a451e9;
+}
+
+.PetCare{
+    width: 200px;
+}
+
+.logo-area i {
+    font-size: 45px;
+    display: block;
+}
+
+.logo-area span {
+    display: block;
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.logo-area small {
+    color: #777;
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #77738b;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.menu-item i {
+    font-size: 18px;
+}
+
+.menu-item:hover {
+    background: #f5f0ff;
+    color: #7046e8;
+}
+
+.menu-item.active {
+    background: linear-gradient(
+        90deg,
+        #eee7ff,
+        #f8f5ff
+    );
+    color: #7046e8;
+    font-weight: 600;
+}
+
+
+/* ================= AYUDA ================= */
+
+.help-card {
+    margin-top: 35px;
+    background: linear-gradient(
+        145deg,
+        #f1ebff,
+        #faf8ff
+    );
+    border-radius: 18px;
+    padding: 18px;
+    text-align: center;
+}
+
+.help-icon {
+    width: 40px;
+    height: 40px;
+    background: #7046e8;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.help-card h6 {
+    margin-top: 12px;
+    font-weight: 700;
+}
+
+.help-card p {
+    font-size: 12px;
+    color: #858197;
+    line-height: 1.5;
+}
+
+.help-card button {
+    border: none;
+    background: white;
+    color: #7046e8;
+    border-radius: 9px;
+    padding: 8px 15px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* ================= MAIN ================= */
+
+.main-content {
+    margin-left: 255px;
+    width: calc(100% - 255px);
+    padding: 0 35px 40px;
+}
+
+
+/* ================= TOPBAR ================= */
+
+.topbar {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ece9f4;
+}
+
+.back-button {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #77738b;
+    cursor: pointer;
+}
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.notification {
+    position: relative;
+    font-size: 20px;
+    color: #77738b;
+}
+
+.notification span {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    background: #7046e8;
+    color: white;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #e8ddff;
+    color: #7046e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.user-info strong {
+    display: block;
+    font-size: 14px;
+}
+
+.user-info small {
+    color: #9691a5;
+    font-size: 11px;
+}
+
+
+/* ================= HEADER ================= */
+
+.page-header {
+    padding: 35px 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #8b70d8;
+    letter-spacing: 1.5px;
+}
+
+.page-header h1 {
+    margin-top: 5px;
+    font-size: 30px;
+    font-weight: 750;
+}
+
+.page-header p {
+    color: #858197;
+    font-size: 14px;
+}
+
+.btn-primary-custom {
+    border: none;
+    background: linear-gradient(
+        135deg,
+        #7046e8,
+        #8e63ee
+    );
+    color: white;
+    padding: 12px 19px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(112, 70, 232, 0.2);
+}
+
+.btn-primary-custom i {
+    margin-right: 5px;
+}
+
+
+/* ================= SUMMARY ================= */
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.summary-card {
+    border-radius: 18px;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.summary-card.purple {
+    background: linear-gradient(
+        135deg,
+        #eee6ff,
+        #f8f5ff
+    );
+}
+
+.summary-card.blue {
+    background: linear-gradient(
+        135deg,
+        #e6f3ff,
+        #f6fbff
+    );
+}
+
+.summary-card.pink {
+    background: linear-gradient(
+        135deg,
+        #ffe9f2,
+        #fff7fa
+    );
+}
+
+.summary-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: #7046e8;
+    font-size: 22px;
+}
+
+.summary-card span {
+    font-size: 12px;
+    color: #77738b;
+}
+
+.summary-card h2 {
+    font-size: 24px;
+    margin: 3px 0;
+    font-weight: 750;
+}
+
+.summary-card small {
+    color: #7b72a0;
+    font-size: 10px;
+}
+
+.summary-card small i {
+    color: #7046e8;
+}
+
+
+/* ================= FINANCE LAYOUT ================= */
+
+.finance-layout {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 20px;
+}
+
+
+/* ================= CARDS ================= */
+
+.expenses-card,
+.categories-card,
+.pets-finance {
+    background: white;
+    border-radius: 18px;
+    padding: 23px;
+    border: 1px solid #eeeaf5;
+}
+
+.card-header-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.card-header-custom h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.card-header-custom p {
+    color: #9993aa;
+    font-size: 11px;
+    margin: 0;
+}
+
+.view-all {
+    background: none;
+    border: none;
+    color: #7046e8;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* ================= GASTOS ================= */
+
+.expense-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.expense-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid #f1eef6;
+}
+
+.expense-item:last-child {
+    border-bottom: none;
+}
+
+.expense-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.veterinary {
+    background: #eee8ff;
+    color: #7046e8;
+}
+
+.food {
+    background: #e5f5ff;
+    color: #4397d5;
+}
+
+.grooming {
+    background: #ffe9f1;
+    color: #d76894;
+}
+
+.accessories {
+    background: #fff0dc;
+    color: #d99445;
+}
+
+.expense-info {
+    flex: 1;
+}
+
+.expense-info strong {
+    display: block;
+    font-size: 13px;
+}
+
+.expense-info span {
+    color: #9993aa;
+    font-size: 10px;
+}
+
+.expense-price {
+    font-size: 13px;
+    font-weight: 700;
+    color: #5e596d;
+}
+
+
+/* ================= CATEGORÍAS ================= */
+
+.category {
+    margin-bottom: 20px;
+}
+
+.category-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.category-top div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #656073;
+}
+
+.category-top i {
+    color: #7046e8;
+}
+
+.category-top strong {
+    font-size: 12px;
+}
+
+.progress {
+    height: 7px;
+    background: #f0edf5;
+    border-radius: 20px;
+}
+
+.progress-bar {
+    background: linear-gradient(
+        90deg,
+        #7046e8,
+        #a282f1
+    );
+    border-radius: 20px;
+}
+
+
+/* ================= MASCOTAS ================= */
+
+.pets-finance {
+    margin-top: 20px;
+}
+
+.pets-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.pet-finance-card {
+    background: #faf9fd;
+    border: 1px solid #eeeaf5;
+    border-radius: 15px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pet-avatar {
+    width: 48px;
+    height: 48px;
+    background: #eee8ff;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.pet-finance-info {
+    flex: 1;
+}
+
+.pet-finance-info h4 {
+    font-size: 14px;
+    margin: 0;
+    font-weight: 700;
+}
+
+.pet-finance-info span {
+    color: #9993aa;
+    font-size: 10px;
+}
+
+.pet-finance-card > strong {
+    color: #7046e8;
+    font-size: 13px;
+}
+
+
+/* ================= MODAL ================= */
+
+.custom-modal {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.modal-header {
+    border: none;
+    padding: 25px 25px 10px;
+}
+
+.modal-header h4 {
+    font-size: 19px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.modal-header p {
+    color: #9993aa;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.modal-body {
+    padding: 10px 25px 25px;
+}
+
+.modal-body label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.form-control,
+.form-select {
+    border: 1px solid #e6e1ef;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 12px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #9a7bea;
+    box-shadow: 0 0 0 3px rgba(112, 70, 232, 0.08);
+}
+
+.input-group-text {
+    background: #f8f5ff;
+    border: 1px solid #e6e1ef;
+    color: #7046e8;
+}
+
+.btn-save {
+    width: 100%;
+    border: none;
+    background: linear-gradient(
+        135deg,
+        #7046e8,
+        #8f66ed
+    );
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1100px) {
+
+    .summary-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .summary-card:last-child {
+        grid-column: span 2;
+    }
+
+    .finance-layout {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        width: 75px;
+        padding: 20px 10px;
+    }
+
+    .logo {
+        justify-content: center;
+        padding: 5px 0 30px;
+    }
+
+    .logo span,
+    .menu-item span,
+    .help-card {
+        display: none;
+    }
+
+    .menu-item {
+        justify-content: center;
+        padding: 13px;
+    }
+
+    .main-content {
+        margin-left: 75px;
+        width: calc(100% - 75px);
+        padding: 0 20px 30px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .topbar {
+        height: 70px;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .page-header h1 {
+        font-size: 25px;
+    }
+
+    .btn-primary-custom {
+        width: 100%;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-card:last-child {
+        grid-column: auto;
+    }
+
+    .pets-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .user-info {
+        display: none;
+    }
+
+    .finance-layout {
+        grid-template-columns: 1fr;
+    }
+
+}

@@ -1,0 +1,169 @@
+/* Fondo */
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    min-height:100vh;
+
+    background: linear-gradient(
+        135deg,
+        #DFCDE5 0%,
+        #b898eb 35%,
+        #CEB4D9 70%,
+        #DFCDE5 100%
+    );
+}
+
+/* Contenedor */
+
+.configuracion{
+    max-width:430px;
+    margin:auto;
+}
+
+/* Botón volver */
+
+.volver{
+    font-size:24px;
+    color:#7c23f1;
+    text-decoration:none;
+}
+
+/* Título */
+
+.titulo{
+    text-align:center;
+    font-weight:700;
+    color:#9967eb;
+    margin:20px 0 25px;
+}
+
+.subtitulo{
+    color:#7B5CE1;
+    font-size:18px;
+    margin:25px 0 15px;
+}
+
+/* Tarjetas */
+
+.card-config{
+    background:#fff;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+    overflow:hidden;
+    margin-bottom:20px;
+}
+
+/* Opciones */
+
+.item-config{
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+    color:#333;
+    padding: 16px 20px;
+    transition:.3s;
+}
+
+.item-config:not(:last-child){
+    border-bottom:10px solid #ececec;
+}
+
+.item-config:hover{
+    background:#faf7ff;
+}
+
+/* Iconos */
+
+.icono{
+    width:50px;
+    height:50px;
+    background:#F2EEFD;
+    border-radius:15px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin-right:15px;
+}
+
+.icono i{
+    color:#8A6CE9;
+    color:#000000;
+    font-size:22px;
+}
+
+/* Texto */
+
+.texto{
+    flex:1;
+}
+
+.texto h6{
+    margin:0;
+    font-weight:600;
+    color:#6c3da1;
+}
+
+.texto p{
+    margin:0;
+    color:#8b8b8b;
+    font-size:14px;
+}
+
+/* Flecha */
+
+.flecha{
+    color:#9f9f9f;
+    font-size:18px;
+}
+
+/* Cerrar sesión */
+
+.rojo{
+    background:#FFECEC;
+}
+
+.rojo i{
+    color:#E74C3C;
+}
+
+.salir h6{
+    color:#E74C3C;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .configuracion{
+        max-width:100%;
+        padding:0 10px;
+    }
+
+    .titulo{
+        font-size:28px;
+    }
+
+    .item-config{
+        padding:15px;
+    }
+
+    .icono{
+        width:45px;
+        height:45px;
+    }
+
+    .icono i{
+        font-size:20px;
+    }
+
+    .texto h6{
+        font-size:16px;
+    }
+
+    .texto p{
+        font-size:13px;
+    }
+
+}

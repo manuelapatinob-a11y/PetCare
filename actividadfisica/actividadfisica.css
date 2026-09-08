@@ -1,0 +1,895 @@
+/* ==============================
+   CONFIGURACIÓN GENERAL
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f6fc;
+    color: #24324a;
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* ==============================
+   SIDEBAR
+================================ */
+
+.sidebar {
+    width: 225px;
+    min-height: 100vh;
+    background: #ffffff;
+    border-right: 1px solid #e3e4ee;
+    padding: 25px 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-area {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 200px;
+    max-width: 100%;
+}
+
+
+/* MENÚ */
+
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.main-menu a {
+    text-decoration: none;
+    color: #62618c;
+    padding: 14px 13px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.main-menu a i {
+    font-size: 19px;
+    margin-right: 12px;
+}
+
+.main-menu a:hover {
+    background: #f0ebff;
+    color: #7046e8;
+}
+
+.main-menu a.active {
+    background: linear-gradient(90deg, #9b55df, #7046e8);
+    color: white;
+    box-shadow: 0 6px 15px rgba(112, 70, 232, 0.25);
+}
+
+
+/* TARJETA DE AYUDA */
+
+.help-card {
+    margin-top: auto;
+    background: linear-gradient(135deg, #6540c9, #8d5ae0);
+    color: white;
+    padding: 18px;
+    border-radius: 18px;
+}
+
+.help-card h5 {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.help-card p {
+    font-size: 12px;
+    line-height: 1.5;
+    opacity: 0.9;
+    margin-top: 10px;
+}
+
+.help-card button {
+    width: 100%;
+    border: none;
+    background: white;
+    color: #7046e8;
+    padding: 9px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+
+/* ==============================
+   CONTENIDO PRINCIPAL
+================================ */
+
+.content {
+    flex: 1;
+    padding: 18px 32px 40px;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* ==============================
+   HEADER
+================================ */
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0 20px;
+    border-bottom: 1px solid #e4e5ee;
+}
+
+.page-title {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.back {
+    color: #4c5283;
+    font-size: 24px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.back:hover {
+    color: #7046e8;
+    transform: translateX(-3px);
+}
+
+.page-title h2 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.page-title p {
+    color: #6c7185;
+    font-size: 15px;
+    margin: 0;
+}
+
+
+/* ==============================
+   USUARIO
+================================ */
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.notification-btn {
+    border: none;
+    background: transparent;
+    color: #8b62df;
+    font-size: 22px;
+}
+
+.user-button {
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #273047;
+}
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6f4bd1, #9d73e8);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+
+/* ==============================
+   SELECTOR DE MASCOTAS
+================================ */
+
+.pets-selector {
+    background: white;
+    border: 1px solid #dedfeb;
+    border-radius: 18px;
+    padding: 18px;
+    margin-top: 18px;
+}
+
+.pets-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.pets-header h6 {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.pets-header a {
+    text-decoration: none;
+    color: #7553cc;
+    font-size: 14px;
+}
+
+.pet-option {
+    width: 100%;
+    min-height: 75px;
+    border: 1px solid #d9dbea;
+    background: white;
+    border-radius: 13px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+}
+
+.pet-option:hover {
+    border-color: #875be0;
+    transform: translateY(-2px);
+}
+
+.pet-option.active-pet {
+    background: linear-gradient(90deg, #7b45d2, #a466d9);
+    color: white;
+    border-color: transparent;
+}
+
+.pet-emoji {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 31px;
+}
+
+.pet-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.pet-name strong {
+    font-size: 15px;
+}
+
+.pet-name span {
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.online-dot,
+.offline-dot {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+}
+
+.online-dot {
+    background: #35bf74;
+}
+
+.offline-dot {
+    background: #c6c7cd;
+}
+
+
+/* ==============================
+   ESTRUCTURA ACTIVIDAD
+================================ */
+
+.activity-layout {
+    display: flex;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+
+/* ==============================
+   MENÚ INTERNO
+================================ */
+
+.activity-menu {
+    width: 200px;
+    background: white;
+    border: 1px solid #dedfeb;
+    border-radius: 18px;
+    padding: 20px 12px;
+    height: fit-content;
+}
+
+.activity-title {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.activity-icon {
+    font-size: 42px;
+    color: #7046e8;
+}
+
+.activity-title h4 {
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.activity-link {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 12px 11px;
+    border-radius: 10px;
+    text-align: left;
+    color: #3e465c;
+    font-size: 14px;
+    margin-bottom: 4px;
+    transition: 0.3s;
+}
+
+.activity-link i {
+    color: #7751d2;
+    margin-right: 8px;
+}
+
+.activity-link:hover {
+    background: #f1edff;
+}
+
+.activity-link.active-link {
+    background: #eae5fb;
+    color: #6442bd;
+}
+
+
+/* ==============================
+   CONTENIDO ACTIVIDAD
+================================ */
+
+.activity-content {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* ==============================
+   TARJETAS GENERALES
+================================ */
+
+.plan-card,
+.info-card {
+    background: white;
+    border: 1px solid #dedfeb;
+    border-radius: 18px;
+    padding: 18px;
+}
+
+
+/* ENCABEZADO TARJETAS */
+
+.card-header-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.card-header-custom h5 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.card-header-custom h5 i {
+    color: #7046e8;
+    margin-right: 5px;
+}
+
+.edit-btn {
+    border: 1px solid #8a64e4;
+    background: white;
+    color: #7046e8;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.edit-btn:hover {
+    background: #7046e8;
+    color: white;
+}
+
+
+/* ==============================
+   ESTADÍSTICAS
+================================ */
+
+.activity-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid #dedfeb;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.activity-stat {
+    text-align: center;
+    padding: 24px 15px;
+    border-right: 1px solid #dedfeb;
+}
+
+.activity-stat:last-child {
+    border-right: none;
+}
+
+.activity-stat i {
+    display: block;
+    font-size: 30px;
+    color: #7046e8;
+    margin-bottom: 12px;
+}
+
+.activity-stat p {
+    color: #555d70;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.activity-stat strong {
+    font-size: 15px;
+}
+
+
+/* ==============================
+   MENSAJE
+================================ */
+
+.activity-message {
+    margin-top: 14px;
+    padding: 11px;
+    background: #eeeafa;
+    color: #5b5573;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.activity-message i {
+    color: #7046e8;
+    margin-right: 4px;
+}
+
+
+/* ==============================
+   AGENDA
+================================ */
+
+.schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.schedule-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px;
+    border: 1px solid #e2e3eb;
+    border-radius: 12px;
+}
+
+.schedule-icon {
+    font-size: 24px;
+}
+
+.schedule-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.schedule-info strong {
+    font-size: 14px;
+}
+
+.schedule-info span {
+    font-size: 12px;
+    color: #777b89;
+    margin-top: 3px;
+}
+
+.schedule-item b {
+    color: #7046e8;
+    font-size: 13px;
+}
+
+
+/* ==============================
+   SEGUIMIENTO
+================================ */
+
+.week-text {
+    font-size: 13px;
+    color: #4d5262;
+}
+
+.progress-area {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 12px 0;
+}
+
+.progress-circle {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+
+    background: conic-gradient(
+        #7046e8 0deg,
+        #7046e8 306deg,
+        #ece9f5 306deg
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.progress-circle::before {
+    content: "";
+    width: 86px;
+    height: 86px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.progress-circle div {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.progress-circle strong {
+    display: block;
+    font-size: 24px;
+}
+
+.progress-circle span {
+    font-size: 11px;
+    color: #697084;
+}
+
+.progress-info {
+    flex: 1;
+}
+
+.progress-info p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 9px;
+}
+
+.progress-info strong {
+    font-weight: 600;
+}
+
+.progress-info .missed strong {
+    color: #d14d5c;
+}
+
+
+/* ==============================
+   MENSAJE POSITIVO
+================================ */
+
+.success-message {
+    background: #e5f5ec;
+    color: #487863;
+    padding: 11px;
+    border-radius: 9px;
+    font-size: 13px;
+}
+
+.success-message i {
+    margin-right: 5px;
+}
+
+
+/* ==============================
+   DROPDOWN
+================================ */
+
+.dropdown-menu {
+    border-radius: 12px;
+    border: 1px solid #e1e2ec;
+    padding: 8px;
+}
+
+.dropdown-item {
+    border-radius: 8px;
+    padding: 9px 12px;
+    font-size: 14px;
+}
+
+.dropdown-item i {
+    margin-right: 8px;
+    color: #7046e8;
+}
+
+
+/* ==============================
+   TABLET
+================================ */
+
+@media (max-width: 1100px) {
+
+    .sidebar {
+        width: 75px;
+        padding: 20px 10px;
+    }
+
+    .logo {
+        width: 50px;
+    }
+
+    .main-menu a {
+        font-size: 0;
+        text-align: center;
+        padding: 14px 5px;
+    }
+
+    .main-menu a i {
+        font-size: 22px;
+        margin: 0;
+    }
+
+    .help-card {
+        display: none;
+    }
+
+    .activity-menu {
+        width: 170px;
+    }
+
+}
+
+
+/* ==============================
+   TABLET PEQUEÑA
+================================ */
+
+@media (max-width: 900px) {
+
+    .content {
+        padding: 20px;
+    }
+
+    .activity-layout {
+        flex-direction: column;
+    }
+
+    .activity-menu {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .activity-title {
+        width: 100%;
+    }
+
+    .activity-link {
+        width: auto;
+        flex: 1;
+    }
+
+}
+
+
+/* ==============================
+   MÓVIL
+================================ */
+
+@media (max-width: 768px) {
+
+    .app {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        height: auto;
+        padding: 12px;
+        border-right: none;
+        border-bottom: 1px solid #e3e4ee;
+    }
+
+    .logo-area {
+        margin-bottom: 10px;
+    }
+
+    .logo {
+        width: 75px;
+    }
+
+    .main-menu {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .main-menu a {
+        white-space: nowrap;
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .main-menu a i {
+        font-size: 16px;
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    .top-header {
+        align-items: flex-start;
+    }
+
+    .page-title h2 {
+        font-size: 21px;
+    }
+
+    .page-title p {
+        font-size: 12px;
+    }
+
+    .user-button strong,
+    .user-button > i {
+        display: none;
+    }
+
+    .user-area {
+        gap: 8px;
+    }
+
+    .pets-header {
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .pets-header a {
+        font-size: 11px;
+        text-align: right;
+    }
+
+    .activity-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .activity-stat {
+        border-right: none;
+        border-bottom: 1px solid #dedfeb;
+    }
+
+    .activity-stat:last-child {
+        border-bottom: none;
+    }
+
+    .activity-menu {
+        padding: 15px;
+    }
+
+    .activity-link {
+        flex: none;
+        width: 100%;
+    }
+
+    .progress-area {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .progress-info {
+        width: 100%;
+    }
+
+}
+
+
+/* ==============================
+   CELULARES PEQUEÑOS
+================================ */
+
+@media (max-width: 480px) {
+
+    .top-header {
+        gap: 10px;
+    }
+
+    .back {
+        font-size: 20px;
+    }
+
+    .page-title {
+        gap: 10px;
+    }
+
+    .notification-btn {
+        font-size: 19px;
+    }
+
+    .avatar {
+        width: 36px;
+        height: 36px;
+        font-size: 12px;
+    }
+
+    .card-header-custom {
+        gap: 10px;
+    }
+
+    .card-header-custom h5 {
+        font-size: 14px;
+    }
+
+    .edit-btn {
+        padding: 7px 10px;
+        font-size: 12px;
+    }
+
+    .schedule-item {
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .schedule-info strong {
+        font-size: 12px;
+    }
+
+    .schedule-info span {
+        font-size: 11px;
+    }
+
+}

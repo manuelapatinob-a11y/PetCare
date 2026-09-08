@@ -1,0 +1,820 @@
+/* =========================================
+   PETCARE - MIS MASCOTAS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f7fc;
+    color: #18264a;
+}
+
+
+/* =========================================
+   APP
+========================================= */
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+    width: 225px;
+    min-height: 100vh;
+    background: white;
+    border-right: 1px solid #e5e5ef;
+    padding: 25px 14px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.logo-area {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    width: 200px;
+}
+
+
+/* =========================================
+   MENÚ
+========================================= */
+
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.main-menu a {
+    display: flex;
+    align-items: center;
+
+    padding: 13px;
+
+    border-radius: 10px;
+
+    color: #665f91;
+
+    font-size: 14px;
+
+    transition: .25s;
+}
+
+.main-menu a i {
+    width: 28px;
+
+    color: #7046e8;
+
+    font-size: 18px;
+}
+
+.main-menu a:hover {
+    background: #f0ebff;
+    color: #7046e8;
+}
+
+.main-menu a.active {
+    background: linear-gradient(
+        90deg,
+        #a25ae2,
+        #8050e4
+    );
+
+    color: white;
+
+    box-shadow:
+        0 7px 18px rgba(112,70,232,.25);
+}
+
+.main-menu a.active i {
+    color: white;
+}
+
+
+/* =========================================
+   AYUDA
+========================================= */
+
+.help-card {
+    margin-top: auto;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #7046d8,
+        #9855df
+    );
+}
+
+.help-card h5 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.help-card p {
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 8px 0 12px;
+}
+
+.help-card button {
+    width: 100%;
+    border: none;
+    padding: 9px;
+    border-radius: 8px;
+    background: white;
+    color: #7046e8;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+
+/* =========================================
+   CONTENIDO
+========================================= */
+
+.content {
+    flex: 1;
+    min-width: 0;
+    padding: 22px 32px 40px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e3e4ed;
+}
+
+.page-title {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.back {
+    color: #27345b;
+    font-size: 24px;
+}
+
+.back:hover {
+    color: #7046e8;
+}
+
+.page-title h2 {
+    font-size: 25px;
+    font-weight: 700;
+
+    margin-bottom: 4px;
+}
+
+.page-title p {
+    margin: 0;
+
+    color: #777b8c;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   USUARIO
+========================================= */
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.notification-btn {
+    border: none;
+    background: transparent;
+
+    color: #8754e7;
+
+    font-size: 21px;
+}
+
+.user-button {
+    border: none;
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    background: linear-gradient(
+        135deg,
+        #7046d8,
+        #9d61e7
+    );
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 25px 0 18px;
+}
+
+.intro h3 {
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.intro p {
+    color: #777b8c;
+    font-size: 13px;
+    margin: 0;
+}
+
+.btn-add {
+    border: none;
+    padding: 11px 17px;
+    border-radius: 9px;
+    background: linear-gradient(
+        90deg,
+        #7b48d8,
+        #9859e3
+    );
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow:
+        0 5px 12px rgba(112,70,232,.2);
+    transition: .25s;
+}
+
+.btn-add:hover {
+    transform: translateY(-2px);
+}
+
+.btn-add i {
+    margin-right: 6px;
+}
+
+
+/* =========================================
+   GRID DE MASCOTAS
+========================================= */
+
+.pets-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(280px, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================================
+   TARJETA MASCOTA
+========================================= */
+
+.pet-card {
+    background: white;
+    border: 1px solid #dedff0;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: .25s;
+}
+
+.pet-card:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 10px 25px rgba(70,50,120,.08);
+}
+
+
+/* FOTO */
+
+.pet-image {
+    height: 170px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dog {
+    background: linear-gradient(
+        135deg,
+        #eee7ff,
+        #f8efff
+    );
+}
+
+.cat {
+    background: linear-gradient(
+        135deg,
+        #e9e9ff,
+        #f4eaff
+    );
+}
+
+.pet-photo {
+    width: 105px;
+    height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: white;
+    font-size: 65px;
+    box-shadow:
+        0 6px 20px rgba(80,60,130,.12);
+}
+
+/* ESTADO */
+
+.status {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.active-status {
+    background: #ddf8ea;
+    color: #23925c;
+}
+
+/* =========================================
+   CONTENIDO
+========================================= */
+
+.pet-content {
+    padding: 17px;
+}
+
+.pet-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.pet-heading h4 {
+    margin: 0;
+    font-size: 19px;
+}
+
+.pet-heading span {
+    display: block;
+    margin-top: 3px;
+    color: #777b8c;
+    font-size: 12px;
+}
+
+.options {
+    border: none;
+    background: transparent;
+    color: #777b8c;
+    font-size: 18px;
+}
+
+/* =========================================
+   DATOS
+========================================= */
+
+.pet-data {
+    display: grid;
+    grid-template-columns:
+        repeat(3, 1fr);
+    gap: 8px;
+    margin: 18px 0;
+}
+
+.pet-data div {
+    padding: 10px;
+    background: #f8f7fc;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.pet-data i {
+    display: block;
+    margin-bottom: 4px;
+    color: #7046e8;
+    font-size: 17px;
+}
+
+.pet-data span {
+    display: block;
+    color: #777b8c;
+    font-size: 10px;
+}
+
+.pet-data strong {
+    display: block;
+    margin-top: 3px;
+    font-size: 12px;
+}
+
+
+/* =========================================
+   ACCIONES
+========================================= */
+
+.pet-actions {
+    display: flex;
+    gap: 10px;
+    padding-top: 12px;
+    border-top: 1px solid #eeeeF4;
+}
+
+.pet-actions a {
+    flex: 1;
+    padding: 9px;
+    border-radius: 8px;
+    text-align: center;
+    color: #7046e8;
+    background: #f2edff;
+    font-size: 12px;
+    transition: .2s;
+}
+
+.pet-actions a:hover {
+    background: #7046e8;
+    color: white;
+}
+
+.pet-actions i {
+    margin-right: 4px;
+}
+
+/* =========================================
+   AGREGAR MASCOTA
+========================================= */
+
+.add-pet-card {
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: white;
+    border: 2px dashed #d7d0ef;
+    border-radius: 18px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.add-pet-card:hover {
+    border-color: #8b5ce3;
+    background: #fbf9ff;
+}
+
+.add-icon {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #eee8ff;
+    color: #7046e8;
+    font-size: 26px;
+    margin-bottom: 14px;
+}
+
+.add-pet-card h4 {
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.add-pet-card p {
+    max-width: 220px;
+    color: #777b8c;
+    font-size: 12px;
+}
+
+/* =========================================
+   RESUMEN
+========================================= */
+
+.summary {
+    margin-top: 25px;
+}
+
+.summary h3 {
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, 1fr);
+    gap: 15px;
+}
+
+.summary-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: white;
+    border: 1px solid #dedff0;
+    border-radius: 14px;
+}
+
+.summary-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: #eee8ff;
+    color: #7046e8;
+    font-size: 18px;
+}
+
+.summary-card span {
+    display: block;
+    color: #777b8c;
+    font-size: 11px;
+}
+
+.summary-card strong {
+    display: block;
+    margin-top: 3px;
+    font-size: 19px;
+}
+
+/* =========================================
+   MODAL
+========================================= */
+.modal-content {
+    border: none;
+    border-radius: 18px;
+}
+
+.modal-header {
+    border-bottom: 1px solid #eeeeF4;
+}
+
+.modal-title {
+    color: #27345b;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.modal-title i {
+    color: #7046e8;
+    margin-right: 5px;
+}
+
+.modal-body {
+    padding: 22px;
+}
+
+.modal-body label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-control,
+.form-select {
+    border: 1px solid #dfe0eb;
+    border-radius: 9px;
+    padding: 10px 12px;
+    font-size: 13px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #8b5ce3;
+    box-shadow:
+        0 0 0 3px rgba(112,70,232,.1);
+}
+
+.btn-save {
+    width: 100%;
+    border: none;
+    padding: 11px;
+    border-radius: 9px;
+    background: linear-gradient(
+        90deg,
+        #7b48d8,
+        #9859e3
+    );
+    color: white;
+    font-weight: 600;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+    .sidebar {
+        width: 190px;
+    }
+    .content {
+        padding: 20px;
+    }
+    .summary-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+/* =========================================
+   TABLET PEQUEÑA
+========================================= */
+@media (max-width: 850px) {
+    .sidebar {
+        width: 75px;
+        padding: 20px 10px;
+    }
+
+    .logo {
+        width: 48px;
+    }
+
+    .main-menu a {
+        justify-content: center;
+
+        font-size: 0;
+    }
+
+    .main-menu a i {
+        margin: 0;
+
+        font-size: 20px;
+    }
+
+    .help-card {
+        display: none;
+    }
+
+    .pets-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================================
+   MÓVIL
+========================================= */
+
+@media (max-width: 650px) {
+
+    .app {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        padding: 10px;
+        border-right: none;
+        border-bottom: 1px solid #e5e5ef;
+    }
+
+    .logo-area {
+        margin-bottom: 10px;
+    }
+
+    .logo {
+        width: 70px;
+    }
+
+    .main-menu {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .main-menu a {
+        flex-shrink: 0;
+        width: auto;
+        font-size: 11px;
+        padding: 8px 10px;
+    }
+
+    .main-menu a i {
+        margin-right: 4px;
+        font-size: 14px;
+    }
+
+    .content {
+        padding: 14px;
+    }
+
+    .top-header {
+        align-items: flex-start;
+    }
+
+    .page-title {
+        gap: 9px;
+    }
+
+    .page-title h2 {
+        font-size: 20px;
+    }
+
+    .page-title p {
+        font-size: 11px;
+    }
+
+    .user-button strong {
+        display: none;
+    }
+
+    .intro {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 13px;
+    }
+
+    .btn-add {
+        width: 100%;
+    }
+
+    .pets-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================
+   CELULAR PEQUEÑO
+========================================= */
+
+@media (max-width: 400px) {
+
+    .pet-data {
+        grid-template-columns: 1fr;
+    }
+
+    .pet-data div {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-align: left;
+    }
+
+    .pet-data i {
+        margin: 0;
+    }
+
+}

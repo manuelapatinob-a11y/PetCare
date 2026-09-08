@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PetCare | Recordatorios</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Pantallas/css/recordatorios.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =================================
+         BARRA LATERAL
+    ================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo-area">
+
+            <img
+                src="/Pantallas/Recursos/logo.png"
+                class="logo"
+                alt="PetCare">
+
+        </div>
+
+
+        <nav class="main-menu">
+
+            <a href="/Pantallas/index.html">
+                <i class="bi bi-house"></i>
+                Inicio
+            </a>
+
+            <a href="/Pantallas/mismascotas.html">
+                <i class="bi bi-people"></i>
+                Mis Mascotas
+            </a>
+
+            <a href="/Pantallas/salud.html">
+                <i class="bi bi-heart-pulse"></i>
+                Salud
+            </a>
+
+            <a href="/Pantallas/alimentacion.html">
+                <i class="bi bi-cup-hot"></i>
+                Alimentación
+            </a>
+
+            <a href="/Pantallas/recordatorios.html" class="active">
+                <i class="bi bi-bell"></i>
+                Recordatorios
+            </a>
+
+            <a href="/Pantallas/mapa.html">
+                <i class="bi bi-geo-alt"></i>
+                Mapa Pet Friendly
+            </a>
+
+            <a href="/Pantallas/servicios.html">
+                <i class="bi bi-shop"></i>
+                Servicios
+            </a>
+
+            <a href="/Pantallas/finanzas.html">
+                <i class="bi bi-wallet2"></i>
+                Finanzas
+            </a>
+
+            <a href="/Pantallas/perfil.html">
+                <i class="bi bi-person"></i>
+                Perfil
+            </a>
+
+            <a href="/Pantallas/configuracion.html">
+                <i class="bi bi-gear"></i>
+                Configuración
+            </a>
+
+        </nav>
+
+
+        <!-- AYUDA -->
+
+        <div class="help-card">
+
+            <h5>¿Necesitas ayuda?</h5>
+
+            <p>
+                Nuestro asistente virtual está disponible
+                para ayudarte.
+            </p>
+
+            <button>
+                Hablar con el asistente
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =================================
+         CONTENIDO
+    ================================== -->
+
+    <main class="content">
+
+
+        <!-- HEADER -->
+
+        <header class="top-header">
+
+            <div class="page-title">
+
+                <a href="/Pantallas/index.html" class="back">
+
+                    <i class="bi bi-arrow-left"></i>
+
+                </a>
+
+                <div>
+
+                    <h2>Recordatorios</h2>
+
+                    <p>
+                        Organiza las actividades importantes
+                        de tus mascotas.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- USUARIO -->
+
+            <div class="user-area">
+
+                <button class="notification-btn">
+
+                    <i class="bi bi-bell"></i>
+
+                </button>
+
+
+                <div class="dropdown">
+
+                    <button
+                        class="user-button dropdown-toggle"
+                        data-bs-toggle="dropdown">
+
+                        <span class="avatar">
+                            MP
+                        </span>
+
+                        <strong>
+                            Manuela P.
+                        </strong>
+
+                    </button>
+
+
+                    <ul class="dropdown-menu dropdown-menu-end">
+
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="perfil.html">
+
+                                <i class="bi bi-person"></i>
+                                Mi perfil
+
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="/Pantallas/configuracion.html">
+
+                                <i class="bi bi-gear"></i>
+                                Configuración
+
+                            </a>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="/Pantallas/login.html">
+
+                                <i class="bi bi-box-arrow-right"></i>
+                                Cerrar sesión
+
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================
+             ENCABEZADO
+        ================================== -->
+
+        <section class="reminder-intro">
+
+            <div>
+
+                <h3>
+                    Mis recordatorios 🔔
+                </h3>
+
+                <p>
+                    No olvides ninguna actividad importante
+                    de tus mascotas.
+                </p>
+
+            </div>
+
+
+            <button
+                class="btn-add"
+                data-bs-toggle="modal"
+                data-bs-target="#modalRecordatorio">
+
+                <i class="bi bi-plus-lg"></i>
+
+                Nuevo recordatorio
+
+            </button>
+
+        </section>
+
+
+        <!-- =================================
+             RESUMEN
+        ================================== -->
+
+        <section class="summary-grid">
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon purple">
+
+                    <i class="bi bi-calendar-event"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Próximos
+                    </span>
+
+                    <strong>
+                        4
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon blue">
+
+                    <i class="bi bi-check-circle"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Completados
+                    </span>
+
+                    <strong>
+                        8
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon lilac">
+
+                    <i class="bi bi-bell"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Esta semana
+                    </span>
+
+                    <strong>
+                        6
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon pink">
+
+                    <i class="bi bi-exclamation-circle"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Pendientes
+                    </span>
+
+                    <strong>
+                        3
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             FILTROS
+        ================================== -->
+
+        <section class="filters">
+
+            <div>
+
+                <label>
+                    Mascota
+                </label>
+
+                <select class="form-select">
+
+                    <option>
+                        Todas las mascotas
+                    </option>
+
+                    <option>
+                        🐶 Toby
+                    </option>
+
+                    <option>
+                        🐱 Luna
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div>
+
+                <label>
+                    Tipo
+                </label>
+
+                <select class="form-select">
+
+                    <option>
+                        Todos
+                    </option>
+
+                    <option>
+                        Veterinario
+                    </option>
+
+                    <option>
+                        Vacuna
+                    </option>
+
+                    <option>
+                        Alimentación
+                    </option>
+
+                    <option>
+                        Actividad física
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div>
+
+                <label>
+                    Fecha
+                </label>
+
+                <select class="form-select">
+
+                    <option>
+                        Todos
+                    </option>
+
+                    <option>
+                        Hoy
+                    </option>
+
+                    <option>
+                        Esta semana
+                    </option>
+
+                    <option>
+                        Este mes
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             RECORDATORIOS
+        ================================== -->
+
+        <section class="reminders-container">
+
+            <div class="section-title">
+
+                <h3>
+                    Próximos recordatorios
+                </h3>
+
+                <a href="#">
+                    Ver todos
+                </a>
+
+            </div>
+
+
+            <!-- RECORDATORIO 1 -->
+
+            <article class="reminder-card">
+
+                <div class="reminder-icon vaccine">
+
+                    <i class="bi bi-shield-plus"></i>
+
+                </div>
+
+
+                <div class="reminder-info">
+
+                    <h4>
+                        Vacuna anual
+                    </h4>
+
+                    <p>
+                        🐶 Toby
+                    </p>
+
+                    <span>
+                        <i class="bi bi-calendar3"></i>
+                        12 de septiembre de 2026
+                    </span>
+
+                </div>
+
+
+                <div class="reminder-status">
+
+                    <span class="status upcoming">
+                        Próximo
+                    </span>
+
+                    <strong>
+                        En 11 días
+                    </strong>
+
+                </div>
+
+
+                <button class="more-btn">
+
+                    <i class="bi bi-three-dots"></i>
+
+                </button>
+
+            </article>
+
+
+            <!-- RECORDATORIO 2 -->
+
+            <article class="reminder-card">
+
+                <div class="reminder-icon vet">
+
+                    <i class="bi bi-heart-pulse"></i>
+
+                </div>
+
+
+                <div class="reminder-info">
+
+                    <h4>
+                        Cita veterinaria
+                    </h4>
+
+                    <p>
+                        🐱 Luna
+                    </p>
+
+                    <span>
+                        <i class="bi bi-calendar3"></i>
+                        15 de septiembre de 2026
+                    </span>
+
+                </div>
+
+
+                <div class="reminder-status">
+
+                    <span class="status upcoming">
+                        Próximo
+                    </span>
+
+                    <strong>
+                        En 14 días
+                    </strong>
+
+                </div>
+
+
+                <button class="more-btn">
+
+                    <i class="bi bi-three-dots"></i>
+
+                </button>
+
+            </article>
+
+
+            <!-- RECORDATORIO 3 -->
+
+            <article class="reminder-card">
+
+                <div class="reminder-icon food">
+
+                    <i class="bi bi-cup-hot"></i>
+
+                </div>
+
+
+                <div class="reminder-info">
+
+                    <h4>
+                        Comprar concentrado
+                    </h4>
+
+                    <p>
+                        🐶 Toby
+                    </p>
+
+                    <span>
+                        <i class="bi bi-calendar3"></i>
+                        18 de septiembre de 2026
+                    </span>
+
+                </div>
+
+
+                <div class="reminder-status">
+
+                    <span class="status pending">
+                        Pendiente
+                    </span>
+
+                    <strong>
+                        En 17 días
+                    </strong>
+
+                </div>
+
+
+                <button class="more-btn">
+
+                    <i class="bi bi-three-dots"></i>
+
+                </button>
+
+            </article>
+
+
+            <!-- RECORDATORIO 4 -->
+
+            <article class="reminder-card">
+
+                <div class="reminder-icon walk">
+
+                    <i class="bi bi-person-walking"></i>
+
+                </div>
+
+
+                <div class="reminder-info">
+
+                    <h4>
+                        Paseo de la tarde
+                    </h4>
+
+                    <p>
+                        🐶 Toby
+                    </p>
+
+                    <span>
+                        <i class="bi bi-clock"></i>
+                        Todos los días · 5:00 PM
+                    </span>
+
+                </div>
+
+
+                <div class="reminder-status">
+
+                    <span class="status daily">
+                        Diario
+                    </span>
+
+                    <strong>
+                        Hoy
+                    </strong>
+
+                </div>
+
+
+                <button class="more-btn">
+
+                    <i class="bi bi-three-dots"></i>
+
+                </button>
+
+            </article>
+
+        </section>
+
+
+        <!-- =================================
+             CALENDARIO
+        ================================== -->
+
+        <section class="calendar-card">
+
+            <div class="calendar-header">
+
+                <div>
+
+                    <h3>
+                        Calendario
+                    </h3>
+
+                    <p>
+                        Septiembre 2026
+                    </p>
+
+                </div>
+
+                <div class="calendar-buttons">
+
+                    <button>
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+
+                    <button>
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="calendar">
+
+                <div class="day-name">Lun</div>
+                <div class="day-name">Mar</div>
+                <div class="day-name">Mié</div>
+                <div class="day-name">Jue</div>
+                <div class="day-name">Vie</div>
+                <div class="day-name">Sáb</div>
+                <div class="day-name">Dom</div>
+
+
+                <div class="day empty"></div>
+                <div class="day">1</div>
+                <div class="day">2</div>
+                <div class="day">3</div>
+                <div class="day">4</div>
+                <div class="day">5</div>
+                <div class="day">6</div>
+
+                <div class="day">7</div>
+                <div class="day">8</div>
+                <div class="day">9</div>
+                <div class="day">10</div>
+                <div class="day">11</div>
+
+                <div class="day event">
+                    12
+                    <span></span>
+                </div>
+
+                <div class="day">13</div>
+
+                <div class="day">14</div>
+
+                <div class="day event">
+                    15
+                    <span></span>
+                </div>
+
+                <div class="day">16</div>
+                <div class="day">17</div>
+
+                <div class="day event">
+                    18
+                    <span></span>
+                </div>
+
+                <div class="day">19</div>
+                <div class="day">20</div>
+
+                <div class="day">21</div>
+                <div class="day">22</div>
+                <div class="day">23</div>
+                <div class="day">24</div>
+                <div class="day">25</div>
+                <div class="day">26</div>
+                <div class="day">27</div>
+
+                <div class="day">28</div>
+                <div class="day">29</div>
+                <div class="day">30</div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =================================
+     MODAL
+================================== -->
+
+<div
+    class="modal fade"
+    id="modalRecordatorio"
+    tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+
+                    <i class="bi bi-bell"></i>
+
+                    Nuevo recordatorio
+
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <form>
+
+                    <div class="mb-3">
+
+                        <label>
+                            Título
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Ej: Vacuna anual">
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label>
+                            Mascota
+                        </label>
+
+                        <select class="form-select">
+
+                            <option>
+                                Selecciona una mascota
+                            </option>
+
+                            <option>
+                                🐶 Toby
+                            </option>
+
+                            <option>
+                                🐱 Luna
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label>
+                            Tipo de recordatorio
+                        </label>
+
+                        <select class="form-select">
+
+                            <option>
+                                Selecciona el tipo
+                            </option>
+
+                            <option>
+                                Vacuna
+                            </option>
+
+                            <option>
+                                Veterinario
+                            </option>
+
+                            <option>
+                                Alimentación
+                            </option>
+
+                            <option>
+                                Actividad física
+                            </option>
+
+                            <option>
+                                Otro
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <label>
+                                Fecha
+                            </label>
+
+                            <input
+                                type="date"
+                                class="form-control">
+
+                        </div>
+
+
+                        <div class="col-md-6 mb-3">
+
+                            <label>
+                                Hora
+                            </label>
+
+                            <input
+                                type="time"
+                                class="form-control">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label>
+                            Notas
+                        </label>
+
+                        <textarea
+                            class="form-control"
+                            rows="3"
+                            placeholder="Agrega información adicional...">
+                        </textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn-save">
+
+                        Guardar recordatorio
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Bootstrap -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+</body>
+
+</html>

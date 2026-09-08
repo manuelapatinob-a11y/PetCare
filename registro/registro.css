@@ -1,0 +1,241 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:linear-gradient(
+135deg,
+#f5f1ff,
+#ebe4ff,
+#f7f4ff
+);
+padding:30px;
+}
+
+.container{
+max-width:1500px;
+margin:auto;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:40px;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo img{
+width:200px;
+}
+
+.logo h2{
+color:#6d4cff;
+}
+
+.logo p{
+font-size:14px;
+color:#555;
+}
+
+.login-btn{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.login-btn button{
+padding:12px 25px;
+border:2px solid #7a5cff;
+background:white;
+border-radius:12px;
+cursor:pointer;
+font-weight:600;
+color:#6d4cff;
+}
+
+.content{
+display:grid;
+grid-template-columns:1fr 1.2fr;
+gap:40px;
+align-items:center;
+}
+
+.left h1{
+font-size:55px;
+color:#20156e;
+margin-bottom:25px;
+}
+
+.description{
+font-size:18px;
+line-height:1.8;
+color:#555;
+margin-bottom:30px;
+}
+
+.benefits{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:20px;
+display:flex;
+gap:20px;
+align-items:center;
+box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+
+.card i{
+font-size:30px;
+color:#7c58ff;
+}
+
+.form-box{
+background:white;
+padding:40px;
+border-radius:30px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.user-icon{
+width:80px;
+height:80px;
+background:#efe9ff;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:35px;
+color:#7b5cff;
+margin-bottom:20px;
+}
+
+.form-box h2{
+font-size:40px;
+color:#1e176f;
+}
+
+.form-box p{
+margin-bottom:25px;
+color:#555;
+}
+
+h3{
+color:#6d4cff;
+margin-bottom:15px;
+margin-top:15px;
+}
+
+.row{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.input-group{
+display:flex;
+flex-direction:column;
+margin-bottom:18px;
+}
+
+.input-group label{
+margin-bottom:8px;
+font-weight:600;
+}
+
+.input-group input,
+.input-group select{
+padding:15px;
+border:1px solid #ddd;
+border-radius:12px;
+font-size:15px;
+}
+
+.requirements{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+margin:15px 0;
+color:#4caf50;
+font-size:14px;
+}
+
+.checkbox{
+display:flex;
+gap:10px;
+margin:20px 0;
+}
+
+.register-btn{
+width:100%;
+padding:18px;
+border:none;
+border-radius:12px;
+background:linear-gradient(
+90deg,
+#7a5cff,
+#8d5eff
+);
+color:white;
+font-size:18px;
+font-weight:600;
+cursor:pointer;
+}
+
+.separator{
+text-align:center;
+margin:25px 0;
+color:#777;
+}
+
+.social{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+}
+
+.social button{
+padding:15px;
+background:white;
+border:1px solid #ddd;
+border-radius:12px;
+cursor:pointer;
+font-weight:600;
+}
+
+.social i{
+margin-right:8px;
+}
+
+@media(max-width:1000px){
+
+.content{
+grid-template-columns:1fr;
+}
+
+.left h1{
+font-size:40px;
+}
+
+.row{
+grid-template-columns:1fr;
+}
+
+.social{
+grid-template-columns:1fr;
+}
+
+}

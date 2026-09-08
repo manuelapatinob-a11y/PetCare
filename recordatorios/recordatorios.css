@@ -1,0 +1,999 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f7fc;
+    color: #18264a;
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 225px;
+    min-height: 100vh;
+
+    background: white;
+
+    border-right: 1px solid #e5e5ef;
+
+    padding: 25px 14px;
+
+    display: flex;
+    flex-direction: column;
+
+    flex-shrink: 0;
+}
+
+.logo-area {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    width: 200px;
+}
+
+
+/* MENU */
+
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.main-menu a {
+    display: flex;
+    align-items: center;
+
+    padding: 13px;
+
+    border-radius: 10px;
+
+    color: #665f91;
+
+    font-size: 14px;
+
+    text-decoration: none;
+
+    transition: .25s;
+}
+
+.main-menu a i {
+    width: 28px;
+
+    color: #7046e8;
+
+    font-size: 18px;
+}
+
+.main-menu a:hover {
+    background: #f0ebff;
+    color: #7046e8;
+}
+
+.main-menu a.active {
+    background: linear-gradient(
+        90deg,
+        #a25ae2,
+        #8050e4
+    );
+
+    color: white;
+
+    box-shadow:
+        0 7px 18px rgba(112,70,232,.25);
+}
+
+.main-menu a.active i {
+    color: white;
+}
+
+
+/* AYUDA */
+
+.help-card {
+    margin-top: auto;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #7046d8,
+        #9855df
+    );
+}
+
+.help-card h5 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.help-card p {
+    font-size: 12px;
+    line-height: 1.5;
+
+    margin: 8px 0 12px;
+}
+
+.help-card button {
+    width: 100%;
+
+    border: none;
+
+    padding: 9px;
+
+    border-radius: 8px;
+
+    background: white;
+
+    color: #7046e8;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* CONTENIDO */
+
+.content {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 22px 32px 40px;
+}
+
+
+/* HEADER */
+
+.top-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #e3e4ed;
+}
+
+.page-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+.back {
+    color: #27345b;
+
+    font-size: 24px;
+}
+
+.back:hover {
+    color: #7046e8;
+}
+
+.page-title h2 {
+    font-size: 25px;
+
+    font-weight: 700;
+
+    margin-bottom: 4px;
+}
+
+.page-title p {
+    margin: 0;
+
+    color: #777b8c;
+
+    font-size: 14px;
+}
+
+
+/* USUARIO */
+
+.user-area {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.notification-btn {
+    border: none;
+
+    background: transparent;
+
+    color: #8754e7;
+
+    font-size: 21px;
+}
+
+.user-button {
+    border: none;
+
+    background: transparent;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    background: linear-gradient(
+        135deg,
+        #7046d8,
+        #9d61e7
+    );
+}
+
+
+/* INTRO */
+
+.reminder-intro {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin: 25px 0 18px;
+}
+
+.reminder-intro h3 {
+    font-size: 21px;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+.reminder-intro p {
+    color: #777b8c;
+
+    font-size: 13px;
+
+    margin: 0;
+}
+
+.btn-add {
+    border: none;
+
+    padding: 11px 17px;
+
+    border-radius: 9px;
+
+    background: linear-gradient(
+        90deg,
+        #7b48d8,
+        #9859e3
+    );
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 5px 12px rgba(112,70,232,.2);
+}
+
+
+/* RESUMEN */
+
+.summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.summary-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 16px;
+
+    background: white;
+
+    border: 1px solid #dedff0;
+
+    border-radius: 14px;
+}
+
+.summary-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    font-size: 18px;
+}
+
+.summary-icon.purple {
+    background: #eee8ff;
+    color: #7046e8;
+}
+
+.summary-icon.blue {
+    background: #e5f1ff;
+    color: #3981df;
+}
+
+.summary-icon.lilac {
+    background: #f1e7ff;
+    color: #9254d8;
+}
+
+.summary-icon.pink {
+    background: #ffeaf3;
+    color: #dc6092;
+}
+
+.summary-card span {
+    display: block;
+
+    color: #777b8c;
+
+    font-size: 11px;
+}
+
+.summary-card strong {
+    display: block;
+
+    font-size: 19px;
+
+    margin-top: 3px;
+}
+
+
+/* FILTROS */
+
+.filters {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    padding: 17px;
+
+    background: white;
+
+    border: 1px solid #dedff0;
+
+    border-radius: 15px;
+
+    margin-bottom: 20px;
+}
+
+.filters label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #555c72;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.form-select {
+    border-radius: 9px;
+
+    border-color: #dedff0;
+
+    font-size: 13px;
+}
+
+.form-select:focus {
+    border-color: #8050e4;
+
+    box-shadow:
+        0 0 0 3px rgba(112,70,232,.1);
+}
+
+
+/* RECORDATORIOS */
+
+.reminders-container {
+    padding: 20px;
+
+    background: white;
+
+    border: 1px solid #dedff0;
+
+    border-radius: 17px;
+}
+
+.section-title {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.section-title h3 {
+    font-size: 17px;
+
+    margin: 0;
+}
+
+.section-title a {
+    color: #7046e8;
+
+    font-size: 12px;
+
+    text-decoration: none;
+}
+
+
+/* TARJETA */
+
+.reminder-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 13px;
+
+    margin-bottom: 10px;
+
+    border: 1px solid #e4e4ed;
+
+    border-radius: 12px;
+
+    transition: .2s;
+}
+
+.reminder-card:last-child {
+    margin-bottom: 0;
+}
+
+.reminder-card:hover {
+    border-color: #c9bce9;
+
+    background: #fcfbff;
+}
+
+
+/* ICONO */
+
+.reminder-icon {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    font-size: 20px;
+}
+
+.vaccine {
+    background: #eee8ff;
+    color: #7046e8;
+}
+
+.vet {
+    background: #e7f1ff;
+    color: #4785dc;
+}
+
+.food {
+    background: #fff0df;
+    color: #d28a32;
+}
+
+.walk {
+    background: #e6f7ed;
+    color: #3a9b68;
+}
+
+
+/* INFO */
+
+.reminder-info {
+    flex: 1;
+}
+
+.reminder-info h4 {
+    font-size: 14px;
+
+    margin: 0 0 4px;
+}
+
+.reminder-info p {
+    margin: 0 0 4px;
+
+    color: #777b8c;
+
+    font-size: 11px;
+}
+
+.reminder-info span {
+    color: #8a8d99;
+
+    font-size: 10px;
+}
+
+
+/* ESTADO */
+
+.reminder-status {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 4px;
+}
+
+.status {
+    padding: 4px 9px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+}
+
+.upcoming {
+    background: #eee8ff;
+    color: #7046e8;
+}
+
+.pending {
+    background: #fff0db;
+    color: #bd7620;
+}
+
+.daily {
+    background: #e5f7ec;
+    color: #318257;
+}
+
+.reminder-status strong {
+    color: #737789;
+
+    font-size: 10px;
+}
+
+
+/* OPCIONES */
+
+.more-btn {
+    border: none;
+
+    background: transparent;
+
+    color: #858897;
+
+    font-size: 18px;
+}
+
+
+/* CALENDARIO */
+
+.calendar-card {
+    margin-top: 20px;
+
+    padding: 20px;
+
+    background: white;
+
+    border: 1px solid #dedff0;
+
+    border-radius: 17px;
+}
+
+.calendar-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+.calendar-header h3 {
+    margin: 0;
+
+    font-size: 17px;
+}
+
+.calendar-header p {
+    margin: 4px 0 0;
+
+    color: #777b8c;
+
+    font-size: 11px;
+}
+
+.calendar-buttons {
+    display: flex;
+
+    gap: 6px;
+}
+
+.calendar-buttons button {
+    width: 32px;
+    height: 32px;
+
+    border: 1px solid #dedff0;
+
+    border-radius: 8px;
+
+    background: white;
+
+    color: #7046e8;
+}
+
+
+/* CALENDARIO */
+
+.calendar {
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 5px;
+}
+
+.day-name {
+    padding: 8px;
+
+    text-align: center;
+
+    color: #777b8c;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.day {
+    min-height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+.day:hover {
+    background: #f0ebff;
+}
+
+.day.empty {
+    cursor: default;
+}
+
+.day.event {
+    background: #eee8ff;
+
+    color: #7046e8;
+
+    font-weight: bold;
+}
+
+.day.event span {
+    width: 4px;
+    height: 4px;
+
+    position: absolute;
+
+    bottom: 5px;
+
+    border-radius: 50%;
+
+    background: #7046e8;
+}
+
+
+/* MODAL */
+
+.modal-content {
+    border: none;
+
+    border-radius: 18px;
+}
+
+.modal-title {
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+.modal-title i {
+    color: #7046e8;
+
+    margin-right: 5px;
+}
+
+.modal-body label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.form-control {
+    border-radius: 9px;
+
+    border-color: #dedff0;
+
+    font-size: 13px;
+}
+
+.form-control:focus {
+    border-color: #8050e4;
+
+    box-shadow:
+        0 0 0 3px rgba(112,70,232,.1);
+}
+
+.btn-save {
+    width: 100%;
+
+    border: none;
+
+    padding: 11px;
+
+    border-radius: 9px;
+
+    background: linear-gradient(
+        90deg,
+        #7b48d8,
+        #9859e3
+    );
+
+    color: white;
+
+    font-weight: 600;
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 1100px) {
+
+    .sidebar {
+        width: 190px;
+    }
+
+    .summary-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .sidebar {
+        width: 75px;
+    }
+
+    .logo {
+        width: 48px;
+    }
+
+    .main-menu a {
+        justify-content: center;
+
+        font-size: 0;
+    }
+
+    .main-menu a i {
+        margin: 0;
+    }
+
+    .help-card {
+        display: none;
+    }
+
+    .filters {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .app {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 10px;
+
+        border-right: none;
+
+        border-bottom: 1px solid #e5e5ef;
+    }
+
+    .logo-area {
+        margin-bottom: 10px;
+    }
+
+    .logo {
+        width: 70px;
+    }
+
+    .main-menu {
+        flex-direction: row;
+
+        overflow-x: auto;
+    }
+
+    .main-menu a {
+        flex-shrink: 0;
+
+        width: auto;
+
+        font-size: 11px;
+
+        padding: 8px 10px;
+    }
+
+    .main-menu a i {
+        margin-right: 4px;
+
+        font-size: 14px;
+    }
+
+    .content {
+        padding: 14px;
+    }
+
+    .top-header {
+        align-items: flex-start;
+    }
+
+    .page-title h2 {
+        font-size: 20px;
+    }
+
+    .page-title p {
+        font-size: 11px;
+    }
+
+    .user-button strong {
+        display: none;
+    }
+
+    .reminder-intro {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 13px;
+    }
+
+    .btn-add {
+        width: 100%;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reminder-card {
+        align-items: flex-start;
+    }
+
+    .reminder-status {
+        display: none;
+    }
+
+    .calendar-card {
+        overflow-x: auto;
+    }
+
+    .calendar {
+        min-width: 450px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .reminder-icon {
+        width: 40px;
+        height: 40px;
+
+        font-size: 17px;
+    }
+
+    .reminder-info h4 {
+        font-size: 12px;
+    }
+
+    .reminder-info span {
+        font-size: 9px;
+    }
+
+}

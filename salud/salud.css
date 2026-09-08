@@ -1,0 +1,1165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f8f9ff;
+    color: #17183d;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background: linear-gradient(
+        180deg,
+        #ffffff,
+        #f5f0ff
+    );
+    border-right: 1px solid #e6defb;
+    padding: 25px 16px;
+    position: fixed;
+    z-index: 10;
+}
+
+.PetCare{
+    width: 200px;
+}
+
+.menu a {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 6px;
+    color: #403084;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    background: #eee8ff;
+}
+
+
+.menu a.active {
+    background: linear-gradient(
+        90deg,
+        #7046e8,
+        #9565ef
+    );
+    color: white;
+}
+
+.help-box {
+    margin-top: 30px;
+    padding: 18px;
+    background: linear-gradient(
+        135deg,
+        #7046e8,
+        #a56bea
+    );
+    color: white;
+    border-radius: 18px;
+}
+
+.help-box p {
+    font-size: 13px;
+}
+
+.help-box button {
+
+    border: none;
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    color: #7046e8;
+
+}
+
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.main-content {
+
+    width: calc(100% - 250px);
+
+    margin-left: 250px;
+
+    padding: 25px 35px 60px;
+
+}
+
+
+.top-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+}
+
+
+.top-header h1 {
+
+    color: #21165f;
+
+    font-size: 25px;
+
+}
+
+
+.top-header h1 i {
+
+    color: #e63965;
+
+}
+
+
+.top-header p {
+
+    color: #777;
+
+    margin-left: 35px;
+
+}
+
+
+.user-dropdown {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border: none;
+
+    background: transparent;
+
+}
+
+
+.notification {
+
+    font-size: 22px;
+
+    color: #7046e8;
+
+}
+
+
+.user-avatar {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #7046e8,
+        #a46bea
+    );
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================
+   MASCOTAS
+========================= */
+
+.pet-selector {
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+    border: 1px solid #e8e0fa;
+
+}
+
+
+.section-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+
+}
+
+
+.section-header h3 {
+
+    font-size: 16px;
+
+}
+
+
+.section-header a {
+
+    color: #7046e8;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+}
+
+
+.pets-row {
+
+    display: flex;
+
+    gap: 15px;
+
+}
+
+
+.pet-option {
+
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 12px;
+
+    border: 1px solid #e5dff5;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+}
+
+
+.pet-option.selected {
+
+    background: linear-gradient(
+        90deg,
+        #7046e8,
+        #9565ef
+    );
+
+    color: white;
+
+}
+
+
+.pet-photo {
+
+    width: 55px;
+
+    height: 55px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 30px;
+
+}
+
+
+.pet-option h4 {
+
+    font-size: 16px;
+
+    margin: 0;
+
+}
+
+
+.pet-option p {
+
+    font-size: 12px;
+
+    margin: 0;
+
+}
+
+
+.status {
+
+    width: 10px;
+
+    height: 10px;
+
+    background: #22c77a;
+
+    border-radius: 50%;
+
+    margin-left: auto;
+
+}
+
+
+.status.offline {
+
+    background: #aaa;
+
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.health-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        220px
+        1fr
+        1fr;
+
+    gap: 20px;
+
+}
+
+
+.health-menu,
+.health-status,
+.vaccines-card,
+.appointment-card,
+.deworming-card,
+.medical-history,
+.reminder-card {
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    border: 1px solid #e9e3f8;
+
+    box-shadow:
+        0 8px 25px
+        rgba(70, 40, 130, .05);
+
+}
+
+
+/* =========================
+   MENÚ SALUD
+========================= */
+
+.health-menu {
+
+    grid-row: span 2;
+
+}
+
+
+.health-icon {
+
+    text-align: center;
+
+    font-size: 45px;
+
+}
+
+
+.health-menu h2 {
+
+    font-size: 18px;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+.health-menu ul {
+
+    list-style: none;
+
+    padding: 0;
+
+}
+
+
+.health-menu li {
+
+    padding: 11px;
+
+    border-radius: 10px;
+
+    margin-bottom: 5px;
+
+    font-size: 13px;
+
+}
+
+
+.health-menu li.active {
+
+    background: #ffe9f0;
+
+    color: #e63965;
+
+}
+
+
+.health-menu li i {
+
+    margin-right: 8px;
+
+}
+
+
+/* =========================
+   TARJETAS
+========================= */
+
+.card-title {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+.card-title h2 {
+
+    font-size: 18px;
+
+    margin: 0;
+
+}
+
+
+.card-title h2 i {
+
+    color: #e63965;
+
+}
+
+
+.healthy {
+
+    color: #15945c;
+
+    background: #e9fff3;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================
+   ESTADO DE SALUD
+========================= */
+
+.health-status {
+
+    grid-column: span 2;
+
+}
+
+
+.health-summary {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+
+}
+
+
+.health-summary div {
+
+    background: #faf8ff;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+}
+
+
+.health-summary i {
+
+    color: #e63965;
+
+    font-size: 25px;
+
+}
+
+
+.health-summary span {
+
+    display: block;
+
+    font-size: 12px;
+
+    color: #777;
+
+}
+
+
+.health-summary strong {
+
+    display: block;
+
+    margin-top: 5px;
+
+}
+
+
+.health-summary small {
+
+    color: #15945c;
+
+}
+
+
+/* =========================
+   VACUNAS
+========================= */
+
+.add-button {
+
+    background: #f1ebff;
+
+    border: 1px solid #bca4f5;
+
+    color: #6438dc;
+
+    padding: 7px 12px;
+
+    border-radius: 8px;
+
+}
+
+
+.vaccine-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px;
+
+    border: 1px solid #eee;
+
+    border-radius: 10px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.vaccine-icon {
+
+    font-size: 25px;
+
+}
+
+
+.vaccine-item div:nth-child(2) {
+
+    flex: 1;
+
+}
+
+
+.vaccine-item strong {
+
+    display: block;
+
+    font-size: 14px;
+
+}
+
+
+.vaccine-item small {
+
+    color: #777;
+
+    font-size: 11px;
+
+}
+
+
+.badge-complete {
+
+    color: #15945c;
+
+    background: #e8fff2;
+
+    padding: 5px 8px;
+
+    border-radius: 10px;
+
+    font-size: 10px;
+
+}
+
+
+.badge-pending {
+
+    color: #dc8b00;
+
+    background: #fff5dd;
+
+    padding: 5px 8px;
+
+    border-radius: 10px;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================
+   CITA
+========================= */
+
+.appointment {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.calendar-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    background: #ffe8ef;
+
+    color: #e63965;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.calendar-icon strong {
+
+    font-size: 23px;
+
+}
+
+
+.calendar-icon small {
+
+    font-size: 10px;
+
+}
+
+
+.appointment h4 {
+
+    font-size: 15px;
+
+}
+
+
+.appointment p {
+
+    margin: 0;
+
+    font-size: 12px;
+
+    color: #777;
+
+}
+
+
+.appointment-button {
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    border: 1px solid #e63965;
+
+    color: #e63965;
+
+    background: white;
+
+    border-radius: 10px;
+
+    padding: 9px;
+
+}
+
+
+/* =========================
+   DESPARASITACIÓN
+========================= */
+
+.deworming-content {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.deworming-circle {
+
+    width: 80px;
+
+    height: 80px;
+
+    border-radius: 50%;
+
+    background: #fff0f4;
+
+    color: #e63965;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.deworming-circle strong {
+
+    font-size: 25px;
+
+}
+
+
+.deworming-circle span {
+
+    font-size: 10px;
+
+}
+
+
+.deworming-content h4 {
+
+    font-size: 15px;
+
+}
+
+
+.deworming-content p {
+
+    color: #777;
+
+    font-size: 12px;
+
+}
+
+
+.days {
+
+    color: #e63965;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================
+   HISTORIAL
+========================= */
+
+.medical-history {
+
+    grid-column: span 2;
+
+}
+
+
+.card-title a {
+
+    color: #7046e8;
+
+    font-size: 12px;
+
+}
+
+
+.history-item {
+
+    display: flex;
+
+    gap: 15px;
+
+    padding: 12px;
+
+    border-bottom: 1px solid #eee;
+
+}
+
+
+.history-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    background: #f1ebff;
+
+    color: #7046e8;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.history-item strong {
+
+    display: block;
+
+    font-size: 14px;
+
+}
+
+
+.history-item small {
+
+    color: #777;
+
+    font-size: 11px;
+
+}
+
+
+.history-item p {
+
+    margin: 4px 0 0;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================
+   RECORDATORIOS
+========================= */
+
+.reminder-card {
+
+    grid-column: span 2;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    background: linear-gradient(
+        90deg,
+        #7046e8,
+        #a05fea
+    );
+
+    color: white;
+
+}
+
+
+.reminder-card > i {
+
+    font-size: 35px;
+
+}
+
+
+.reminder-card div {
+
+    flex: 1;
+
+}
+
+
+.reminder-card h3 {
+
+    font-size: 17px;
+
+}
+
+
+.reminder-card p {
+
+    margin: 0;
+
+    font-size: 13px;
+
+}
+
+
+.reminder-card button {
+
+    border: none;
+
+    background: white;
+
+    color: #7046e8;
+
+    padding: 10px 18px;
+
+    border-radius: 20px;
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+
+
+    .sidebar {
+
+        width: 210px;
+
+    }
+
+
+    .main-content {
+
+        width: calc(100% - 210px);
+
+        margin-left: 210px;
+
+    }
+
+
+    .health-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+    .health-menu {
+
+        grid-column: span 2;
+
+        grid-row: auto;
+
+    }
+
+
+}
+
+
+/* =========================
+   MÓVIL
+========================= */
+
+@media (max-width: 768px) {
+
+
+    .app-container {
+
+        display: block;
+
+    }
+
+
+    .sidebar {
+
+        position: relative;
+
+        width: 100%;
+
+        min-height: auto;
+
+    }
+
+
+    .main-content {
+
+        width: 100%;
+
+        margin: 0;
+
+        padding: 20px 15px;
+
+    }
+
+
+    .top-header {
+
+        align-items: flex-start;
+
+    }
+
+
+    .top-header h1 {
+
+        font-size: 20px;
+
+    }
+
+
+    .top-header p {
+
+        margin-left: 0;
+
+        font-size: 12px;
+
+    }
+
+
+    .user-dropdown strong {
+
+        display: none;
+
+    }
+
+
+    .pets-row {
+
+        flex-direction: column;
+
+    }
+
+
+    .health-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .health-menu,
+    .health-status,
+    .medical-history,
+    .reminder-card {
+
+        grid-column: span 1;
+
+    }
+
+
+    .health-summary {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .reminder-card {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+
+}
+
+
+/* =========================
+   CELULAR PEQUEÑO
+========================= */
+
+@media (max-width: 480px) {
+    .section-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+
+    .card-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .health-summary {
+        grid-template-columns: 1fr;
+
+    }
+}

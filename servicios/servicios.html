@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Servicios | PetCare</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Pantallas/css/servicios.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <div class="logo-area">
+                    <img src="/Pantallas/Recursos/logo.png" alt="" class="PetCare">
+                </div>
+
+            </div>
+
+            <nav class="menu">
+
+                <a href="/Pantallas/index.html" class="menu-item">
+                    <i class="bi bi-house"></i>
+                    <span>Inicio</span>
+                </a>
+
+                <a href="/Pantallas/mismascotas.html" class="menu-item">
+                    <i class="bi bi-heart"></i>
+                    <span>Mis Mascotas</span>
+                </a>
+
+                <a href="/Pantallas/salud.html" class="menu-item">
+                    <i class="bi bi-heart-pulse"></i>
+                    <span>Salud</span>
+                </a>
+
+                <a href="/Pantallas/alimentacion.html" class="menu-item">
+                    <i class="bi bi-cup-straw"></i>
+                    <span>Alimentación</span>
+                </a>
+
+                <a href="/Pantallas/recordatorios.html" class="menu-item">
+                    <i class="bi bi-bell"></i>
+                    <span>Recordatorios</span>
+                </a>
+
+                <a href="/Pantallas/mapa.html" class="menu-item">
+                    <i class="bi bi-geo-alt"></i>
+                    <span>Mapa Pet Friendly</span>
+                </a>
+
+                <a href="/Pantallas/servicios.html" class="menu-item active">
+                    <i class="bi bi-shop"></i>
+                    <span>Servicios</span>
+                </a>
+
+                <a href="/Pantallas/actividadfisica.html" class="menu-item">
+                    <i class="bi bi-person-walking"></i>
+                    <span>Actividad Física</span>
+                </a>
+
+
+                <a href="/Pantallas/finanzas.html" class="menu-item">
+                    <i class="bi bi-wallet2"></i>
+                    <span>Finanzas</span>
+                </a>
+
+                <a href="/Pantallas/perfil.html" class="menu-item">
+                    <i class="bi bi-person"></i>
+                    <span>Perfil</span>
+                </a>
+
+                <a href="/Pantallas/configuracion.html" class="menu-item">
+                    <i class="bi bi-gear"></i>
+                    <span>Configuración</span>
+                </a>
+
+            </nav>
+
+            <div class="help-card">
+
+                <div class="help-icon">
+                    <i class="bi bi-question-circle"></i>
+                </div>
+
+                <h5>¿Necesitas ayuda?</h5>
+
+                <p>
+                    Estamos aquí para ayudarte a cuidar mejor a tu mascota.
+                </p>
+
+                <button>
+                    Centro de ayuda
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- CONTENIDO -->
+        <main class="main-content">
+
+            <!-- HEADER -->
+            <header class="topbar">
+
+                <div class="welcome">
+
+                    <h4>Servicios 🐾</h4>
+
+                    <p>
+                        Encuentra todo lo que tu mascota necesita
+                    </p>
+
+                </div>
+
+                <div class="user-area">
+
+                    <div class="user-info">
+
+                        <div class="user-avatar">
+                            MP
+                        </div>
+
+                        <div>
+                            <strong>Manuela P.</strong>
+                            <small>Dueña de mascotas</small>
+                        </div>
+
+                    </div>
+
+                    <i class="bi bi-chevron-down"></i>
+
+                </div>
+
+            </header>
+
+
+            <!-- BUSCADOR -->
+            <section class="search-section">
+
+                <div class="search-box">
+
+                    <i class="bi bi-search"></i>
+
+                    <input
+                        type="text"
+                        id="buscarServicio"
+                        placeholder="Busca un servicio, lugar o categoría..."
+                    >
+
+                </div>
+
+                <button class="filter-btn" id="btnFiltros">
+
+                    <i class="bi bi-sliders"></i>
+                    Filtros
+
+                </button>
+
+            </section>
+
+
+            <!-- CATEGORÍAS -->
+            <section class="categories">
+
+                <button class="category active" data-category="todos">
+
+                    <i class="bi bi-grid"></i>
+
+                    <span>Todos</span>
+
+                </button>
+
+                <button class="category" data-category="veterinaria">
+
+                    <i class="bi bi-hospital"></i>
+
+                    <span>Veterinaria</span>
+
+                </button>
+
+                <button class="category" data-category="peluqueria">
+
+                    <i class="bi bi-scissors"></i>
+
+                    <span>Peluquería</span>
+
+                </button>
+
+                <button class="category" data-category="paseo">
+
+                    <i class="bi bi-person-walking"></i>
+
+                    <span>Paseadores</span>
+
+                </button>
+
+                <button class="category" data-category="guarderia">
+
+                    <i class="bi bi-house-heart"></i>
+
+                    <span>Guardería</span>
+
+                </button>
+
+                <button class="category" data-category="tienda">
+
+                    <i class="bi bi-bag"></i>
+
+                    <span>Tiendas</span>
+
+                </button>
+
+            </section>
+
+
+            <!-- TÍTULO -->
+            <div class="section-title">
+
+                <div>
+
+                    <h2>Servicios recomendados</h2>
+
+                    <p>
+                        Lugares y profesionales para cuidar a tu mascota
+                    </p>
+
+                </div>
+
+                <div class="view-buttons">
+
+                    <button class="view-btn active">
+                        <i class="bi bi-grid-3x3-gap"></i>
+                    </button>
+
+                    <button class="view-btn">
+                        <i class="bi bi-list"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICIOS -->
+            <section class="services-grid" id="servicesGrid">
+
+
+                <!-- VETERINARIA -->
+                <article
+                    class="service-card"
+                    data-category="veterinaria"
+                    data-name="Veterinaria Pet Salud">
+
+                    <div class="service-image veterinary">
+
+                        <i class="bi bi-hospital"></i>
+
+                        <span class="favorite">
+                            <i class="bi bi-heart"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="service-content">
+
+                        <span class="service-type">
+                            Veterinaria
+                        </span>
+
+                        <h3>Pet Salud</h3>
+
+                        <div class="rating">
+
+                            <i class="bi bi-star-fill"></i>
+                            <strong>4.9</strong>
+                            <span>(128)</span>
+
+                        </div>
+
+                        <p>
+                            Atención veterinaria, vacunas,
+                            controles y consultas.
+                        </p>
+
+                        <div class="location">
+
+                            <i class="bi bi-geo-alt"></i>
+
+                            <span>
+                                Medellín · Cerca de ti
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="service-button"
+                            onclick="abrirServicio('Pet Salud')">
+
+                            Ver servicio
+                            <i class="bi bi-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PELUQUERÍA -->
+                <article
+                    class="service-card"
+                    data-category="peluqueria"
+                    data-name="Pet Style">
+
+                    <div class="service-image grooming">
+
+                        <i class="bi bi-scissors"></i>
+
+                        <span class="favorite">
+                            <i class="bi bi-heart"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="service-content">
+
+                        <span class="service-type">
+                            Peluquería
+                        </span>
+
+                        <h3>Pet Style</h3>
+
+                        <div class="rating">
+
+                            <i class="bi bi-star-fill"></i>
+                            <strong>4.8</strong>
+                            <span>(96)</span>
+
+                        </div>
+
+                        <p>
+                            Baño, corte de pelo y cuidado
+                            especial para tu mascota.
+                        </p>
+
+                        <div class="location">
+
+                            <i class="bi bi-geo-alt"></i>
+
+                            <span>
+                                Medellín · El Poblado
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="service-button"
+                            onclick="abrirServicio('Pet Style')">
+
+                            Ver servicio
+                            <i class="bi bi-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PASEADOR -->
+                <article
+                    class="service-card"
+                    data-category="paseo"
+                    data-name="Paseo Feliz">
+
+                    <div class="service-image walker">
+
+                        <i class="bi bi-person-walking"></i>
+
+                        <span class="favorite">
+                            <i class="bi bi-heart"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="service-content">
+
+                        <span class="service-type">
+                            Paseadores
+                        </span>
+
+                        <h3>Paseo Feliz</h3>
+
+                        <div class="rating">
+
+                            <i class="bi bi-star-fill"></i>
+                            <strong>4.9</strong>
+                            <span>(74)</span>
+
+                        </div>
+
+                        <p>
+                            Paseos individuales y grupales
+                            para perros.
+                        </p>
+
+                        <div class="location">
+
+                            <i class="bi bi-geo-alt"></i>
+
+                            <span>
+                                Medellín · Laureles
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="service-button"
+                            onclick="abrirServicio('Paseo Feliz')">
+
+                            Ver servicio
+                            <i class="bi bi-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- GUARDERÍA -->
+                <article
+                    class="service-card"
+                    data-category="guarderia"
+                    data-name="Huellitas Guardería">
+
+                    <div class="service-image daycare">
+
+                        <i class="bi bi-house-heart"></i>
+
+                        <span class="favorite">
+                            <i class="bi bi-heart"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="service-content">
+
+                        <span class="service-type">
+                            Guardería
+                        </span>
+
+                        <h3>Huellitas</h3>
+
+                        <div class="rating">
+
+                            <i class="bi bi-star-fill"></i>
+                            <strong>4.7</strong>
+                            <span>(52)</span>
+
+                        </div>
+
+                        <p>
+                            Cuidado diario y hospedaje
+                            para mascotas.
+                        </p>
+
+                        <div class="location">
+
+                            <i class="bi bi-geo-alt"></i>
+
+                            <span>
+                                Medellín · Envigado
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="service-button"
+                            onclick="abrirServicio('Huellitas')">
+
+                            Ver servicio
+                            <i class="bi bi-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TIENDA -->
+                <article
+                    class="service-card"
+                    data-category="tienda"
+                    data-name="Pet Market">
+
+                    <div class="service-image store">
+
+                        <i class="bi bi-bag-heart"></i>
+
+                        <span class="favorite">
+                            <i class="bi bi-heart"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="service-content">
+
+                        <span class="service-type">
+                            Tienda
+                        </span>
+
+                        <h3>Pet Market</h3>
+
+                        <div class="rating">
+
+                            <i class="bi bi-star-fill"></i>
+                            <strong>4.8</strong>
+                            <span>(143)</span>
+
+                        </div>
+
+                        <p>
+                            Alimentos, juguetes y accesorios
+                            para mascotas.
+                        </p>
+
+                        <div class="location">
+
+                            <i class="bi bi-geo-alt"></i>
+
+                            <span>
+                                Medellín · Belén
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="service-button"
+                            onclick="abrirServicio('Pet Market')">
+
+                            Ver servicio
+                            <i class="bi bi-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- BAÑO -->
+                <article
+                    class="service-card"
+                    data-category="peluqueria"
+                    data-name="Spa Huellitas">
+
+                    <div class="service-image spa">
+
+                        <i class="bi bi-droplet"></i>
+
+                        <span class="favorite">
+                            <i class="bi bi-heart"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="service-content">
+
+                        <span class="service-type">
+                            Peluquería
+                        </span>
+
+                        <h3>Spa Huellitas</h3>
+
+                        <div class="rating">
+
+                            <i class="bi bi-star-fill"></i>
+                            <strong>4.9</strong>
+                            <span>(87)</span>
+
+                        </div>
+
+                        <p>
+                            Baño, limpieza y spa
+                            para perros y gatos.
+                        </p>
+
+                        <div class="location">
+
+                            <i class="bi bi-geo-alt"></i>
+
+                            <span>
+                                Medellín · Sabaneta
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="service-button"
+                            onclick="abrirServicio('Spa Huellitas')">
+
+                            Ver servicio
+                            <i class="bi bi-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- MODAL -->
+    <div
+        class="modal fade"
+        id="servicioModal"
+        tabindex="-1">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title">
+                        <i class="bi bi-shop"></i>
+                        Información del servicio
+                    </h5>
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="modal-service-icon">
+                        <i class="bi bi-heart-fill"></i>
+                    </div>
+
+                    <h3 id="nombreServicio">
+                        Servicio
+                    </h3>
+
+                    <p>
+                        Aquí podrás encontrar información,
+                        horarios, ubicación y formas de contacto
+                        del servicio seleccionado.
+                    </p>
+
+                    <div class="modal-info">
+
+                        <div>
+                            <i class="bi bi-geo-alt"></i>
+                            <span>Medellín, Colombia</span>
+                        </div>
+
+                        <div>
+                            <i class="bi bi-clock"></i>
+                            <span>Lunes a sábado · 8:00 AM - 6:00 PM</span>
+                        </div>
+
+                        <div>
+                            <i class="bi bi-star-fill"></i>
+                            <span>Servicio recomendado por PetCare</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button
+                        class="btn-secondary-custom"
+                        data-bs-dismiss="modal">
+
+                        Cerrar
+
+                    </button>
+
+                    <button
+                        class="btn-primary-custom"
+                        onclick="solicitarServicio()">
+
+                        <i class="bi bi-calendar-check"></i>
+                        Solicitar servicio
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JS -->
+    <script src="/Pantallas/js/servicios.js"></script>
+
+</body>
+
+</html>

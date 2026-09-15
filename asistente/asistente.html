@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PetCare | Asistente Inteligente</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/asistente/asistente.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <!-- LOGO -->
+
+            <div class="logo-area">
+
+                <div class="logo-icon">
+                    <i class="bi bi-heart-fill"></i>
+                </div>
+
+                <div>
+                    <h2>PetCare</h2>
+                    <small>Cuida con amor</small>
+                </div>
+
+            </div>
+
+
+            <!-- MENÚ -->
+
+            <nav class="menu">
+
+                <a href="#" class="menu-item">
+                    <i class="bi bi-house"></i>
+                    <span>Inicio</span>
+                </a>
+
+                <a href="/mismascotas/mismascotas.html" class="menu-item">
+                    <i class="bi bi-heart"></i>
+                    <span>Mis Mascotas</span>
+                </a>
+
+                <a href="/salud/salud.html" class="menu-item">
+                    <i class="bi bi-heart-pulse"></i>
+                    <span>Salud</span>
+                </a>
+
+                <a href="/alimentacion/Alimentacion.html" class="menu-item">
+                    <i class="bi bi-cup-hot"></i>
+                    <span>Alimentación</span>
+                </a>
+
+                <a href="/recordatorios/recordatorios.html" class="menu-item">
+                    <i class="bi bi-bell"></i>
+                    <span>Recordatorios</span>
+                </a>
+
+                <a href="/mapa/mapa.html" class="menu-item">
+                    <i class="bi bi-geo-alt"></i>
+                    <span>Mapa Pet Friendly</span>
+                </a>
+
+                <a href="/servicios/servicios.html" class="menu-item">
+                    <i class="bi bi-shop"></i>
+                    <span>Servicios</span>
+                </a>
+
+                <a href="/finanzas/finanzas.html" class="menu-item">
+                    <i class="bi bi-wallet2"></i>
+                    <span>Finanzas</span>
+                </a>
+
+                <a href="/asistente/asistente.html" class="menu-item active">
+                    <i class="bi bi-robot"></i>
+                    <span>Asistente IA</span>
+                </a>
+
+                <a href="/perfil/perfil.html" class="menu-item">
+                    <i class="bi bi-person"></i>
+                    <span>Perfil</span>
+                </a>
+
+            </nav>
+
+
+            <!-- AYUDA -->
+
+            <div class="help-card">
+
+                <i class="bi bi-question-circle"></i>
+
+                <h5>¿Necesitas ayuda?</h5>
+
+                <p>
+                    Estamos aquí para ayudarte a cuidar mejor
+                    a tu mascota.
+                </p>
+
+                <button>
+                    Centro de ayuda
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= CONTENIDO ================= -->
+
+        <main class="main-content">
+
+            <!-- HEADER -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>Asistente Inteligente 🤖</h1>
+
+                    <p>
+                        Tu compañero para el cuidado de tu mascota
+                    </p>
+
+                </div>
+
+
+                <div class="user-area">
+
+                    <i class="bi bi-bell notification"></i>
+
+                    <div class="avatar">
+                        MP
+                    </div>
+
+                    <div class="user-text">
+
+                        <strong>Manuela P.</strong>
+
+                        <small>
+                            Dueña de mascotas
+                        </small>
+
+                    </div>
+
+                    <i class="bi bi-chevron-down"></i>
+
+                </div>
+
+            </header>
+
+
+            <!-- ================= ASISTENTE ================= -->
+
+            <section class="assistant-container">
+
+
+                <!-- INFORMACIÓN DEL ASISTENTE -->
+
+                <div class="assistant-header">
+
+                    <div class="robot-avatar">
+
+                        <i class="bi bi-robot"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h2>Hola, soy PetBot 👋</h2>
+
+                        <p>
+                            Estoy aquí para ayudarte con el cuidado
+                            y bienestar de tus mascotas.
+                        </p>
+
+                        <span class="online">
+                            <i class="bi bi-circle-fill"></i>
+                            Asistente disponible
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CHAT -->
+
+                <div class="chat-area" id="chatArea">
+
+
+                    <!-- MENSAJE DEL ASISTENTE -->
+
+                    <div class="message assistant-message">
+
+                        <div class="message-avatar">
+                            <i class="bi bi-robot"></i>
+                        </div>
+
+                        <div class="message-content">
+
+                            <div class="message-name">
+                                PetBot
+                            </div>
+
+                            <div class="message-bubble">
+
+                                ¡Hola! 🐾 Soy el asistente
+                                inteligente de PetCare.
+
+                                <br><br>
+
+                                Puedo ayudarte con preguntas
+                                sobre alimentación, salud,
+                                actividad física, comportamiento
+                                y cuidados de tu mascota.
+
+                            </div>
+
+                            <small class="message-time">
+                                Ahora
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PREGUNTAS SUGERIDAS -->
+
+                    <div class="suggestions">
+
+                        <p>
+                            💡 Puedes preguntarme:
+                        </p>
+
+                        <div class="suggestion-buttons">
+
+                            <button onclick="preguntaRapida(
+                                '¿Qué comida es recomendable para mi perro?'
+                            )">
+
+                                <i class="bi bi-cup-hot"></i>
+
+                                Alimentación
+
+                            </button>
+
+
+                            <button onclick="preguntaRapida(
+                                '¿Cuánto ejercicio necesita mi mascota?'
+                            )">
+
+                                <i class="bi bi-activity"></i>
+
+                                Actividad física
+
+                            </button>
+
+
+                            <button onclick="preguntaRapida(
+                                '¿Qué vacunas necesita mi perro?'
+                            )">
+
+                                <i class="bi bi-heart-pulse"></i>
+
+                                Salud
+
+                            </button>
+
+
+                            <button onclick="preguntaRapida(
+                                '¿Cómo puedo mejorar el comportamiento de mi mascota?'
+                            )">
+
+                                <i class="bi bi-emoji-smile"></i>
+
+                                Comportamiento
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INPUT -->
+
+                <div class="chat-input-area">
+
+                    <button
+                        class="attach-button"
+                        onclick="adjuntarArchivo()">
+
+                        <i class="bi bi-paperclip"></i>
+
+                    </button>
+
+
+                    <input
+                        type="text"
+                        id="mensajeInput"
+                        placeholder="Escribe tu pregunta..."
+                        autocomplete="off"
+                    >
+
+
+                    <button
+                        class="mic-button"
+                        onclick="activarMicrofono()">
+
+                        <i class="bi bi-mic"></i>
+
+                    </button>
+
+
+                    <button
+                        class="send-button"
+                        onclick="enviarMensaje()">
+
+                        <i class="bi bi-send-fill"></i>
+
+                    </button>
+
+                </div>
+
+
+                <div class="security-message">
+
+                    <i class="bi bi-shield-check"></i>
+
+                    La información proporcionada es orientativa.
+                    Para situaciones de salud urgentes, consulta
+                    a un veterinario.
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= FUNCIONES ================= -->
+
+            <section class="features">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon purple">
+                        <i class="bi bi-heart-pulse"></i>
+                    </div>
+
+                    <div>
+                        <h3>Salud</h3>
+
+                        <p>
+                            Resuelve dudas sobre cuidados,
+                            vacunas y bienestar.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon blue">
+                        <i class="bi bi-cup-hot"></i>
+                    </div>
+
+                    <div>
+                        <h3>Alimentación</h3>
+
+                        <p>
+                            Obtén recomendaciones generales
+                            para la alimentación.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon pink">
+                        <i class="bi bi-emoji-smile"></i>
+                    </div>
+
+                    <div>
+                        <h3>Comportamiento</h3>
+
+                        <p>
+                            Aprende sobre hábitos y
+                            comportamiento de tu mascota.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- Bootstrap -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- JavaScript -->
+
+    <script src="/asistente/asistente.js"></script>
+
+</body>
+
+</html>

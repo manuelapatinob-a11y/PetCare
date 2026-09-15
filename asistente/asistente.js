@@ -1,300 +1,54 @@
-/*==================================================
-                PETCARE
-                SCRIPT.JS
-==================================================*/
+// ==========================================
+// PETCARE - ASISTENTE INTELIGENTE
+// ==========================================
 
-/*==================================================
-            OBTENER ELEMENTOS
-==================================================*/
+const input = document.getElementById("mensajeInput");
+const chatArea = document.getElementById("chatArea");
 
-const btnInicio = document.getElementById("btnInicio");
-const btnAgente = document.getElementById("btnAgente");
 
-const inicio = document.getElementById("inicio");
-const agenteIA = document.getElementById("agenteIA");
+// ==========================================
+// ENVIAR MENSAJE
+// ==========================================
 
-/*==================================================
-            FUNCIÓN MENÚ ACTIVO
-==================================================*/
+function enviarMensaje() {
 
-function limpiarMenu() {
+    const mensaje = input.value.trim();
 
-    const opciones = document.querySelectorAll(".sidebar li");
-
-    opciones.forEach(opcion => {
-
-        opcion.classList.remove("activo");
-
-    });
-
-}
-
-/*==================================================
-            IR A INICIO
-==================================================*/
-
-btnInicio.addEventListener("click", () => {
-
-    limpiarMenu();
-
-    btnInicio.classList.add("activo");
-
-    inicio.style.display = "block";
-
-    agenteIA.style.display = "none";
-
-});
-
-/*==================================================
-        IR A AGENTE INTELIGENTE
-==================================================*/
-
-btnAgente.addEventListener("click", () => {
-
-    limpiarMenu();
-
-    btnAgente.classList.add("activo");
-
-    inicio.style.display = "none";
-
-    agenteIA.style.display = "flex";
-
-});
-
-/*==================================================
-            CHAT DEL AGENTE IA
-==================================================*/
-
-const mensajes = document.getElementById("mensajes");
-const texto = document.getElementById("texto");
-const enviar = document.getElementById("enviar");
-
-/*==================================================
-        RESPUESTAS PREDEFINIDAS
-==================================================*/
-
-function respuestaIA(mensaje){
-
-    mensaje = mensaje.toLowerCase();
-
-    if(mensaje.includes("hola")){
-
-        return "¡Hola! 😊 ¿En qué puedo ayudarte con tu mascota hoy?";
-
+    if (mensaje === "") {
+        return;
     }
 
-    if(mensaje.includes("vacuna")){
-
-        return "Las vacunas son fundamentales para prevenir enfermedades. Te recomiendo consultar el calendario de vacunación de tu mascota con tu veterinario.";
-
-    }
-
-    if(mensaje.includes("comida") || mensaje.includes("alimentación")){
-
-        return "Una alimentación balanceada depende de la edad, raza y tamaño de tu mascota. Puedo ayudarte a crear una rutina alimenticia.";
-
-    }
-
-    if(mensaje.includes("baño")){
-
-        return "La frecuencia del baño depende del tipo de mascota y su pelaje. Generalmente se recomienda cada 3 o 4 semanas.";
-
-    }
-
-    if(mensaje.includes("gracias")){
-
-        return "¡Con mucho gusto! Estoy aquí para ayudarte siempre. 🐾";
-
-    }
-
-    return "Estoy analizando tu consulta. Te recomiendo proporcionar más detalles para poder ayudarte mejor.";
-}
-
-/*==================================================
-        AGREGAR MENSAJE DEL USUARIO
-==================================================*/
-
-function agregarMensajeUsuario(textoMensaje){
-
-    mensajes.innerHTML += `
-
-        <div class="mensajeUsuario">
-
-            <div class="burbujaUsuario">
-
-                ${textoMensaje}
-
-            </div>
-
-        </div>
-
-    `;
-
-    mensajes.scrollTop = mensajes.scrollHeight;
-
-}
-
-/*==================================================
-        AGREGAR MENSAJE DE LA IA
-==================================================*/
-
-function agregarMensajeIA(textoMensaje){
-
-    mensajes.innerHTML += `
-
-        <div class="mensajeIA">
-
-            <div class="avatarIA">
-
-                <img src="img/robot.png">
-
-            </div>
-
-            <div class="burbujaIA">
-
-                ${textoMensaje}
-
-            </div>
-
-        </div>
-
-    `;
-
-    mensajes.scrollTop = mensajes.scrollHeight;
-
-}
-
-/*==================================================
-            ENVIAR MENSAJE
-==================================================*/
-
-function enviarMensaje(){
-
-    const mensaje = texto.value.trim();
-
-    if(mensaje==="") return;
-
+    // Mostrar mensaje del usuario
     agregarMensajeUsuario(mensaje);
 
-    texto.value="";
+    // Limpiar input
+    input.value = "";
 
-    setTimeout(()=>{
-
-        agregarMensajeIA(respuestaIA(mensaje));
-
-    },800);
-
-}
-
-/*==================================================
-        BOTÓN ENVIAR
-==================================================*/
-
-enviar.addEventListener("click",enviarMensaje);
-
-/*==================================================
-        TECLA ENTER
-==================================================*/
-
-texto.addEventListener("keypress",function(e){
-
-    if(e.key==="Enter"){
-
-        enviarMensaje();
-
-    }
-
-});
-
-/*==================================================
-        INDICADOR "ESCRIBIENDO..."
-==================================================*/
-
-function mostrarEscribiendo(){
-
-    mensajes.innerHTML += `
-
-        <div class="mensajeIA" id="escribiendo">
-
-            <div class="avatarIA">
-
-                <img src="img/robot.png">
-
-            </div>
-
-            <div class="burbujaIA">
-
-                <i class="fa-solid fa-circle-notch fa-spin"></i>
-
-                El Agente IA está escribiendo...
-
-            </div>
-
-        </div>
-
-    `;
-
-    mensajes.scrollTop = mensajes.scrollHeight;
-
-}
-
-/*==================================================
-        ELIMINAR INDICADOR
-==================================================*/
-
-function ocultarEscribiendo(){
-
-    const escribiendo = document.getElementById("escribiendo");
-
-    if(escribiendo){
-
-        escribiendo.remove();
-
-    }
-
-}
-
-/*==================================================
-        NUEVO ENVÍO DE MENSAJES
-==================================================*/
-
-function enviarMensaje(){
-
-    const mensaje = texto.value.trim();
-
-    if(mensaje=="") return;
-
-    agregarMensajeUsuario(mensaje);
-
-    texto.value="";
-
+    // Simular respuesta de IA
     mostrarEscribiendo();
 
-    setTimeout(()=>{
+    setTimeout(() => {
 
-        ocultarEscribiendo();
+        quitarEscribiendo();
 
-        agregarMensajeIA(respuestaIA(mensaje));
+        const respuesta = generarRespuesta(mensaje);
 
-    },1800);
+        agregarMensajeAsistente(respuesta);
+
+    }, 1000);
 
 }
 
-/*==================================================
-        BOTÓN ENVIAR
-==================================================*/
 
-enviar.onclick = enviarMensaje;
+// ==========================================
+// ENVIAR CON ENTER
+// ==========================================
 
-/*==================================================
-            TECLA ENTER
-==================================================*/
+input.addEventListener("keydown", function(event) {
 
-texto.addEventListener("keydown",function(e){
+    if (event.key === "Enter") {
 
-    if(e.key==="Enter"){
-
-        e.preventDefault();
+        event.preventDefault();
 
         enviarMensaje();
 
@@ -302,356 +56,326 @@ texto.addEventListener("keydown",function(e){
 
 });
 
-/*==================================================
-        RESPUESTAS AVANZADAS DEL AGENTE IA
-==================================================*/
 
-const respuestasIA = {
+// ==========================================
+// MENSAJE DEL USUARIO
+// ==========================================
 
-    perro: "🐶 Los perros necesitan ejercicio diario, agua fresca, una alimentación balanceada y visitas periódicas al veterinario.",
+function agregarMensajeUsuario(mensaje) {
 
-    gatos: "🐱 Los gatos son animales muy independientes, pero también requieren vacunas, buena alimentación y controles veterinarios.",
+    const contenedor = document.createElement("div");
 
-    gato: "🐱 Los gatos son animales muy independientes, pero también requieren vacunas, buena alimentación y controles veterinarios.",
+    contenedor.className =
+        "message user-message";
 
-    vacunas: "💉 Mantener el esquema de vacunación al día ayuda a prevenir enfermedades graves.",
+    contenedor.innerHTML = `
 
-    vacuna: "💉 Mantener el esquema de vacunación al día ayuda a prevenir enfermedades graves.",
+        <div class="message-content">
 
-    comida: "🍖 La alimentación debe adaptarse a la edad, peso y raza de la mascota.",
+            <div class="message-name">
+                Tú
+            </div>
 
-    alimento: "🥣 Una buena nutrición mejora la salud y prolonga la vida de tu mascota.",
+            <div class="message-bubble">
 
-    agua: "💧 Tu mascota siempre debe tener agua limpia y fresca disponible.",
+                ${mensaje}
 
-    paseo: "🦮 Los paseos diarios ayudan a mantener una buena salud física y mental.",
+            </div>
 
-    pasear: "🚶‍♂️ Pasear diariamente reduce el estrés y mejora el comportamiento.",
+            <small class="message-time">
+                Ahora
+            </small>
 
-    rutina: "📅 Una rutina constante mejora la calidad de vida de cualquier mascota.",
+        </div>
 
-    baño: "🛁 La frecuencia del baño depende del tipo de pelaje y de la especie.",
+    `;
 
-    pulgas: "🪲 Existen productos antipulgas muy efectivos. Consulta con tu veterinario cuál es el más adecuado.",
+    chatArea.appendChild(contenedor);
 
-    garrapatas: "🕷️ Es importante revisar el pelaje después de cada paseo.",
-
-    emergencia: "🚨 Si tu mascota presenta dificultad para respirar, convulsiones o sangrado abundante, acude inmediatamente al veterinario.",
-
-    veterinario: "👨‍⚕️ Las revisiones veterinarias periódicas ayudan a detectar enfermedades a tiempo."
-
-};
-
-/*==================================================
-        MEJORAR RESPUESTAS
-==================================================*/
-
-const respuestaAnterior = respuestaIA;
-
-respuestaIA = function(mensaje){
-
-    mensaje = mensaje.toLowerCase();
-
-    for(const palabra in respuestasIA){
-
-        if(mensaje.includes(palabra)){
-
-            return respuestasIA[palabra];
-
-        }
-
-    }
-
-    return respuestaAnterior(mensaje);
-
-};
-
-/*==================================================
-        RESPUESTAS NATURALES DEL AGENTE IA
-==================================================*/
-
-const saludos = [
-
-    "¡Hola! 👋 ¿En qué puedo ayudarte con tu mascota hoy?",
-
-    "¡Bienvenido! 🐾 Estoy listo para responder tus preguntas.",
-
-    "¡Hola! 😊 Cuéntame, ¿qué necesitas saber sobre tu mascota?",
-
-    "¡Es un gusto ayudarte! ❤️"
-
-];
-
-const despedidas = [
-
-    "¡Hasta luego! 🐶 Cuida mucho a tu mascota.",
-
-    "Fue un placer ayudarte. 🐾",
-
-    "¡Nos vemos pronto! Estoy aquí cuando me necesites.",
-
-    "Gracias por utilizar PetCare IA. ❤️"
-
-];
-
-const respuestasGenerales = [
-
-    "Estoy analizando tu consulta para darte la mejor recomendación.",
-
-    "Te recomiendo consultar también con un veterinario si los síntomas persisten.",
-
-    "Puedo ayudarte con alimentación, vacunas, comportamiento, rutinas y mucho más.",
-
-    "Cada mascota es diferente, por lo que siempre es importante tener en cuenta su edad y estado de salud.",
-
-    "Si deseas, puedes darme más detalles para ofrecerte una respuesta más precisa."
-
-];
-
-/*==================================================
-        RESPUESTA ALEATORIA
-==================================================*/
-
-function obtenerRespuestaAleatoria(lista){
-
-    return lista[Math.floor(Math.random()*lista.length)];
+    bajarChat();
 
 }
 
-/*==================================================
-        MEJORAR RESPUESTA IA
-==================================================*/
 
-const respuestaOriginal = respuestaIA;
+// ==========================================
+// MENSAJE DEL ASISTENTE
+// ==========================================
 
-respuestaIA = function(mensaje){
+function agregarMensajeAsistente(mensaje) {
 
-    mensaje = mensaje.toLowerCase();
+    const contenedor = document.createElement("div");
 
-    if(mensaje.includes("hola") ||
-       mensaje.includes("buenas") ||
-       mensaje.includes("buen día") ||
-       mensaje.includes("buenos días")){
+    contenedor.className =
+        "message assistant-message";
 
-        return obtenerRespuestaAleatoria(saludos);
+    contenedor.innerHTML = `
 
-    }
+        <div class="message-avatar">
 
-    if(mensaje.includes("adiós") ||
-       mensaje.includes("hasta luego") ||
-       mensaje.includes("nos vemos") ||
-       mensaje.includes("chao")){
+            <i class="bi bi-robot"></i>
 
-        return obtenerRespuestaAleatoria(despedidas);
+        </div>
 
-    }
+        <div class="message-content">
 
-    let respuesta = respuestaOriginal(mensaje);
+            <div class="message-name">
+                PetBot
+            </div>
 
-    if(respuesta.includes("Estoy analizando")){
+            <div class="message-bubble">
 
-        return obtenerRespuestaAleatoria(respuestasGenerales);
+                ${mensaje}
 
-    }
+            </div>
 
-    return respuesta;
+            <small class="message-time">
+                Ahora
+            </small>
 
-};
+        </div>
 
-/*==================================================
-        EFECTO AL ESCRIBIR
-==================================================*/
+    `;
 
-texto.addEventListener("input",()=>{
+    chatArea.appendChild(contenedor);
 
-    if(texto.value.length>0){
-
-        enviar.style.opacity="1";
-
-        enviar.style.transform="scale(1)";
-
-    }else{
-
-        enviar.style.opacity=".6";
-
-        enviar.style.transform="scale(.95)";
-
-    }
-
-});
-
-/*==================================================
-        ENFOCAR INPUT AL CARGAR
-==================================================*/
-
-window.addEventListener("load",()=>{
-
-    texto.focus();
-
-});
-
-/*==================================================
-            HORA ACTUAL
-==================================================*/
-
-function obtenerHora(){
-
-    const ahora = new Date();
-
-    let horas = ahora.getHours();
-
-    let minutos = ahora.getMinutes();
-
-    if(horas < 10){
-
-        horas = "0" + horas;
-
-    }
-
-    if(minutos < 10){
-
-        minutos = "0" + minutos;
-
-    }
-
-    return horas + ":" + minutos;
+    bajarChat();
 
 }
 
-/*==================================================
-        AGREGAR HORA A LOS MENSAJES
-==================================================*/
 
-function agregarHoraMensaje(){
+// ==========================================
+// PREGUNTAS RÁPIDAS
+// ==========================================
+
+function preguntaRapida(pregunta) {
+
+    input.value = pregunta;
+
+    enviarMensaje();
+
+}
+
+
+// ==========================================
+// RESPUESTAS SIMULADAS
+// ==========================================
+
+function generarRespuesta(mensaje) {
+
+    const texto = mensaje.toLowerCase();
+
+
+    // ALIMENTACIÓN
+
+    if (
+        texto.includes("comida") ||
+        texto.includes("aliment") ||
+        texto.includes("comer")
+    ) {
+
+        return `
+            Una alimentación adecuada depende de la especie,
+            edad, tamaño y necesidades de tu mascota. 🐶🐱
+            <br><br>
+            Lo mejor es ofrecerle un alimento completo y
+            adecuado para su etapa de vida y mantener siempre
+            agua fresca disponible.
+        `;
+
+    }
+
+
+    // ACTIVIDAD
+
+    if (
+        texto.includes("ejercicio") ||
+        texto.includes("actividad") ||
+        texto.includes("caminar") ||
+        texto.includes("paseo")
+    ) {
+
+        return `
+            La actividad física ayuda a mantener a tu mascota
+            saludable y activa. 🐾
+            <br><br>
+            Los perros generalmente necesitan paseos y juegos
+            diarios, pero la cantidad depende de su edad,
+            tamaño, condición física y características.
+        `;
+
+    }
+
+
+    // SALUD
+
+    if (
+        texto.includes("vacuna") ||
+        texto.includes("salud") ||
+        texto.includes("veterin")
+    ) {
+
+        return `
+            Las vacunas son importantes para prevenir
+            diferentes enfermedades. 💜
+            <br><br>
+            El calendario de vacunación debe ser definido
+            por un veterinario según la edad y las
+            características de tu mascota.
+        `;
+
+    }
+
+
+    // COMPORTAMIENTO
+
+    if (
+        texto.includes("comportamiento") ||
+        texto.includes("conducta") ||
+        texto.includes("ladra") ||
+        texto.includes("muerde")
+    ) {
+
+        return `
+            El comportamiento de cada mascota puede tener
+            diferentes causas. 🐕
+            <br><br>
+            Una rutina estable, ejercicio, refuerzo positivo
+            y paciencia pueden ayudar. Si el comportamiento
+            cambia de manera repentina, es recomendable
+            consultar con un veterinario o especialista.
+        `;
+
+    }
+
+
+    // PESO
+
+    if (
+        texto.includes("peso") ||
+        texto.includes("obesidad")
+    ) {
+
+        return `
+            El peso saludable depende de factores como la
+            raza, edad, tamaño y condición corporal. ⚖️
+            <br><br>
+            Para saber si el peso de tu mascota es adecuado,
+            lo mejor es consultar con un veterinario.
+        `;
+
+    }
+
+
+    // RESPUESTA GENERAL
 
     return `
-
-        <span class="horaMensaje">
-
-            ${obtenerHora()}
-
-        </span>
-
+        ¡Claro! 🐾 Puedo ayudarte con información general
+        sobre el cuidado de tu mascota.
+        <br><br>
+        Puedes preguntarme sobre <strong>salud, alimentación,
+        actividad física, comportamiento o cuidados</strong>.
+        <br><br>
+        ¿Qué te gustaría saber?
     `;
 
 }
 
-/*==================================================
-        GUARDAR CONVERSACIÓN
-==================================================*/
 
-function guardarConversacion(){
+// ==========================================
+// INDICADOR "ESCRIBIENDO"
+// ==========================================
 
-    localStorage.setItem(
+function mostrarEscribiendo() {
 
-        "chatPetCare",
+    const indicador = document.createElement("div");
 
-        mensajes.innerHTML
+    indicador.id = "typing";
 
+    indicador.className =
+        "message assistant-message";
+
+    indicador.innerHTML = `
+
+        <div class="message-avatar">
+
+            <i class="bi bi-robot"></i>
+
+        </div>
+
+        <div class="message-content">
+
+            <div class="message-name">
+                PetBot
+            </div>
+
+            <div class="message-bubble">
+
+                PetBot está escribiendo... 💜
+
+            </div>
+
+        </div>
+
+    `;
+
+    chatArea.appendChild(indicador);
+
+    bajarChat();
+
+}
+
+
+// ==========================================
+// QUITAR INDICADOR
+// ==========================================
+
+function quitarEscribiendo() {
+
+    const indicador =
+        document.getElementById("typing");
+
+    if (indicador) {
+
+        indicador.remove();
+
+    }
+
+}
+
+
+// ==========================================
+// BAJAR CHAT
+// ==========================================
+
+function bajarChat() {
+
+    chatArea.scrollTop =
+        chatArea.scrollHeight;
+
+}
+
+
+// ==========================================
+// ADJUNTAR ARCHIVO
+// ==========================================
+
+function adjuntarArchivo() {
+
+    alert(
+        "Aquí podrás adjuntar una foto de tu mascota 📷🐾"
     );
 
 }
 
-/*==================================================
-        CARGAR CONVERSACIÓN
-==================================================*/
 
-function cargarConversacion(){
+// ==========================================
+// MICRÓFONO
+// ==========================================
 
-    const chatGuardado = localStorage.getItem("chatPetCare");
+function activarMicrofono() {
 
-    if(chatGuardado){
-
-        mensajes.innerHTML = chatGuardado;
-
-    }
+    alert(
+        "Función de reconocimiento de voz disponible próximamente 🎤"
+    );
 
 }
-
-/*==================================================
-        LIMPIAR CHAT
-==================================================*/
-
-function limpiarChat(){
-
-    if(confirm("¿Deseas borrar toda la conversación?")){
-
-        mensajes.innerHTML = `
-
-            <div class="mensajeIA">
-
-                <div class="avatarIA">
-
-                    <img src="img/robot.png">
-
-                </div>
-
-                <div class="burbujaIA">
-
-                    👋 Hola.
-
-                    Soy el Agente Inteligente de PetCare.
-
-                    ¿Cómo puedo ayudarte hoy?
-
-                </div>
-
-            </div>
-
-        `;
-
-        guardarConversacion();
-
-    }
-
-}
-
-/*==================================================
-        BOTÓN LIMPIAR CHAT
-==================================================*/
-
-const botonLimpiar = document.createElement("button");
-
-botonLimpiar.innerHTML = '<i class="fa-solid fa-trash"></i>';
-
-botonLimpiar.className = "btnIcono";
-
-botonLimpiar.title = "Limpiar conversación";
-
-const escribir = document.querySelector(".escribir");
-
-if(escribir){
-
-    escribir.prepend(botonLimpiar);
-
-}
-
-botonLimpiar.addEventListener("click", limpiarChat);
-
-/*==================================================
-        GUARDAR AUTOMÁTICAMENTE
-==================================================*/
-
-const observador = new MutationObserver(() => {
-
-    guardarConversacion();
-
-});
-
-observador.observe(mensajes, {
-
-    childList: true,
-
-    subtree: true
-
-});
-
-/*==================================================
-        CARGAR CHAT AL INICIAR
-==================================================*/
-
-window.addEventListener("load", () => {
-
-    cargarConversacion();
-
-});

@@ -36,44 +36,28 @@ body {
 /* LOGO */
 
 .logo-area {
-    display: flex;
-    align-items: center;
-    gap: 11px;
-
-    padding-left: 8px;
+    text-align: center;
     margin-bottom: 35px;
+    color: #a451e9;
 }
 
-.logo-icon {
-    width: 43px;
-    height: 43px;
-
-    border-radius: 13px;
-
-    background: linear-gradient(
-        135deg,
-        #7046e8,
-        #a85be8
-    );
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: white;
+.PetCare{
+    width: 200px;
 }
 
-.logo-area h2 {
-    margin: 0;
+.logo-area i {
+    font-size: 45px;
+    display: block;
+}
 
-    font-size: 21px;
-
-    color: #7046e8;
+.logo-area span {
+    display: block;
+    font-size: 27px;
+    font-weight: 100;
 }
 
 .logo-area small {
-    font-size: 10px;
-    color: #9692a6;
+    color: #777;
 }
 
 

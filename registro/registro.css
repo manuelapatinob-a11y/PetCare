@@ -1,241 +1,870 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
+/* ==================================================
+   CONFIGURACIÓN GENERAL
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-background:linear-gradient(
-135deg,
-#f5f1ff,
-#ebe4ff,
-#f7f4ff
-);
-padding:30px;
+html {
+    scroll-behavior: smooth;
 }
 
-.container{
-max-width:1500px;
-margin:auto;
+body {
+    min-height: 100vh;
+
+    font-family: 'Segoe UI', sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #f5f1ff 0%,
+        #ebe4ff 45%,
+        #f7f4ff 100%
+    );
+
+    color: #333;
+
+    padding: 25px;
 }
 
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:40px;
+
+/* ==================================================
+   CONTENEDOR
+================================================== */
+
+.container {
+    width: 100%;
+    max-width: 1350px;
+
+    margin: 0 auto;
 }
 
-.logo{
-display:flex;
-align-items:center;
-gap:15px;
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 35px;
+
+    gap: 20px;
 }
 
-.logo img{
-width:200px;
+
+/* LOGO */
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+
+    text-decoration: none;
 }
 
-.logo h2{
-color:#6d4cff;
+.logo-img {
+    width: 180px;
+    height: auto;
+
+    display: block;
 }
 
-.logo p{
-font-size:14px;
-color:#555;
+
+/* LOGIN */
+
+.login {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    color: #555;
+
+    font-size: 14px;
 }
 
-.login-btn{
-display:flex;
-align-items:center;
-gap:15px;
+.login-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 22px;
+
+    border: 2px solid #7a5cff;
+
+    background: white;
+
+    border-radius: 12px;
+
+    color: #6d4cff;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
 }
 
-.login-btn button{
-padding:12px 25px;
-border:2px solid #7a5cff;
-background:white;
-border-radius:12px;
-cursor:pointer;
-font-weight:600;
-color:#6d4cff;
+.login-link:hover {
+    background: #7a5cff;
+    color: white;
+
+    transform: translateY(-2px);
 }
 
-.content{
-display:grid;
-grid-template-columns:1fr 1.2fr;
-gap:40px;
-align-items:center;
+
+/* ==================================================
+   CONTENIDO PRINCIPAL
+================================================== */
+
+.content {
+    display: grid;
+
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+
+    gap: 50px;
+
+    align-items: start;
 }
 
-.left h1{
-font-size:55px;
-color:#20156e;
-margin-bottom:25px;
+
+/* ==================================================
+   LADO IZQUIERDO
+================================================== */
+
+.left {
+    padding: 20px 10px;
 }
 
-.description{
-font-size:18px;
-line-height:1.8;
-color:#555;
-margin-bottom:30px;
+.intro {
+    max-width: 600px;
 }
 
-.benefits{
-display:flex;
-flex-direction:column;
-gap:20px;
+
+/* TÍTULO */
+
+.left h1 {
+    font-size: clamp(36px, 4vw, 58px);
+
+    line-height: 1.12;
+
+    color: #20156e;
+
+    margin-bottom: 25px;
+
+    font-weight: 700;
 }
 
-.card{
-background:white;
-padding:20px;
-border-radius:20px;
-display:flex;
-gap:20px;
-align-items:center;
-box-shadow:0 5px 15px rgba(0,0,0,.05);
+.left h1 span {
+    white-space: nowrap;
 }
 
-.card i{
-font-size:30px;
-color:#7c58ff;
+
+/* DESCRIPCIÓN */
+
+.description {
+    max-width: 560px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #5f5f5f;
+
+    margin-bottom: 30px;
 }
 
-.form-box{
-background:white;
-padding:40px;
-border-radius:30px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+/* ==================================================
+   BENEFICIOS
+================================================== */
+
+.benefits {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    max-width: 570px;
 }
 
-.user-icon{
-width:80px;
-height:80px;
-background:#efe9ff;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:35px;
-color:#7b5cff;
-margin-bottom:20px;
+
+/* TARJETA */
+
+.benefit-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 16px 18px;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    border-radius: 18px;
+
+    box-shadow: 0 5px 18px rgba(50, 30, 100, 0.06);
+
+    transition: all 0.3s ease;
 }
 
-.form-box h2{
-font-size:40px;
-color:#1e176f;
+.benefit-card:hover {
+    transform: translateX(5px);
+
+    box-shadow: 0 8px 22px rgba(50, 30, 100, 0.1);
 }
 
-.form-box p{
-margin-bottom:25px;
-color:#555;
+
+/* ICONO */
+
+.benefit-icon {
+    flex: 0 0 48px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #eee8ff;
+
+    border-radius: 14px;
+
+    color: #7958e8;
+
+    font-size: 21px;
 }
 
-h3{
-color:#6d4cff;
-margin-bottom:15px;
-margin-top:15px;
+
+/* TEXTO */
+
+.benefit-card h4 {
+    margin: 0 0 4px;
+
+    font-size: 15px;
+
+    color: #453185;
+
+    font-weight: 700;
 }
 
-.row{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
+.benefit-card p {
+    margin: 0;
+
+    font-size: 13px;
+
+    color: #777;
 }
 
-.input-group{
-display:flex;
-flex-direction:column;
-margin-bottom:18px;
+
+/* ==================================================
+   LADO DERECHO
+================================================== */
+
+.right {
+    width: 100%;
 }
 
-.input-group label{
-margin-bottom:8px;
-font-weight:600;
+
+/* FORMULARIO */
+
+.form-box {
+    width: 100%;
+
+    background: white;
+
+    padding: 38px;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 15px 40px rgba(50, 30, 100, 0.1);
+}
+
+
+/* ==================================================
+   ICONO DE USUARIO
+================================================== */
+
+.user-icon {
+    width: 68px;
+    height: 68px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #efe9ff;
+
+    border-radius: 50%;
+
+    color: #7b5cff;
+
+    font-size: 28px;
+
+    margin-bottom: 18px;
+}
+
+
+/* ==================================================
+   TÍTULOS DEL FORMULARIO
+================================================== */
+
+.form-box h2 {
+    font-size: 34px;
+
+    color: #1e176f;
+
+    margin-bottom: 8px;
+}
+
+.form-description {
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+}
+
+.form-box h3 {
+    color: #6d4cff;
+
+    font-size: 18px;
+
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+
+/* ==================================================
+   FILAS
+================================================== */
+
+.row {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* ==================================================
+   INPUTS
+================================================== */
+
+.input-group {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 17px;
+
+    min-width: 0;
+}
+
+.input-group label {
+    margin-bottom: 7px;
+
+    color: #444;
+
+    font-size: 14px;
+
+    font-weight: 600;
 }
 
 .input-group input,
-.input-group select{
-padding:15px;
-border:1px solid #ddd;
-border-radius:12px;
-font-size:15px;
+.input-group select {
+    width: 100%;
+
+    min-height: 48px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 11px;
+
+    background: #fff;
+
+    color: #333;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: all 0.3s ease;
 }
 
-.requirements{
-display:flex;
-flex-wrap:wrap;
-gap:15px;
-margin:15px 0;
-color:#4caf50;
-font-size:14px;
+
+/* INPUT ACTIVO */
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #8a6ce9;
+
+    box-shadow: 0 0 0 3px rgba(138, 108, 233, 0.12);
 }
 
-.checkbox{
-display:flex;
-gap:10px;
-margin:20px 0;
+
+/* ==================================================
+   REQUISITOS
+================================================== */
+
+.requirements {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px 14px;
+
+    margin: 5px 0 20px;
+
+    color: #4caf50;
+
+    font-size: 12px;
 }
 
-.register-btn{
-width:100%;
-padding:18px;
-border:none;
-border-radius:12px;
-background:linear-gradient(
-90deg,
-#7a5cff,
-#8d5eff
-);
-color:white;
-font-size:18px;
-font-weight:600;
-cursor:pointer;
+
+/* ==================================================
+   CHECKBOX
+================================================== */
+
+.checkbox {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    margin: 18px 0 22px;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: #666;
 }
 
-.separator{
-text-align:center;
-margin:25px 0;
-color:#777;
+.checkbox input {
+    flex: 0 0 auto;
+
+    width: 16px;
+    height: 16px;
+
+    margin-top: 2px;
+
+    accent-color: #7a5cff;
 }
 
-.social{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:15px;
+.checkbox label {
+    cursor: pointer;
 }
 
-.social button{
-padding:15px;
-background:white;
-border:1px solid #ddd;
-border-radius:12px;
-cursor:pointer;
-font-weight:600;
+
+/* ==================================================
+   BOTÓN REGISTRO
+================================================== */
+
+.register-btn {
+    width: 100%;
+
+    min-height: 52px;
+
+    padding: 14px 20px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        90deg,
+        #7a5cff,
+        #8d5eff
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
 }
 
-.social i{
-margin-right:8px;
+.register-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 7px 18px rgba(122, 92, 255, 0.25);
 }
 
-@media(max-width:1000px){
 
-.content{
-grid-template-columns:1fr;
+/* ==================================================
+   SEPARADOR
+================================================== */
+
+.separator {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 25px 0;
+
+    color: #999;
+
+    font-size: 13px;
+
+    text-align: center;
 }
 
-.left h1{
-font-size:40px;
+.separator::before,
+.separator::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #e5e5e5;
 }
 
-.row{
-grid-template-columns:1fr;
+
+/* ==================================================
+   REDES SOCIALES
+================================================== */
+
+.social {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
 }
 
-.social{
-grid-template-columns:1fr;
+.social button {
+    min-height: 45px;
+
+    padding: 10px;
+
+    background: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 11px;
+
+    color: #444;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
 }
 
+.social button:hover {
+    background: #faf8ff;
+
+    border-color: #b8a8ee;
 }
+
+.social i {
+    margin-right: 6px;
+
+    font-size: 15px;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 1050px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .left {
+        text-align: center;
+
+        padding: 10px;
+    }
+
+    .intro {
+        max-width: 750px;
+
+        margin: auto;
+    }
+
+    .description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .benefits {
+        max-width: 750px;
+
+        margin: auto;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        text-align: left;
+    }
+
+    .form-box {
+        max-width: 750px;
+
+        margin: auto;
+    }
+
+}
+
+
+/* ==================================================
+   TABLET PEQUEÑA
+================================================== */
+
+@media (max-width: 700px) {
+
+    .header {
+        margin-bottom: 25px;
+    }
+
+    .logo-img {
+        width: 145px;
+    }
+
+    .login {
+        gap: 8px;
+
+        font-size: 12px;
+    }
+
+    .login-link {
+        padding: 9px 13px;
+
+        font-size: 12px;
+    }
+
+    .left h1 {
+        font-size: 36px;
+    }
+
+    .benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .form-box {
+        padding: 28px 22px;
+
+        border-radius: 22px;
+    }
+
+}
+
+
+/* ==================================================
+   CELULAR
+================================================== */
+
+@media (max-width: 520px) {
+
+    body {
+        padding: 15px 10px;
+    }
+
+    .header {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 15px;
+    }
+
+    .logo-img {
+        width: 150px;
+    }
+
+    .login {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .content {
+        gap: 25px;
+    }
+
+    .left {
+        padding: 5px;
+    }
+
+    .left h1 {
+        font-size: 30px;
+
+        line-height: 1.2;
+
+        margin-bottom: 18px;
+    }
+
+    .description {
+        font-size: 14px;
+
+        line-height: 1.6;
+
+        margin-bottom: 22px;
+    }
+
+    .benefit-card {
+        padding: 13px;
+
+        gap: 12px;
+
+        border-radius: 15px;
+    }
+
+    .benefit-icon {
+        flex-basis: 42px;
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 18px;
+    }
+
+    .benefit-card h4 {
+        font-size: 14px;
+    }
+
+    .benefit-card p {
+        font-size: 12px;
+    }
+
+    .form-box {
+        padding: 22px 16px;
+
+        border-radius: 20px;
+    }
+
+    .user-icon {
+        width: 58px;
+        height: 58px;
+
+        font-size: 24px;
+    }
+
+    .form-box h2 {
+        font-size: 27px;
+    }
+
+    .form-description {
+        font-size: 13px;
+    }
+
+    .row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .input-group {
+        margin-bottom: 14px;
+    }
+
+    .input-group input,
+    .input-group select {
+        min-height: 46px;
+
+        padding: 11px 12px;
+    }
+
+    .requirements {
+        flex-direction: column;
+
+        gap: 5px;
+
+        font-size: 11px;
+    }
+
+    .checkbox {
+        font-size: 11px;
+    }
+
+    .social {
+        grid-template-columns: 1fr;
+
+        gap: 9px;
+    }
+
+    .social button {
+        min-height: 42px;
+    }
+
+}
+
+
+/* ==================================================
+   CELULARES MUY PEQUEÑOS
+================================================== */
+
+@media (max-width: 360px) {
+
+    body {
+        padding: 10px 7px;
+    }
+
+    .logo-img {
+        width: 130px;
+    }
+
+    .login {
+        font-size: 11px;
+    }
+
+    .login-link {
+        padding: 8px 11px;
+    }
+
+    .left h1 {
+        font-size: 26px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    .form-box {
+        padding: 20px 13px;
+    }
+
+    .form-box h2 {
+        font-size: 24px;
+    }
+
+}
+

@@ -2,23 +2,28 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>PetCare | Registro</title>
+    <title>PetCare | Crear cuenta</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="/registro/registro.css">
 
     <!-- Font Awesome -->
     <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        rel="stylesheet">
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
+
 
 <body>
 
-    <main class="container">
+    <main class="page">
+
 
         <!-- ================= HEADER ================= -->
 
@@ -27,163 +32,201 @@
             <a href="/index.html" class="logo">
                 <img
                     src="/Recursos/logo.png"
-                    alt="Logo PetCare"
-                    class="logo-img">
+                    alt="PetCare">
             </a>
 
-            <div class="login">
-                <span>¿Ya tienes cuenta?</span>
 
-                <a href="/login/login.html" class="login-link">
+            <div class="login">
+
+                <span>¿Ya tienes una cuenta?</span>
+
+                <a href="/login/login.html">
                     Iniciar sesión
                 </a>
+
             </div>
 
         </header>
 
 
+
         <!-- ================= CONTENIDO ================= -->
 
-        <section class="content">
+        <section class="register-container">
 
-            <!-- =============== LADO IZQUIERDO =============== -->
 
-            <div class="left">
+            <!-- ================= PRESENTACIÓN ================= -->
 
-                <div class="intro">
+            <aside class="welcome">
+
+                <div class="welcome-content">
+
+                    <span class="tag">
+                        🐾 Bienvenido a PetCare
+                    </span>
+
 
                     <h1>
-                        Crea tu cuenta y empieza a cuidar mejor a tu mascota
-                        <span>💜</span>
+                        Todo el cuidado de tu mascota
+                        <strong>en un solo lugar.</strong>
                     </h1>
 
-                    <p class="description">
-                        Únete a miles de dueños responsables que ya confían
-                        en PetCare para el bienestar de sus mascotas.
+
+                    <p>
+                        Crea tu cuenta y lleva un mejor control
+                        de la salud, alimentación y bienestar de
+                        tu mascota.
                     </p>
 
+
+                    <!-- BENEFICIOS -->
+
+                    <div class="benefits">
+
+
+                        <div class="benefit">
+
+                            <div class="benefit-icon">
+                                <i class="fa-solid fa-heart-pulse"></i>
+                            </div>
+
+                            <div>
+                                <h3>
+                                    Cuida su salud
+                                </h3>
+
+                                <p>
+                                    Lleva el control de vacunas,
+                                    citas y medicamentos.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="benefit">
+
+                            <div class="benefit-icon">
+                                <i class="fa-solid fa-bell"></i>
+                            </div>
+
+                            <div>
+                                <h3>
+                                    Nunca olvides nada
+                                </h3>
+
+                                <p>
+                                    Recibe recordatorios importantes
+                                    para tu mascota.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="benefit">
+
+                            <div class="benefit-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+
+                            <div>
+                                <h3>
+                                    Encuentra lugares
+                                </h3>
+
+                                <p>
+                                    Descubre veterinarias y lugares
+                                    pet friendly.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </aside>
+
+
+
+            <!-- ================= FORMULARIO ================= -->
+
+            <section class="form-container">
+
+
+                <div class="form-header">
+
+                    <div class="form-icon">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+
+
+                    <div>
+
+                        <h2>
+                            Crear cuenta
+                        </h2>
+
+                        <p>
+                            Completa tus datos para comenzar.
+                        </p>
+
+                    </div>
+
                 </div>
 
 
-                <!-- BENEFICIOS -->
 
-                <div class="benefits">
-
-                    <div class="benefit-card">
-
-                        <div class="benefit-icon">
-                            <i class="fa-solid fa-shield-heart"></i>
-                        </div>
-
-                        <div>
-                            <h4>Información segura</h4>
-                            <p>Tus datos siempre protegidos.</p>
-                        </div>
-
-                    </div>
+                <form>
 
 
-                    <div class="benefit-card">
+                    <!-- DATOS PERSONALES -->
 
-                        <div class="benefit-icon">
-                            <i class="fa-solid fa-bell"></i>
-                        </div>
-
-                        <div>
-                            <h4>Recordatorios inteligentes</h4>
-                            <p>Vacunas, citas y medicamentos.</p>
-                        </div>
-
-                    </div>
-
-
-                    <div class="benefit-card">
-
-                        <div class="benefit-icon">
-                            <i class="fa-solid fa-heart-pulse"></i>
-                        </div>
-
-                        <div>
-                            <h4>Bienestar completo</h4>
-                            <p>Control total de tu mascota.</p>
-                        </div>
-
-                    </div>
-
-
-                    <div class="benefit-card">
-
-                        <div class="benefit-icon">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-
-                        <div>
-                            <h4>Ubicación y seguridad</h4>
-                            <p>GPS y alertas en tiempo real.</p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- =============== FORMULARIO =============== -->
-
-            <div class="right">
-
-                <div class="form-box">
-
-                    <!-- Icono -->
-
-                    <div class="user-icon">
+                    <div class="section-title">
                         <i class="fa-solid fa-user"></i>
+                        <span>Datos personales</span>
                     </div>
 
 
-                    <h2>Crear cuenta</h2>
-
-                    <p class="form-description">
-                        Completa tus datos para registrarte en PetCare IA.
-                    </p>
+                    <div class="fields">
 
 
-                    <form>
+                        <div class="field">
 
-                        <!-- DATOS PERSONALES -->
+                            <label for="nombre">
+                                Nombre
+                            </label>
 
-                        <h3>Datos personales</h3>
-
-                        <div class="row">
-
-                            <div class="input-group">
-                                <label for="nombre">
-                                    Nombre completo
-                                </label>
-
-                                <input
-                                    type="text"
-                                    id="nombre"
-                                    placeholder="Ej. Ana Martínez">
-                            </div>
-
-
-                            <div class="input-group">
-                                <label for="apellido">
-                                    Apellido completo
-                                </label>
-
-                                <input
-                                    type="text"
-                                    id="apellido"
-                                    placeholder="Ej. García López">
-                            </div>
+                            <input
+                                type="text"
+                                id="nombre"
+                                placeholder="Ej. Ana">
 
                         </div>
 
 
-                        <div class="input-group">
+
+                        <div class="field">
+
+                            <label for="apellido">
+                                Apellido
+                            </label>
+
+                            <input
+                                type="text"
+                                id="apellido"
+                                placeholder="Ej. Martínez">
+
+                        </div>
+
+
+
+                        <div class="field full">
 
                             <label for="correo">
                                 Correo electrónico
@@ -197,10 +240,11 @@
                         </div>
 
 
-                        <div class="input-group">
+
+                        <div class="field">
 
                             <label for="telefono">
-                                Número de teléfono
+                                Teléfono
                             </label>
 
                             <input
@@ -211,139 +255,199 @@
                         </div>
 
 
-                        <div class="row">
 
-                            <div class="input-group">
+                        <div class="field">
 
-                                <label for="fecha">
-                                    Fecha de nacimiento
-                                </label>
-
-                                <input
-                                    type="date"
-                                    id="fecha">
-
-                            </div>
-
-
-                            <div class="input-group">
-
-                                <label for="genero">
-                                    Género
-                                </label>
-
-                                <select id="genero">
-
-                                    <option>
-                                        Selecciona una opción
-                                    </option>
-
-                                    <option>
-                                        Masculino
-                                    </option>
-
-                                    <option>
-                                        Femenino
-                                    </option>
-
-                                    <option>
-                                        Otro
-                                    </option>
-
-                                </select>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- SEGURIDAD -->
-
-                        <h3>Seguridad</h3>
-
-                        <div class="row">
-
-                            <div class="input-group">
-
-                                <label for="password">
-                                    Contraseña
-                                </label>
-
-                                <input
-                                    type="password"
-                                    id="password"
-                                    placeholder="Crear contraseña">
-
-                            </div>
-
-
-                            <div class="input-group">
-
-                                <label for="confirm-password">
-                                    Confirmar contraseña
-                                </label>
-
-                                <input
-                                    type="password"
-                                    id="confirm-password"
-                                    placeholder="Repite tu contraseña">
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- REQUISITOS -->
-
-                        <div class="requirements">
-
-                            <span>✔ Mínimo 8 caracteres</span>
-                            <span>✔ Una mayúscula</span>
-                            <span>✔ Un número</span>
-                            <span>✔ Un carácter especial</span>
-
-                        </div>
-
-
-                        <!-- TÉRMINOS -->
-
-                        <div class="checkbox">
-
-                            <input
-                                type="checkbox"
-                                id="terms">
-
-                            <label for="terms">
-                                Acepto los Términos y Condiciones y
-                                la Política de Privacidad.
+                            <label for="fecha">
+                                Fecha de nacimiento
                             </label>
 
+                            <input
+                                type="date"
+                                id="fecha">
+
                         </div>
 
 
-                        <!-- BOTÓN -->
-
-                        <button
-                            type="submit"
-                            class="register-btn">
-
-                            Crear cuenta
-
-                        </button>
-
-                    </form>
-
-
-                    <!-- SEPARADOR -->
-
-                    <div class="separator">
-                        <span>O regístrate con</span>
                     </div>
 
 
-                    <!-- REDES SOCIALES -->
 
-                    <div class="social">
+                    <!-- SEGURIDAD -->
 
-                        <
-```
+                    <div class="section-title security-title">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <span>Seguridad</span>
+
+                    </div>
+
+
+                    <div class="fields">
+
+
+                        <div class="field">
+
+                            <label for="password">
+                                Contraseña
+                            </label>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Crear contraseña">
+
+                        </div>
+
+
+
+                        <div class="field">
+
+                            <label for="confirm-password">
+                                Confirmar contraseña
+                            </label>
+
+                            <input
+                                type="password"
+                                id="confirm-password"
+                                placeholder="Repite tu contraseña">
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- REQUISITOS -->
+
+                    <div class="requirements">
+
+                        <span>
+                            <i class="fa-solid fa-check"></i>
+                            8 caracteres
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-check"></i>
+                            Una mayúscula
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-check"></i>
+                            Un número
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-check"></i>
+                            Un carácter especial
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- TÉRMINOS -->
+
+                    <label class="terms">
+
+                        <input
+                            type="checkbox"
+                            id="terms">
+
+                        <span>
+                            Acepto los
+                            <a href="#">
+                                Términos y Condiciones
+                            </a>
+                            y la
+                            <a href="#">
+                                Política de Privacidad
+                            </a>.
+                        </span>
+
+                    </label>
+
+
+
+                    <!-- BOTÓN -->
+
+                    <button
+                        type="submit"
+                        class="register-button">
+
+                        Crear mi cuenta
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+                </form>
+
+
+
+                <!-- ================= REDES ================= -->
+
+                <div class="separator">
+
+                    <span>o continúa con</span>
+
+                </div>
+
+
+                <div class="social">
+
+
+                    <button type="button">
+
+                        <i class="fa-brands fa-google"></i>
+
+                        <span>Google</span>
+
+                    </button>
+
+
+                    <button type="button">
+
+                        <i class="fa-brands fa-facebook-f"></i>
+
+                        <span>Facebook</span>
+
+                    </button>
+
+
+                    <button type="button">
+
+                        <i class="fa-brands fa-apple"></i>
+
+                        <span>Apple</span>
+
+                    </button>
+
+
+                </div>
+
+
+            </section>
+
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+            <span>🐾</span>
+            PetCare · Cuidando a quienes más quieres
+        </footer>
+
+
+    </main>
+
+
+</body>
+
+</html>
+

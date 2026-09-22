@@ -20,15 +20,15 @@ body {
     background:
         radial-gradient(
             circle at top left,
-            #e9ddff,
+            #bea3f1,
             transparent 35%
         ),
         radial-gradient(
             circle at bottom right,
-            #ddd0ff,
+            #b597ee,
             transparent 35%
         ),
-        #f7f5ff;
+        #ffffff;
 
     color: #333;
 

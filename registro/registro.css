@@ -140,8 +140,8 @@ body {
     background:
         linear-gradient(
             145deg,
-            #7d5ce7,
-            #9b78ed
+            #c59cec,
+            #8768d1
         );
 
     color: white;
@@ -315,7 +315,7 @@ body {
 
 .form-header h2 {
 
-    color: #24166d;
+    color: #481b9c;
 
     font-size: 29px;
 
@@ -515,8 +515,8 @@ body {
     background:
         linear-gradient(
             90deg,
-            #7655e5,
-            #9671ed
+            #c697f3,
+            #9a7ddf
         );
 
     color: white;

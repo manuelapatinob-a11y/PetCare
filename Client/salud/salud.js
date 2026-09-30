@@ -1,26 +1,22 @@
 function seleccionarMascota(nombre, elemento) {
 
-    // Cambiar el nombre de la mascota
+    // Cambiar el nombre de la mascota seleccionada
+    const petName = document.getElementById("petName");
 
-    document.getElementById("petName").textContent = nombre;
-
+    if (petName) {
+        petName.textContent = nombre;
+    }
 
     // Obtener todas las mascotas
-
     const mascotas = document.querySelectorAll(".pet-option");
 
-
-    // Quitar selección
-
-    mascotas.forEach(function(mascota) {
-
+    // Quitar la selección anterior
+    mascotas.forEach((mascota) => {
         mascota.classList.remove("selected");
-
     });
 
-
-    // Seleccionar mascota actual
-
-    elemento.classList.add("selected");
-
+    // Marcar la mascota seleccionada
+    if (elemento) {
+        elemento.classList.add("selected");
+    }
 }

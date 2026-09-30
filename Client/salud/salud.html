@@ -2,12 +2,12 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <title>PetCare | Salud y Bienestar</title>
+    <title>PetCare | Alimentación</title>
 
     <!-- Bootstrap -->
     <link
@@ -20,231 +20,211 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="salud.css">
-
+    <link rel="stylesheet" href="/Client/salud/salud.css">
 </head>
-
 
 <body>
 
-
 <div class="app-container">
-
 
     <!-- =====================================
          BARRA LATERAL
     ====================================== -->
 
     <aside class="sidebar">
+
         <!-- LOGO -->
-        <div class="logo-area">
-            <img src="logo.png" alt="" class="PetCare">
-        </div>
+
+        <a href="/index.html" class="logo-area">
+
+            <img
+                src="/Recursos/Logo.png"
+                alt="Logo PetCare"
+                class="logo">
+
+        </a>
+
+
         <!-- MENÚ -->
+
         <nav class="menu">
-            <a href="index.html">
+
+            <a href="/index.html" class="menu-item">
                 <i class="bi bi-house"></i>
-                Inicio
+                <span>Inicio</span>
             </a>
 
-            <a href="mismascotas.html">
+            <a href="/Client/mismascotas/mismascotas.html" class="menu-item">
                 <i class="bi bi-people"></i>
-                Mis Mascotas
+                <span>Mis Mascotas</span>
             </a>
 
-            <a href="salud.html">
+            <a href="/Client/salud/salud.html" class="menu-item">
                 <i class="bi bi-heart-pulse"></i>
-                Salud y Bienestar
+                <span>Salud</span>
             </a>
 
-            <a href="Alimentacion.html">
+            <a href="/Client/salud/alimentacion.html"
+                class="menu-item active">
+
                 <i class="bi bi-cup-hot"></i>
-                Alimentación
+
+                <span>Alimentación</span>
+
             </a>
 
-            <a href="recordatorios.html">
+            <a href="/Client/salud/recordatorios.html" class="menu-item">
                 <i class="bi bi-bell"></i>
-                Recordatorios
+                <span>Recordatorios</span>
             </a>
 
-            <a href="mapa.html">
+            <a href="/Client/salud/mapa.html" class="menu-item">
                 <i class="bi bi-geo-alt"></i>
-                Mapa Pet Friendly
+                <span>Mapa Pet Friendly</span>
             </a>
 
-            <a href="servicios.html">
+            <a href="/Client/salud/servicios.html" class="menu-item">
                 <i class="bi bi-shop"></i>
-                Servicios
+                <span>Servicios</span>
             </a>
 
-            <a href="actividadfisica.html">
-                <i class="bi bi-person-walking"></i>
-                Actividad fisica
-            </a>
-
-            <a href="finanzas.html">
+            <a href="/Client/salud/finanzas.html" class="menu-item">
                 <i class="bi bi-wallet2"></i>
-                Finanzas
+                <span>Finanzas</span>
             </a>
 
-            <a href="/asistente/asistente.html" class="menu-item ">
-                    <i class="bi bi-robot"></i>
-                    <span>Asistente IA</span>
-                </a>
-
-            <a href="perfil.html">
+            <a href="/Client/salud/perfil-usuario.html" class="menu-item">
                 <i class="bi bi-person"></i>
-                Perfil
+                <span>Perfil</span>
             </a>
 
-            <a href="configuracion.html">
+            <a href="/Client/salud/configuracion.html" class="menu-item">
                 <i class="bi bi-gear"></i>
-                Configuración
+                <span>Configuración</span>
             </a>
 
         </nav>
 
+
         <!-- AYUDA -->
+
         <div class="help-box">
+
             <h5>
                 ¿Necesitas ayuda?
             </h5>
 
             <p>
-                Nuestro asistente virtual está aquí para ayudarte.
+                Nuestro asistente virtual
+                está aquí para ayudarte.
             </p>
 
-            <button>
-                Chatear ahora
-            </button>
+            <a href="/Client/asistente/asistente.html">
+                Ir al asistente
+                <i class="bi bi-arrow-right"></i>
+            </a>
+
         </div>
+
     </aside>
+
+
 
     <!-- =====================================
          CONTENIDO PRINCIPAL
     ====================================== -->
+
     <main class="main-content">
 
-        <!-- HEADER -->
-        <header class="top-header">
-            <div>
-                <h1>
-                    <i class="bi bi-heart-pulse"></i>
-                    Salud y Bienestar
-                </h1>
 
-                <p>
-                    Lleva el control de la salud y bienestar de tus mascotas.
-                </p>
+        <!-- =================================
+             ENCABEZADO
+        ================================== -->
+
+        <header class="topbar">
+
+            <div class="title-area">
+
+                <div class="back-button">
+
+                    <a href="/index.html">
+
+                        <i class="bi bi-arrow-left"></i>
+
+                    </a>
+
+                </div>
+
+                <div>
+
+                    <h1>
+                        Alimentación
+                    </h1>
+
+                    <p>
+                        Organiza y mejora la alimentación
+                        de tus mascotas.
+                    </p>
+
+                </div>
 
             </div>
-            <!-- USUARIO -->
-            <div class="dropdown">
-                <button
-                    class="user-dropdown"
-                    type="button"
-                    data-bs-toggle="dropdown">
-                    <i class="bi bi-bell notification"></i>
-                    <div class="user-avatar">
-                        MP
-                    </div>
 
-                    <strong>
-                        Manuela P.
-                    </strong>
+
+            <!-- USUARIO -->
+
+            <div class="user-area">
+
+                <button class="notification">
+
+                    <i class="bi bi-bell"></i>
+
+                </button>
+
+
+                <div class="avatar">
+                    MP
+                </div>
+
+
+                <strong>
+                    Manuela P.
+                </strong>
+
+
+                <button class="dropdown-button">
 
                     <i class="bi bi-chevron-down"></i>
+
                 </button>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                        <a
-                            class="dropdown-item"
-                            href="#">
-
-                            <i class="bi bi-person"></i>
-
-                            Mi perfil
-
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a
-                            class="dropdown-item"
-                            href="#">
-
-                            <i class="bi bi-gear"></i>
-
-                            Configuración
-
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <hr class="dropdown-divider">
-
-                    </li>
-
-
-                    <li>
-
-                        <a
-                            class="dropdown-item text-danger"
-                            href="login.html">
-
-                            <i class="bi bi-box-arrow-right"></i>
-
-                            Cerrar sesión
-
-                        </a>
-
-                    </li>
-
-
-                </ul>
-
 
             </div>
-
 
         </header>
 
 
 
-        <!-- =====================================
-             SELECTOR DE MASCOTA
-        ====================================== -->
+        <!-- =================================
+             SELECCIONAR MASCOTA
+        ================================== -->
 
-        <section class="pet-selector">
-
+        <section class="pet-selector card-petcare">
 
             <div class="section-header">
 
                 <h3>
-
                     Selecciona una mascota
-
                 </h3>
 
-
-                <a href="mismascotas.html">
-
-                    Ver mis mascotas
-
+                <a href="/Client/mismascotas/mismascotas.html">
+                    Ver todas mis mascotas
                     <i class="bi bi-arrow-right"></i>
-
                 </a>
 
             </div>
 
 
-            <div class="pets-row">
+            <div class="pet-options">
 
 
                 <!-- TOBY -->
@@ -253,33 +233,23 @@
                     class="pet-option selected"
                     onclick="seleccionarMascota('Toby', this)">
 
+                    <img
+                        src="/Recursos/toby.jpg"
+                        alt="Toby">
 
-                    <div class="pet-photo">
-
-                        🐶
-
-                    </div>
-
-
-                    <div>
+                    <div class="pet-info">
 
                         <h4>
-
                             Toby
-
                         </h4>
 
                         <p>
-
                             Golden Retriever
-
                         </p>
 
                     </div>
 
-
-                    <span class="status"></span>
-
+                    <span class="status-dot"></span>
 
                 </div>
 
@@ -291,735 +261,538 @@
                     class="pet-option"
                     onclick="seleccionarMascota('Luna', this)">
 
+                    <img
+                        src="/Recursos/luna.jpg"
+                        alt="Luna">
 
-                    <div class="pet-photo">
-
-                        🐱
-
-                    </div>
-
-
-                    <div>
+                    <div class="pet-info">
 
                         <h4>
-
                             Luna
-
                         </h4>
 
                         <p>
-
                             Gato
-
                         </p>
 
                     </div>
 
-
-                    <span class="status offline"></span>
-
+                    <span class="status-dot"></span>
 
                 </div>
 
-
             </div>
-
 
         </section>
 
 
 
-        <!-- =====================================
-             TARJETAS PRINCIPALES
-        ====================================== -->
+        <!-- =================================
+             PLAN ALIMENTICIO
+        ================================== -->
 
-        <section class="health-grid">
+        <section class="card-petcare food-plan">
 
-
-            <!-- =================================
-                 MENÚ SALUD
-            ================================== -->
-
-            <div class="health-menu">
-
-
-                <div class="health-icon">
-
-                    ❤️
-
-                </div>
-
-
-                <h2>
-
-                    Salud y Bienestar
-
-                </h2>
-
-
-                <ul>
-
-
-                    <li class="active">
-
-                        <i class="bi bi-shield-check"></i>
-
-                        Vacunas
-
-                    </li>
-
-
-                    <li>
-
-                        <i class="bi bi-bug"></i>
-
-                        Desparasitación
-
-                    </li>
-
-
-                    <li>
-
-                        <i class="bi bi-hospital"></i>
-
-                        Control Veterinario
-
-                    </li>
-
-
-                    <li>
-
-                        <i class="bi bi-file-medical"></i>
-
-                        Historial Médico
-
-                    </li>
-
-
-                    <li>
-
-                        <i class="bi bi-search"></i>
-
-                        Diagnósticos
-
-                    </li>
-
-
-                    <li>
-
-                        <i class="bi bi-clipboard2-pulse"></i>
-
-                        Tratamientos
-
-                    </li>
-
-
-                    <li>
-
-                        <i class="bi bi-capsule"></i>
-
-                        Medicamentos
-
-                    </li>
-
-
-                </ul>
-
-
-            </div>
-
-
-
-            <!-- =================================
-                 ESTADO DE SALUD
-            ================================== -->
-
-            <div class="health-status">
-
-
-                <div class="card-title">
-
-
-                    <h2>
-
-                        <i class="bi bi-heart-pulse"></i>
-
-                        Estado de Salud de
-
-                        <span id="petName">
-
-                            Toby
-
-                        </span>
-
-                    </h2>
-
-
-                    <span class="healthy">
-
-                        <i class="bi bi-check-circle-fill"></i>
-
-                        Saludable
-
-                    </span>
-
-
-                </div>
-
-
-                <div class="health-summary">
-
-
-                    <div>
-
-                        <i class="bi bi-shield-check"></i>
-
-                        <span>
-
-                            Vacunas
-
-                        </span>
-
-                        <strong>
-
-                            5 / 5
-
-                        </strong>
-
-                        <small>
-
-                            Al día
-
-                        </small>
-
-                    </div>
-
-
-                    <div>
-
-                        <i class="bi bi-bug"></i>
-
-                        <span>
-
-                            Desparasitación
-
-                        </span>
-
-                        <strong>
-
-                            Al día
-
-                        </strong>
-
-                        <small>
-
-                            Próxima: 20 Ago
-
-                        </small>
-
-                    </div>
-
-
-                    <div>
-
-                        <i class="bi bi-hospital"></i>
-
-                        <span>
-
-                            Veterinario
-
-                        </span>
-
-                        <strong>
-
-                            Última visita
-
-                        </strong>
-
-                        <small>
-
-                            15 Jun 2026
-
-                        </small>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- =================================
-                 VACUNAS
-            ================================== -->
-
-            <div class="vaccines-card">
-
-
-                <div class="card-title">
-
-
-                    <h2>
-
-                        <i class="bi bi-shield-plus"></i>
-
-                        Vacunas
-
-                    </h2>
-
-
-                    <button class="add-button">
-
-                        <i class="bi bi-plus"></i>
-
-                        Agregar vacuna
-
-                    </button>
-
-
-                </div>
-
-
-                <div class="vaccine-item">
-
-
-                    <div class="vaccine-icon">
-
-                        💉
-
-                    </div>
-
-
-                    <div>
-
-                        <strong>
-
-                            Vacuna múltiple
-
-                        </strong>
-
-                        <small>
-
-                            Aplicada: 15 Mayo 2026
-
-                        </small>
-
-                    </div>
-
-
-                    <span class="badge-complete">
-
-                        Aplicada
-
-                    </span>
-
-
-                </div>
-
-
-                <div class="vaccine-item">
-
-
-                    <div class="vaccine-icon">
-
-                        💉
-
-                    </div>
-
-
-                    <div>
-
-                        <strong>
-
-                            Rabia
-
-                        </strong>
-
-                        <small>
-
-                            Aplicada: 15 Mayo 2026
-
-                        </small>
-
-                    </div>
-
-
-                    <span class="badge-complete">
-
-                        Aplicada
-
-                    </span>
-
-
-                </div>
-
-
-                <div class="vaccine-item">
-
-
-                    <div class="vaccine-icon">
-
-                        💉
-
-                    </div>
-
-
-                    <div>
-
-                        <strong>
-
-                            Bordetella
-
-                        </strong>
-
-                        <small>
-
-                            Próxima aplicación: 15 Mayo 2027
-
-                        </small>
-
-                    </div>
-
-
-                    <span class="badge-pending">
-
-                        Pendiente
-
-                    </span>
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- =================================
-                 PRÓXIMO CONTROL
-            ================================== -->
-
-            <div class="appointment-card">
-
-
-                <div class="card-title">
-
-
-                    <h2>
-
-                        <i class="bi bi-calendar-heart"></i>
-
-                        Próximo Control
-
-                    </h2>
-
-
-                    <i class="bi bi-three-dots"></i>
-
-                </div>
-
-
-                <div class="appointment">
-
-
-                    <div class="calendar-icon">
-
-                        <strong>
-
-                            20
-
-                        </strong>
-
-                        <small>
-
-                            AGO
-
-                        </small>
-
-                    </div>
-
-
-                    <div>
-
-                        <h4>
-
-                            Control veterinario
-
-                        </h4>
-
-                        <p>
-
-                            Clínica Veterinaria PetCare
-
-                        </p>
-
-                        <small>
-
-                            <i class="bi bi-clock"></i>
-
-                            10:30 AM
-
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <button class="appointment-button">
-
-                    Ver detalles
-
-                </button>
-
-
-            </div>
-
-
-
-            <!-- =================================
-                 DESPARASITACIÓN
-            ================================== -->
-
-            <div class="deworming-card">
-
-
-                <div class="card-title">
-
-
-                    <h2>
-
-                        <i class="bi bi-bug"></i>
-
-                        Desparasitación
-
-                    </h2>
-
-
-                    <button class="add-button">
-
-                        Registrar
-
-                    </button>
-
-                </div>
-
-
-                <div class="deworming-content">
-
-
-                    <div class="deworming-circle">
-
-                        <strong>
-
-                            20
-
-                        </strong>
-
-                        <span>
-
-                            AGO
-
-                        </span>
-
-                    </div>
-
-
-                    <div>
-
-                        <h4>
-
-                            Próxima desparasitación
-
-                        </h4>
-
-                        <p>
-
-                            Interna y externa
-
-                        </p>
-
-                        <span class="days">
-
-                            Faltan 16 días
-
-                        </span>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- =================================
-                 HISTORIAL MÉDICO
-            ================================== -->
-
-            <div class="medical-history">
-
-
-                <div class="card-title">
-
-
-                    <h2>
-
-                        <i class="bi bi-file-medical"></i>
-
-                        Historial Médico
-
-                    </h2>
-
-
-                    <a href="#">
-
-                        Ver historial completo
-
-                    </a>
-
-                </div>
-
-
-                <div class="history-item">
-
-
-                    <div class="history-icon">
-
-                        <i class="bi bi-hospital"></i>
-
-                    </div>
-
-
-                    <div>
-
-                        <strong>
-
-                            Consulta veterinaria
-
-                        </strong>
-
-                        <small>
-
-                            15 Junio 2026
-
-                        </small>
-
-                        <p>
-
-                            Revisión general y control de peso.
-
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-
-                <div class="history-item">
-
-
-                    <div class="history-icon">
-
-                        <i class="bi bi-capsule"></i>
-
-                    </div>
-
-
-                    <div>
-
-                        <strong>
-
-                            Tratamiento registrado
-
-                        </strong>
-
-                        <small>
-
-                            10 Mayo 2026
-
-                        </small>
-
-                        <p>
-
-                            Tratamiento preventivo recomendado por el veterinario.
-
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- =================================
-                 RECORDATORIO
-            ================================== -->
-
-            <div class="reminder-card">
-
-
-                <i class="bi bi-bell-fill"></i>
-
+            <div class="card-title">
 
                 <div>
 
-                    <h3>
+                    <i class="bi bi-calendar-check"></i>
 
-                        Próximos recordatorios
-
-                    </h3>
-
-                    <p>
-
-                        Tienes 2 eventos de salud próximos
-                        para Toby.
-
-                    </p>
+                    <h2>
+                        Plan Alimenticio de
+                        <span id="petName">
+                            Toby
+                        </span>
+                    </h2>
 
                 </div>
 
 
-                <button>
+                <button class="btn-petcare-light">
 
-                    Ver recordatorios
+                    Editar plan
 
                 </button>
+
+            </div>
+
+
+            <div class="food-stats">
+
+
+                <!-- PORCIONES -->
+
+                <div class="food-stat">
+
+                    <i class="bi bi-basket"></i>
+
+                    <span>
+                        Porciones por día
+                    </span>
+
+                    <strong>
+                        2 porciones
+                    </strong>
+
+                </div>
+
+
+                <!-- CANTIDAD -->
+
+                <div class="food-stat">
+
+                    <i class="bi bi-cup"></i>
+
+                    <span>
+                        Cantidad por porción
+                    </span>
+
+                    <strong>
+                        1.5 tazas (150 g)
+                    </strong>
+
+                </div>
+
+
+                <!-- CALORÍAS -->
+
+                <div class="food-stat">
+
+                    <i class="bi bi-fire"></i>
+
+                    <span>
+                        Calorías diarias aproximadas
+                    </span>
+
+                    <strong>
+                        1,200 kcal
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="food-information">
+
+                <i class="bi bi-info-circle"></i>
+
+                <span>
+                    Toby es un perro adulto con nivel
+                    de actividad moderado. Ajusta las
+                    porciones según su actividad y
+                    condición física.
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             DOS COLUMNAS
+        ================================== -->
+
+        <div class="content-grid">
+
+
+            <!-- =================================
+                 HORARIOS
+            ================================== -->
+
+            <section class="card-petcare">
+
+                <div class="card-title">
+
+                    <div>
+
+                        <i class="bi bi-clock"></i>
+
+                        <h2>
+                            Horarios de Comida
+                        </h2>
+
+                    </div>
+
+                    <button class="btn-petcare-light">
+                        Editar
+                    </button>
+
+                </div>
+
+
+                <div class="meal-list">
+
+
+                    <!-- DESAYUNO -->
+
+                    <div class="meal">
+
+                        <div class="meal-icon">
+                            ☀️
+                        </div>
+
+                        <div class="meal-info">
+
+                            <strong>
+                                Desayuno
+                            </strong>
+
+                            <span>
+                                08:00 AM
+                            </span>
+
+                        </div>
+
+                        <strong class="quantity">
+                            1.5 tazas
+                        </strong>
+
+                    </div>
+
+
+                    <!-- ALMUERZO -->
+
+                    <div class="meal">
+
+                        <div class="meal-icon">
+                            🌤️
+                        </div>
+
+                        <div class="meal-info">
+
+                            <strong>
+                                Almuerzo
+                            </strong>
+
+                            <span>
+                                01:00 PM
+                            </span>
+
+                        </div>
+
+                        <strong class="quantity">
+                            1.5 tazas
+                        </strong>
+
+                    </div>
+
+
+                    <!-- CENA -->
+
+                    <div class="meal">
+
+                        <div class="meal-icon">
+                            🌙
+                        </div>
+
+                        <div class="meal-info">
+
+                            <strong>
+                                Cena
+                            </strong>
+
+                            <span>
+                                08:00 PM
+                            </span>
+
+                        </div>
+
+                        <strong class="quantity">
+                            1.5 tazas
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 SEGUIMIENTO
+            ================================== -->
+
+            <section class="card-petcare">
+
+                <div class="card-title">
+
+                    <div>
+
+                        <i class="bi bi-bar-chart"></i>
+
+                        <h2>
+                            Seguimiento de Alimentación
+                        </h2>
+
+                    </div>
+
+                    <span class="week">
+                        Esta semana
+                    </span>
+
+                </div>
+
+
+                <div class="tracking">
+
+
+                    <div class="progress-circle">
+
+                        <strong>
+                            90%
+                        </strong>
+
+                        <span>
+                            Comidas
+                            <br>
+                            completadas
+                        </span>
+
+                    </div>
+
+
+                    <div class="tracking-info">
+
+                        <p>
+                            <strong>
+                                Comidas programadas
+                            </strong>
+
+                            <span>
+                                21
+                            </span>
+                        </p>
+
+
+                        <p>
+                            <strong>
+                                Comidas completadas
+                            </strong>
+
+                            <span>
+                                19
+                            </span>
+                        </p>
+
+
+                        <p class="missed">
+
+                            <strong>
+                                Comidas omitidas
+                            </strong>
+
+                            <span>
+                                2
+                            </span>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="success-message">
+
+                    <i class="bi bi-check-circle"></i>
+
+                    ¡Excelente! Toby lleva una
+                    alimentación muy constante
+                    esta semana.
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+
+        <!-- =================================
+             TIPO DE CONCENTRADO
+        ================================== -->
+
+        <section class="card-petcare">
+
+            <div class="card-title">
+
+                <div>
+
+                    <i class="bi bi-box-seam"></i>
+
+                    <h2>
+                        Tipo de concentrado
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="food-type-grid">
+
+
+                <div class="food-type">
+
+                    <div class="food-type-icon">
+                        🐶
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            Perros
+                        </h4>
+
+                        <p>
+                            Concentrado para perros
+                            según su edad, tamaño y
+                            nivel de actividad.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="food-type">
+
+                    <div class="food-type-icon">
+                        🐱
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            Gatos
+                        </h4>
+
+                        <p>
+                            Alimento para gatos
+                            adaptado a sus necesidades.
+                        </p>
+
+                    </div>
+
+                </div>
 
 
             </div>
 
+        </section>
+
+
+
+        <!-- =================================
+             RECOMENDACIONES
+        ================================== -->
+
+        <section class="card-petcare recommendations">
+
+            <div class="card-title">
+
+                <div>
+
+                    <i class="bi bi-stars"></i>
+
+                    <h2>
+                        Recomendaciones de alimentación
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="recommendation-grid">
+
+
+                <div class="recommendation">
+
+                    <span>
+                        🥕
+                    </span>
+
+                    <div>
+
+                        <h4>
+                            Alimentación equilibrada
+                        </h4>
+
+                        <p>
+                            Combina una alimentación
+                            adecuada con agua fresca
+                            durante todo el día.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="recommendation">
+
+                    <span>
+                        💧
+                    </span>
+
+                    <div>
+
+                        <h4>
+                            Hidratación
+                        </h4>
+
+                        <p>
+                            Mantén siempre disponible
+                            agua limpia y fresca.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="recommendation">
+
+                    <span>
+                        🥩
+                    </span>
+
+                    <div>
+
+                        <h4>
+                            Según la mascota
+                        </h4>
+
+                        <p>
+                            El tipo y cantidad de alimento
+                            debe adaptarse a cada mascota.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </section>
 
 
     </main>
 
-
 </div>
 
 
 
-<!-- Bootstrap JS -->
+<!-- =====================================
+     JAVASCRIPT
+====================================== -->
 
-<script
-src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-</script>
-
-
-<!-- JavaScript -->
-
-<script src="salud.js"></script>
-
+<script src="/Client/salud/salud.js"></script>
 
 </body>
 

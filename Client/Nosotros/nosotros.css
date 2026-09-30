@@ -33,15 +33,15 @@ a {
 }
 
 .logo {
-    width: 42px;
-    height: 42px;
+    width: 150px;
+    height: 50px;
     object-fit: contain;
 }
 
 .brand-name {
     font-size: 24px;
     font-weight: 700;
-    color: #3b82f6;
+    color: #a25ef0;
     margin-left: 8px;
 }
 
@@ -58,7 +58,7 @@ a {
 
 .nav-link:hover,
 .nav-link.active {
-    color: #6366f1 !important;
+    color: #9975db !important;
 }
 
 .btn-login {
@@ -86,7 +86,7 @@ a {
 }
 
 .small-title {
-    color: #6366f1;
+    color: #ad69db;
     font-weight: 700;
     font-size: 14px;
     letter-spacing: 1px;
@@ -106,7 +106,7 @@ a {
 
 .hero h1 span {
     display: block;
-    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    background: linear-gradient(90deg, #934ce4, #8b5cf6);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -123,7 +123,7 @@ a {
     margin-top: 20px;
     padding: 13px 25px;
     border-radius: 30px;
-    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    background: linear-gradient(90deg, #a669ec, #8b5cf6);
     border: none;
     color: white;
     font-weight: 600;
@@ -168,7 +168,7 @@ a {
 
 .pet-icon i {
     font-size: 110px;
-    color: #6366f1;
+    color: #b474f0;
 }
 
 .heart {
@@ -195,7 +195,7 @@ a {
 
 .section-title span,
 .section-label {
-    color: #6366f1;
+    color: #b36dec;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -213,13 +213,13 @@ a {
 .section-title h2 strong,
 .mission-section h2 span,
 .vision-section h2 span {
-    color: #6366f1;
+    color: #bb7bf7;
 }
 
 .section-title p {
     max-width: 650px;
     margin: auto;
-    color: #64748b;
+    color: #76648b;
     line-height: 1.7;
 }
 

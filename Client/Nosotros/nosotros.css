@@ -399,9 +399,11 @@ a {
    CTA
 ================================ */
 
+
+
 .cta-section {
     padding: 90px 20px;
-    background: linear-gradient(135deg, #b78fec, #8b5cf6);
+    background: linear-gradient(135deg, #bd8df3, #8b5cf6);
     color: white;
 }
 
@@ -426,7 +428,7 @@ a {
 
 .btn-white {
     background: white;
-    color: #6366f1;
+    color: #c187f0;
     padding: 13px 25px;
     border-radius: 30px;
     font-weight: 700;
@@ -435,64 +437,50 @@ a {
 
 .btn-white:hover {
     transform: translateY(-3px);
-    color: #a160eb;
+    color: #efeff1;
 }
 
 
-/* ================================
-   FOOTER
-================================ */
 
-footer {
-    background: linear-gradient(90deg,  #8b5cf6, #a288f0);
-    color: white;
-    padding: 45px 0 20px;
-}
+/* ================================ FOOTER ================================ */
+ footer { 
+    background: #111827; 
+    color: white; 
+    padding: 45px 0 20px; } 
 
-.footer-brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+    .footer-brand { 
+        display: flex;
+         align-items: center; 
+         gap: 10px; } 
 
-.footer-brand img {
-    width: 50px;
-}
+    .footer-brand img { 
+        width: 40px; } 
 
-.footer-brand span {
-    font-size: 23px;
-    font-weight: 700;
-}
+        .footer-brand span { 
+            font-size: 23px; 
+            font-weight: 700; } 
 
-.footer-brand span span {
-    color: #a288f0;
-}
+        .footer-brand span span { 
+        color: #a78bfa; } 
 
-footer p {
-    color: #191d22;
-    margin-top: 10px;
-}
+        footer p { 
+        color: #94a3b8; 
+        margin-top: 10px; } 
 
-.back-home {
-    color: #201f27;
-    font-weight: 600;
-}
+        .back-home { 
+        color: #c4b5fd;
+        font-weight: 600; }
 
-.back-home:hover {
-    color: white;
-}
+        .back-home:hover {
+            color: white; } 
 
-footer hr {
-    border-color: #171d25;
-    margin-top: 30px;
-}
-
-.copyright {
-    text-align: center;
-    font-size: 13px;
-    margin-bottom: 0;
-}
-
+        footer hr {
+        border-color: #334155;
+        margin-top: 30px; }
+        .copyright {
+        text-align: center; 
+        font-size: 13px;
+        margin-bottom: 0; } 
 
 /* ================================
    RESPONSIVE

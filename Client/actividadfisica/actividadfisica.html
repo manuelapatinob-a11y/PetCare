@@ -2,773 +2,884 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>PetCare | Actividad Física</title>
 
     <!-- Bootstrap -->
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet">
 
     <!-- Bootstrap Icons -->
-
-    <link rel="stylesheet"
+    <link
+        rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- CSS -->
-
     <link rel="stylesheet" href="/Client/actividadfisica/actividadfisica.css">
-
 </head>
-
 
 <body>
 
+<div class="app-container">
 
-    <div class="app">
+    <!-- ==============================
+         BARRA LATERAL
+    =============================== -->
+
+    <aside class="sidebar">
+
+        <a href="index.html" class="logo-area">
+
+            <img
+                src="/Recursos/logo.png"
+                alt="Logo PetCare"
+                class="logo-petcare">
+
+        </a>
 
 
-        <!-- =========================
-             SIDEBAR PRINCIPAL
-        ========================== -->
+        <nav class="menu">
 
-        <aside class="sidebar">
+            <a href="/index.html" class="menu-item">
+                <i class="bi bi-house"></i>
+                <span>Inicio</span>
+            </a>
 
-            <div class="logo-area">
+            <a href="/Client/mismascotas/mismascotas.html" class="menu-item">
+                <i class="bi bi-heart"></i>
+                <span>Mis Mascotas</span>
+            </a>
 
-                <img src="/Recursos/logo.png"
-                    alt="PetCare"
-                    class="logo">
+            <a href="/Client/salud/salud.html" class="menu-item">
+                <i class="bi bi-heart-pulse"></i>
+                <span>Salud</span>
+            </a>
 
-            </div>
+            <a href="/Client/alimentacion/alimentacion.html" class="menu-item">
+                <i class="bi bi-cup-hot"></i>
+                <span>Alimentación</span>
+            </a>
+
+            <a href="/Client/actividadfisica/actividadfisica.html" class="menu-item active">
+                <i class="bi bi-bicycle"></i>
+                <span>Actividad Física</span>
+            </a>
+
+            <a href="/Client/recordatorios/recordatorios.html" class="menu-item">
+                <i class="bi bi-bell"></i>
+                <span>Recordatorios</span>
+            </a>
+
+            <a href="/Client/mapa/mapa.html" class="menu-item">
+                <i class="bi bi-geo-alt"></i>
+                <span>Mapa Pet Friendly</span>
+            </a>
+
+            <a href="/Client/servicios/servicios.html" class="menu-item">
+                <i class="bi bi-shop"></i>
+                <span>Servicios</span>
+            </a>
+
+            <a href="/Client/finanzas/finanzas.html" class="menu-item">
+                <i class="bi bi-wallet2"></i>
+                <span>Finanzas</span>
+            </a>
+
+            <a href="/Client/asistente/asistente.html" class="menu-item">
+                <i class="bi bi-robot"></i>
+                <span>Asistente IA</span>
+            </a>
+
+            <a href="/Client/perfil/perfil.html" class="menu-item">
+                <i class="bi bi-person"></i>
+                <span>Perfil</span>
+            </a>
+
+            <a href="/Client/configuracion/configuracion.html" class="menu-item">
+                <i class="bi bi-gear"></i>
+                <span>Configuración</span>
+            </a>
+
+        </nav>
+
+    </aside>
 
 
-            <nav class="main-menu">
+    <!-- ==============================
+         CONTENIDO
+    =============================== -->
 
-                <a href="/Client/login/login.html">
+    <main class="main-content">
 
-                    <i class="bi bi-house"></i>
+        <!-- ENCABEZADO -->
 
-                    Inicio
+        <header class="topbar">
 
+            <div class="title-area">
+
+                <a href="/index.html" class="back-button">
+                    <i class="bi bi-arrow-left"></i>
                 </a>
 
+                <div>
 
-                <a href="/Client/mismascotas/mismascotas.html">
+                    <h1>Actividad Física</h1>
 
-                    <i class="bi bi-people"></i>
-
-                    Mis Mascotas
-
-                </a>
-
-
-                <a href="/Client/salud/salud.html">
-
-                    <i class="bi bi-heart-pulse"></i>
-
-                    Salud
-
-                </a>
-
-
-                <a href="/Client/alimentacion/alimentacion.html">
-
-                    <i class="bi bi-cup-hot"></i>
-
-                    Alimentación
-
-                </a>
-
-
-                <a href="/Client/recordatorios/recordatorios.html">
-
-                    <i class="bi bi-bell"></i>
-
-                    Recordatorios
-
-                </a>
-
-
-                <a href="/Client/mapa/mapa.html">
-
-                    <i class="bi bi-geo-alt"></i>
-
-                    Mapa Pet Friendly
-
-                </a>
-
-
-                <a href="/Client/servicios/servicios.html">
-
-                    <i class="bi bi-shop"></i>
-
-                    Servicios
-
-                </a>
-
-                <a href="/Client/actividadfisica/actividadfisica.html"
-                    class="active">
-
-                    <i class="bi bi-person-walking"></i>
-
-                    Actividad Física
-
-                </a>
-
-                <a href="/Client/finanzas/finanzas.html">
-
-                    <i class="bi bi-wallet2"></i>
-
-                    Finanzas
-
-                </a>
-
-                <a href="/Client/asistente/asistente.html" class="menu-item ">
-                    <i class="bi bi-robot"></i>
-                    <span>Asistente IA</span>
-                </a>
-
-                <a href="/Client/perfil/perfil.html">
-
-                    <i class="bi bi-person"></i>
-
-                    Perfil
-
-                </a>
-
-
-                <a href="/Client/configuracion/configuracion.html">
-
-                    <i class="bi bi-gear"></i>
-
-                    Configuración
-
-                </a>
-
-            </nav>
-
-            </div>
-
-        </aside>
-        <!-- =========================
-             CONTENIDO
-        ========================== -->
-        <main class="content">
-
-            <!-- HEADER -->
-
-            <header class="top-header">
-
-                <div class="page-title">
-
-                    <a href="/index.html"
-                        class="back">
-                        <i class="bi bi-arrow-left"></i>
-                    </a>
-
-                    <div>
-
-                        <h2>Actividad Física</h2>
-
-
-                    </div>
+                    <p>
+                        Organiza y controla la actividad de tus mascotas.
+                    </p>
 
                 </div>
 
-                <div class="user-area">
-                    <button class="notification-btn">
-                        <i class="bi bi-bell"></i>
+            </div>
+
+
+            <!-- USUARIO -->
+
+            <div class="user-area">
+
+                <button class="notification-btn">
+                    <i class="bi bi-bell"></i>
+                </button>
+
+                <div class="avatar">
+                    MP
+                </div>
+
+                <div class="user-name">
+                    <strong>Manuela P.</strong>
+                    <small>Dueña</small>
+                </div>
+
+                <i class="bi bi-chevron-down arrow-user"></i>
+
+            </div>
+
+        </header>
+
+
+        <!-- ==============================
+             SELECCIÓN DE MASCOTA
+        =============================== -->
+
+        <section class="pet-selector">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>Selecciona una mascota</h2>
+
+                    <p>
+                        Elige la mascota para consultar su actividad.
+                    </p>
+
+                </div>
+
+                <a
+                    href="/Client/mismascotas/mismascotas.html"
+                    class="secondary-btn">
+
+                    Ver mis mascotas →
+
+                </a>
+
+            </div>
+
+
+            <div class="pet-options">
+
+
+                <!-- TOBY -->
+
+                <button
+                    class="pet-option selected"
+                    onclick="seleccionarMascota('Toby', this)">
+
+                    <div class="pet-avatar">
+
+                        <i class="bi bi-heart-fill"></i>
+
+                    </div>
+
+                    <div class="pet-data">
+
+                        <strong>Toby</strong>
+
+                        <span>Golden Retriever</span>
+
+                    </div>
+
+                    <i class="bi bi-check-circle-fill check-icon"></i>
+
+                </button>
+
+
+                <!-- LUNA -->
+
+                <button
+                    class="pet-option"
+                    onclick="seleccionarMascota('Luna', this)">
+
+                    <div class="pet-avatar">
+
+                        <i class="bi bi-heart-fill"></i>
+
+                    </div>
+
+                    <div class="pet-data">
+
+                        <strong>Luna</strong>
+
+                        <span>Gato</span>
+
+                    </div>
+
+                    <i class="bi bi-check-circle-fill check-icon"></i>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             RESUMEN
+        =============================== -->
+
+        <section class="activity-summary">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Actividad de
+                        <span id="petName">Toby</span>
+                    </h2>
+
+                    <p>
+                        Consulta el estado de actividad de tu mascota.
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-btn"
+                    onclick="registrarActividad()">
+
+                    <i class="bi bi-plus-lg"></i>
+
+                    Registrar actividad
+
+                </button>
+
+            </div>
+
+
+            <!-- TARJETAS -->
+
+            <div class="activity-cards">
+
+
+                <!-- PASOS -->
+
+                <article class="activity-card">
+
+                    <div class="activity-icon blue">
+
+                        <i class="bi bi-shoe-print"></i>
+
+                    </div>
+
+                    <div class="activity-info">
+
+                        <span>Pasos de hoy</span>
+
+                        <strong>6.240</strong>
+
+                        <small>
+                            Meta: 8.000 pasos
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PASEOS -->
+
+                <article class="activity-card">
+
+                    <div class="activity-icon purple">
+
+                        <i class="bi bi-person-walking"></i>
+
+                    </div>
+
+                    <div class="activity-info">
+
+                        <span>Paseos</span>
+
+                        <strong>2</strong>
+
+                        <small>
+                            Esta semana
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TIEMPO -->
+
+                <article class="activity-card">
+
+                    <div class="activity-icon orange">
+
+                        <i class="bi bi-stopwatch"></i>
+
+                    </div>
+
+                    <div class="activity-info">
+
+                        <span>Tiempo activo</span>
+
+                        <strong>45 min</strong>
+
+                        <small>
+                            Hoy
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CALORÍAS -->
+
+                <article class="activity-card">
+
+                    <div class="activity-icon green">
+
+                        <i class="bi bi-fire"></i>
+
+                    </div>
+
+                    <div class="activity-info">
+
+                        <span>Calorías</span>
+
+                        <strong>280 kcal</strong>
+
+                        <small>
+                            Aproximadas
+                        </small>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             CONTENIDO
+        =============================== -->
+
+        <div class="content-grid">
+
+
+            <!-- AGENDA DE PASEOS -->
+
+            <section class="info-card">
+
+                <div class="card-header">
+
+                    <div class="card-title">
+
+                        <div class="title-icon">
+
+                            <i class="bi bi-calendar-event"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>Agenda de Paseos</h3>
+
+                            <p>
+                                Organiza los próximos paseos.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="icon-btn"
+                        onclick="agregarPaseo()">
+
+                        <i class="bi bi-plus"></i>
+
                     </button>
 
-                    <div class="dropdown">
-                        <button class="user-button"
-                            data-bs-toggle="dropdown">
-                            <div class="avatar">
-                                MP
-                            </div>
+                </div>
 
-                            <strong>
-                                Manuela P.
-                            </strong>
 
-                            <i class="bi bi-chevron-down"></i>
+                <!-- PASEO 1 -->
 
-                        </button>
+                <div class="walk">
 
-                        <ul class="dropdown-menu dropdown-menu-end">
+                    <div class="walk-date">
 
-                            <li>
+                        <strong>01</strong>
 
-                                <a class="dropdown-item"
-                                    href="/Client/perfil/perfil.html">
-
-                                    <i class="bi bi-person"></i>
-                                    Mi perfil
-                                </a>
-
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item"
-                                    href="/Client/configuracion/configuracion.html">
-                                    <i class="bi bi-gear"></i>
-                                    Configuración
-                                </a>
-                            </li>
-
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item text-danger"
-                                    href="/Client/login/login.html">
-                                    <i class="bi bi-box-arrow-right"></i>
-                                    Cerrar sesión
-                                </a>
-
-                            </li>
-
-                        </ul>
+                        <span>OCT</span>
 
                     </div>
 
-                </div>
+                    <div class="walk-info">
 
-            </header>
-            <!-- =========================
-                 SELECCIONAR MASCOTA
-            ========================== -->
-            <section class="pets-selector">
+                        <strong>
+                            Paseo por el parque
+                        </strong>
 
-                <div class="pets-header">
+                        <span>
 
-                    <h6>
-                        Selecciona una mascota
-                    </h6>
+                            <i class="bi bi-clock"></i>
+                            08:00 AM
 
-                    <a href="/Client/mismascotas/mismascotas.html">
+                        </span>
 
-                        Ver todas mis mascotas
+                        <span>
 
-                        <i class="bi bi-arrow-right"></i>
+                            <i class="bi bi-geo-alt"></i>
+                            Parque cercano
 
-                    </a>
+                        </span>
+
+                    </div>
+
+                    <span class="walk-status">
+                        Pendiente
+                    </span>
 
                 </div>
 
 
-                <div class="row g-3">
+                <!-- PASEO 2 -->
 
+                <div class="walk">
 
-                    <!-- TOBY -->
+                    <div class="walk-date">
 
-                    <div class="col-md-6">
+                        <strong>02</strong>
 
-                        <button class="pet-option active-pet"
-                            data-pet="Toby">
-
-                            <div class="pet-emoji">
-
-                                🐶
-
-                            </div>
-
-
-                            <div class="pet-name">
-
-                                <strong>
-                                    Toby
-                                </strong>
-
-                                <span>
-                                    Golden Retriever
-                                </span>
-
-                            </div>
-
-
-                            <span class="online-dot"></span>
-
-                        </button>
+                        <span>OCT</span>
 
                     </div>
 
+                    <div class="walk-info">
 
+                        <strong>
+                            Caminata
+                        </strong>
 
-                    <!-- LUNA -->
+                        <span>
 
-                    <div class="col-md-6">
+                            <i class="bi bi-clock"></i>
+                            05:30 PM
 
-                        <button class="pet-option"
-                            data-pet="Luna">
+                        </span>
 
-                            <div class="pet-emoji">
+                        <span>
 
-                                🐱
+                            <i class="bi bi-geo-alt"></i>
+                            Parque Pet Friendly
 
-                            </div>
-
-
-                            <div class="pet-name">
-
-                                <strong>
-                                    Luna
-                                </strong>
-
-                                <span>
-                                    Gato
-                                </span>
-
-                            </div>
-
-
-                            <span class="offline-dot"></span>
-
-                        </button>
+                        </span>
 
                     </div>
+
+                    <span class="walk-status">
+                        Programado
+                    </span>
 
                 </div>
 
             </section>
 
 
+            <!-- CONTROL DE ACTIVIDAD -->
 
-            <!-- =========================
-                 CONTENIDO ACTIVIDAD
-            ========================== -->
+            <section class="info-card">
 
-            <div class="activity-layout">
+                <div class="card-header">
 
+                    <div class="card-title">
 
+                        <div class="title-icon">
 
-                <!-- MENU INTERNO -->
-
-                <aside class="activity-menu">
-
-                    <div class="activity-title">
-
-                        <div class="activity-icon">
-
-                            <i class="bi bi-person-walking"></i>
+                            <i class="bi bi-bar-chart"></i>
 
                         </div>
 
-                        <h4>
-                            Actividad Física
-                        </h4>
+                        <div>
+
+                            <h3>
+                                Monitor de Actividad
+                            </h3>
+
+                            <p>
+                                Actividad de esta semana.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <span class="week-label">
+                        Esta semana
+                    </span>
+
+                </div>
+
+
+                <!-- PROGRESO -->
+
+                <div class="progress-section">
+
+                    <div class="progress-circle">
+
+                        <span>78%</span>
+
+                        <small>
+                            Actividad
+                        </small>
 
                     </div>
 
 
-                    <button class="activity-link active-link">
+                    <div class="progress-data">
 
-                        <i class="bi bi-calendar-check"></i>
+                        <div>
 
-                        Agenda de Paseos
+                            <span>
+                                Lunes
+                            </span>
 
-                    </button>
+                            <div class="progress">
+
+                                <div
+                                    class="progress-bar"
+                                    style="width: 80%">
+                                </div>
+
+                            </div>
+
+                        </div>
 
 
-                    <button class="activity-link">
+                        <div>
 
-                        <i class="bi bi-bar-chart-line"></i>
+                            <span>
+                                Martes
+                            </span>
 
-                        Monitor de Actividad
+                            <div class="progress">
 
-                    </button>
+                                <div
+                                    class="progress-bar"
+                                    style="width: 65%">
+                                </div>
+
+                            </div>
+
+                        </div>
 
 
-                    <button class="activity-link">
+                        <div>
+
+                            <span>
+                                Miércoles
+                            </span>
+
+                            <div class="progress">
+
+                                <div
+                                    class="progress-bar"
+                                    style="width: 90%">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Jueves
+                            </span>
+
+                            <div class="progress">
+
+                                <div
+                                    class="progress-bar"
+                                    style="width: 75%">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="activity-message">
+
+                    <i class="bi bi-check-circle"></i>
+
+                    ¡Excelente! Toby mantiene una buena
+                    actividad esta semana.
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- ==============================
+             CONTROL DE PESO
+        =============================== -->
+
+        <section class="info-card">
+
+            <div class="card-header">
+
+                <div class="card-title">
+
+                    <div class="title-icon">
 
                         <i class="bi bi-speedometer2"></i>
 
-                        Control de Peso
+                    </div>
 
-                    </button>
+                    <div>
 
+                        <h3>Control de Peso</h3>
 
-                    <button class="activity-link">
-
-                        <i class="bi bi-clock-history"></i>
-
-                        Historial de Actividades
-
-                    </button>
-
-                </aside>
-
-
-
-                <!-- AREA PRINCIPAL -->
-
-                <section class="activity-content">
-
-
-                    <!-- PLAN -->
-
-                    <div class="plan-card">
-
-                        <div class="card-header-custom">
-
-                            <h5>
-
-                                <i class="bi bi-person-walking"></i>
-
-                                Plan de Actividad de
-
-                                <span id="nombreMascota">
-                                    Toby
-                                </span>
-
-                            </h5>
-
-
-                            <button class="edit-btn"
-                                id="btnEditar">
-
-                                Editar plan
-
-                            </button>
-
-                        </div>
-
-
-                        <div class="activity-stats">
-
-
-                            <div class="activity-stat">
-
-                                <i class="bi bi-calendar-check"></i>
-
-                                <p>
-                                    Paseos por día
-                                </p>
-
-                                <strong id="paseos">
-
-                                    3 paseos
-
-                                </strong>
-
-                            </div>
-
-
-
-                            <div class="activity-stat">
-
-                                <i class="bi bi-clock"></i>
-
-                                <p>
-                                    Tiempo recomendado
-                                </p>
-
-                                <strong id="tiempo">
-
-                                    60 minutos
-
-                                </strong>
-
-                            </div>
-
-
-
-                            <div class="activity-stat">
-
-                                <i class="bi bi-fire"></i>
-
-                                <p>
-                                    Calorías estimadas
-                                </p>
-
-                                <strong id="calorias">
-
-                                    320 kcal
-
-                                </strong>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="activity-message">
-
-                            <i class="bi bi-info-circle"></i>
-
-                            <span id="mensajeActividad">
-
-                                Toby es un perro adulto con nivel de actividad moderado.
-                                Ajusta el ejercicio según su condición física.
-
-                            </span>
-
-                        </div>
+                        <p>
+                            Seguimiento del peso de tu mascota.
+                        </p>
 
                     </div>
 
+                </div>
 
+                <button
+                    class="secondary-btn"
+                    onclick="registrarPeso()">
 
-                    <!-- TARJETAS INFERIORES -->
+                    Registrar peso
 
-                    <div class="row g-4 mt-1">
-
-
-                        <!-- AGENDA -->
-
-                        <div class="col-lg-6">
-
-                            <div class="info-card">
-
-                                <div class="card-header-custom">
-
-                                    <h5>
-
-                                        <i class="bi bi-clock"></i>
-
-                                        Agenda de Paseos
-
-                                    </h5>
-
-
-                                    <button class="edit-btn"
-                                        id="btnAgregar">
-
-                                        <i class="bi bi-plus"></i>
-
-                                        Agregar
-
-                                    </button>
-
-                                </div>
-
-
-                                <div class="schedule-list"
-                                    id="scheduleList">
-
-
-                                    <div class="schedule-item">
-
-                                        <div class="schedule-icon">
-
-                                            🌅
-
-                                        </div>
-
-
-                                        <div class="schedule-info">
-
-                                            <strong>
-                                                Paseo de la mañana
-                                            </strong>
-
-                                            <span>
-                                                08:00 AM
-                                            </span>
-
-                                        </div>
-
-
-                                        <b>
-                                            20 min
-                                        </b>
-
-                                    </div>
-
-
-
-                                    <div class="schedule-item">
-
-                                        <div class="schedule-icon">
-
-                                            ☀️
-
-                                        </div>
-
-
-                                        <div class="schedule-info">
-
-                                            <strong>
-                                                Paseo del mediodía
-                                            </strong>
-
-                                            <span>
-                                                01:00 PM
-                                            </span>
-
-                                        </div>
-
-
-                                        <b>
-                                            20 min
-                                        </b>
-
-                                    </div>
-
-
-
-                                    <div class="schedule-item">
-
-                                        <div class="schedule-icon">
-
-                                            🌙
-
-                                        </div>
-
-
-                                        <div class="schedule-info">
-
-                                            <strong>
-                                                Paseo de la noche
-                                            </strong>
-
-                                            <span>
-                                                08:00 PM
-                                            </span>
-
-                                        </div>
-
-
-                                        <b>
-                                            20 min
-                                        </b>
-
-                                    </div>
-
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- SEGUIMIENTO -->
-
-                        <div class="col-lg-6">
-
-                            <div class="info-card">
-
-                                <div class="card-header-custom">
-
-                                    <h5>
-
-                                        <i class="bi bi-bar-chart-line"></i>
-
-                                        Seguimiento de Actividad
-
-                                    </h5>
-
-
-                                    <span class="week-text">
-
-                                        Esta semana
-
-                                    </span>
-
-                                </div>
-
-
-                                <div class="progress-area">
-
-
-                                    <div class="progress-circle">
-
-                                        <div>
-
-                                            <strong id="progressNumber">
-
-                                                85%
-
-                                            </strong>
-
-                                            <span>
-                                                Actividad
-                                            </span>
-
-                                        </div>
-
-                                    </div>
-
-
-                                    <div class="progress-info">
-
-                                        <p>
-
-                                            Actividades programadas
-
-                                            <strong>
-                                                21
-                                            </strong>
-
-                                        </p>
-
-
-                                        <p>
-
-                                            Actividades completadas
-
-                                            <strong id="completadas">
-                                                18
-                                            </strong>
-
-                                        </p>
-
-
-                                        <p class="missed">
-
-                                            Actividades omitidas
-
-                                            <strong>
-                                                3
-                                            </strong>
-
-                                        </p>
-
-                                    </div>
-
-                                </div>
-
-
-                                <div class="success-message">
-
-                                    <i class="bi bi-check-circle"></i>
-
-                                    ¡Excelente! Toby ha mantenido una actividad muy constante esta semana.
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                </section>
+                </button>
 
             </div>
 
-        </main>
 
-    </div>
+            <div class="weight-content">
+
+                <div class="weight-number">
+
+                    <span>Peso actual</span>
+
+                    <strong>12.5 kg</strong>
+
+                    <small>
+                        Última actualización:
+                        25 Septiembre 2026
+                    </small>
+
+                </div>
 
 
-    <!-- BOOTSTRAP -->
+                <div class="weight-status">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+                    <i class="bi bi-check-circle-fill"></i>
 
-    <!-- JAVASCRIPT -->
+                    <div>
 
-    <script src="/actividadfisica/actividadfisica.js"></script>
+                        <strong>Peso estable</strong>
 
+                        <span>
+                            Continúa con la actividad recomendada.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             HISTORIAL
+        =============================== -->
+
+        <section class="info-card">
+
+            <div class="card-header">
+
+                <div class="card-title">
+
+                    <div class="title-icon">
+
+                        <i class="bi bi-clock-history"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Historial de Actividades
+                        </h3>
+
+                        <p>
+                            Últimas actividades registradas.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <button class="secondary-btn">
+                    Ver historial
+                </button>
+
+            </div>
+
+
+            <div class="history-list">
+
+                <div class="history-item">
+
+                    <div class="history-icon">
+
+                        <i class="bi bi-person-walking"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Paseo por el parque
+                        </strong>
+
+                        <span>
+                            45 minutos · 3.2 km
+                        </span>
+
+                        <small>
+                            30 Septiembre 2026
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="history-item">
+
+                    <div class="history-icon">
+
+                        <i class="bi bi-bicycle"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Caminata
+                        </strong>
+
+                        <span>
+                            30 minutos · 2.1 km
+                        </span>
+
+                        <small>
+                            28 Septiembre 2026
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="history-item">
+
+                    <div class="history-icon">
+
+                        <i class="bi bi-controller"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Juego en casa
+                        </strong>
+
+                        <span>
+                            20 minutos
+                        </span>
+
+                        <small>
+                            27 Septiembre 2026
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- NOTIFICACIÓN -->
+
+        <div
+            id="activityMessage"
+            class="activity-message-popup">
+
+            <i class="bi bi-check-circle-fill"></i>
+
+            <span>Actividad registrada correctamente.</span>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- JavaScript -->
+
+<script src="/Client/actividadfisica/actividadfisica.js"></script>
 
 </body>
 

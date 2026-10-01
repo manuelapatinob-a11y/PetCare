@@ -1,158 +1,1527 @@
-/* ================================
-   SELECCIÓN DE MASCOTAS
-================================ */
+/* =========================================
+   PETCARE - SALUD
+========================================= */
 
-.pet-options {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    width: 100%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.pet-option {
+
+:root {
+
+    --purple: #7046e8;
+
+    --purple-light: #9b6df2;
+
+    --lilac: #eee8ff;
+
+    --blue: #4d8eea;
+
+    --blue-light: #eaf3ff;
+
+    --green: #46b982;
+
+    --green-light: #e8f8f0;
+
+    --text: #29253d;
+
+    --gray: #858092;
+
+    --border: #ece9f5;
+
+    --background: #f8f7fc;
+
+    --white: #ffffff;
+}
+
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   ESTRUCTURA
+========================================= */
+
+.app-container {
+
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 250px;
+
+    padding: 25px 17px;
+
+    background: var(--white);
+
+    border-right: 1px solid var(--border);
+
+    overflow-y: auto;
+
+    z-index: 1000;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo-area {
+
     display: flex;
+
     align-items: center;
-    gap: 15px;
 
-    padding: 15px;
+    justify-content: center;
 
-    background: #ffffff;
+    width: 100%;
 
-    border: 1px solid #ddd6f5;
-    border-radius: 14px;
+    text-decoration: none;
 
-    cursor: pointer;
-
-    transition: all 0.3s ease;
-
-    min-width: 0;
-}
-
-.pet-option:hover {
-    border-color: #8b5cf6;
-
-    transform: translateY(-2px);
-
-    box-shadow: 0 5px 15px rgba(112, 70, 232, 0.12);
+    margin-bottom: 35px;
 }
 
 
-/* Mascota seleccionada */
+.logo-petcare {
 
-.pet-option.selected {
-    background: linear-gradient(
-        90deg,
-        #a855f7,
-        #b66bea
-    );
+    width: 135px;
 
-    border-color: #a855f7;
+    height: auto;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================================
+   MENÚ
+========================================= */
+
+.menu {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.menu-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 12px 13px;
+
+    color: #77738a;
+
+    text-decoration: none;
+
+    border-radius: 11px;
+
+    font-size: 13px;
+
+    transition: .25s;
+}
+
+
+.menu-item i {
+
+    width: 21px;
+
+    text-align: center;
+
+    font-size: 17px;
+}
+
+
+.menu-item:hover {
+
+    background: var(--lilac);
+
+    color: var(--purple);
+}
+
+
+.menu-item.active {
 
     color: white;
 
-    box-shadow: 0 6px 18px rgba(112, 70, 232, 0.20);
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--purple-light)
+        );
+
+    box-shadow:
+        0 7px 18px
+        rgba(112, 70, 232, .18);
 }
 
 
-/* Imagen de mascota */
+/* =========================================
+   CONTENIDO PRINCIPAL
+========================================= */
 
-.pet-option img {
-    width: 55px;
-    height: 55px;
+.main-content {
 
-    object-fit: cover;
+    margin-left: 250px;
+
+    width: calc(100% - 250px);
+
+    padding: 28px 35px;
+
+    max-width: 1600px;
+}
+
+
+/* =========================================
+   TOPBAR
+========================================= */
+
+.topbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 27px;
+}
+
+
+.title-area {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+.back-button {
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    color: var(--purple);
+
+    text-decoration: none;
+
+    transition: .2s;
+}
+
+
+.back-button:hover {
+
+    background: var(--lilac);
+
+    transform: translateX(-2px);
+}
+
+
+.title-area h1 {
+
+    font-size: 25px;
+
+    margin: 0 0 3px;
+
+    color: #211b49;
+}
+
+
+.title-area p {
+
+    margin: 0;
+
+    color: var(--gray);
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   USUARIO
+========================================= */
+
+.user-area {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.notification-btn {
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--purple);
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+.avatar {
+
+    width: 39px;
+    height: 39px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 
     border-radius: 50%;
 
-    flex-shrink: 0;
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--purple-light)
+        );
 
-    border: 3px solid white;
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: bold;
 }
 
 
-/* Información */
+.user-name {
 
-.pet-info {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.user-name strong {
+
+    font-size: 12px;
+}
+
+
+.user-name small {
+
+    color: var(--gray);
+
+    font-size: 10px;
+}
+
+
+.arrow-user {
+
+    color: var(--purple);
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   TARJETAS PRINCIPALES
+========================================= */
+
+.pet-selector,
+.health-summary,
+.info-card {
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 21px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(70, 50, 120, .035);
+}
+
+
+/* =========================================
+   ENCABEZADOS
+========================================= */
+
+.section-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+
+.section-heading h2 {
+
+    font-size: 18px;
+
+    margin: 0 0 4px;
+
+    color: #211b49;
+}
+
+
+.section-heading p {
+
+    margin: 0;
+
+    color: var(--gray);
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.primary-btn {
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 10px 15px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--purple-light)
+        );
+
+    color: white;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.primary-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 16px
+        rgba(112, 70, 232, .2);
+}
+
+
+.secondary-btn {
+
+    border: 1px solid #ded7f1;
+
+    background: white;
+
+    color: var(--purple);
+
+    border-radius: 9px;
+
+    padding: 8px 13px;
+
+    font-size: 11px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.secondary-btn:hover {
+
+    background: var(--lilac);
+}
+
+
+/* =========================================
+   MASCOTAS
+========================================= */
+
+.pet-options {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+
+.pet-option {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid var(--border);
+
+    background: white;
+
+    border-radius: 14px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+
+.pet-option:hover {
+
+    border-color:
+        var(--purple-light);
+
+    transform: translateY(-2px);
+}
+
+
+.pet-option.selected {
+
+    background:
+        linear-gradient(
+            135deg,
+            #eee1ff,
+            #f8f3ff
+        );
+
+    border-color:
+        var(--purple);
+}
+
+
+.pet-avatar {
+
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: var(--purple);
+
+    background: white;
+
+    font-size: 20px;
+}
+
+
+.pet-data {
+
+    display: flex;
+
+    flex-direction: column;
+
     min-width: 0;
 }
 
-.pet-info h4 {
+
+.pet-data strong {
+
+    font-size: 14px;
+
+    color: var(--text);
+}
+
+
+.pet-data span {
+
+    font-size: 11px;
+
+    color: var(--gray);
+}
+
+
+.check-icon {
+
+    margin-left: auto;
+
+    color: transparent;
+}
+
+
+.pet-option.selected
+.check-icon {
+
+    color: var(--purple);
+}
+
+
+/* =========================================
+   TARJETAS DE SALUD
+========================================= */
+
+.health-cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 14px;
+}
+
+
+.health-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    background: white;
+
+    transition: .2s;
+}
+
+
+.health-card:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 20px
+        rgba(70, 50, 120, .07);
+}
+
+
+.health-icon {
+
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    font-size: 19px;
+}
+
+
+.health-icon.blue {
+
+    background:
+        var(--blue-light);
+
+    color: var(--blue);
+}
+
+
+.health-icon.purple {
+
+    background:
+        var(--lilac);
+
+    color: var(--purple);
+}
+
+
+.health-icon.lilac {
+
+    background: #f4eaff;
+
+    color: #9b59d6;
+}
+
+
+.health-icon.green {
+
+    background:
+        var(--green-light);
+
+    color: var(--green);
+}
+
+
+.health-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+
+.health-info span {
+
+    color: var(--gray);
+
+    font-size: 10px;
+}
+
+
+.health-info strong {
+
+    font-size: 16px;
+
+    color: #211b49;
+}
+
+
+.health-info small {
+
+    font-size: 9px;
+
+    color: var(--gray);
+}
+
+
+.health-info small i {
+
+    color: var(--blue);
+}
+
+
+.health-info .success {
+
+    color: var(--green);
+}
+
+
+/* =========================================
+   DOS COLUMNAS
+========================================= */
+
+.content-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 20px;
+}
+
+
+/* =========================================
+   CABECERA DE TARJETAS
+========================================= */
+
+.card-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+
+.card-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+
+.title-icon {
+
+    width: 39px;
+    height: 39px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: var(--lilac);
+
+    color: var(--purple);
+
+    font-size: 17px;
+}
+
+
+.card-title h3 {
+
     margin: 0;
 
     font-size: 15px;
 
-    color: #17152b;
-}
-
-.pet-info p {
-    margin: 3px 0 0;
-
-    font-size: 12px;
-
-    color: #858092;
+    color: #211b49;
 }
 
 
-/* Texto cuando está seleccionada */
+.card-title p {
 
-.pet-option.selected .pet-info h4,
-.pet-option.selected .pet-info p {
+    margin: 2px 0 0;
+
+    color: var(--gray);
+
+    font-size: 10px;
+}
+
+
+.icon-btn {
+
+    width: 33px;
+    height: 33px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: var(--lilac);
+
+    color: var(--purple);
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.icon-btn:hover {
+
+    background: var(--purple);
+
     color: white;
 }
 
 
-/* ================================
-   TABLET
-================================ */
+/* =========================================
+   VACUNAS
+========================================= */
 
-@media (max-width: 768px) {
+.record-list {
 
-    .pet-options {
-        grid-template-columns: 1fr;
-    }
+    display: flex;
 
-    .pet-option {
-        padding: 13px;
-    }
+    flex-direction: column;
 
-    .pet-option img {
-        width: 50px;
-        height: 50px;
-    }
-
+    gap: 10px;
 }
 
 
-/* ================================
-   CELULAR
-================================ */
+.record {
 
-@media (max-width: 480px) {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px;
+
+    border-radius: 11px;
+
+    background: #faf9fd;
+}
+
+
+.record-icon {
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        var(--green-light);
+
+    color: var(--green);
+
+    font-size: 12px;
+}
+
+
+.record > div:nth-child(2) {
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.record strong {
+
+    font-size: 12px;
+}
+
+
+.record span {
+
+    color: var(--gray);
+
+    font-size: 9px;
+}
+
+
+.record-status {
+
+    padding: 5px 8px;
+
+    border-radius: 8px;
+
+    background:
+        var(--green-light);
+
+    color: var(--green) !important;
+
+    font-size: 8px !important;
+}
+
+
+/* =========================================
+   CITAS
+========================================= */
+
+.appointment {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 0;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+
+.appointment:last-child {
+
+    border-bottom: none;
+}
+
+
+.appointment-date {
+
+    width: 45px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 6px;
+
+    border-radius: 9px;
+
+    background:
+        var(--lilac);
+
+    color: var(--purple);
+}
+
+
+.appointment-date strong {
+
+    font-size: 16px;
+}
+
+
+.appointment-date span {
+
+    font-size: 8px;
+}
+
+
+.appointment-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.appointment-info strong {
+
+    font-size: 12px;
+}
+
+
+.appointment-info span {
+
+    color: var(--gray);
+
+    font-size: 9px;
+
+    margin-top: 2px;
+}
+
+
+.appointment-info i {
+
+    color: var(--purple);
+}
+
+
+.more-btn {
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--gray);
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   HISTORIAL
+========================================= */
+
+.history-list {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.history-item {
+
+    position: relative;
+
+    display: flex;
+
+    gap: 13px;
+
+    padding: 10px 0;
+}
+
+
+.history-item:not(:last-child)::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 5px;
+
+    top: 22px;
+
+    bottom: -10px;
+
+    width: 1px;
+
+    background:
+        #e6e0f5;
+}
+
+
+.history-dot {
+
+    width: 11px;
+    height: 11px;
+
+    flex-shrink: 0;
+
+    margin-top: 5px;
+
+    border-radius: 50%;
+
+    background:
+        var(--purple);
+
+    border:
+        3px solid var(--lilac);
+}
+
+
+.history-item div:last-child {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.history-item strong {
+
+    font-size: 12px;
+}
+
+
+.history-item span {
+
+    color: var(--gray);
+
+    font-size: 10px;
+}
+
+
+.history-item small {
+
+    color: var(--purple);
+
+    font-size: 9px;
+
+    margin-top: 3px;
+}
+
+
+/* =========================================
+   MENSAJE
+========================================= */
+
+.health-message {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    display: none;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 12px 16px;
+
+    border-radius: 11px;
+
+    background: #29253d;
+
+    color: white;
+
+    font-size: 11px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.15);
+
+    z-index: 2000;
+}
+
+
+.health-message.show {
+
+    display: flex;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .health-cards {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .content-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+}
+
+
+/* =========================================
+   TABLET PEQUEÑA
+========================================= */
+
+@media (max-width: 800px) {
+
+    .sidebar {
+
+        width: 75px;
+
+        padding:
+            20px 9px;
+    }
+
+
+    .logo-petcare {
+
+        width: 52px;
+    }
+
+
+    .menu-item {
+
+        justify-content: center;
+
+        padding:
+            12px 8px;
+    }
+
+
+    .menu-item span {
+
+        display: none;
+    }
+
+
+    .main-content {
+
+        margin-left: 75px;
+
+        width:
+            calc(100% - 75px);
+
+        padding: 22px;
+    }
+
 
     .pet-options {
-        grid-template-columns: 1fr;
-        gap: 10px;
+
+        grid-template-columns:
+            1fr;
+    }
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding-bottom: 70px;
     }
 
-    .pet-option {
-        padding: 12px;
 
-        gap: 10px;
+    .sidebar {
 
-        border-radius: 12px;
+        position: fixed;
+
+        top: auto;
+
+        left: 0;
+
+        bottom: 0;
+
+        width: 100%;
+
+        height: 65px;
+
+        padding:
+            5px 8px;
+
+        border-right: none;
+
+        border-top:
+            1px solid var(--border);
+
+        overflow: hidden;
     }
 
-    .pet-option img {
+
+    .logo-area {
+
+        display: none;
+    }
+
+
+    .menu {
+
+        height: 100%;
+
+        flex-direction: row;
+
+        justify-content:
+            space-around;
+
+        align-items: center;
+
+        gap: 2px;
+    }
+
+
+    .menu-item {
+
         width: 45px;
-        height: 45px;
+
+        height: 50px;
+
+        padding: 5px;
+
+        justify-content: center;
+
+        border-radius: 10px;
     }
 
-    .pet-info h4 {
-        font-size: 14px;
+
+    .menu-item i {
+
+        font-size: 18px;
     }
 
-    .pet-info p {
+
+    .main-content {
+
+        width: 100%;
+
+        margin-left: 0;
+
+        padding: 15px;
+
+        padding-bottom: 20px;
+    }
+
+
+    .topbar {
+
+        align-items:
+            flex-start;
+    }
+
+
+    .title-area h1 {
+
+        font-size: 21px;
+    }
+
+
+    .title-area p {
+
         font-size: 11px;
     }
 
+
+    .user-name,
+    .notification-btn,
+    .arrow-user {
+
+        display: none;
+    }
+
+
+    .section-heading {
+
+        align-items:
+            flex-start;
+
+        gap: 10px;
+
+        flex-direction:
+            column;
+    }
+
+
+    .health-cards {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .health-card {
+
+        padding: 14px;
+    }
+
+
+    .pet-selector,
+    .health-summary,
+    .info-card {
+
+        padding: 16px;
+
+        border-radius: 15px;
+    }
+
+
+    .primary-btn,
+    .secondary-btn {
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .health-message {
+
+        left: 15px;
+
+        right: 15px;
+
+        bottom: 80px;
+    }
+}
+
+
+/* =========================================
+   CELULAR PEQUEÑO
+========================================= */
+
+@media (max-width: 400px) {
+
+    .main-content {
+
+        padding: 12px;
+    }
+
+
+    .title-area {
+
+        gap: 8px;
+    }
+
+
+    .back-button {
+
+        width: 33px;
+
+        height: 33px;
+    }
+
+
+    .avatar {
+
+        width: 34px;
+
+        height: 34px;
+    }
+
+
+    .pet-option {
+
+        padding: 10px;
+    }
+
+
+    .pet-avatar {
+
+        width: 42px;
+
+        height: 42px;
+    }
+
+
+    .record-status {
+
+        display: none;
+    }
+
+
+    .health-info strong {
+
+        font-size: 14px;
+    }
 }

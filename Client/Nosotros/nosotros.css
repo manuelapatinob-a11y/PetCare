@@ -51,8 +51,15 @@ a {
 .nav-link {
     color: #475569 !important;
     font-weight: 500;
-    margin: 0 8px;
+    margin: 0px;
     transition: 0.3s;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .nav-link:hover,
@@ -394,7 +401,7 @@ a {
 
 .cta-section {
     padding: 90px 20px;
-    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    background: linear-gradient(135deg, #b78fec, #8b5cf6);
     color: white;
 }
 
@@ -449,7 +456,7 @@ footer {
 }
 
 .footer-brand img {
-    width: 40px;
+    width: 50px;
 }
 
 .footer-brand span {

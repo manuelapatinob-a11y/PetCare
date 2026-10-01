@@ -1,0 +1,412 @@
+/* ================================
+   CONFIGURACIÓN GENERAL
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #26344a;
+    background: #f8faff;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
+
+.navbar {
+    padding: 13px 0;
+}
+
+.logo {
+    width: 150px;
+    height: 90px;
+    object-fit: contain;
+}
+
+.brand-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #c780f7;
+    margin-left: 8px;
+}
+
+.brand-name span {
+    color: #8b5cf6;
+}
+
+.nav-link {
+    color: #475569 !important;
+    font-weight: 500;
+    margin: 0 8px;
+    transition: 0.3s;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #bf88f3 !important;
+}
+
+.btn-login {
+    background: linear-gradient(90deg, #bf85ee, #8b5cf6);
+    color: white !important;
+    border-radius: 25px;
+    padding: 9px 22px;
+    font-weight: 600;
+}
+
+
+/* ================================
+   CONTACTO
+================================ */
+
+.contact-section {
+    padding: 130px 0 70px;
+    min-height: calc(100vh - 180px);
+}
+
+
+/* ================================
+   TÍTULO
+================================ */
+
+.contact-title {
+    max-width: 650px;
+    margin: 0 auto 45px;
+}
+
+.contact-title span {
+    color: #9963f1;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.contact-title h1 {
+    font-size: clamp(36px, 5vw, 50px);
+    font-weight: 800;
+    margin: 12px 0;
+    color: #1e293b;
+}
+
+.contact-title p {
+    color: #64748b;
+    line-height: 1.7;
+}
+
+
+/* ================================
+   INFORMACIÓN
+================================ */
+
+.contact-info,
+.contact-form {
+    background: white;
+    border-radius: 22px;
+    padding: 32px;
+    height: 100%;
+    box-shadow: 0 10px 35px rgba(15, 23, 42, 0.07);
+    border: 1px solid #e2e8f0;
+}
+
+.contact-info h2,
+.contact-form h2 {
+    font-size: 23px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.description,
+.contact-form > p {
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+
+/* ================================
+   DATOS DE CONTACTO
+================================ */
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 18px;
+    color: #334155;
+    transition: 0.3s;
+}
+
+.contact-item:hover {
+    transform: translateX(4px);
+}
+
+.contact-item .icon {
+    min-width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: #eef2ff;
+    color: #b163f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+}
+
+.contact-item small {
+    display: block;
+    color: #94a3b8;
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+
+.contact-item strong {
+    display: block;
+    font-size: 14px;
+    color: #334155;
+    word-break: break-word;
+}
+
+.contact-item span {
+    display: block;
+    font-size: 13px;
+    color: #64748b;
+    margin-top: 3px;
+}
+
+
+/* ================================
+   REDES SOCIALES
+================================ */
+
+.social-section {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.social-section p {
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.socials {
+    display: flex;
+    gap: 10px;
+}
+
+.socials a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #eef2ff;
+    color: #a562e4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    background: linear-gradient(90deg, #b872f1, #c6a4fc);
+    color: white;
+    transform: translateY(-3px);
+}
+
+
+/* ================================
+   FORMULARIO
+================================ */
+
+.contact-form label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 7px;
+}
+
+.form-control {
+    border: 1px solid #dbe2ea;
+    border-radius: 12px;
+    padding: 11px 13px;
+    font-size: 14px;
+}
+
+.form-control:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+textarea {
+    resize: none;
+}
+
+
+/* ================================
+   BOTÓN ENVIAR
+================================ */
+
+.btn-send {
+    width: 100%;
+    border: none;
+    border-radius: 25px;
+    padding: 12px;
+    color: white;
+    font-weight: 600;
+    background: linear-gradient(90deg, #be7dfa, #8b5cf6);
+    transition: 0.3s;
+}
+
+.btn-send:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
+}
+
+.btn-send i {
+    margin-left: 7px;
+}
+
+
+/* ================================
+   MENSAJE DEL FORMULARIO
+================================ */
+
+#formMessage {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    background: #111827;
+    color: white;
+    padding: 30px 0 20px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.footer-brand img {
+    width: 38px;
+}
+
+.footer-brand span {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.footer-brand span span {
+    color: #a78bfa;
+}
+
+footer p {
+    color: #94a3b8;
+    margin: 8px 0 15px;
+}
+
+.back-home {
+    color: #c4b5fd;
+    font-weight: 600;
+}
+
+.back-home:hover {
+    color: white;
+}
+
+footer hr {
+    border-color: #334155;
+    margin: 22px 0 15px;
+}
+
+footer small {
+    color: #64748b;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 991px) {
+
+    .navbar-nav {
+        padding: 15px 0;
+    }
+
+    .nav-link {
+        margin: 5px 0;
+    }
+
+    .btn-login {
+        display: inline-block;
+    }
+
+    .contact-section {
+        padding-top: 120px;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .contact-section {
+        padding: 110px 15px 50px;
+    }
+
+    .contact-title {
+        margin-bottom: 30px;
+    }
+
+    .contact-title h1 {
+        font-size: 36px;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 24px 20px;
+        border-radius: 18px;
+    }
+
+    .contact-info h2,
+    .contact-form h2 {
+        font-size: 20px;
+    }
+
+    .contact-item strong {
+        font-size: 13px;
+    }
+
+    footer {
+        padding: 25px 15px 18px;
+    }
+}
+

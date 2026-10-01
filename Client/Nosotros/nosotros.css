@@ -33,9 +33,8 @@ a {
 }
 
 .logo {
-    width: 150px;
-    height: 50px;
-    object-fit: contain;
+    width:150px;
+    margin-bottom:10px;
 }
 
 .brand-name {
@@ -260,6 +259,11 @@ a {
     margin-bottom: 22px;
 }
 
+.icon-box i {
+  color: #5b50e3; /* Color morado del icono */
+  font-size: 24px;
+}
+
 .info-card h3 {
     font-size: 21px;
     font-weight: 700;
@@ -424,7 +428,7 @@ a {
 
 .btn-white:hover {
     transform: translateY(-3px);
-    color: #6366f1;
+    color: #a160eb;
 }
 
 
@@ -433,7 +437,7 @@ a {
 ================================ */
 
 footer {
-    background: #111827;
+    background: linear-gradient(90deg,  #8b5cf6, #a288f0);
     color: white;
     padding: 45px 0 20px;
 }
@@ -454,16 +458,16 @@ footer {
 }
 
 .footer-brand span span {
-    color: #a78bfa;
+    color: #a288f0;
 }
 
 footer p {
-    color: #94a3b8;
+    color: #191d22;
     margin-top: 10px;
 }
 
 .back-home {
-    color: #c4b5fd;
+    color: #201f27;
     font-weight: 600;
 }
 
@@ -472,7 +476,7 @@ footer p {
 }
 
 footer hr {
-    border-color: #334155;
+    border-color: #171d25;
     margin-top: 30px;
 }
 

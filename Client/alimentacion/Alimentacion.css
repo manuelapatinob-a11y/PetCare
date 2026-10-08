@@ -1,6 +1,7 @@
-/* =========================================
+/* =====================================
    CONFIGURACIÓN GENERAL
-========================================= */
+===================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,796 +10,1277 @@
 
 body {
     font-family: "Segoe UI", Arial, sans-serif;
-    background: #f8f9ff;
-    color: #151944;
+    background: #f8f7fd;
+    color: #172653;
 }
 
 button,
 a {
+    font-family: inherit;
+}
+
+button {
     cursor: pointer;
 }
 
-a {
-    text-decoration: none;
-}
 
+/* =====================================
+   CONTENEDOR PRINCIPAL
+===================================== */
 
-/* =========================================
-   CONTENEDOR
-========================================= */
 .app-container {
     display: flex;
     min-height: 100vh;
 }
-/* =========================================
+
+
+/* =====================================
    SIDEBAR
-========================================= */
+===================================== */
+
 .sidebar {
-    width: 250px;
-    min-height: 100vh;
-    background: linear-gradient(
-        180deg,
-        #ffffff,
-        #f5f1ff
-    );
-    border-right: 1px solid #e5e0ff;
-    padding: 25px 16px;
+    width: 280px;
+    height: 100vh;
+
     position: fixed;
     left: 0;
     top: 0;
+
+    background: #ffffff;
+
+    border-right: 1px solid #ece9f7;
+
+    padding: 30px 15px;
+
+    overflow-y: auto;
+
     z-index: 100;
 }
 
+
 /* LOGO */
+
 .logo-area {
     text-align: center;
-    margin-bottom: 35px;
-    color: #a451e9;
+    margin-bottom: 45px;
 }
 
-.PetCare{
+.logo-area img {
     width: 200px;
-}
-
-.logo-area i {
-    font-size: 45px;
-    display: block;
-}
-
-.logo-area span {
-    display: block;
-    font-size: 27px;
-    font-weight: 800;
-}
-
-.logo-area small {
-    color: #777;
+    max-width: 100%;
 }
 
 
-/* MENU */
+/* =====================================
+   MENÚ
+===================================== */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
 .menu a {
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 13px 15px;
-    margin-bottom: 7px;
-    border-radius: 12px;
-    color: #464444;
-    font-weight: 500;
-    transition: .3s;
+
+    gap: 17px;
+
+    padding: 14px 17px;
+
+    border-radius: 13px;
+
+    color: #747392;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    transition: 0.3s;
 }
 
 .menu a i {
-    font-size: 21px;
+    font-size: 20px;
 }
 
 .menu a:hover {
-    background: #eee8ff;
-    transform: translateX(3px);
+    background: #f4efff;
+    color: #7444e8;
 }
+
+
+/* BOTÓN ACTIVO */
 
 .menu a.active {
+
     color: white;
-    background: linear-gradient(
-        90deg,
-        #b064ee,
-        #9363f5
-    );
+
+    background:
+        linear-gradient(
+            135deg,
+            #7540e8,
+            #a35bea
+        );
+
     box-shadow:
         0 8px 20px
-        rgba(186, 114, 219, 0.897);
+        rgba(117, 64, 232, 0.25);
 }
 
 
-/* AYUDA */
-.help-box {
+/* =====================================
+   TARJETA AYUDA
+===================================== */
+
+.help-card {
+
     margin-top: 35px;
+
     padding: 20px;
-    border-radius: 20px;
-    background: linear-gradient(
-        135deg,
-        #7347ed,
-        #a16bea
-    );
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8050e7,
+            #a55ce8
+        );
+
     color: white;
 }
 
-.help-box h5 {
-    font-weight: 700;
-}
-
-.help-box p {
-    font-size: 14px;
-    opacity: .9;
-}
-
-.help-box button {
-    border: none;
-    background: white;
-    color: #8e52c7;
-    padding: 10px 18px;
-    border-radius: 25px;
-    font-weight: 600;
-}
-
-/* =========================================
-   CONTENIDO
-========================================= */
-.main-content {
-    width: calc(100% - 250px);
-    margin-left: 250px;
-    padding: 25px 35px 60px;
-}
-
-
-/* HEADER */
-.top-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
-}
-
-.top-header h1 {
-    font-size: 25px;
-    color: #21165f;
-    font-weight: 700;
-}
-
-.top-header h1 i {
-    margin-right: 15px;
-}
-
-.top-header p {
-    color: #777;
-    margin-left: 40px;
-}
-
-.user-area {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.notification {
-    font-size: 23px;
-    color: #a555e7;
-}
-
-.user-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: linear-gradient(
-        135deg,
-        #7046e8,
-        #b071f1
-    );
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-}
-
-/* =========================================
-   SELECTOR MASCOTAS
-========================================= */
-.pet-selector {
-    background: white;
-    padding: 20px;
-    border: 1px solid #e8e1ff;
-    border-radius: 20px;
-    margin-bottom: 20px;
-}
-
-.section-header{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-}
- 
-.section-header h3 {
+.help-card h5 {
     font-size: 16px;
-}
-
-.section-header a {
-    color: #8c46e8;
-    font-size: 14px;
-}
-
-.pets-row {
-    display: flex;
-    gap: 15px;
-}
-
-.pet-option {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 12px;
-    border: 1px solid #ddd8f5;
-    border-radius: 12px;
-    position: relative;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.pet-option.selected {
-    color: white;
-    background: linear-gradient(
-        90deg,
-        #a465ec,
-        #c988ee
-    );
-}
-
-.pet-option:hover {
-    transform: translateY(-3px);
-}
-
-.pet-photo {
-    width: 55px;
-    height: 55px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-}
-
-.pet-option h4 {
-    font-size: 16px;
-    margin: 0;
-}
-
-.pet-option p {
-    margin: 0;
-    font-size: 13px;
-}
-
-.status {
-    width: 10px;
-    height: 10px;
-    background: #29c478;
-    border-radius: 50%;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-}
-
-.status.offline {
-    background: #bbb;
-}
-
-/* =========================================
-   GRID
-========================================= */
-
-.dashboard-grid {
-    display: grid;
-    grid-template-columns:
-        220px
-        1fr
-        1fr;
-    gap: 20px;
-}
-
-
-/* TARJETAS */
-.food-menu,
-.food-plan,
-.schedule-card,
-.tracking-card,
-.concentrate-card,
-.recommendations-card {
-    background: white;
-    border: 1px solid #e9e4f8;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow:
-        0 8px 25px
-        rgba(80, 55, 160, .05);
-}
-
-/* =========================================
-   MENU ALIMENTACIÓN
-========================================= */
-.food-menu {
-    grid-row: span 2;
-}
-
-.food-icon {
-    font-size: 45px;
-    text-align: center;
-}
-
-.food-menu h2 {
-    text-align: center;
-    font-size: 19px;
-    margin-bottom: 20px;
-}
-
-.food-menu ul {
-    list-style: none;
-    padding: 0;
-}
-
-.food-menu li{
-     padding: 12px;
-    margin-bottom: 5px;
-    border-radius: 10px;
-    font-size: 14px;
-}
-
-.food-menu li.active {
-    background: #f0eaff;
-    color: #643be0;
-}
-
-.food-menu li i {
-    margin-right: 8px;
-}
-
-/* =========================================
-   TÍTULOS
-========================================= */
-.card-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.card-title h2 {
-    font-size: 18px;
-    margin: 0;
-}
-
-.card-title i {
-    color: #7147e8;
-}
-
-.card-title button {
-    border: 1px solid #8258ee;
-    color: #6b40dc;
-    background: white;
-    padding: 6px 15px;
-    border-radius: 8px;
-}
-
-/* =========================================
-   PLAN ALIMENTICIO
-========================================= */
-.food-plan {
-    grid-column: span 2;
-}
-
-.food-data {
- display: grid;
-    grid-template-columns: repeat(3,1fr);
-    border: 1px solid #e7e2f5;
-    border-radius: 12px;
-} 
-
-.food-data div {
-    padding: 20px;
-    text-align: center;
-    border-right: 1px solid #e7e2f5;
-}
-
-.food-data div:last-child {
-    border: none;
-}
-
-.food-data i {
-    display: block;
-    font-size: 28px;
-    color: #7046e8;
-    margin-bottom: 10px;
-}
-
-.food-data span {
-    display: block;
-    font-size: 13px;
-}
-
-.food-data strong {
-    display: block;
-    margin-top: 10px;
-}
-
-.info-alert {
-    margin-top: 15px;
-    padding: 12px;
-    background: #f2edff;
-    border-radius: 10px;
-    color: #49378a;
-    font-size: 13px;
-}
-
-/* =========================================
-   HORARIOS
-========================================= */
-.meal {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 12px;
-    border: 1px solid #eee;
-    border-radius: 10px;
     margin-bottom: 8px;
 }
 
-.meal > span {
+.help-card p {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.help-card button {
+
+    border: none;
+
+    background: white;
+
+    color: #7345dd;
+
+    padding: 8px 12px;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+}
+
+
+/* =====================================
+   CONTENIDO
+===================================== */
+
+.main-content {
+
+    width: calc(100% - 280px);
+
+    margin-left: 280px;
+
+    padding: 30px 45px;
+
+    min-height: 100vh;
+}
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+.topbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+
+.page-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+.back-button {
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: white;
+
+    border: 1px solid #ebe7f5;
+
+    color: #7447e8;
+
+    text-decoration: none;
+
     font-size: 22px;
 }
 
-.meal div {
-    flex: 1;
+.page-title h1 {
+
+    font-size: 30px;
+
+    margin-bottom: 4px;
+
+    color: #152552;
 }
 
-.meal strong {
-    display: block;
+.page-title p {
+
+    margin: 0;
+
+    color: #85849a;
+
     font-size: 14px;
 }
 
-.meal small {
-    color: #777;
-}
 
-.meal b {
-    color: #6840dd;
-    font-size: 13px;
-}
+/* =====================================
+   USUARIO
+===================================== */
 
-.reminder-btn {
-    width: 100%;
-    margin-top: 10px;
-    padding: 10px;
-    background: #f3edff;
-    border: 1px solid #bda6f9;
-    color: #6338dc;
-    border-radius: 10px;
-}
+.user-area {
 
-/* =========================================
-   SEGUIMIENTO
-========================================= */
-.progress-area {
     display: flex;
+
     align-items: center;
-    gap: 30px;
+
+    gap: 18px;
 }
 
-.progress-circle {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 12px solid #8b5cf6;
+.notification {
+
+    border: none;
+
+    background: transparent;
+
+    color: #7849e8;
+
+    font-size: 23px;
+}
+
+.user-info {
+
     display: flex;
-    flex-direction: column;
+
     align-items: center;
-    justify-content: center;
-}
 
-.progress-circle strong {
-    font-size: 25px;
-}
-
-.progress-circle span {
-    font-size: 10px;
-    text-align: center;
-}
-
-.stats p {
-    font-size: 13px;
-    margin-bottom: 8px;
-}
-
-.stats strong {
-    display: block;
-}
-
-.missed strong {
-    color: red;
-}
-
-.success-message {
-    background: #e9fff3;
-    color: #198754;
-    padding: 10px;
-    border-radius: 10px;
-    margin-top: 15px;
-    font-size: 13px;
-}
-/* =========================================
-   CONCENTRADO
-========================================= */
-.food-product {
-    display: flex;
-    gap: 15px;
-}
-
-.food-bag {
-    width: 80px;
-    height: 100px;
-    background: #f4eee2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 40px;
-    border-radius: 8px;
-}
-
-.food-product h4 {
-    color: #4323a9;
-    font-size: 15px;
-}
-
-.food-product strong {
-    font-size: 13px;
-}
-
-.food-product ul {
-    padding-left: 15px;
-    font-size: 12px;
-    margin-top: 10px;
-}
-
-.change-food {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #b798fa;
-    background: #f4efff;
-    color: #6338dc;
-    border-radius: 8px;
-}
-
-.food-info {
-    font-size: 12px;
-    margin-top: 10px;
-    color: #777;
-}
-
-/* =========================================
-   RECOMENDACIONES
-========================================= */
-.recommendations-card {
-    grid-column: span 2;
-}
-
-.recommendation-grid {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
     gap: 10px;
 }
 
-.recommendation {
-    padding: 12px;
-    border: 1px solid #eee;
-    border-radius: 12px;
-    text-align: center;
-}
+.user-info strong {
 
-.recommendation span {
-    font-size: 11px;
     display: block;
-    margin-bottom: 8px;
-}
 
-.recommended span {
-    color: #15945c;
-}
-
-.occasional span{
-     color: #dc8b00;
-}
-
-.avoid span {
-    color: #e32929;
-}
-
-.food-image {
-    font-size: 45px;
-    margin: 10px;
-}
-
-.recommendation h4 {
     font-size: 14px;
 }
 
-.recommendation p {
+.user-info small {
+
+    display: block;
+
+    color: #85849a;
+
     font-size: 11px;
-    color: #777;
 }
 
-.vet-warning {
-    margin-top: 15px;
-    background: #f2edff;
-    color: #5e3bc4;
-    padding: 10px;
-    border-radius: 10px;
+.avatar {
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: white;
+
+    font-weight: bold;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7441e7,
+            #a458e9
+        );
+}
+
+
+/* =====================================
+   TARJETAS GENERALES
+===================================== */
+
+.card-section {
+
+    background: white;
+
+    border: 1px solid #ebe7f5;
+
+    border-radius: 22px;
+
+    padding: 28px;
+
+    margin-bottom: 24px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(70, 50, 130, 0.035);
+}
+
+
+/* CABECERA */
+
+.section-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 24px;
+}
+
+.section-header h2 {
+
+    font-size: 21px;
+
+    margin-bottom: 5px;
+}
+
+.section-header p {
+
+    margin: 0;
+
+    color: #88879c;
+
+    font-size: 14px;
+}
+
+
+/* BOTONES */
+
+.outline-button {
+
+    padding: 11px 17px;
+
+    border-radius: 11px;
+
+    border: 1px solid #dfd5fa;
+
+    background: white;
+
+    color: #7041e4;
+
+    text-decoration: none;
+
+    font-size: 13px;
+}
+
+.outline-button:hover {
+
+    background: #f7f2ff;
+}
+
+
+.primary-button {
+
+    border: none;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7340e7,
+            #a359e9
+        );
+
+    padding: 13px 18px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 7px 15px
+        rgba(112, 59, 224, 0.2);
+}
+
+
+/* =====================================
+   MASCOTAS
+===================================== */
+
+.pets-selector {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.pet-option {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    text-align: left;
+
+    padding: 17px;
+
+    border-radius: 17px;
+
+    border: 1px solid #e8e3f4;
+
+    background: white;
+
+    transition: 0.3s;
+}
+
+.pet-option:hover {
+
+    border-color: #a275ee;
+
+    background: #faf7ff;
+}
+
+
+.pet-option.selected {
+
+    border: 1.5px solid #7b43e9;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f3eaff,
+            #fbf8ff
+        );
+}
+
+
+.pet-icon {
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f0e7ff;
+
+    color: #7442e7;
+
+    font-size: 22px;
+}
+
+.pet-data {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.pet-data strong {
+
+    color: #17244d;
+
+    font-size: 16px;
+}
+
+.pet-data span {
+
+    color: #89879b;
+
+    font-size: 12px;
+}
+
+.check {
+
+    display: none;
+
+    position: absolute;
+
+    right: 15px;
+
+    color: #7442e7;
+}
+
+.pet-option.selected .check {
+
+    display: block;
+}
+
+
+/* =====================================
+   ESTADÍSTICAS
+===================================== */
+
+.food-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 17px;
+}
+
+.food-stat {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 17px;
+
+    border: 1px solid #eeeaf7;
+
+    border-radius: 16px;
+}
+
+.stat-icon {
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    font-size: 20px;
+}
+
+.stat-icon.purple {
+
+    background: #eee4ff;
+    color: #7744e5;
+}
+
+.stat-icon.blue {
+
+    background: #e6f0ff;
+    color: #4683e9;
+}
+
+.stat-icon.green {
+
+    background: #e5f8ef;
+    color: #36ae75;
+}
+
+.stat-icon.orange {
+
+    background: #fff0df;
+    color: #ec963e;
+}
+
+.food-stat span {
+
+    display: block;
+
+    color: #89879b;
+
+    font-size: 12px;
+}
+
+.food-stat strong {
+
+    display: block;
+
+    color: #182552;
+
+    font-size: 19px;
+}
+
+.food-stat small {
+
+    color: #9997a8;
+
+    font-size: 10px;
+}
+
+
+/* =====================================
+   PARTE INFERIOR
+===================================== */
+
+.bottom-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.05fr 0.95fr;
+
+    gap: 24px;
+
+    margin-bottom: 24px;
+}
+
+
+/* TARJETA */
+
+.content-card {
+
+    background: white;
+
+    border: 1px solid #ebe7f5;
+
+    border-radius: 22px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(70, 50, 130, 0.035);
+}
+
+.content-card-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 25px;
+}
+
+.content-card-header h3 {
+
+    font-size: 18px;
+
+    margin-bottom: 4px;
+}
+
+.content-card-header h3 i {
+
+    color: #7845e6;
+
+    margin-right: 6px;
+}
+
+.content-card-header p {
+
+    margin: 0;
+
+    color: #89879b;
+
+    font-size: 12px;
+}
+
+.small-add {
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #eee5ff;
+
+    color: #7542e5;
+
+    font-size: 20px;
+}
+
+.week-label {
+
+    color: #89879b;
+
     font-size: 12px;
 }
 
 
-/* =========================================
-   RESPONSIVE TABLET
-========================================= */
+/* =====================================
+   COMIDAS
+===================================== */
+
+.meal-list {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.meal-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid #eeeaf6;
+}
+
+.meal-item:last-child {
+
+    border-bottom: none;
+}
+
+.meal-time {
+
+    width: 45px;
+
+    text-align: center;
+}
+
+.meal-time strong {
+
+    display: block;
+
+    color: #7141e2;
+
+    font-size: 14px;
+}
+
+.meal-time span {
+
+    color: #9290a0;
+
+    font-size: 10px;
+}
+
+.meal-icon {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #f0e8ff;
+
+    color: #7645e3;
+}
+
+.meal-info {
+
+    flex: 1;
+}
+
+.meal-info strong {
+
+    display: block;
+
+    font-size: 14px;
+}
+
+.meal-info span {
+
+    color: #8b899d;
+
+    font-size: 11px;
+}
+
+.meal-status {
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: #e3f7ec;
+
+    color: #28a465;
+
+    font-size: 10px;
+}
+
+.meal-status.pending {
+
+    background: #f0e8ff;
+
+    color: #7845e5;
+}
+
+
+/* =====================================
+   PROGRESO
+===================================== */
+
+.progress-container {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.progress-row {
+
+    width: 100%;
+}
+
+.progress-label {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 7px;
+
+    font-size: 11px;
+}
+
+.progress-label span {
+
+    color: #89879b;
+}
+
+.progress-label strong {
+
+    color: #7041df;
+}
+
+.progress {
+
+    height: 8px;
+
+    background: #ece9f4;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.progress-bar {
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7441e6,
+            #a258e8
+        );
+
+    border-radius: 20px;
+}
+
+
+/* =====================================
+   RECOMENDACIONES
+===================================== */
+
+.recommendations {
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5efff,
+            #fbf8ff
+        );
+
+    border: 1px solid #e8ddff;
+
+    border-radius: 22px;
+
+    padding: 27px;
+
+    margin-bottom: 25px;
+}
+
+.recommendation-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 22px;
+}
+
+.recommendation-icon {
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e9ddff;
+
+    color: #7643e4;
+
+    border-radius: 14px;
+
+    font-size: 21px;
+}
+
+.recommendation-title h3 {
+
+    font-size: 18px;
+
+    margin-bottom: 3px;
+}
+
+.recommendation-title p {
+
+    margin: 0;
+
+    color: #89879b;
+
+    font-size: 12px;
+}
+
+.recommendation-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.recommendation-item {
+
+    display: flex;
+
+    gap: 12px;
+
+    background: white;
+
+    padding: 17px;
+
+    border-radius: 14px;
+}
+
+.recommendation-item > i {
+
+    color: #7845e5;
+
+    font-size: 18px;
+}
+
+.recommendation-item strong {
+
+    display: block;
+
+    font-size: 13px;
+
+    margin-bottom: 4px;
+}
+
+.recommendation-item p {
+
+    color: #858398;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    margin: 0;
+}
+
+
+/* =====================================
+   RESPONSIVE - TABLET
+===================================== */
+
 @media (max-width: 1100px) {
+
     .sidebar {
-        width: 210px;
+
+        width: 230px;
     }
 
     .main-content {
-        margin-left: 210px;
-        width: calc(100% - 210px);
+
+        width: calc(100% - 230px);
+
+        margin-left: 230px;
+
+        padding: 25px;
     }
 
-    .dashboard-grid {
-        grid-template-columns: 1fr 1fr;
+    .food-stats {
+
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
-    .food-menu {
-        grid-column: span 2;
-        grid-row: auto;
+    .pets-selector {
+
+        grid-template-columns:
+            1fr 1fr;
     }
 
-    .recommendations-card {
-        grid-column: span 2;
+    .bottom-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .recommendation-grid {
+
+        grid-template-columns:
+            1fr 1fr;
     }
 }
 
 
-/* =========================================
-   RESPONSIVE MÓVIL
-========================================= */
+/* =====================================
+   RESPONSIVE - TABLET PEQUEÑA
+===================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
+
     .app-container {
+
         display: block;
     }
 
     .sidebar {
+
         position: relative;
+
         width: 100%;
-        min-height: auto;
-        padding: 15px;
+
+        height: auto;
+
+        max-height: none;
+
+        padding: 20px;
+
+        border-right: none;
+
+        border-bottom: 1px solid #eeeaf6;
     }
 
     .logo-area {
-        margin-bottom: 15px;
-    }
 
-    .logo-area i {
-        font-size: 35px;
-    }
-
-    .logo-area span {
-        font-size: 23px;
+        margin-bottom: 20px;
     }
 
     .menu {
+
         display: grid;
-        grid-template-columns: repeat(2,1fr);
-        gap: 5px;
+
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
-    .menu a {
-        margin: 0;
-        font-size: 12px;
-    }
+    .help-card {
 
-    .help-box {
         display: none;
     }
 
     .main-content {
+
         width: 100%;
-        margin: 0;
-        padding: 20px 15px;
-    }
 
-    .top-header {
-        align-items: flex-start;
-    }
-
-    .top-header h1 {
-        font-size: 20px;
-
-    }
-        
-    .top-header p {
         margin-left: 0;
-        font-size: 12px;
+
+        padding: 20px;
     }
 
-    .user-area strong {
-        display: none;
-    }
-
-    .pets-row {
-        flex-direction: column;
-    }
-
-    .dashboard-grid {
-        grid-template-columns: 1fr;
-    }
-    .food-menu,
-    .food-plan,
-    .recommendations-card {
-        grid-column: span 1;
-    }
-
-    .food-data {
-        grid-template-columns: 1fr;
-    }
-
-    .food-data div {
-        border-right: none;
-        border-bottom: 1px solid #eee;
-    }
-
-    .recommendation-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .progress-area {
-        flex-direction: column;
-    }
 }
 
 
-/* =========================================
-   RESPONSIVE CELULAR PEQUEÑO
-========================================= */
+/* =====================================
+   RESPONSIVE - CELULAR
+===================================== */
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
 
-    .menu {
-        grid-template-columns: 1fr;
+    .main-content {
+
+        padding: 15px;
     }
+
+    .topbar {
+
+        align-items: flex-start;
+    }
+
+    .page-title {
+
+        gap: 10px;
+    }
+
+    .page-title h1 {
+
+        font-size: 22px;
+    }
+
+    .page-title p {
+
+        font-size: 12px;
+    }
+
+    .back-button {
+
+        width: 40px;
+        height: 40px;
+
+        font-size: 18px;
+    }
+
+    .user-info > div:not(.avatar),
+    .user-info > i {
+
+        display: none;
+    }
+
+    .avatar {
+
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .card-section,
+    .content-card,
+    .recommendations {
+
+        padding: 18px;
+
+        border-radius: 17px;
+    }
+
 
     .section-header {
-        flex-direction: column;
-        gap: 10px;
-    }
 
-    .card-title {
         flex-direction: column;
+
         align-items: flex-start;
-        gap: 10px;
+
+        gap: 15px;
     }
 
-    .recommendation-grid {
+    .section-header h2 {
+
+        font-size: 18px;
+    }
+
+    .outline-button,
+    .primary-button {
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .pets-selector {
+
         grid-template-columns: 1fr;
     }
 
-    .food-product {
-        flex-direction: column;
+
+    .food-stats {
+
+        grid-template-columns: 1fr;
     }
+
+
+    .bottom-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .recommendation-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .meal-item {
+
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+    }
+
+    .meal-status {
+
+        margin-left: auto;
+    }
+
+
+    .menu {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =====================================
+   CELULARES MUY PEQUEÑOS
+===================================== */
+
+@media (max-width: 400px) {
+
+    .page-title p {
+
+        display: none;
+    }
+
+    .food-stat {
+
+        padding: 13px;
+    }
+
+    .meal-time {
+
+        width: 40px;
+    }
+
 }

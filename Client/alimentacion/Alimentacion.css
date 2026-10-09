@@ -8,10 +8,28 @@
     box-sizing: border-box;
 }
 
+:root {
+    --purple: #7046e8;
+    --purple-light: #a16cf2;
+    --lilac: #eee8ff;
+    --blue: #4d8eea;
+    --blue-light: #eaf3ff;
+    --green: #46b982;
+    --green-light: #e8f8f0;
+    --orange: #f39b45;
+    --orange-light: #fff1e3;
+    --text: #29253d;
+    --gray: #858092;
+    --border: #ece9f5;
+    --background: #f8f7fc;
+    --white: #ffffff;
+}
+
 body {
     font-family: "Segoe UI", Arial, sans-serif;
-    background: #f8f7fd;
-    color: #172653;
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
 }
 
 button,
@@ -39,7 +57,7 @@ button {
 ===================================== */
 
 .sidebar {
-    width: 280px;
+    width: 250px;
     height: 100vh;
 
     position: fixed;
@@ -61,13 +79,19 @@ button {
 /* LOGO */
 
 .logo-area {
-    text-align: center;
-    margin-bottom: 45px;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 35px;
+
+    text-decoration: none;
 }
 
 .logo-area img {
-    width: 200px;
-    max-width: 100%;
+     width: 135px;
+    height: auto;
 }
 
 
@@ -77,36 +101,44 @@ button {
 
 .menu {
     display: flex;
+
     flex-direction: column;
-    gap: 7px;
+
+    gap: 5px;
 }
 
 .menu a {
     display: flex;
+
     align-items: center;
 
-    gap: 17px;
+    gap: 13px;
 
-    padding: 14px 17px;
+    padding: 12px 13px;
 
-    border-radius: 13px;
-
-    color: #747392;
+    color: #77738a;
 
     text-decoration: none;
 
-    font-size: 15px;
+    border-radius: 11px;
 
-    transition: 0.3s;
+    font-size: 13px;
+
+    transition: .25s;
 }
 
 .menu a i {
-    font-size: 20px;
+    width: 21px;
+
+    text-align: center;
+
+    font-size: 17px;
 }
 
 .menu a:hover {
-    background: #f4efff;
-    color: #7444e8;
+    background: var(--lilac);
+
+    color: var(--purple);
 }
 
 
@@ -118,63 +150,13 @@ button {
 
     background:
         linear-gradient(
-            135deg,
-            #7540e8,
-            #a35bea
+            90deg,
+            var(--purple),
+            var(--purple-light)
         );
 
     box-shadow:
-        0 8px 20px
-        rgba(117, 64, 232, 0.25);
-}
-
-
-/* =====================================
-   TARJETA AYUDA
-===================================== */
-
-.help-card {
-
-    margin-top: 35px;
-
-    padding: 20px;
-
-    border-radius: 18px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #8050e7,
-            #a55ce8
-        );
-
-    color: white;
-}
-
-.help-card h5 {
-    font-size: 16px;
-    margin-bottom: 8px;
-}
-
-.help-card p {
-    font-size: 12px;
-    line-height: 1.5;
-    margin-bottom: 15px;
-}
-
-.help-card button {
-
-    border: none;
-
-    background: white;
-
-    color: #7345dd;
-
-    padding: 8px 12px;
-
-    border-radius: 9px;
-
-    font-size: 12px;
+        0 7px 18px rgba(112,70,232,.18);
 }
 
 
@@ -211,53 +193,50 @@ button {
 
 
 .page-title {
-
-    display: flex;
+display: flex;
 
     align-items: center;
 
-    gap: 18px;
+    gap: 13px;
 }
 
 .back-button {
 
-    width: 46px;
-    height: 46px;
+    width: 38px;
+    height: 38px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    border-radius: 12px;
-
     background: white;
 
-    border: 1px solid #ebe7f5;
+    border: 1px solid var(--border);
 
-    color: #7447e8;
+    border-radius: 10px;
+
+    color: var(--purple);
 
     text-decoration: none;
-
-    font-size: 22px;
 }
 
 .page-title h1 {
 
-    font-size: 30px;
+    margin: 0;
 
-    margin-bottom: 4px;
+    color: #211b49;
 
-    color: #152552;
+    font-size: 25px;
 }
 
 .page-title p {
 
-    margin: 0;
+    margin: 4px 0 0;
 
-    color: #85849a;
+    color: var(--gray);
 
-    font-size: 14px;
+    font-size: 13px;
 }
 
 
@@ -271,7 +250,7 @@ button {
 
     align-items: center;
 
-    gap: 18px;
+    gap: 10px;
 }
 
 .notification {
@@ -280,9 +259,11 @@ button {
 
     background: transparent;
 
-    color: #7849e8;
+    color: var(--purple);
 
-    font-size: 23px;
+    font-size: 20px;
+
+    cursor: pointer;
 }
 
 .user-info {
@@ -298,7 +279,7 @@ button {
 
     display: block;
 
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .user-info small {
@@ -307,13 +288,13 @@ button {
 
     color: #85849a;
 
-    font-size: 11px;
+    font-size: 10px;
 }
 
 .avatar {
 
-    width: 48px;
-    height: 48px;
+    width: 39px;
+    height: 39px;
 
     display: flex;
 
@@ -322,16 +303,18 @@ button {
 
     border-radius: 50%;
 
-    color: white;
-
-    font-weight: bold;
-
     background:
         linear-gradient(
             135deg,
-            #7441e7,
-            #a458e9
+            var(--purple),
+            var(--purple-light)
         );
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: bold;
 }
 
 
@@ -343,17 +326,16 @@ button {
 
     background: white;
 
-    border: 1px solid #ebe7f5;
+    border: 1px solid var(--border);
 
-    border-radius: 22px;
+    border-radius: 18px;
 
-    padding: 28px;
+    padding: 21px;
 
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 
     box-shadow:
-        0 5px 20px
-        rgba(70, 50, 130, 0.035);
+        0 5px 20px rgba(70,50,120,.035);
 }
 
 
@@ -363,11 +345,11 @@ button {
 
     display: flex;
 
-    justify-content: space-between;
-
     align-items: center;
 
-    margin-bottom: 24px;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
 }
 
 .section-header h2 {
@@ -381,9 +363,9 @@ button {
 
     margin: 0;
 
-    color: #88879c;
+    color: var(--gray);
 
-    font-size: 14px;
+    font-size: 12px;
 }
 
 
@@ -391,19 +373,21 @@ button {
 
 .outline-button {
 
-    padding: 11px 17px;
-
-    border-radius: 11px;
-
-    border: 1px solid #dfd5fa;
+    border: 1px solid #ded7f1;
 
     background: white;
 
-    color: #7041e4;
+    color: var(--purple);
+
+    border-radius: 9px;
+
+    padding: 8px 13px;
+
+    font-size: 11px;
 
     text-decoration: none;
 
-    font-size: 13px;
+    cursor: pointer;
 }
 
 .outline-button:hover {
@@ -416,22 +400,22 @@ button {
 
     border: none;
 
-    color: white;
+    border-radius: 10px;
+
+    padding: 10px 15px;
 
     background:
         linear-gradient(
-            135deg,
-            #7340e7,
-            #a359e9
+            90deg,
+            var(--purple),
+            var(--purple-light)
         );
 
-    padding: 13px 18px;
+    color: white;
 
-    border-radius: 12px;
+    font-size: 12px;
 
-    box-shadow:
-        0 7px 15px
-        rgba(112, 59, 224, 0.2);
+    cursor: pointer;
 }
 
 
@@ -442,34 +426,23 @@ button {
 .pets-selector {
 
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 18px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
 }
 
 .pet-option {
 
-    position: relative;
-
+   position: relative;
     display: flex;
-
     align-items: center;
-
-    gap: 15px;
-
-    text-align: left;
-
-    padding: 17px;
-
-    border-radius: 17px;
-
-    border: 1px solid #e8e3f4;
-
+    gap: 13px;
+    width: 100%;
+    padding: 13px;
+    border: 1px solid var(--border);
     background: white;
-
-    transition: 0.3s;
+    border-radius: 14px;
+    text-align: left;
+    cursor: pointer;
 }
 
 .pet-option:hover {
@@ -482,71 +455,50 @@ button {
 
 .pet-option.selected {
 
-    border: 1.5px solid #7b43e9;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f3eaff,
-            #fbf8ff
-        );
+   background: linear-gradient(135deg, #eee1ff, #f8f3ff);
+    border-color: var(--purple);
 }
 
 
 .pet-icon {
 
-    width: 52px;
-    height: 52px;
-
+    width: 48px;
+    height: 48px;
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
-
-    background: #f0e7ff;
-
-    color: #7442e7;
-
-    font-size: 22px;
+    color: var(--purple);
+    background: white;
+    font-size: 20px;
 }
 
 .pet-data {
 
     display: flex;
-
     flex-direction: column;
 }
 
 .pet-data strong {
 
-    color: #17244d;
-
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .pet-data span {
 
-    color: #89879b;
-
-    font-size: 12px;
+    color: #85849a;
+    font-size: 11px;
 }
 
 .check {
 
-    display: none;
-
-    position: absolute;
-
-    right: 15px;
-
-    color: #7442e7;
+    margin-left: auto;
+    color: transparent;
 }
 
 .pet-option.selected .check {
 
-    display: block;
+    color: var(--purple);
 }
 
 
@@ -570,13 +522,13 @@ button {
 
     align-items: center;
 
-    gap: 13px;
+    gap: 10px;
 
     padding: 17px;
 
     border: 1px solid #eeeaf7;
 
-    border-radius: 16px;
+    border-radius: 14px;
 }
 
 .stat-icon {

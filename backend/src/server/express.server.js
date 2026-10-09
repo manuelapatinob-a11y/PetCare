@@ -2,7 +2,11 @@ import express from 'express';
 import cors from 'cors';
 import fileUpload from 'express-fileupload';
 import router from '../routes/index.js';
-import { carpetaUploads } from '../utils/fotos.js';
+import { fileURLToPath } from 'node:url';
+import { carpetaUploads, servirArchivo } from '../utils/fotos.js';
+
+// Carpeta del proyecto (donde están index.html, Client/ y Recursos/)
+const raizProyecto = fileURLToPath(new URL('../../../', import.meta.url));
 
 //como numero de telefono el que sirve la ifnromacion
 //y que se puede hacer
@@ -22,8 +26,17 @@ class Server {
         this.app.use(express.urlencoded({ extended: true }));
         // Archivos de máximo 5 MB (las fotos de perfil y mascotas se limitan a 2 MB)
         this.app.use(fileUpload({ limits: { fileSize: 5 * 1024 * 1024 } }));
-        // Fotos de perfil subidas por los usuarios
-        this.app.use('/uploads', express.static(carpetaUploads));
+        // Fotos y documentos subidos: del disco o, si no están, de la base de datos
+        this.app.use('/uploads', express.static(carpetaUploads), servirArchivo);
+
+        // La página web (así funciona en internet con una sola dirección).
+        // Solo se publican estas carpetas y archivos: nunca backend/ (ahí está el .env)
+        this.app.use('/Client', express.static(raizProyecto + 'Client'));
+        this.app.use('/Recursos', express.static(raizProyecto + 'Recursos'));
+        ['index.html', 'style1.css', 'app.js'].forEach((archivo) => {
+            this.app.get('/' + archivo, (req, res) => res.sendFile(raizProyecto + archivo));
+        });
+        this.app.get('/', (req, res) => res.sendFile(raizProyecto + 'index.html'));
     }
 
     routes() {

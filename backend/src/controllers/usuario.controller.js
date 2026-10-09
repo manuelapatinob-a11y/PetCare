@@ -145,7 +145,7 @@ export async function editarPerfil(req, res) {
             if (error) {
                 return res.status(400).json({ message: error });
             }
-            datos.foto_perfil = guardarFoto(foto, 'perfiles');
+            datos.foto_perfil = await guardarFoto(foto, 'perfiles');
         } else if (booleano(req.body.quitar_foto)) {
             datos.foto_perfil = null;
         }

@@ -256,7 +256,7 @@ async function leerDatos(recurso, req, mascota, esEdicion) {
 
     // Los archivos se guardan solo si todo lo demás es válido
     for (const [nombre, archivo] of Object.entries(archivos)) {
-        datos[nombre] = guardarFoto(archivo, recurso.carpeta || 'documentos');
+        datos[nombre] = await guardarFoto(archivo, recurso.carpeta || 'documentos');
     }
 
     return { datos, extras };

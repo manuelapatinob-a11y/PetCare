@@ -1,0 +1,43 @@
+# =====================================================
+# PetCare en Render (plan gratis)
+# Un solo servicio: el backend (Node + Express) también publica la página web.
+# Los valores secretos se escriben en Render (Environment), no aquí.
+# =====================================================
+services:
+  - type: web
+    name: petcare
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: cd backend && npm install --omit=dev
+    startCommand: cd backend && node app.js
+    healthCheckPath: /mascotas/especies
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: TZ
+        value: America/Bogota
+      - key: MYSQL_SSL
+        value: "true"
+      - key: MYSQL_HOST
+        sync: false
+      - key: MYSQL_PORT
+        sync: false
+      - key: MYSQL_USER
+        sync: false
+      - key: MYSQL_PASSWORD
+        sync: false
+      - key: MYSQL_DATABASE
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false

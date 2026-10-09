@@ -198,7 +198,7 @@ export async function crearMascota(req, res) {
         const [resultado] = await connection.query('INSERT INTO mascotas SET ?', [{
             ...datos,
             id_usuario: req.usuario.id_usuario,
-            foto: foto ? guardarFoto(foto, 'mascotas') : null,
+            foto: foto ? await guardarFoto(foto, 'mascotas') : null,
         }]);
 
         res.status(201).json(await buscarMascotaCompleta(resultado.insertId));
@@ -234,7 +234,7 @@ export async function editarMascota(req, res) {
         }
 
         if (foto) {
-            datos.foto = guardarFoto(foto, 'mascotas');
+            datos.foto = await guardarFoto(foto, 'mascotas');
         } else if (booleano(req.body.quitar_foto)) {
             datos.foto = null;
         }

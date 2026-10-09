@@ -254,7 +254,7 @@ export async function crearGasto(req, res) {
             return res.status(400).json({ message: error });
         }
 
-        const comprobante = archivo ? guardarFoto(archivo, 'comprobantes') : null;
+        const comprobante = archivo ? await guardarFoto(archivo, 'comprobantes') : null;
 
         // Dividido entre varias mascotas: partes iguales y el resto de centavos en la primera
         const parte = Math.floor((datos.monto / mascotas.length) * 100) / 100;
@@ -316,7 +316,7 @@ export async function editarGasto(req, res) {
         const cambios = { ...datos, id_mascota: mascotas[0] };
 
         if (archivo) {
-            cambios.comprobante = guardarFoto(archivo, 'comprobantes');
+            cambios.comprobante = await guardarFoto(archivo, 'comprobantes');
         }
 
         await consulta('UPDATE gastos SET ? WHERE id_gasto = ?', [cambios, idGasto]);

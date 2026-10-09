@@ -3,8 +3,12 @@
    Se usa en las páginas internas de PetCare
 ================================== */
 
-// Dirección del backend (backend/.env -> PORT)
-const API_URL = "http://localhost:4000";
+// Dirección del backend:
+// - En internet (Render) la página y el backend están en el mismo sitio.
+// - En tu PC con Live Server (puerto 5500) el backend está en localhost:4000.
+const API_URL = ["localhost", "127.0.0.1"].includes(location.hostname) && location.port !== "4000"
+    ? "http://localhost:4000"
+    : location.origin;
 
 // Rutas calculadas desde la ubicación de este archivo (Client/auth/)
 const RUTA_SESION = document.currentScript.src;

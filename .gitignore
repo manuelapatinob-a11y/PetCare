@@ -12,3 +12,7 @@ backend/uploads/
 *.log
 .DS_Store
 Thumbs.db
+
+# Copia de la base de datos con datos de usuarios y datos de la base en internet
+backend/database/petcare_completo.sql
+backend/.env.produccion

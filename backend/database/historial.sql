@@ -5,11 +5,15 @@
 -- Ejecutar después de salud.sql, alimentacion.sql, actividad.sql y entrenamiento.sql.
 -- =====================================================
 
+SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci;
+
 CREATE OR REPLACE VIEW v_historial_mascota AS
-    SELECT v.id_mascota, v.fecha_aplicacion AS fecha, 'vacuna' AS tipo, v.id_vacuna AS id_registro,
-           CONCAT('Vacuna: ', COALESCE(tv.nombre, v.nombre_vacuna, 'Sin nombre')) AS titulo,
+    -- En esta primera parte se fija la intercalación (COLLATE) de los textos:
+    -- así la unión funciona igual en cualquier servidor MySQL o MariaDB
+    SELECT v.id_mascota, v.fecha_aplicacion AS fecha, 'vacuna' COLLATE utf8mb4_unicode_ci AS tipo, v.id_vacuna AS id_registro,
+           CONCAT('Vacuna: ', COALESCE(tv.nombre, v.nombre_vacuna, 'Sin nombre')) COLLATE utf8mb4_unicode_ci AS titulo,
            CONCAT_WS(' · ', v.clinica, v.veterinario,
-                     IF(v.proxima_dosis IS NULL, NULL, CONCAT('Próxima: ', DATE_FORMAT(v.proxima_dosis, '%d/%m/%Y')))) AS detalle
+                     IF(v.proxima_dosis IS NULL, NULL, CONCAT('Próxima: ', DATE_FORMAT(v.proxima_dosis, '%d/%m/%Y')))) COLLATE utf8mb4_unicode_ci AS detalle
     FROM vacunas v
     LEFT JOIN tipos_vacuna tv ON tv.id_tipo_vacuna = v.id_tipo_vacuna
 

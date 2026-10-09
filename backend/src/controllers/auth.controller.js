@@ -170,7 +170,7 @@ export async function registro(req, res) {
         }
 
         const contrasenaHash = await crearHash(contrasena);
-        const fotoPerfil = foto ? guardarFoto(foto, 'perfiles') : null;
+        const fotoPerfil = foto ? await guardarFoto(foto, 'perfiles') : null;
 
         const [resultado] = await connection.query(
             `INSERT INTO usuarios

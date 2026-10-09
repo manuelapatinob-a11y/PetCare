@@ -1,0 +1,365 @@
+/* =========================================
+   PETCARE - ENTRENAMIENTO Y COMPORTAMIENTO
+   (el diseño general viene de mismascotas.css, el de
+   los apartados por mascota de salud/salud.css y el de
+   las ideas con IA de comun/ideas.css)
+========================================= */
+
+
+/* =========================================
+   RUTINA DE HOY (en la ficha)
+========================================= */
+
+.today-routine {
+    align-self: center;
+    padding: 16px 18px;
+    border-radius: 18px;
+    background: #faf9fd;
+}
+
+.today-routine-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.today-routine-head span {
+    color: #1f1a3d;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.today-routine-head span i {
+    color: #7046e8;
+}
+
+.today-routine-head small {
+    color: #777b8c;
+    font-size: 12px;
+}
+
+.today-routine ul {
+    max-height: 190px;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    list-style: none;
+}
+
+.today-routine li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+    border-bottom: 1px solid #efecf7;
+    font-size: 13px;
+}
+
+.today-routine li:last-child {
+    border-bottom: none;
+}
+
+.today-routine li i {
+    color: #7046e8;
+}
+
+.today-routine li small {
+    color: #8a879c;
+}
+
+/* Lo que ya pasó hoy se ve más tenue */
+.today-routine li.past {
+    opacity: .5;
+}
+
+.today-routine .today-empty {
+    color: #8a879c;
+}
+
+.today-time {
+    min-width: 72px;
+    color: #4a3c7c;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   CONSEJOS Y GUÍAS
+========================================= */
+
+.guide-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.guide-filter {
+    padding: 6px 12px;
+    border: 1px solid #e3dcf5;
+    border-radius: 20px;
+    background: white;
+    color: #4a3c7c;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.guide-filter.active {
+    background: #7046e8;
+    border-color: #7046e8;
+    color: white;
+}
+
+.guides-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+}
+
+.guide-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px;
+    border: 1px solid #ece7f8;
+    border-radius: 16px;
+    background: white;
+}
+
+.guide-top {
+    display: flex;
+    gap: 10px;
+}
+
+.guide-top strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #1f1a3d;
+    font-size: 15px;
+}
+
+.guide-card p {
+    margin: 0;
+    color: #4a4760;
+    font-size: 13px;
+}
+
+.guide-practice {
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 5px 10px;
+    border: 1px solid #e3dcf5;
+    border-radius: 20px;
+    background: white;
+    color: #7046e8;
+    font-size: 12px;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.guide-practice:hover {
+    background: #7046e8;
+    border-color: #7046e8;
+    color: white;
+}
+
+
+/* =========================================
+   RESUMEN DEL DIARIO
+========================================= */
+
+#resumenDiario {
+    margin-bottom: 18px;
+}
+
+.diary-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.summary-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #777b8c;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.mood-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.mood-chip {
+    padding: 5px 10px;
+    border-radius: 12px;
+    background: #f7f5fe;
+    color: #4a3c7c;
+    font-size: 13px;
+}
+
+.mood-chip.good {
+    background: #e7f7ee;
+    color: #137a48;
+}
+
+.mood-chip.warn {
+    background: #fff1df;
+    color: #a15600;
+}
+
+.trigger-list {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 13px;
+}
+
+.trigger-list small,
+.summary-empty {
+    color: #8a879c;
+}
+
+.summary-empty {
+    margin: 0;
+    font-size: 13px;
+}
+
+
+/* =========================================
+   GENERADOR DE RUTINAS
+========================================= */
+
+.routine-form label {
+    margin-bottom: 4px;
+    color: #4a4760;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.routine-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.routine-card {
+    margin-bottom: 16px;
+}
+
+.routine-card.active {
+    border-color: #9fd9b8;
+    box-shadow: 0 0 0 3px #e7f7ee;
+}
+
+.routine-card .badges {
+    margin-top: 6px;
+}
+
+.routine-text {
+    margin: 0 0 10px;
+    color: #4a4760;
+    font-size: 14px;
+}
+
+.routine-why {
+    margin: 0 0 12px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    background: #eef6ff;
+    color: #1f4f8f;
+    font-size: 13px;
+}
+
+.routine-day {
+    margin: 14px 0 6px;
+    color: #7046e8;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+}
+
+.routine-steps {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.routine-steps li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px solid #f3f0fa;
+}
+
+.routine-steps .today-time {
+    padding-top: 6px;
+}
+
+.step-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #f1ebff;
+    color: #7046e8;
+}
+
+.step-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.step-body strong {
+    display: block;
+    color: #1f1a3d;
+    font-size: 14px;
+}
+
+.step-body small {
+    color: #8a879c;
+    font-size: 12px;
+}
+
+.step-body p {
+    margin: 2px 0 0;
+    color: #4a4760;
+    font-size: 13px;
+}
+
+.routine-add {
+    margin-top: 12px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .diary-summary {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .today-time {
+        min-width: 58px;
+    }
+
+    .routine-steps li {
+        flex-wrap: wrap;
+    }
+}

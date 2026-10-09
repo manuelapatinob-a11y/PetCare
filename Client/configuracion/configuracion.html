@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Configuración | PetCare</title>
+    <title>PetCare | Configuración</title>
 
     <!-- Bootstrap -->
     <link
@@ -17,155 +17,420 @@
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/PetCare/Client/configuracion/configuracion.css">
+    <!-- CSS: diseño general, el de los apartados (Salud) y el de esta página -->
+    <link rel="stylesheet" href="../mismascotas/mismascotas.css">
+    <link rel="stylesheet" href="../salud/salud.css">
+    <link rel="stylesheet" href="configuracion.css">
+
+    <!-- Sesión: si no hay sesión iniciada, va al login -->
+    <script src="../auth/sesion.js"></script>
+    <script>requiereSesion();</script>
 </head>
 
 <body>
 
-    <main class="container-fluid">
+<div class="app">
 
-        <div class="configuracion">
+    <!-- ================= SIDEBAR ================= -->
 
-            <!-- Botón volver -->
-            <a href="/PetCare/index.html" class="volver" aria-label="Volver al inicio">
-                <i class="bi bi-chevron-left"></i>
+    <aside class="sidebar">
+
+        <a href="../inicio/inicio.html" class="logo-area">
+            <img src="../../Recursos/logo.png" class="logo" alt="PetCare">
+        </a>
+
+        <nav class="main-menu">
+
+            <a href="../inicio/inicio.html" class="sin-subrayado">
+                <i class="bi bi-house"></i>
+                Inicio
             </a>
 
-            <!-- Título -->
-            <h2 class="titulo">Configuración</h2>
+            <a href="../mismascotas/mismascotas.html" class="sin-subrayado">
+                <i class="bi bi-people"></i>
+                Mis Mascotas
+            </a>
 
-            <!-- Opciones principales -->
-            <div class="card-config">
+            <a href="../salud/salud.html" class="sin-subrayado">
+                <i class="bi bi-heart-pulse"></i>
+                Salud
+            </a>
 
-                <a href="/PetCare/Client/perfil del usuario/perfildelusuario.html" class="item-config">
-                    <div class="icono">
-                        <i class="bi bi-person"></i>
-                    </div>
+            <a href="../alimentacion/Alimentacion.html" class="sin-subrayado">
+                <i class="bi bi-cup-hot"></i>
+                Alimentación
+            </a>
 
-                    <div class="texto">
-                        <h6>Perfil de Usuario</h6>
-                        <p>Editar información personal</p>
-                    </div>
+            <a href="../actividadfisica/actividadfisica.html" class="sin-subrayado">
+                <i class="bi bi-person-walking"></i>
+                Actividad Física
+            </a>
 
-                    <i class="bi bi-chevron-right flecha"></i>
+            <a href="../entrenamiento/entrenamiento.html" class="sin-subrayado">
+                <i class="bi bi-award"></i>
+                Entrenamiento y comportamiento
+            </a>
+
+            <a href="../recordatorios/recordatorios.html" class="sin-subrayado">
+                <i class="bi bi-bell"></i>
+                Recordatorios
+            </a>
+
+            <a href="../mapa/mapa.html" class="sin-subrayado">
+                <i class="bi bi-geo-alt"></i>
+                Mapa Pet Friendly
+            </a>
+
+            <a href="../finanzas/finanzas.html" class="sin-subrayado">
+                <i class="bi bi-wallet2"></i>
+                Finanzas
+            </a>
+
+            <a href="../asistente/asistente.html" class="sin-subrayado">
+                <i class="bi bi-robot"></i>
+                Asistente IA
+            </a>
+
+            <a href="../perfil/perfil.html" class="sin-subrayado">
+                <i class="bi bi-person"></i>
+                Perfil
+            </a>
+
+            <a href="configuracion.html" class="sin-subrayado active">
+                <i class="bi bi-gear"></i>
+                Configuración
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ================= CONTENIDO ================= -->
+
+    <main class="content">
+
+        <header class="top-header">
+
+            <div class="page-title">
+
+                <a href="../inicio/inicio.html" class="back" aria-label="Volver al inicio">
+                    <i class="bi bi-arrow-left"></i>
                 </a>
 
-                <a href="#" class="item-config">
-                    <div class="icono">
-                        <i class="bi bi-bell"></i>
-                    </div>
-
-                    <div class="texto">
-                        <h6>Notificaciones</h6>
-                        <p>Configura alertas y recordatorios</p>
-                    </div>
-
-                    <i class="bi bi-chevron-right flecha"></i>
-                </a>
-
-                <a href="/PetCare/Client/configuracion/configuracion.html" class="item-config">
-                    <div class="icono">
-                        <i class="bi bi-gear"></i>
-                    </div>
-
-                    <div class="texto">
-                        <h6>Configuración de la App</h6>
-                        <p>Preferencias generales</p>
-                    </div>
-
-                    <i class="bi bi-chevron-right flecha"></i>
-                </a>
+                <div>
+                    <h2>Configuración</h2>
+                    <p>Notificaciones, apariencia, seguridad y tu cuenta.</p>
+                </div>
 
             </div>
 
-            <!-- Preferencias -->
-            <h5 class="subtitulo">Preferencias</h5>
+            <div class="user-area">
 
-            <div class="card-config">
+                <div class="dropdown">
 
-                <a href="#" class="item-config">
-                    <div class="icono">
-                        <i class="bi bi-sun"></i>
-                    </div>
+                    <button class="user-button dropdown-toggle" data-bs-toggle="dropdown">
+                        <span class="avatar" data-usuario-avatar></span>
+                        <strong data-usuario-nombre></strong>
+                    </button>
 
-                    <div class="texto">
-                        <h6>Tema</h6>
-                        <p>Claro</p>
-                    </div>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="../perfil/perfil.html">
+                                <i class="bi bi-person"></i>
+                                Mi perfil
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item text-danger" href="../login/login.html" data-cerrar-sesion>
+                                <i class="bi bi-box-arrow-right"></i>
+                                Cerrar sesión
+                            </a>
+                        </li>
+                    </ul>
 
-                    <i class="bi bi-chevron-right flecha"></i>
-                </a>
-
-                <a href="#" class="item-config">
-                    <div class="icono">
-                        <i class="bi bi-globe"></i>
-                    </div>
-
-                    <div class="texto">
-                        <h6>Idioma</h6>
-                        <p>Español</p>
-                    </div>
-
-                    <i class="bi bi-chevron-right flecha"></i>
-                </a>
-
-                <a href="#" class="item-config">
-                    <div class="icono">
-                        <i class="bi bi-rulers"></i>
-                    </div>
-
-                    <div class="texto">
-                        <h6>Unidades</h6>
-                        <p>Métrico (kg, cm)</p>
-                    </div>
-
-                    <i class="bi bi-chevron-right flecha"></i>
-                </a>
+                </div>
 
             </div>
 
-            <!-- Más opciones -->
-            <div class="card-config">
+        </header>
 
-                <a href="#" class="item-config">
-                    <div class="icono">
-                        <i class="bi bi-question-circle"></i>
-                    </div>
 
-                    <div class="texto">
-                        <h6>Ayuda y Soporte</h6>
-                        <p>Centro de ayuda y contacto</p>
-                    </div>
+        <div id="mensaje" class="alert d-none" role="alert"></div>
 
-                    <i class="bi bi-chevron-right flecha"></i>
+
+        <div class="settings">
+
+            <!-- ================= MENÚ DE SECCIONES ================= -->
+
+            <nav class="settings-nav" aria-label="Secciones de configuración">
+
+                <a href="#notificaciones" data-seccion="notificaciones" class="active">
+                    <i class="bi bi-bell"></i>
+                    <span>Notificaciones</span>
                 </a>
 
-                <a href="#" class="item-config">
-                    <div class="icono">
-                        <i class="bi bi-info-circle"></i>
-                    </div>
-
-                    <div class="texto">
-                        <h6>Acerca de PetCare</h6>
-                        <p>Versión 1.0.0</p>
-                    </div>
-
-                    <i class="bi bi-chevron-right flecha"></i>
+                <a href="#apariencia" data-seccion="apariencia">
+                    <i class="bi bi-palette"></i>
+                    <span>Apariencia</span>
                 </a>
 
-                <a href="#" class="item-config salir">
-                    <div class="icono rojo">
-                        <i class="bi bi-box-arrow-right"></i>
-                    </div>
-
-                    <div class="texto">
-                        <h6>Cerrar Sesión</h6>
-                        <p>Salir de tu cuenta</p>
-                    </div>
-
-                    <i class="bi bi-chevron-right flecha"></i>
+                <a href="#seguridad" data-seccion="seguridad">
+                    <i class="bi bi-shield-lock"></i>
+                    <span>Perfil y seguridad</span>
                 </a>
+
+                <a href="#mascotas" data-seccion="mascotas">
+                    <i class="bi bi-arrow-counterclockwise"></i>
+                    <span>Mascotas eliminadas</span>
+                </a>
+
+                <a href="#cuenta" data-seccion="cuenta">
+                    <i class="bi bi-person-gear"></i>
+                    <span>Cuenta</span>
+                </a>
+
+                <a href="#ayuda" data-seccion="ayuda">
+                    <i class="bi bi-question-circle"></i>
+                    <span>Ayuda y acerca de</span>
+                </a>
+
+            </nav>
+
+
+            <div class="settings-body">
+
+                <!-- ================= NOTIFICACIONES ================= -->
+
+                <section class="panel-box" data-panel-config="notificaciones">
+
+                    <div class="list-header">
+                        <div>
+                            <h3><i class="bi bi-bell"></i> Notificaciones</h3>
+                            <p>Los avisos aparecen en la campanita y, si quieres, también en tu correo. Los cambios se guardan solos.</p>
+                        </div>
+                    </div>
+
+                    <div class="setting-row">
+                        <div>
+                            <strong>Recibir los avisos por correo</strong>
+                            <small>Un solo correo con los avisos nuevos, entre las 7 a. m. y las 9 p. m.</small>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="notif_correo" data-guardar aria-label="Recibir los avisos por correo">
+                        </div>
+                    </div>
+
+                    <div class="setting-row">
+                        <div>
+                            <strong>Recordatorios de salud y agenda</strong>
+                            <small>Vacunas, desparasitaciones, citas, medicamentos, paseos y tus recordatorios.</small>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="notif_recordatorios" data-guardar aria-label="Recordatorios de salud y agenda">
+                        </div>
+                    </div>
+
+                    <div class="setting-row">
+                        <div>
+                            <strong>Recordatorios de comidas y snacks</strong>
+                            <small>30 minutos antes de cada horario de Alimentación.</small>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="notif_comidas" data-guardar aria-label="Recordatorios de comidas y snacks">
+                        </div>
+                    </div>
+
+                    <div class="mail-box" id="estadoCorreo"></div>
+
+                </section>
+
+
+                <!-- ================= APARIENCIA ================= -->
+
+                <section class="panel-box d-none" data-panel-config="apariencia">
+
+                    <div class="list-header">
+                        <div>
+                            <h3><i class="bi bi-palette"></i> Apariencia</h3>
+                            <p>Elige cómo quieres ver PetCare. Se aplica de inmediato en todas las páginas.</p>
+                        </div>
+                    </div>
+
+                    <div class="theme-options" role="radiogroup" aria-label="Tema">
+
+                        <label class="theme-card">
+                            <input type="radio" name="tema" value="claro" data-guardar>
+                            <span class="theme-preview light"><span></span><span></span></span>
+                            <strong><i class="bi bi-sun"></i> Claro</strong>
+                        </label>
+
+                        <label class="theme-card">
+                            <input type="radio" name="tema" value="oscuro" data-guardar>
+                            <span class="theme-preview dark"><span></span><span></span></span>
+                            <strong><i class="bi bi-moon-stars"></i> Oscuro</strong>
+                        </label>
+
+                        <label class="theme-card">
+                            <input type="radio" name="tema" value="sistema" data-guardar>
+                            <span class="theme-preview system"><span></span><span></span></span>
+                            <strong><i class="bi bi-circle-half"></i> Como el dispositivo</strong>
+                        </label>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================= PERFIL Y SEGURIDAD ================= -->
+
+                <section class="panel-box d-none" data-panel-config="seguridad">
+
+                    <div class="list-header">
+                        <div>
+                            <h3><i class="bi bi-shield-lock"></i> Perfil y seguridad</h3>
+                            <p>Tus datos personales, tu contraseña y los dispositivos donde tienes la sesión abierta.</p>
+                        </div>
+                    </div>
+
+                    <div class="link-cards">
+                        <a class="link-card" href="../perfil/perfil.html">
+                            <span class="record-icon purple"><i class="bi bi-person-vcard"></i></span>
+                            <span>
+                                <strong>Editar mi perfil</strong>
+                                <small>Nombre, correo, teléfono, dirección, ciudad y foto.</small>
+                            </span>
+                            <i class="bi bi-chevron-right"></i>
+                        </a>
+
+                        <a class="link-card" href="../perfil/perfil.html#seguridad">
+                            <span class="record-icon blue"><i class="bi bi-key"></i></span>
+                            <span>
+                                <strong id="textoContrasena">Cambiar contraseña</strong>
+                                <small>Se cierran las sesiones en otros dispositivos.</small>
+                            </span>
+                            <i class="bi bi-chevron-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="list-header mt-4">
+                        <div>
+                            <h3 class="small-title"><i class="bi bi-laptop"></i> Sesiones abiertas</h3>
+                            <p>Si no reconoces un dispositivo, cierra su sesión y cambia tu contraseña.</p>
+                        </div>
+
+                        <button type="button" class="btn-light-action" id="cerrarOtras">
+                            <i class="bi bi-box-arrow-right"></i>
+                            Cerrar las demás
+                        </button>
+                    </div>
+
+                    <div id="sesiones"></div>
+
+                </section>
+
+
+                <!-- ================= MASCOTAS ELIMINADAS ================= -->
+
+                <section class="panel-box d-none" data-panel-config="mascotas">
+
+                    <div class="list-header">
+                        <div>
+                            <h3><i class="bi bi-arrow-counterclockwise"></i> Mascotas eliminadas</h3>
+                            <p>Al eliminar una mascota no se borra su información: puedes recuperarla con todo su historial.</p>
+                        </div>
+                    </div>
+
+                    <div id="eliminadas"></div>
+
+                </section>
+
+
+                <!-- ================= CUENTA ================= -->
+
+                <section class="panel-box d-none" data-panel-config="cuenta">
+
+                    <div class="list-header">
+                        <div>
+                            <h3><i class="bi bi-person-gear"></i> Cuenta</h3>
+                            <p id="textoCuenta"></p>
+                        </div>
+                    </div>
+
+                    <div class="setting-row">
+                        <div>
+                            <strong>Cerrar sesión</strong>
+                            <small>Sales de PetCare en este dispositivo.</small>
+                        </div>
+                        <button type="button" class="btn-light-action" data-cerrar-sesion>
+                            <i class="bi bi-box-arrow-right"></i>
+                            Cerrar sesión
+                        </button>
+                    </div>
+
+                    <div class="danger-zone">
+
+                        <strong><i class="bi bi-exclamation-octagon"></i> Desactivar mi cuenta</strong>
+
+                        <p>Se cierran todas tus sesiones y ya no podrás entrar. Tus datos no se borran.</p>
+
+                        <div id="errorDesactivar" class="alert alert-danger d-none" role="alert"></div>
+
+                        <form id="formDesactivar" class="danger-form" novalidate>
+                            <label for="confirmacionCuenta" id="etiquetaConfirmacion">Escribe tu contraseña para confirmar</label>
+                            <div class="danger-input">
+                                <input type="password" id="confirmacionCuenta" class="form-control" autocomplete="current-password">
+                                <button type="submit" class="btn-danger-soft">Desactivar cuenta</button>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================= AYUDA ================= -->
+
+                <section class="panel-box d-none" data-panel-config="ayuda">
+
+                    <div class="list-header">
+                        <div>
+                            <h3><i class="bi bi-question-circle"></i> Ayuda y acerca de</h3>
+                            <p>¿Dudas sobre el cuidado de tu mascota o sobre PetCare?</p>
+                        </div>
+                    </div>
+
+                    <div class="link-cards">
+                        <a class="link-card" href="../asistente/asistente.html">
+                            <span class="record-icon purple"><i class="bi bi-robot"></i></span>
+                            <span>
+                                <strong>Asistente IA</strong>
+                                <small>Pregunta sobre salud, alimentación o comportamiento.</small>
+                            </span>
+                            <i class="bi bi-chevron-right"></i>
+                        </a>
+
+                        <a class="link-card" href="../Contacto/contacto.html">
+                            <span class="record-icon blue"><i class="bi bi-envelope"></i></span>
+                            <span>
+                                <strong>Contacto y soporte</strong>
+                                <small>Escríbenos si algo no funciona.</small>
+                            </span>
+                            <i class="bi bi-chevron-right"></i>
+                        </a>
+
+                        <a class="link-card" href="../Nosotros/nosotros.html">
+                            <span class="record-icon green"><i class="bi bi-info-circle"></i></span>
+                            <span>
+                                <strong>Acerca de PetCare</strong>
+                                <small>Versión 1.0 · Hecho en Medellín para cuidar mejor a tus mascotas.</small>
+                            </span>
+                            <i class="bi bi-chevron-right"></i>
+                        </a>
+                    </div>
+
+                </section>
 
             </div>
 
@@ -173,8 +438,14 @@
 
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</div>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="configuracion.js"></script>
 
 </body>
+
 </html>
-```

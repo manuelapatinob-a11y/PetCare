@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import fileUpload from 'express-fileupload';
 import router from '../routes/index.js';
+import { carpetaUploads } from '../utils/fotos.js';
 
 //como numero de telefono el que sirve la ifnromacion
 //y que se puede hacer
@@ -19,7 +20,10 @@ class Server {
         this.app.use(cors());
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true }));
-        this.app.use(fileUpload());
+        // Archivos de máximo 5 MB (las fotos de perfil y mascotas se limitan a 2 MB)
+        this.app.use(fileUpload({ limits: { fileSize: 5 * 1024 * 1024 } }));
+        // Fotos de perfil subidas por los usuarios
+        this.app.use('/uploads', express.static(carpetaUploads));
     }
 
     routes() {

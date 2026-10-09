@@ -5,731 +5,308 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>PetCare | Perfil de Mascota</title>
+    <title>PetCare | Mi perfil</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet"
+    <link
+        rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/PetCare/Client/perfil/perfil.css">
+    <!-- CSS: diseño general, el de los apartados (Salud) y el de esta página -->
+    <link rel="stylesheet" href="../mismascotas/mismascotas.css">
+    <link rel="stylesheet" href="../salud/salud.css">
+    <link rel="stylesheet" href="perfil.css">
+
+    <!-- Sesión: si no hay sesión iniciada, va al login -->
+    <script src="../auth/sesion.js"></script>
+    <script>requiereSesion();</script>
 </head>
 
 <body>
 
-    <div class="app-container">
+<div class="app">
 
-        <!-- ================= SIDEBAR ================= -->
+    <!-- ================= SIDEBAR ================= -->
 
-        <aside class="sidebar">
+    <aside class="sidebar">
 
-            <div class="logo-area">
-                <img src="/PetCare/Recursos/logo.png" alt="" class="PetCare">
-                <div class="logo-icon">
-                    
+        <a href="../inicio/inicio.html" class="logo-area">
+            <img src="../../Recursos/logo.png" class="logo" alt="PetCare">
+        </a>
+
+        <nav class="main-menu">
+
+            <a href="../inicio/inicio.html" class="sin-subrayado">
+                <i class="bi bi-house"></i>
+                Inicio
+            </a>
+
+            <a href="../mismascotas/mismascotas.html" class="sin-subrayado">
+                <i class="bi bi-people"></i>
+                Mis Mascotas
+            </a>
+
+            <a href="../salud/salud.html" class="sin-subrayado">
+                <i class="bi bi-heart-pulse"></i>
+                Salud
+            </a>
+
+            <a href="../alimentacion/Alimentacion.html" class="sin-subrayado">
+                <i class="bi bi-cup-hot"></i>
+                Alimentación
+            </a>
+
+            <a href="../actividadfisica/actividadfisica.html" class="sin-subrayado">
+                <i class="bi bi-person-walking"></i>
+                Actividad Física
+            </a>
+
+            <a href="../entrenamiento/entrenamiento.html" class="sin-subrayado">
+                <i class="bi bi-award"></i>
+                Entrenamiento y comportamiento
+            </a>
+
+            <a href="../recordatorios/recordatorios.html" class="sin-subrayado">
+                <i class="bi bi-bell"></i>
+                Recordatorios
+            </a>
+
+            <a href="../mapa/mapa.html" class="sin-subrayado">
+                <i class="bi bi-geo-alt"></i>
+                Mapa Pet Friendly
+            </a>
+
+            <a href="../finanzas/finanzas.html" class="sin-subrayado">
+                <i class="bi bi-wallet2"></i>
+                Finanzas
+            </a>
+
+            <a href="../asistente/asistente.html" class="sin-subrayado">
+                <i class="bi bi-robot"></i>
+                Asistente IA
+            </a>
+
+            <a href="perfil.html" class="sin-subrayado active">
+                <i class="bi bi-person"></i>
+                Perfil
+            </a>
+
+            <a href="../configuracion/configuracion.html" class="sin-subrayado">
+                <i class="bi bi-gear"></i>
+                Configuración
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ================= CONTENIDO ================= -->
+
+    <main class="content">
+
+        <header class="top-header">
+
+            <div class="page-title">
+
+                <a href="../inicio/inicio.html" class="back" aria-label="Volver al inicio">
+                    <i class="bi bi-arrow-left"></i>
+                </a>
+
+                <div>
+                    <h2>Mi perfil</h2>
+                    <p>Tu información personal, tu foto y tu contraseña.</p>
                 </div>
 
             </div>
 
+            <div class="user-area">
 
-            <nav class="menu">
+                <div class="dropdown">
 
-                <a href="/PetCare/index.html" class="menu-item">
-                    <i class="bi bi-house"></i>
-                    <span>Inicio</span>
-                </a>
-
-                <a href="/PetCare/Client/mismascotas/mismascotas.html" class="menu-item active">
-                    <i class="bi bi-heart"></i>
-                    <span>Mis Mascotas</span>
-                </a>
-
-                <a href="/PetCare/Client/salud/salud.html" class="menu-item">
-                    <i class="bi bi-heart-pulse"></i>
-                    <span>Salud</span>
-                </a>
-
-                <a href="/PetCare/Client/alimentacion/Alimentacion.html" class="menu-item">
-                    <i class="bi bi-cup-hot"></i>
-                    <span>Alimentación</span>
-                </a>
-
-                <a href="/PetCare/Client/actividadfisica/actividadfisica.html" class="menu-item">
-                    <i class="bi bi-person-walking"></i>
-                    <span>Actividad Física</span>
-                </a>
-
-                <a href="/PetCare/Client/recordatorios/recordatorios.html" class="menu-item">
-                    <i class="bi bi-bell"></i>
-                    <span>Recordatorios</span>
-                </a>
-
-                <a href="/PetCare/Client/mapa/mapa.html" class="menu-item">
-                    <i class="bi bi-geo-alt"></i>
-                    <span>Mapa Pet Friendly</span>
-                </a>
-
-                <a href="/PetCare/Client/servicios/servicios.html" class="menu-item">
-                    <i class="bi bi-shop"></i>
-                    <span>Servicios</span>
-                </a>
-
-                <a href="/PetCare/Client/finanzas/finanzas.html" class="menu-item">
-                    <i class="bi bi-wallet2"></i>
-                    <span>Finanzas</span>
-                </a>
-
-                <a href="/PetCare/Client/asistente/asistente.html" class="menu-item ">
-                    <i class="bi bi-robot"></i>
-                    <span>Asistente IA</span>
-                </a>
-
-                <a href="/PetCare/Client/perfil/perfil.html" class="menu-item">
-                    <i class="bi bi-person"></i>
-                    <span>Perfil</span>
-                </a>
-
-                <a href="/PetCare/Client/configuracion/configuracion.html" class="menu-item">
-                    <i class="bi bi-gear"></i>
-                    <span>Configuración</span>
-                </a>
-
-            </nav>
-
-        </aside>
-
-
-        <!-- ================= CONTENIDO ================= -->
-
-        <main class="main-content">
-
-
-            <!-- HEADER -->
-
-            <header class="topbar">
-
-                <div class="page-title">
-
-                    <a href="/PetCare/Client/mismascotas/mismascotas.html" class="back-button">
-                        <i class="bi bi-arrow-left"></i>
-                    </a>
-
-                    <div>
-                        <h1>Perfil de Max</h1>
-
-                        <p>
-                            Información y cuidado de tu mascota
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="user-menu">
-
-                    <i class="bi bi-bell notification"></i>
-
-                    <div class="avatar">
-                        MP
-                    </div>
-
-                    <strong>Manuela P.</strong>
-
-                    <i class="bi bi-chevron-down"></i>
-
-                </div>
-
-            </header>
-
-
-            <!-- ================= PERFIL PRINCIPAL ================= -->
-
-            <section class="profile-card">
-
-                <div class="profile-photo">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=500"
-                        alt="Max">
-
-                    <button
-                        class="photo-button"
-                        onclick="cambiarFoto()">
-
-                        <i class="bi bi-camera-fill"></i>
-
+                    <button class="user-button dropdown-toggle" data-bs-toggle="dropdown">
+                        <span class="avatar" data-usuario-avatar></span>
+                        <strong data-usuario-nombre></strong>
                     </button>
 
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="perfil.html">
+                                <i class="bi bi-person"></i>
+                                Mi perfil
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item text-danger" href="../login/login.html" data-cerrar-sesion>
+                                <i class="bi bi-box-arrow-right"></i>
+                                Cerrar sesión
+                            </a>
+                        </li>
+                    </ul>
+
                 </div>
 
+            </div>
 
-                <div class="profile-info">
+        </header>
 
-                    <span class="pet-status">
-                        <i class="bi bi-circle-fill"></i>
-                        Activo
-                    </span>
 
-                    <h2>Max 🐶</h2>
+        <div id="mensaje" class="alert d-none" role="alert"></div>
 
-                    <p class="breed">
-                        Golden Retriever
-                    </p>
 
-                    <div class="pet-data">
+        <!-- ================= TARJETA DEL USUARIO ================= -->
 
-                        <div>
-                            <i class="bi bi-gender-male"></i>
+        <section class="profile-hero" id="tarjeta">
+            <span class="text-muted small">Cargando tu perfil...</span>
+        </section>
 
-                            <span>
-                                Macho
-                            </span>
+
+        <div class="profile-grid">
+
+            <!-- INFORMACIÓN PERSONAL -->
+            <section class="panel-box">
+
+                <div class="list-header">
+                    <div>
+                        <h3><i class="bi bi-person-vcard"></i> Información personal</h3>
+                        <p>Estos datos se usan en tus recordatorios y en los correos de PetCare.</p>
+                    </div>
+                </div>
+
+                <div id="errorPerfil" class="alert alert-danger d-none" role="alert"></div>
+
+                <form id="formPerfil" novalidate>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+                            <label for="nombres">Nombres *</label>
+                            <input type="text" id="nombres" name="nombres" class="form-control" maxlength="80" required autocomplete="given-name">
                         </div>
 
-                        <div>
-                            <i class="bi bi-calendar3"></i>
-
-                            <span>
-                                3 años
-                            </span>
+                        <div class="col-md-6">
+                            <label for="apellidos">Apellidos *</label>
+                            <input type="text" id="apellidos" name="apellidos" class="form-control" maxlength="80" required autocomplete="family-name">
                         </div>
 
-                        <div>
-                            <i class="bi bi-geo-alt"></i>
+                        <div class="col-md-6">
+                            <label for="correo">Correo electrónico *</label>
+                            <input type="email" id="correo" name="correo" class="form-control" maxlength="120" required autocomplete="email">
+                            <small class="form-help">Aquí te llegan los recordatorios.</small>
+                        </div>
 
-                            <span>
-                                Medellín
-                            </span>
+                        <div class="col-md-6">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" class="form-control" maxlength="20" autocomplete="tel" placeholder="Ej: 300 123 4567">
+                        </div>
+
+                        <div class="col-md-8">
+                            <label for="direccion">Dirección</label>
+                            <input type="text" id="direccion" name="direccion" class="form-control" maxlength="150" autocomplete="street-address">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="ciudad">Ciudad</label>
+                            <input type="text" id="ciudad" name="ciudad" class="form-control" maxlength="80" autocomplete="address-level2">
+                        </div>
+
+                        <!-- Solo si cambia el correo y la cuenta tiene contraseña -->
+                        <div class="col-12 d-none" id="confirmarCorreo">
+                            <label for="contrasena_actual">Tu contraseña actual (para cambiar el correo) *</label>
+                            <input type="password" id="contrasena_actual" name="contrasena_actual" class="form-control" autocomplete="current-password">
                         </div>
 
                     </div>
 
-                </div>
-
-
-                <button
-                    class="edit-button"
-                    onclick="editarPerfil()">
-
-                    <i class="bi bi-pencil"></i>
-
-                    Editar perfil
-
-                </button>
-
-            </section>
-
-
-            <!-- ================= INFORMACIÓN ================= -->
-
-            <section class="information-grid">
-
-
-                <!-- DATOS -->
-
-                <div class="info-card">
-
-                    <div class="card-header">
-
-                        <div>
-                            <i class="bi bi-person-vcard"></i>
-
-                            <h3>Información básica</h3>
-                        </div>
-
-                        <button onclick="editarDatos()">
-                            <i class="bi bi-pencil"></i>
+                    <div class="form-actions">
+                        <button type="button" class="btn-light-action" id="botonDeshacer">
+                            <i class="bi bi-arrow-counterclockwise"></i>
+                            Deshacer cambios
                         </button>
 
+                        <button type="submit" class="btn-save" id="botonGuardarPerfil">
+                            <i class="bi bi-check-lg"></i>
+                            Guardar cambios
+                        </button>
                     </div>
 
-
-                    <div class="data-grid">
-
-                        <div class="data-item">
-
-                            <span>Nombre</span>
-
-                            <strong>Max</strong>
-
-                        </div>
-
-                        <div class="data-item">
-
-                            <span>Especie</span>
-
-                            <strong>Perro</strong>
-
-                        </div>
-
-                        <div class="data-item">
-
-                            <span>Raza</span>
-
-                            <strong>Golden Retriever</strong>
-
-                        </div>
-
-                        <div class="data-item">
-
-                            <span>Sexo</span>
-
-                            <strong>Macho</strong>
-
-                        </div>
-
-                        <div class="data-item">
-
-                            <span>Edad</span>
-
-                            <strong>3 años</strong>
-
-                        </div>
-
-                        <div class="data-item">
-
-                            <span>Peso</span>
-
-                            <strong>28 kg</strong>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- SALUD -->
-
-                <div class="info-card">
-
-                    <div class="card-header">
-
-                        <div>
-                            <i class="bi bi-heart-pulse"></i>
-
-                            <h3>Salud</h3>
-                        </div>
-
-                        <a href="#">
-                            Ver todo
-                        </a>
-
-                    </div>
-
-
-                    <div class="health-list">
-
-                        <div class="health-item">
-
-                            <div class="health-icon vaccine">
-                                <i class="bi bi-shield-check"></i>
-                            </div>
-
-                            <div>
-                                <strong>Vacunas</strong>
-
-                                <small>
-                                    Próxima vacuna: 20 agosto
-                                </small>
-                            </div>
-
-                            <span class="badge-success">
-                                Al día
-                            </span>
-
-                        </div>
-
-
-                        <div class="health-item">
-
-                            <div class="health-icon">
-                                <i class="bi bi-capsule"></i>
-                            </div>
-
-                            <div>
-                                <strong>Desparasitación</strong>
-
-                                <small>
-                                    Última: 15 junio
-                                </small>
-                            </div>
-
-                            <span class="badge-success">
-                                Al día
-                            </span>
-
-                        </div>
-
-
-                        <div class="health-item">
-
-                            <div class="health-icon">
-                                <i class="bi bi-hospital"></i>
-                            </div>
-
-                            <div>
-                                <strong>Control veterinario</strong>
-
-                                <small>
-                                    Última consulta: 10 julio
-                                </small>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
+                </form>
 
             </section>
 
 
-            <!-- ================= ACTIVIDAD ================= -->
+            <div class="profile-side">
 
-            <section class="bottom-grid">
+                <!-- MIS MASCOTAS -->
+                <section class="panel-box" id="misMascotas"></section>
 
+                <!-- SEGURIDAD -->
+                <section class="panel-box" id="seguridad">
 
-                <!-- ALIMENTACIÓN -->
-
-                <div class="info-card">
-
-                    <div class="card-header">
-
+                    <div class="list-header">
                         <div>
-
-                            <i class="bi bi-cup-hot"></i>
-
-                            <h3>Alimentación</h3>
-
+                            <h3><i class="bi bi-shield-lock"></i> <span id="tituloContrasena">Cambiar contraseña</span></h3>
+                            <p id="textoContrasena">Al cambiarla se cierran tus sesiones en otros dispositivos.</p>
                         </div>
-
-                        <a href="#">
-                            Ver plan
-                        </a>
-
                     </div>
 
+                    <div id="errorContrasena" class="alert alert-danger d-none" role="alert"></div>
 
-                    <div class="food-content">
+                    <form id="formContrasena" novalidate>
 
-                        <div class="food-icon">
-
-                            <i class="bi bi-basket"></i>
-
+                        <div class="mb-3" id="campoActual">
+                            <label for="actual">Contraseña actual *</label>
+                            <input type="password" id="actual" name="actual" class="form-control" autocomplete="current-password">
                         </div>
 
-                        <div>
-
-                            <strong>
-                                Concentrado para perros adultos
-                            </strong>
-
-                            <p>
-                                2 porciones al día · 1.5 tazas
-                            </p>
-
+                        <div class="mb-3">
+                            <label for="nueva">Nueva contraseña *</label>
+                            <input type="password" id="nueva" name="nueva" class="form-control" autocomplete="new-password">
+                            <small class="form-help">8 caracteres o más, con una mayúscula, un número y un carácter especial.</small>
                         </div>
 
-                    </div>
-
-
-                    <div class="food-progress">
-
-                        <div class="progress-info">
-
-                            <span>
-                                Alimentación diaria
-                            </span>
-
-                            <strong>
-                                90%
-                            </strong>
-
+                        <div class="mb-1">
+                            <label for="confirmar">Repite la nueva contraseña *</label>
+                            <input type="password" id="confirmar" name="confirmar" class="form-control" autocomplete="new-password">
                         </div>
 
-                        <div class="progress">
-
-                            <div
-                                class="progress-bar"
-                                style="width: 90%;">
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- ACTIVIDAD -->
-
-                <div class="info-card">
-
-                    <div class="card-header">
-
-                        <div>
-
-                            <i class="bi bi-activity"></i>
-
-                            <h3>Actividad física</h3>
-
-                        </div>
-
-                        <a href="#">
-                            Ver actividad
-                        </a>
-
-                    </div>
-
-
-                    <div class="activity-stats">
-
-                        <div>
-
-                            <i class="bi bi-person-walking"></i>
-
-                            <strong>
-                                4.2 km
-                            </strong>
-
-                            <span>
-                                Caminata semanal
-                            </span>
-
-                        </div>
-
-                        <div>
-
-                            <i class="bi bi-stopwatch"></i>
-
-                            <strong>
-                                2 h 30 min
-                            </strong>
-
-                            <span>
-                                Tiempo activo
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- ================= RECORDATORIOS ================= -->
-
-            <section class="info-card reminders-card">
-
-                <div class="card-header">
-
-                    <div>
-
-                        <i class="bi bi-bell"></i>
-
-                        <h3>Próximos recordatorios</h3>
-
-                    </div>
-
-                    <a href="/PetCare/Client/recordatorios/recordatorios.html" class="ver-todos">
-                        Ver todos
-                    </a>
-
-                </div>
-
-
-                <div class="reminders">
-
-                    <div class="reminder">
-
-                        <div class="reminder-date">
-
-                            <strong>
-                                20
-                            </strong>
-
-                            <span>
-                                AGO
-                            </span>
-
-                        </div>
-
-                        <div>
-
-                            <strong>
-                                Vacuna anual
-                            </strong>
-
-                            <p>
-                                10:00 AM · Clínica Veterinaria
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="reminder">
-
-                        <div class="reminder-date">
-
-                            <strong>
-                                25
-                            </strong>
-
-                            <span>
-                                AGO
-                            </span>
-
-                        </div>
-
-                        <div>
-
-                            <strong>
-                                Baño y peluquería
-                            </strong>
-
-                            <p>
-                                3:00 PM · Pet Style
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="reminder">
-
-                        <div class="reminder-date">
-
-                            <strong>
-                                02
-                            </strong>
-
-                            <span>
-                                SEP
-                            </span>
-
-                        </div>
-
-                        <div>
-
-                            <strong>
-                                Desparasitación
-                            </strong>
-
-                            <p>
-                                Recordatorio de PetCare
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-        </main>
-
-    </div>
-
-
-    <!-- ================= MODAL EDITAR ================= -->
-
-    <div
-        class="modal fade"
-        id="editarModal"
-        tabindex="-1">
-
-        <div class="modal-dialog modal-dialog-centered">
-
-            <div class="modal-content">
-
-                <div class="modal-header">
-
-                    <h5>
-                        Editar perfil de Max
-                    </h5>
-
-                    <button
-                        class="btn-close"
-                        data-bs-dismiss="modal">
-                    </button>
-
-                </div>
-
-                <div class="modal-body">
-
-                    <label>Nombre</label>
-
-                    <input
-                        type="text"
-                        id="nombreMascota"
-                        value="Max"
-                        class="form-control mb-3">
-
-
-                    <label>Raza</label>
-
-                    <input
-                        type="text"
-                        id="razaMascota"
-                        value="Golden Retriever"
-                        class="form-control mb-3">
-
-
-                    <label>Peso</label>
-
-                    <input
-                        type="number"
-                        id="pesoMascota"
-                        value="28"
-                        class="form-control">
-
-                </div>
-
-                <div class="modal-footer">
-
-                    <button
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal">
-
-                        Cancelar
-
-                    </button>
-
-                    <button
-                        class="btn save-button"
-                        onclick="guardarCambios()">
-
-                        Guardar cambios
-
-                    </button>
-
-                </div>
+                        <label class="show-password">
+                            <input type="checkbox" id="verContrasenas">
+                            Mostrar contraseñas
+                        </label>
+
+                        <button type="submit" class="btn-save" id="botonContrasena">
+                            <i class="bi bi-key"></i>
+                            Guardar contraseña
+                        </button>
+
+                    </form>
+
+                </section>
 
             </div>
 
         </div>
 
-    </div>
+    </main>
+
+</div>
 
 
-    <!-- Bootstrap JS -->
+<!-- Foto de perfil (se sube apenas se elige) -->
+<input type="file" id="archivoFoto" accept="image/jpeg,image/png,image/webp" hidden>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- JavaScript -->
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="/PetCare/Client/perfil/perfil.js"></script>
+<script src="perfil.js"></script>
 
 </body>
 

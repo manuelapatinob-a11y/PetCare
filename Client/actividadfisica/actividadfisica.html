@@ -17,90 +17,89 @@
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/PetCare/Client/actividadfisica/actividadfisica.css">
+    <!-- CSS: diseño general, el de los apartados (Salud) y el de esta página -->
+    <link rel="stylesheet" href="../mismascotas/mismascotas.css">
+    <link rel="stylesheet" href="../salud/salud.css">
+    <link rel="stylesheet" href="../comun/ideas.css">
+    <link rel="stylesheet" href="actividadfisica.css">
+
+    <!-- Sesión: si no hay sesión iniciada, va al login -->
+    <script src="../auth/sesion.js"></script>
+    <script>requiereSesion();</script>
 </head>
 
 <body>
 
-<div class="app-container">
+<div class="app">
 
-    <!-- ==============================
-         BARRA LATERAL
-    =============================== -->
+    <!-- ================= SIDEBAR ================= -->
 
     <aside class="sidebar">
 
-        <a href="index.html" class="logo-area">
-
-            <img
-                src="/PetCare/Recursos/logo.png"
-                alt="Logo PetCare"
-                class="logo-petcare">
-
+        <a href="../inicio/inicio.html" class="logo-area">
+            <img src="../../Recursos/logo.png" class="logo" alt="PetCare">
         </a>
 
+        <nav class="main-menu">
 
-        <nav class="menu">
-
-            <a href="/PetCare/index.html" class="menu-item">
+            <a href="../inicio/inicio.html" class="sin-subrayado">
                 <i class="bi bi-house"></i>
-                <span>Inicio</span>
+                Inicio
             </a>
 
-            <a href="/PetCare/Client/mismascotas/mismascotas.html" class="menu-item">
-                <i class="bi bi-heart"></i>
-                <span>Mis Mascotas</span>
+            <a href="../mismascotas/mismascotas.html" class="sin-subrayado">
+                <i class="bi bi-people"></i>
+                Mis Mascotas
             </a>
 
-            <a href="/PetCare/Client/salud/salud.html" class="menu-item">
+            <a href="../salud/salud.html" class="sin-subrayado">
                 <i class="bi bi-heart-pulse"></i>
-                <span>Salud</span>
+                Salud
             </a>
 
-            <a href="/PetCare/Client/alimentacion/alimentacion.html" class="menu-item">
+            <a href="../alimentacion/Alimentacion.html" class="sin-subrayado">
                 <i class="bi bi-cup-hot"></i>
-                <span>Alimentación</span>
+                Alimentación
             </a>
 
-            <a href="/PetCare/Client/actividadfisica/actividadfisica.html" class="menu-item active">
+            <a href="actividadfisica.html" class="sin-subrayado active">
                 <i class="bi bi-person-walking"></i>
-                <span>Actividad Física</span>
+                Actividad Física
             </a>
 
-            <a href="/PetCare/Client/recordatorios/recordatorios.html" class="menu-item">
+            <a href="../entrenamiento/entrenamiento.html" class="sin-subrayado">
+                <i class="bi bi-award"></i>
+                Entrenamiento y comportamiento
+            </a>
+
+            <a href="../recordatorios/recordatorios.html" class="sin-subrayado">
                 <i class="bi bi-bell"></i>
-                <span>Recordatorios</span>
+                Recordatorios
             </a>
 
-            <a href="/PetCare/Client/mapa/mapa.html" class="menu-item">
+            <a href="../mapa/mapa.html" class="sin-subrayado">
                 <i class="bi bi-geo-alt"></i>
-                <span>Mapa Pet Friendly</span>
+                Mapa Pet Friendly
             </a>
 
-            <a href="/PetCare/Client/servicios/servicios.html" class="menu-item">
-                <i class="bi bi-shop"></i>
-                <span>Servicios</span>
-            </a>
-
-            <a href="/PetCare/Client/finanzas/finanzas.html" class="menu-item">
+            <a href="../finanzas/finanzas.html" class="sin-subrayado">
                 <i class="bi bi-wallet2"></i>
-                <span>Finanzas</span>
+                Finanzas
             </a>
 
-            <a href="/PetCare/Client/asistente/asistente.html" class="menu-item">
+            <a href="../asistente/asistente.html" class="sin-subrayado">
                 <i class="bi bi-robot"></i>
-                <span>Asistente IA</span>
+                Asistente IA
             </a>
 
-            <a href="/PetCare/Client/perfil/perfil.html" class="menu-item">
+            <a href="../perfil/perfil.html" class="sin-subrayado">
                 <i class="bi bi-person"></i>
-                <span>Perfil</span>
+                Perfil
             </a>
 
-            <a href="/PetCare/Client/configuracion/configuracion.html" class="menu-item">
+            <a href="../configuracion/configuracion.html" class="sin-subrayado">
                 <i class="bi bi-gear"></i>
-                <span>Configuración</span>
+                Configuración
             </a>
 
         </nav>
@@ -108,30 +107,23 @@
     </aside>
 
 
-    <!-- ==============================
-         CONTENIDO
-    =============================== -->
+    <!-- ================= CONTENIDO ================= -->
 
-    <main class="main-content">
+    <main class="content">
 
-        <!-- ENCABEZADO -->
+        <!-- HEADER -->
 
-        <header class="topbar">
+        <header class="top-header">
 
-            <div class="title-area">
+            <div class="page-title">
 
-                <a href="/PetCare/index.html" class="back-button">
+                <a href="../inicio/inicio.html" class="back" aria-label="Volver al inicio">
                     <i class="bi bi-arrow-left"></i>
                 </a>
 
                 <div>
-
-                    <h1>Actividad Física</h1>
-
-                    <p>
-                        Organiza y controla la actividad de tus mascotas.
-                    </p>
-
+                    <h2>Actividad Física</h2>
+                    <p>Paseos, ejercicio, peso y metas de actividad de tus mascotas.</p>
                 </div>
 
             </div>
@@ -141,734 +133,169 @@
 
             <div class="user-area">
 
-                <button class="notification-btn">
-                    <i class="bi bi-bell"></i>
-                </button>
+                <div class="dropdown">
 
-                <div class="avatar">
-                    MP
+                    <button
+                        class="user-button dropdown-toggle"
+                        data-bs-toggle="dropdown">
+
+                        <span class="avatar" data-usuario-avatar></span>
+
+                        <strong data-usuario-nombre></strong>
+
+                    </button>
+
+                    <ul class="dropdown-menu dropdown-menu-end">
+
+                        <li>
+                            <a class="dropdown-item" href="../perfil/perfil.html">
+                                <i class="bi bi-person"></i>
+                                Mi perfil
+                            </a>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item text-danger" href="../login/login.html" data-cerrar-sesion>
+                                <i class="bi bi-box-arrow-right"></i>
+                                Cerrar sesión
+                            </a>
+                        </li>
+
+                    </ul>
+
                 </div>
-
-                <div class="user-name">
-                    <strong>Manuela P.</strong>
-                    <small>Dueña</small>
-                </div>
-
-                <i class="bi bi-chevron-down arrow-user"></i>
 
             </div>
 
         </header>
 
 
-        <!-- ==============================
-             SELECCIÓN DE MASCOTA
-        =============================== -->
-
-        <section class="pet-selector">
-
-            <div class="section-heading">
-
-                <div>
-
-                    <h2>Selecciona una mascota</h2>
-
-                    <p>
-                        Elige la mascota para consultar su actividad.
-                    </p>
-
-                </div>
-
-                <a
-                    href="/PetCare/Client/mismascotas/mismascotas.html"
-                    class="secondary-btn">
-
-                    Ver mis mascotas →
-
-                </a>
-
-            </div>
+        <div id="mensaje" class="alert d-none" role="alert"></div>
 
 
-            <div class="pet-options">
+        <!-- ================= ELEGIR MASCOTA ================= -->
 
-
-                <!-- TOBY -->
-
-                <button
-                    class="pet-option selected"
-                    onclick="seleccionarMascota('Toby', this)">
-
-                    <div class="pet-avatar">
-
-                        <i class="bi bi-heart-fill"></i>
-
-                    </div>
-
-                    <div class="pet-data">
-
-                        <strong>Toby</strong>
-
-                        <span>Golden Retriever</span>
-
-                    </div>
-
-                    <i class="bi bi-check-circle-fill check-icon"></i>
-
-                </button>
-
-
-                <!-- LUNA -->
-
-                <button
-                    class="pet-option"
-                    onclick="seleccionarMascota('Luna', this)">
-
-                    <div class="pet-avatar">
-
-                        <i class="bi bi-heart-fill"></i>
-
-                    </div>
-
-                    <div class="pet-data">
-
-                        <strong>Luna</strong>
-
-                        <span>Gato</span>
-
-                    </div>
-
-                    <i class="bi bi-check-circle-fill check-icon"></i>
-
-                </button>
-
-            </div>
-
+        <section class="pet-picker" id="selectorMascotas">
+            <span class="text-muted small">Cargando tus mascotas...</span>
         </section>
 
 
-        <!-- ==============================
-             RESUMEN
-        =============================== -->
-
-        <section class="activity-summary">
-
-            <div class="section-heading">
-
-                <div>
-
-                    <h2>
-                        Actividad de
-                        <span id="petName">Toby</span>
-                    </h2>
-
-                    <p>
-                        Consulta el estado de actividad de tu mascota.
-                    </p>
-
-                </div>
-
-                <button
-                    class="primary-btn"
-                    onclick="registrarActividad()">
-
-                    <i class="bi bi-plus-lg"></i>
-
-                    Registrar actividad
-
-                </button>
-
-            </div>
-
-
-            <!-- TARJETAS -->
-
-            <div class="activity-cards">
-
-
-                <!-- PASOS -->
-
-                <article class="activity-card">
-
-                    <div class="activity-icon blue">
-
-                        <i class="bi bi-shoe-print"></i>
-
-                    </div>
-
-                    <div class="activity-info">
-
-                        <span>Pasos de hoy</span>
-
-                        <strong>6.240</strong>
-
-                        <small>
-                            Meta: 8.000 pasos
-                        </small>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PASEOS -->
-
-                <article class="activity-card">
-
-                    <div class="activity-icon purple">
-
-                        <i class="bi bi-person-walking"></i>
-
-                    </div>
-
-                    <div class="activity-info">
-
-                        <span>Paseos</span>
-
-                        <strong>2</strong>
-
-                        <small>
-                            Esta semana
-                        </small>
-
-                    </div>
-
-                </article>
-
-
-                <!-- TIEMPO -->
-
-                <article class="activity-card">
-
-                    <div class="activity-icon orange">
-
-                        <i class="bi bi-stopwatch"></i>
-
-                    </div>
-
-                    <div class="activity-info">
-
-                        <span>Tiempo activo</span>
-
-                        <strong>45 min</strong>
-
-                        <small>
-                            Hoy
-                        </small>
-
-                    </div>
-
-                </article>
-
-
-                <!-- CALORÍAS -->
-
-                <article class="activity-card">
-
-                    <div class="activity-icon green">
-
-                        <i class="bi bi-fire"></i>
-
-                    </div>
-
-                    <div class="activity-info">
-
-                        <span>Calorías</span>
-
-                        <strong>280 kcal</strong>
-
-                        <small>
-                            Aproximadas
-                        </small>
-
-                    </div>
-
-                </article>
-
-            </div>
-
+        <!-- Si no tiene mascotas -->
+
+        <section class="empty-health d-none" id="sinMascotas">
+            <div class="empty-emoji">🦮</div>
+            <h4>Primero registra una mascota</h4>
+            <p>Para llevar el control de su actividad necesitas agregarla en Mis Mascotas.</p>
+            <a href="../mismascotas/mismascotas.html" class="btn-add">
+                <i class="bi bi-plus-lg"></i>
+                Ir a Mis Mascotas
+            </a>
         </section>
 
 
-        <!-- ==============================
-             CONTENIDO
-        =============================== -->
+        <div id="contenidoApartado" class="d-none">
 
-        <div class="content-grid">
+            <!-- ================= FICHA ================= -->
 
+            <section class="health-card" id="ficha">
+                <!-- Se llena con JS -->
+            </section>
+
+
+            <!-- ================= PESTAÑAS ================= -->
+
+            <nav class="health-tabs" role="tablist">
+
+                <button class="tab active" data-tab="resumen" type="button">
+                    <i class="bi bi-speedometer"></i>
+                    <span>Resumen de la semana</span>
+                </button>
+
+                <button class="tab" data-tab="actividades" type="button">
+                    <i class="bi bi-activity"></i>
+                    <span>Actividades</span>
+                </button>
+
+                <button class="tab" data-tab="paseos" type="button">
+                    <i class="bi bi-calendar-week"></i>
+                    <span>Agenda de paseos</span>
+                </button>
+
+                <button class="tab" data-tab="peso" type="button">
+                    <i class="bi bi-speedometer2"></i>
+                    <span>Control de peso</span>
+                </button>
+
+                <button class="tab" data-tab="meta" type="button">
+                    <i class="bi bi-bullseye"></i>
+                    <span>Meta de actividad</span>
+                </button>
+
+            </nav>
+
+
+            <!-- RESUMEN DE LA SEMANA -->
+            <section class="tab-panel" data-panel="resumen">
+
+                <div class="kpi-row" id="indicadores"></div>
+
+                <div class="panel-box">
+
+                    <div class="list-header">
+                        <div>
+                            <h3><i class="bi bi-bar-chart"></i> Monitor de actividad: minutos por día</h3>
+                            <p id="textoMeta"></p>
+                        </div>
+
+                        <button type="button" class="btn-add-small" data-agregar="actividades">
+                            <i class="bi bi-plus-lg"></i>
+                            <span>Registrar actividad</span>
+                        </button>
+                    </div>
+
+                    <div id="monitor"></div>
+
+                    <p class="monitor-message" id="mensajeMonitor"></p>
+
+                    <details class="monitor-table">
+                        <summary>Ver como tabla</summary>
+                        <div id="tablaMonitor"></div>
+                    </details>
+
+                </div>
+
+            </section>
+
+            <!-- ACTIVIDADES -->
+            <section class="tab-panel d-none" data-panel="actividades">
+                <div class="ai-box" data-ideas="actividades"></div>
+                <div data-lista="actividades"></div>
+            </section>
 
             <!-- AGENDA DE PASEOS -->
-
-            <section class="info-card">
-
-                <div class="card-header">
-
-                    <div class="card-title">
-
-                        <div class="title-icon">
-
-                            <i class="bi bi-calendar-event"></i>
-
-                        </div>
-
-                        <div>
-
-                            <h3>Agenda de Paseos</h3>
-
-                            <p>
-                                Organiza los próximos paseos.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <button
-                        class="icon-btn"
-                        onclick="agregarPaseo()">
-
-                        <i class="bi bi-plus"></i>
-
-                    </button>
-
+            <section class="tab-panel d-none" data-panel="paseos">
+                <div class="ai-box" data-ideas="paseos"></div>
+                <div class="lists-grid">
+                    <div data-lista="paseosProximos"></div>
+                    <div data-lista="paseosAnteriores"></div>
                 </div>
-
-
-                <!-- PASEO 1 -->
-
-                <div class="walk">
-
-                    <div class="walk-date">
-
-                        <strong>01</strong>
-
-                        <span>OCT</span>
-
-                    </div>
-
-                    <div class="walk-info">
-
-                        <strong>
-                            Paseo por el parque
-                        </strong>
-
-                        <span>
-
-                            <i class="bi bi-clock"></i>
-                            08:00 AM
-
-                        </span>
-
-                        <span>
-
-                            <i class="bi bi-geo-alt"></i>
-                            Parque cercano
-
-                        </span>
-
-                    </div>
-
-                    <span class="walk-status">
-                        Pendiente
-                    </span>
-
-                </div>
-
-
-                <!-- PASEO 2 -->
-
-                <div class="walk">
-
-                    <div class="walk-date">
-
-                        <strong>02</strong>
-
-                        <span>OCT</span>
-
-                    </div>
-
-                    <div class="walk-info">
-
-                        <strong>
-                            Caminata
-                        </strong>
-
-                        <span>
-
-                            <i class="bi bi-clock"></i>
-                            05:30 PM
-
-                        </span>
-
-                        <span>
-
-                            <i class="bi bi-geo-alt"></i>
-                            Parque Pet Friendly
-
-                        </span>
-
-                    </div>
-
-                    <span class="walk-status">
-                        Programado
-                    </span>
-
-                </div>
-
             </section>
 
-
-            <!-- CONTROL DE ACTIVIDAD -->
-
-            <section class="info-card">
-
-                <div class="card-header">
-
-                    <div class="card-title">
-
-                        <div class="title-icon">
-
-                            <i class="bi bi-bar-chart"></i>
-
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Monitor de Actividad
-                            </h3>
-
-                            <p>
-                                Actividad de esta semana.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <span class="week-label">
-                        Esta semana
-                    </span>
-
-                </div>
-
-
-                <!-- PROGRESO -->
-
-                <div class="progress-section">
-
-                    <div class="progress-circle">
-
-                        <span>78%</span>
-
-                        <small>
-                            Actividad
-                        </small>
-
-                    </div>
-
-
-                    <div class="progress-data">
-
-                        <div>
-
-                            <span>
-                                Lunes
-                            </span>
-
-                            <div class="progress">
-
-                                <div
-                                    class="progress-bar"
-                                    style="width: 80%">
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <div>
-
-                            <span>
-                                Martes
-                            </span>
-
-                            <div class="progress">
-
-                                <div
-                                    class="progress-bar"
-                                    style="width: 65%">
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <div>
-
-                            <span>
-                                Miércoles
-                            </span>
-
-                            <div class="progress">
-
-                                <div
-                                    class="progress-bar"
-                                    style="width: 90%">
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <div>
-
-                            <span>
-                                Jueves
-                            </span>
-
-                            <div class="progress">
-
-                                <div
-                                    class="progress-bar"
-                                    style="width: 75%">
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="activity-message">
-
-                    <i class="bi bi-check-circle"></i>
-
-                    ¡Excelente! Toby mantiene una buena
-                    actividad esta semana.
-
-                </div>
-
+            <!-- CONTROL DE PESO -->
+            <section class="tab-panel d-none" data-panel="peso">
+                <div class="ai-box" data-ideas="peso"></div>
+                <div data-lista="pesos"></div>
             </section>
 
-        </div>
-
-
-        <!-- ==============================
-             CONTROL DE PESO
-        =============================== -->
-
-        <section class="info-card">
-
-            <div class="card-header">
-
-                <div class="card-title">
-
-                    <div class="title-icon">
-
-                        <i class="bi bi-speedometer2"></i>
-
-                    </div>
-
-                    <div>
-
-                        <h3>Control de Peso</h3>
-
-                        <p>
-                            Seguimiento del peso de tu mascota.
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <button
-                    class="secondary-btn"
-                    onclick="registrarPeso()">
-
-                    Registrar peso
-
-                </button>
-
-            </div>
-
-
-            <div class="weight-content">
-
-                <div class="weight-number">
-
-                    <span>Peso actual</span>
-
-                    <strong>12.5 kg</strong>
-
-                    <small>
-                        Última actualización:
-                        25 Septiembre 2026
-                    </small>
-
-                </div>
-
-
-                <div class="weight-status">
-
-                    <i class="bi bi-check-circle-fill"></i>
-
-                    <div>
-
-                        <strong>Peso estable</strong>
-
-                        <span>
-                            Continúa con la actividad recomendada.
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==============================
-             HISTORIAL
-        =============================== -->
-
-        <section class="info-card">
-
-            <div class="card-header">
-
-                <div class="card-title">
-
-                    <div class="title-icon">
-
-                        <i class="bi bi-clock-history"></i>
-
-                    </div>
-
-                    <div>
-
-                        <h3>
-                            Historial de Actividades
-                        </h3>
-
-                        <p>
-                            Últimas actividades registradas.
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <button class="secondary-btn">
-                    Ver historial
-                </button>
-
-            </div>
-
-
-            <div class="history-list">
-
-                <div class="history-item">
-
-                    <div class="history-icon">
-
-                        <i class="bi bi-person-walking"></i>
-
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Paseo por el parque
-                        </strong>
-
-                        <span>
-                            45 minutos · 3.2 km
-                        </span>
-
-                        <small>
-                            30 Septiembre 2026
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <div class="history-item">
-
-                    <div class="history-icon">
-
-                        <i class="bi bi-bicycle"></i>
-
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Caminata
-                        </strong>
-
-                        <span>
-                            30 minutos · 2.1 km
-                        </span>
-
-                        <small>
-                            28 Septiembre 2026
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <div class="history-item">
-
-                    <div class="history-icon">
-
-                        <i class="bi bi-controller"></i>
-
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Juego en casa
-                        </strong>
-
-                        <span>
-                            20 minutos
-                        </span>
-
-                        <small>
-                            27 Septiembre 2026
-                        </small>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- NOTIFICACIÓN -->
-
-        <div
-            id="activityMessage"
-            class="activity-message-popup">
-
-            <i class="bi bi-check-circle-fill"></i>
-
-            <span>Actividad registrada correctamente.</span>
+            <!-- META -->
+            <section class="tab-panel d-none" data-panel="meta">
+                <div class="ai-box" data-ideas="meta"></div>
+                <div data-lista="metas"></div>
+            </section>
 
         </div>
 
@@ -877,9 +304,53 @@
 </div>
 
 
-<!-- JavaScript -->
+<!-- ================= MODAL: AGREGAR / EDITAR ================= -->
 
-<script src="/PetCare/Client/actividadfisica/actividadfisica.js"></script>
+<div class="modal fade" id="modalRegistro" tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="tituloRegistro"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <div id="errorRegistro" class="alert alert-danger d-none" role="alert"></div>
+
+                <form id="formRegistro" novalidate>
+
+                    <div id="camposRegistro">
+                        <!-- Campos generados con JS -->
+                    </div>
+
+                    <button type="submit" class="btn-save" id="botonGuardarRegistro">
+                        <i class="bi bi-check-lg"></i>
+                        Guardar
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Bootstrap JS -->
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<script src="../comun/apartado.js"></script>
+<script src="../comun/ideas.js"></script>
+<script src="actividadfisica.js"></script>
 
 </body>
 

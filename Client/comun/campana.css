@@ -1,0 +1,201 @@
+/* =========================================
+   PETCARE - CAMPANITA DE NOTIFICACIONES
+========================================= */
+
+.campana {
+    position: relative;
+}
+
+.campana-boton {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: #7046e8;
+    font-size: 21px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.campana-boton:hover,
+.campana-boton[aria-expanded="true"] {
+    background: #f1ebff;
+}
+
+.campana-numero {
+    position: absolute;
+    top: 3px;
+    right: 2px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    border-radius: 10px;
+    border: 2px solid white;
+    background: #d63b5c;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 14px;
+    text-align: center;
+}
+
+.campana-numero[hidden],
+.campana-panel[hidden],
+.campana-todas[hidden],
+.campana-aviso[hidden] {
+    display: none;
+}
+
+.campana-panel {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 2000;
+    width: 360px;
+    max-width: calc(100vw - 32px);
+    border-radius: 18px;
+    background: white;
+    border: 1px solid #e6e3f3;
+    box-shadow: 0 18px 45px rgba(40, 30, 80, .18);
+    overflow: hidden;
+    font-family: inherit;
+}
+
+.campana-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    border-bottom: 1px solid #f0eef7;
+}
+
+.campana-encabezado strong {
+    font-size: 15px;
+    color: #1f1a3d;
+}
+
+.campana-todas {
+    border: none;
+    background: none;
+    color: #7046e8;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.campana-lista {
+    max-height: 380px;
+    overflow-y: auto;
+}
+
+.campana-item {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    padding: 12px 16px;
+    border: none;
+    border-bottom: 1px solid #f6f4fb;
+    background: white;
+    text-align: left;
+    cursor: pointer;
+    transition: background .15s;
+}
+
+.campana-item:hover {
+    background: #faf8ff;
+}
+
+.campana-item.nueva {
+    background: #f6f2ff;
+}
+
+.campana-item.nueva .campana-texto strong::after {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-left: 6px;
+    border-radius: 50%;
+    background: #7046e8;
+    vertical-align: middle;
+}
+
+.campana-icono {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.campana-icono.verde   { background: #e3f6ec; color: #137a48; }
+.campana-icono.naranja { background: #fff1df; color: #c66a00; }
+.campana-icono.azul    { background: #e5efff; color: #2b62c9; }
+.campana-icono.morado  { background: #eee7ff; color: #7046e8; }
+
+.campana-texto {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.campana-texto strong {
+    font-size: 13px;
+    color: #1f1a3d;
+}
+
+.campana-texto span {
+    color: #4a4760;
+    font-size: 12px;
+}
+
+.campana-texto small {
+    color: #8a879c;
+    font-size: 11px;
+}
+
+.campana-vacia {
+    margin: 0;
+    padding: 24px 16px;
+    color: #8a879c;
+    font-size: 13px;
+    text-align: center;
+}
+
+.campana-pie {
+    display: grid;
+    gap: 6px;
+    padding: 12px 16px;
+    border-top: 1px solid #f0eef7;
+    background: #faf9fd;
+}
+
+.campana-pie label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    color: #4a4760;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.campana-pie input {
+    accent-color: #7046e8;
+}
+
+.campana-aviso {
+    color: #b45309;
+    font-size: 11px;
+}

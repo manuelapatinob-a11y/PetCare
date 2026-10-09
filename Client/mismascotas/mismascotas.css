@@ -41,6 +41,7 @@ body {
 }
 
 .logo-area {
+    display: block;
     text-align: center;
     margin-bottom: 40px;
 }
@@ -252,6 +253,10 @@ body {
     );
 }
 
+.avatar.con-foto {
+    background: center / cover;
+}
+
 
 /* =========================================
    INTRO
@@ -262,7 +267,7 @@ body {
     align-items: center;
     justify-content: space-between;
 
-    margin: 25px 0 18px;
+    margin: 30px 0 18px;
 }
 
 .intro h3 {
@@ -310,9 +315,19 @@ body {
 .pets-grid {
     display: grid;
     grid-template-columns:
-        repeat(2, minmax(280px, 1fr));
+        repeat(auto-fill, minmax(270px, 1fr));
 
-    gap: 20px;
+    gap: 22px;
+}
+
+.loading-pets {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 30px;
+    color: #777b8c;
+    font-size: 14px;
 }
 
 
@@ -321,111 +336,146 @@ body {
 ========================================= */
 
 .pet-card {
+    display: flex;
+    flex-direction: column;
     background: white;
-    border: 1px solid #dedff0;
-    border-radius: 18px;
+    border: 1px solid #e6e3f3;
+    border-radius: 22px;
     overflow: hidden;
-    transition: .25s;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(70,50,120,.05);
+    transition: transform .25s, box-shadow .25s;
 }
 
 .pet-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
     box-shadow:
-        0 10px 25px rgba(70,50,120,.08);
+        0 16px 35px rgba(70,50,120,.13);
 }
 
 
 /* FOTO */
 
 .pet-image {
-    height: 170px;
+    height: 200px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
-.dog {
-    background: linear-gradient(
-        135deg,
-        #eee7ff,
-        #f8efff
-    );
+.pet-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s;
 }
 
-.cat {
-    background: linear-gradient(
-        135deg,
-        #e9e9ff,
-        #f4eaff
-    );
+.pet-card:hover .pet-image img {
+    transform: scale(1.05);
 }
 
-.pet-photo {
-    width: 105px;
-    height: 105px;
+.pet-emoji {
+    width: 110px;
+    height: 110px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: white;
-    font-size: 65px;
+    background: rgba(255,255,255,.85);
+    font-size: 62px;
     box-shadow:
-        0 6px 20px rgba(80,60,130,.12);
+        0 8px 22px rgba(80,60,130,.15);
 }
 
-/* ESTADO */
+.dog {
+    background: linear-gradient(135deg, #ffe9cc, #f3e5ff);
+}
 
-.status {
+.cat {
+    background: linear-gradient(135deg, #e3e8ff, #f4e6ff);
+}
+
+.bird {
+    background: linear-gradient(135deg, #e0f7ec, #e6f0ff);
+}
+
+.rabbit {
+    background: linear-gradient(135deg, #ffe6ef, #f4eaff);
+}
+
+.other {
+    background: linear-gradient(135deg, #eee7ff, #f8efff);
+}
+
+.species-badge {
     position: absolute;
-    top: 13px;
-    right: 13px;
-    padding: 5px 10px;
+    left: 12px;
+    top: 12px;
+    padding: 5px 11px;
     border-radius: 20px;
-    font-size: 11px;
+    background: rgba(255,255,255,.92);
+    color: #3b2f6b;
+    font-size: 12px;
     font-weight: 600;
+    box-shadow: 0 3px 10px rgba(0,0,0,.08);
 }
 
-.active-status {
-    background: #ddf8ea;
-    color: #23925c;
+.pet-menu {
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
+
+.options {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,.92);
+    color: #4a3c7c;
+    font-size: 16px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.08);
+}
+
+.options:hover {
+    background: white;
+    color: #7046e8;
+}
+
 
 /* =========================================
    CONTENIDO
 ========================================= */
 
 .pet-content {
-    padding: 17px;
-}
-
-.pet-heading {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
+    flex: 1;
+    padding: 18px;
 }
 
 .pet-heading h4 {
     margin: 0;
-    font-size: 19px;
+    font-size: 21px;
+    font-weight: 700;
+    color: #1f1a3d;
 }
 
 .pet-heading span {
     display: block;
-    margin-top: 3px;
+    margin-top: 2px;
     color: #777b8c;
-    font-size: 12px;
+    font-size: 13px;
 }
 
-.options {
-    border: none;
-    background: transparent;
-    color: #777b8c;
-    font-size: 18px;
-}
 
 /* =========================================
-   DATOS
+   DATOS: EDAD, SEXO, PESO
 ========================================= */
 
 .pet-data {
@@ -433,13 +483,13 @@ body {
     grid-template-columns:
         repeat(3, 1fr);
     gap: 8px;
-    margin: 18px 0;
+    margin: 16px 0 12px;
 }
 
 .pet-data div {
-    padding: 10px;
-    background: #f8f7fc;
-    border-radius: 10px;
+    padding: 11px 6px;
+    background: #f7f5fe;
+    border-radius: 14px;
     text-align: center;
 }
 
@@ -447,19 +497,56 @@ body {
     display: block;
     margin-bottom: 4px;
     color: #7046e8;
-    font-size: 17px;
+    font-size: 18px;
 }
 
 .pet-data span {
     display: block;
-    color: #777b8c;
-    font-size: 10px;
+    color: #8a879c;
+    font-size: 11px;
 }
 
 .pet-data strong {
     display: block;
-    margin-top: 3px;
-    font-size: 12px;
+    margin-top: 2px;
+    font-size: 14px;
+    color: #1f1a3d;
+}
+
+
+/* ETIQUETAS */
+
+.pet-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    min-height: 4px;
+    margin-bottom: 14px;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.tag.green {
+    background: #e3f6ec;
+    color: #137a48;
+}
+
+.tag.blue {
+    background: #e5efff;
+    color: #2b62c9;
+}
+
+.tag.red {
+    background: #fdebef;
+    color: #b02a4a;
 }
 
 
@@ -470,18 +557,21 @@ body {
 .pet-actions {
     display: flex;
     gap: 10px;
-    padding-top: 12px;
-    border-top: 1px solid #eeeeF4;
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid #f0eef7;
 }
 
 .pet-actions a {
     flex: 1;
     padding: 9px;
-    border-radius: 8px;
+    border-radius: 10px;
     text-align: center;
     color: #7046e8;
     background: #f2edff;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
     transition: .2s;
 }
 
@@ -494,12 +584,13 @@ body {
     margin-right: 4px;
 }
 
+
 /* =========================================
    AGREGAR MASCOTA
 ========================================= */
 
 .add-pet-card {
-    min-height: 350px;
+    min-height: 380px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -507,7 +598,7 @@ body {
     text-align: center;
     background: white;
     border: 2px dashed #d7d0ef;
-    border-radius: 18px;
+    border-radius: 22px;
     cursor: pointer;
     transition: .25s;
 }
@@ -541,18 +632,39 @@ body {
     font-size: 12px;
 }
 
+
+/* SIN MASCOTAS */
+
+.empty-pets {
+    grid-column: 1 / -1;
+    padding: 50px 20px;
+    text-align: center;
+    background: white;
+    border: 2px dashed #d7d0ef;
+    border-radius: 22px;
+}
+
+.empty-emoji {
+    font-size: 54px;
+    margin-bottom: 10px;
+}
+
+.empty-pets h4 {
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.empty-pets p {
+    max-width: 380px;
+    margin: 6px auto 20px;
+    color: #777b8c;
+    font-size: 14px;
+}
+
+
 /* =========================================
    RESUMEN
 ========================================= */
-
-.summary {
-    margin-top: 25px;
-}
-
-.summary h3 {
-    font-size: 18px;
-    margin-bottom: 14px;
-}
 
 .summary-grid {
     display: grid;
@@ -567,44 +679,62 @@ body {
     gap: 12px;
     padding: 16px;
     background: white;
-    border: 1px solid #dedff0;
-    border-radius: 14px;
+    border: 1px solid #e6e3f3;
+    border-radius: 16px;
 }
 
 .summary-icon {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 11px;
+    border-radius: 12px;
     background: #eee8ff;
     color: #7046e8;
-    font-size: 18px;
+    font-size: 19px;
+}
+
+.summary-icon.blue {
+    background: #e5efff;
+    color: #2b62c9;
+}
+
+.summary-icon.pink {
+    background: #ffe7f0;
+    color: #d0457a;
+}
+
+.summary-icon.green {
+    background: #e3f6ec;
+    color: #137a48;
 }
 
 .summary-card span {
     display: block;
     color: #777b8c;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 .summary-card strong {
     display: block;
-    margin-top: 3px;
-    font-size: 19px;
+    margin-top: 2px;
+    font-size: 21px;
 }
+
 
 /* =========================================
    MODAL
 ========================================= */
+
 .modal-content {
     border: none;
-    border-radius: 18px;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .modal-header {
-    border-bottom: 1px solid #eeeeF4;
+    border-bottom: 1px solid #eeeef4;
 }
 
 .modal-title {
@@ -629,12 +759,25 @@ body {
     font-weight: 600;
 }
 
+.form-section {
+    margin: 24px 0 12px;
+    color: #7046e8;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.form-section i {
+    margin-right: 5px;
+}
+
 .form-control,
 .form-select {
     border: 1px solid #dfe0eb;
-    border-radius: 9px;
+    border-radius: 10px;
     padding: 10px 12px;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .form-control:focus,
@@ -644,11 +787,109 @@ body {
         0 0 0 3px rgba(112,70,232,.1);
 }
 
+
+/* FOTO EN EL FORMULARIO */
+
+.photo-upload {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.photo-preview {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f1ebff center / cover;
+    border: 3px solid white;
+    box-shadow: 0 0 0 2px #e3dcf5;
+    color: #7046e8;
+    font-size: 30px;
+}
+
+.photo-preview.has-photo i {
+    display: none;
+}
+
+.photo-upload small {
+    display: block;
+    margin-top: 6px;
+    color: #777b8c;
+    font-size: 12px;
+}
+
+.modal-body .photo-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    padding: 8px 14px;
+    border-radius: 10px;
+    background: #f1ebff;
+    color: #7046e8;
+    cursor: pointer;
+}
+
+.photo-button:hover {
+    background: #e4d9ff;
+}
+
+
+/* SEXO */
+
+.sex-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.modal-body .btn-sex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 0;
+    padding: 10px;
+    border: 1px solid #dfe0eb;
+    border-radius: 10px;
+    color: #4a3c7c;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-check:checked + .btn-sex {
+    border-color: #7046e8;
+    background: #f1ebff;
+    color: #7046e8;
+}
+
+.switch-box {
+    padding: 11px 12px 11px 48px;
+    width: 100%;
+    border: 1px solid #dfe0eb;
+    border-radius: 10px;
+}
+
+.switch-box .form-check-input:checked {
+    background-color: #7046e8;
+    border-color: #7046e8;
+}
+
+.modal-body .switch-box label {
+    margin: 0;
+    font-weight: 500;
+}
+
 .btn-save {
     width: 100%;
+    margin-top: 24px;
     border: none;
-    padding: 11px;
-    border-radius: 9px;
+    padding: 13px;
+    border-radius: 12px;
     background: linear-gradient(
         90deg,
         #7b48d8,
@@ -656,6 +897,64 @@ body {
     );
     color: white;
     font-weight: 600;
+}
+
+.btn-save:disabled {
+    opacity: .7;
+}
+
+
+/* DETALLE DE LA MASCOTA */
+
+.detail-header {
+    height: 230px;
+}
+
+.detail-header .btn-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,.9);
+}
+
+.detail-name {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.detail-breed {
+    margin: 2px 0 16px;
+    color: #777b8c;
+}
+
+.detail-row {
+    display: grid;
+    grid-template-columns: 22px 120px 1fr;
+    align-items: start;
+    gap: 8px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0eef7;
+    font-size: 14px;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-row i {
+    color: #7046e8;
+}
+
+.detail-row span {
+    color: #777b8c;
+}
+
+.detail-row strong {
+    font-weight: 600;
+    white-space: pre-line;
 }
 
 /* =========================================
@@ -822,4 +1121,44 @@ body {
         margin: 0;
     }
 
+}
+
+/* =========================================
+   EDITAR Y ELIMINAR DESDE EL DETALLE
+========================================= */
+
+.detail-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.detail-buttons .btn-save,
+.detail-buttons .btn-delete {
+    flex: 1;
+    margin-top: 0;
+}
+
+.btn-delete {
+    padding: 13px;
+    border: 1px solid #f3c6d1;
+    border-radius: 12px;
+    background: white;
+    color: #b02a4a;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.btn-delete:hover {
+    background: #fdebef;
+}
+
+.remove-photo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    color: #b02a4a;
+    font-size: 13px;
+    cursor: pointer;
 }

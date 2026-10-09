@@ -18,7 +18,11 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/PetCare/Client/mismascotas/mismascotas.css">
+    <link rel="stylesheet" href="mismascotas.css">
+
+    <!-- Sesión: si no hay sesión iniciada, va al login -->
+    <script src="../auth/sesion.js"></script>
+    <script>requiereSesion();</script>
 </head>
 
 <body>
@@ -29,68 +33,68 @@
 
     <aside class="sidebar">
 
-        <div class="logo-area">
-            <img src="/PetCare/Recursos/logo.png" class="logo" alt="PetCare">
-        </div>
+        <a href="../inicio/inicio.html" class="logo-area">
+            <img src="../../Recursos/logo.png" class="logo" alt="PetCare">
+        </a>
 
         <nav class="main-menu">
 
-            <a href="/PetCare/index.html" class="sin-subrayado">
+            <a href="../inicio/inicio.html" class="sin-subrayado">
                 <i class="bi bi-house"></i>
                 Inicio
             </a>
 
-            <a href="/PetCare/Client/mismascotas/mismascotas.html" class="sin-subrayado">
+            <a href="mismascotas.html" class="sin-subrayado active">
                 <i class="bi bi-people"></i>
                 Mis Mascotas
             </a>
 
-            <a href="/PetCare/Client/salud/salud.html" class="sin-subrayado">
+            <a href="../salud/salud.html" class="sin-subrayado">
                 <i class="bi bi-heart-pulse"></i>
                 Salud
             </a>
 
-            <a href="/PetCare/Client/alimentacion/Alimentacion.html" class="sin-subrayado">
+            <a href="../alimentacion/Alimentacion.html" class="sin-subrayado">
                 <i class="bi bi-cup-hot"></i>
                 Alimentación
             </a>
 
-            <a href="/PetCare/Client/actividadfisica/actividadfisica.html" class="sin-subrayado">
-                    <i class="bi bi-person-walking"></i>
-                    <span>Actividad Física</span>
-                </a>
+            <a href="../actividadfisica/actividadfisica.html" class="sin-subrayado">
+                <i class="bi bi-person-walking"></i>
+                Actividad Física
+            </a>
 
-            <a href="/PetCare/Client/recordatorios/recordatorios.html" class="sin-subrayado">
+            <a href="../entrenamiento/entrenamiento.html" class="sin-subrayado">
+                <i class="bi bi-award"></i>
+                Entrenamiento y comportamiento
+            </a>
+
+            <a href="../recordatorios/recordatorios.html" class="sin-subrayado">
                 <i class="bi bi-bell"></i>
                 Recordatorios
             </a>
 
-            <a href="/PetCare/Client/mapa/mapa.html" class="sin-subrayado">
+            <a href="../mapa/mapa.html" class="sin-subrayado">
                 <i class="bi bi-geo-alt"></i>
                 Mapa Pet Friendly
             </a>
 
-            <a href="/PetCare/Client/servicios/servicios.html" class="sin-subrayado">
-                <i class="bi bi-shop"></i>
-                Servicios
-            </a>
-
-            <a href="/PetCare/Client/finanzas/finanzas.html" class="sin-subrayado">
+            <a href="../finanzas/finanzas.html" class="sin-subrayado">
                 <i class="bi bi-wallet2"></i>
                 Finanzas
             </a>
 
-            <a href="/PetCare/Client/asistente/asistente.html" class="sin-subrayado">
-                    <i class="bi bi-robot"></i>
-                    <span>Asistente IA</span>
-                </a>
+            <a href="../asistente/asistente.html" class="sin-subrayado">
+                <i class="bi bi-robot"></i>
+                Asistente IA
+            </a>
 
-            <a href="/PetCare/Client/perfil/perfil.html" class="sin-subrayado">
+            <a href="../perfil/perfil.html" class="sin-subrayado">
                 <i class="bi bi-person"></i>
                 Perfil
             </a>
 
-            <a href="/PetCare/Client/configuracion/configuracion.html" class="sin-subrayado">
+            <a href="../configuracion/configuracion.html" class="sin-subrayado">
                 <i class="bi bi-gear"></i>
                 Configuración
             </a>
@@ -110,7 +114,7 @@
 
             <div class="page-title">
 
-                <a href="/PetCare/index.html" class="back">
+                <a href="../inicio/inicio.html" class="back" aria-label="Volver al inicio">
                     <i class="bi bi-arrow-left"></i>
                 </a>
 
@@ -118,10 +122,9 @@
                     <h2>Mis Mascotas</h2>
 
                     <p>
-                        Administra y consulta la información de tus mascotas.
+                        Consulta y administra la información de todas tus mascotas.
                     </p>
                 </div>
-
             </div>
 
 
@@ -129,33 +132,29 @@
 
             <div class="user-area">
 
-                <button class="notification-btn">
-                    <i class="bi bi-bell"></i>
-                </button>
-
                 <div class="dropdown">
 
                     <button
                         class="user-button dropdown-toggle"
                         data-bs-toggle="dropdown">
 
-                        <span class="avatar">MP</span>
+                        <span class="avatar" data-usuario-avatar></span>
 
-                        <strong>Manuela P.</strong>
+                        <strong data-usuario-nombre></strong>
 
                     </button>
 
                     <ul class="dropdown-menu dropdown-menu-end">
 
                         <li>
-                            <a class="dropdown-item" href="/PetCare/Client/perfil del usuario/perfildelusuario.html">
+                            <a class="dropdown-item" href="../perfil/perfil.html">
                                 <i class="bi bi-person"></i>
                                 Mi perfil
                             </a>
                         </li>
 
                         <li>
-                            <a class="dropdown-item" href="/PetCare/Client/configuracion/configuracion.html">
+                            <a class="dropdown-item" href="../configuracion/configuracion.html">
                                 <i class="bi bi-gear"></i>
                                 Configuración
                             </a>
@@ -166,7 +165,7 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item" href="/PetCare/Client/login/login.html">
+                            <a class="dropdown-item text-danger" href="../login/login.html" data-cerrar-sesion>
                                 <i class="bi bi-box-arrow-right"></i>
                                 Cerrar sesión
                             </a>
@@ -181,6 +180,53 @@
         </header>
 
 
+        <!-- ================= RESUMEN ================= -->
+
+        <section class="summary-grid">
+
+            <div class="summary-card">
+                <div class="summary-icon">
+                    <i class="bi bi-heart-fill"></i>
+                </div>
+                <div>
+                    <span>Mascotas registradas</span>
+                    <strong id="totalMascotas">0</strong>
+                </div>
+            </div>
+
+            <div class="summary-card">
+                <div class="summary-icon blue">
+                    <i class="bi bi-gender-male"></i>
+                </div>
+                <div>
+                    <span>Machos</span>
+                    <strong id="totalMachos">0</strong>
+                </div>
+            </div>
+
+            <div class="summary-card">
+                <div class="summary-icon pink">
+                    <i class="bi bi-gender-female"></i>
+                </div>
+                <div>
+                    <span>Hembras</span>
+                    <strong id="totalHembras">0</strong>
+                </div>
+            </div>
+
+            <div class="summary-card">
+                <div class="summary-icon green">
+                    <i class="bi bi-shield-check"></i>
+                </div>
+                <div>
+                    <span>Esterilizadas</span>
+                    <strong id="totalEsterilizadas">0</strong>
+                </div>
+            </div>
+
+        </section>
+
+
         <!-- ================= TÍTULO ================= -->
 
         <section class="intro">
@@ -189,8 +235,7 @@
                 <h3>Tus mascotas 🐾</h3>
 
                 <p>
-                    Aquí puedes consultar y administrar la información
-                    de tus compañeros.
+                    Toca una tarjeta para ver toda su información.
                 </p>
             </div>
 
@@ -208,272 +253,17 @@
         </section>
 
 
+        <div id="mensaje" class="alert d-none" role="alert"></div>
+
+
         <!-- ================= MASCOTAS ================= -->
 
-        <section class="pets-grid">
-
-
-            <!-- TOBY -->
-
-            <article class="pet-card">
-
-                <div class="pet-image dog">
-
-                    <span class="status active-status">
-                        Activo
-                    </span>
-
-                    <div class="pet-photo">
-                        🐶
-                    </div>
-
-                </div>
-
-
-                <div class="pet-content">
-
-                    <div class="pet-heading">
-
-                        <div>
-
-                            <h4>Toby</h4>
-
-                            <span>
-                                Golden Retriever
-                            </span>
-
-                        </div>
-
-                        <button class="options">
-                            <i class="bi bi-three-dots"></i>
-                        </button>
-
-                    </div>
-
-
-                    <div class="pet-data">
-
-                        <div>
-                            <i class="bi bi-calendar3"></i>
-
-                            <span>Edad</span>
-
-                            <strong>4 años</strong>
-                        </div>
-
-                        <div>
-                            <i class="bi bi-gender-male"></i>
-
-                            <span>Sexo</span>
-
-                            <strong>Macho</strong>
-                        </div>
-
-                        <div>
-                            <i class="bi bi-speedometer2"></i>
-
-                            <span>Peso</span>
-
-                            <strong>28 kg</strong>
-                        </div>
-
-                    </div>
-
-
-                    <div class="pet-actions">
-
-                        <a href="/PetCare/Client/salud/salud.html">
-                            <i class="bi bi-heart-pulse"></i>
-                            Salud
-                        </a>
-
-                        <a href="/PetCare/Client/alimentacion/alimentacion.html">
-                            <i class="bi bi-cup-hot"></i>
-                            Alimentación
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- LUNA -->
-
-            <article class="pet-card">
-
-                <div class="pet-image cat">
-
-                    <span class="status active-status">
-                        Activa
-                    </span>
-
-                    <div class="pet-photo">
-                        🐱
-                    </div>
-
-                </div>
-
-
-                <div class="pet-content">
-
-                    <div class="pet-heading">
-
-                        <div>
-
-                            <h4>Luna</h4>
-
-                            <span>
-                                Gato
-                            </span>
-
-                        </div>
-
-                        <button class="options">
-                            <i class="bi bi-three-dots"></i>
-                        </button>
-
-                    </div>
-
-
-                    <div class="pet-data">
-
-                        <div>
-                            <i class="bi bi-calendar3"></i>
-
-                            <span>Edad</span>
-
-                            <strong>2 años</strong>
-                        </div>
-
-                        <div>
-                            <i class="bi bi-gender-female"></i>
-
-                            <span>Sexo</span>
-
-                            <strong>Hembra</strong>
-                        </div>
-
-                        <div>
-                            <i class="bi bi-speedometer2"></i>
-
-                            <span>Peso</span>
-
-                            <strong>4.5 kg</strong>
-                        </div>
-
-                    </div>
-
-
-                    <div class="pet-actions">
-
-                        <a href="/PetCare/Client/salud/salud.html">
-                            <i class="bi bi-heart-pulse"></i>
-                            Salud
-                        </a>
-
-                        <a href="/PetCare/Client/alimentacion/Alimentacion.html">
-                            <i class="bi bi-cup-hot"></i>
-                            Alimentación
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- AGREGAR -->
-
-            <article
-                class="add-pet-card"
-                data-bs-toggle="modal"
-                data-bs-target="#modalMascota">
-
-                <div class="add-icon">
-                    <i class="bi bi-plus-lg"></i>
-                </div>
-
-                <h4>Agregar mascota</h4>
-
-                <p>
-                    Registra una nueva mascota
-                    en PetCare.
-                </p>
-
-            </article>
-
-
-        </section>
-
-
-        <!-- ================= RESUMEN ================= -->
-
-        <section class="summary">
-
-            <h3>Resumen de tus mascotas</h3>
-
-            <div class="summary-grid">
-
-                <div class="summary-card">
-
-                    <div class="summary-icon">
-                        <i class="bi bi-heart"></i>
-                    </div>
-
-                    <div>
-                        <span>Mascotas registradas</span>
-                        <strong>2</strong>
-                    </div>
-
-                </div>
-
-
-                <div class="summary-card">
-
-                    <div class="summary-icon">
-                        <i class="bi bi-shield-check"></i>
-                    </div>
-
-                    <div>
-                        <span>Vacunas al día</span>
-                        <strong>2</strong>
-                    </div>
-
-                </div>
-
-
-                <div class="summary-card">
-
-                    <div class="summary-icon">
-                        <i class="bi bi-calendar-check"></i>
-                    </div>
-
-                    <div>
-                        <span>Próximas citas</span>
-                        <strong>1</strong>
-                    </div>
-
-                </div>
-
-
-                <div class="summary-card">
-
-                    <div class="summary-icon">
-                        <i class="bi bi-bell"></i>
-                    </div>
-
-                    <div>
-                        <span>Recordatorios</span>
-                        <strong>3</strong>
-                    </div>
-
-                </div>
-
+        <section class="pets-grid" id="listaMascotas">
+
+            <!-- Mientras cargan -->
+            <div class="loading-pets">
+                <span class="spinner-border spinner-border-sm"></span>
+                Cargando tus mascotas...
             </div>
 
         </section>
@@ -491,13 +281,13 @@
     id="modalMascota"
     tabindex="-1">
 
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
 
         <div class="modal-content">
 
             <div class="modal-header">
 
-                <h5 class="modal-title">
+                <h5 class="modal-title" id="tituloMascota">
                     <i class="bi bi-heart"></i>
                     Agregar mascota
                 </h5>
@@ -513,82 +303,184 @@
 
             <div class="modal-body">
 
-                <form id="formMascota">
+                <div id="mensajeFormulario" class="alert alert-danger d-none" role="alert"></div>
 
-                    <div class="mb-3">
+                <form id="formMascota" novalidate>
 
-                        <label>
-                            Nombre de la mascota
-                        </label>
+                    <!-- FOTO -->
 
-                        <input
-                            type="text"
-                            id="nombreMascota"
-                            class="form-control"
-                            placeholder="Ej: Max"
-                            required>
+                    <div class="photo-upload">
 
-                    </div>
-
-
-                    <div class="mb-3">
-
-                        <label>
-                            Tipo de mascota
-                        </label>
-
-                        <select
-                            id="tipoMascota"
-                            class="form-select"
-                            required>
-
-                            <option value="">
-                                Selecciona una opción
-                            </option>
-
-                            <option value="Perro">
-                                🐶 Perro
-                            </option>
-
-                            <option value="Gato">
-                                🐱 Gato
-                            </option>
-
-                            <option value="Otro">
-                                🐾 Otro
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="row">
-
-                        <div class="col-md-6 mb-3">
-
-                            <label>
-                                Edad
-                            </label>
-
-                            <input
-                                type="number"
-                                class="form-control"
-                                placeholder="Años">
-
+                        <div class="photo-preview" id="vistaFoto">
+                            <i class="bi bi-camera"></i>
                         </div>
 
-                        <div class="col-md-6 mb-3">
-
-                            <label>
-                                Peso
+                        <div>
+                            <label class="photo-button" for="foto">
+                                <i class="bi bi-upload"></i>
+                                Elegir foto
                             </label>
 
                             <input
-                                type="number"
-                                class="form-control"
-                                placeholder="Kg">
+                                type="file"
+                                id="foto"
+                                name="foto"
+                                accept="image/jpeg,image/png,image/webp"
+                                hidden>
 
+                            <small>Opcional. JPG, PNG o WEBP de máximo 2 MB.</small>
+
+                            <label class="remove-photo d-none" id="quitarFoto">
+                                <input type="checkbox" id="quitar_foto" name="quitar_foto" value="1">
+                                Quitar la foto actual
+                            </label>
+                        </div>
+
+                    </div>
+
+
+                    <!-- DATOS BÁSICOS -->
+
+                    <h6 class="form-section">
+                        <i class="bi bi-info-circle"></i>
+                        Datos básicos
+                    </h6>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+                            <label for="nombre">Nombre *</label>
+                            <input
+                                type="text"
+                                id="nombre"
+                                name="nombre"
+                                class="form-control"
+                                placeholder="Ej: Max"
+                                maxlength="60"
+                                required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label>Sexo *</label>
+
+                            <div class="sex-options">
+                                <input type="radio" class="btn-check" name="sexo" id="sexoMacho" value="macho" required>
+                                <label class="btn-sex" for="sexoMacho">
+                                    <i class="bi bi-gender-male"></i>
+                                    Macho
+                                </label>
+
+                                <input type="radio" class="btn-check" name="sexo" id="sexoHembra" value="hembra">
+                                <label class="btn-sex" for="sexoHembra">
+                                    <i class="bi bi-gender-female"></i>
+                                    Hembra
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="id_especie">Especie *</label>
+                            <select id="id_especie" name="id_especie" class="form-select" required>
+                                <option value="">Cargando...</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="id_raza">Raza</label>
+                            <select id="id_raza" name="id_raza" class="form-select" disabled>
+                                <option value="">Primero elige la especie</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="fecha_nacimiento">Fecha de nacimiento</label>
+                            <input
+                                type="date"
+                                id="fecha_nacimiento"
+                                name="fecha_nacimiento"
+                                class="form-control">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="peso_actual">Peso (kg)</label>
+                            <input
+                                type="number"
+                                id="peso_actual"
+                                name="peso_actual"
+                                class="form-control"
+                                placeholder="Ej: 12.5"
+                                min="0.01"
+                                max="999.99"
+                                step="0.01">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="color">Color</label>
+                            <input
+                                type="text"
+                                id="color"
+                                name="color"
+                                class="form-control"
+                                placeholder="Ej: Café con blanco"
+                                maxlength="50">
+                        </div>
+
+                    </div>
+
+
+                    <!-- SALUD -->
+
+                    <h6 class="form-section">
+                        <i class="bi bi-heart-pulse"></i>
+                        Salud e identificación
+                    </h6>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+                            <label for="microchip">Número de microchip</label>
+                            <input
+                                type="text"
+                                id="microchip"
+                                name="microchip"
+                                class="form-control"
+                                placeholder="Si no tiene, déjalo vacío"
+                                maxlength="50">
+                        </div>
+
+                        <div class="col-md-6 d-flex align-items-end">
+                            <div class="form-check form-switch switch-box">
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    id="esterilizado"
+                                    name="esterilizado"
+                                    value="1">
+                                <label class="form-check-label" for="esterilizado">
+                                    Está esterilizado(a)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="alergias">Alergias</label>
+                            <textarea
+                                id="alergias"
+                                name="alergias"
+                                class="form-control"
+                                rows="3"
+                                placeholder="Ej: Alergia al pollo"></textarea>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="observaciones">Observaciones</label>
+                            <textarea
+                                id="observaciones"
+                                name="observaciones"
+                                class="form-control"
+                                rows="3"
+                                placeholder="Carácter, cuidados especiales..."></textarea>
                         </div>
 
                     </div>
@@ -596,8 +488,10 @@
 
                     <button
                         type="submit"
-                        class="btn-save">
+                        class="btn-save"
+                        id="botonGuardar">
 
+                        <i class="bi bi-check-lg"></i>
                         Guardar mascota
 
                     </button>
@@ -613,13 +507,31 @@
 </div>
 
 
+<!-- ================= MODAL DETALLE ================= -->
+
+<div
+    class="modal fade"
+    id="modalDetalle"
+    tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content" id="detalleMascota">
+            <!-- Se llena con JS -->
+        </div>
+
+    </div>
+
+</div>
+
+
 <!-- Bootstrap JS -->
 
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 </script>
 
-<script src="/PetCare/Client/mismascotas/mismascotas.js"></script>
+<script src="mismascotas.js"></script>
 
 </body>
 

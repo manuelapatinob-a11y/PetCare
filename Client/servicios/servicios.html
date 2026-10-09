@@ -5,717 +5,157 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Servicios | PetCare</title>
+    <title>PetCare | Servicios para mascotas</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/PetCare/Client/servicios/servicios.css">
+    <!-- CSS: el menú lateral público es el mismo del mapa -->
+    <link rel="stylesheet" href="../mapa/mapa.css">
+    <link rel="stylesheet" href="servicios.css">
 </head>
 
 <body>
 
-    <div class="dashboard">
+<div class="app-container">
 
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
+    <!-- ================= SIDEBAR (público; con sesión se cambia por el del usuario) ================= -->
 
-            <div class="logo">
-                <div class="logo-area">
-                    <img src="/PetCare/Recursos/logo.png" alt="" class="PetCare">
-                </div>
+    <aside class="sidebar">
 
-            </div>
+        <a href="../../index.html" class="logo-area">
+            <img src="../../Recursos/logo.png" alt="PetCare" class="logo">
+        </a>
 
-            <nav class="menu">
+        <nav class="menu" data-activo="servicios">
 
-                <a href="/PetCare/index.html" class="menu-item">
-                    <i class="bi bi-house"></i>
-                    <span>Inicio</span>
-                </a>
+            <a href="../../index.html">
+                <i class="bi bi-house"></i>
+                Inicio
+            </a>
 
-                <a href="/PetCare/Client/mismascotas/mismascotas.html" class="menu-item">
-                    <i class="bi bi-heart"></i>
-                    <span>Mis Mascotas</span>
-                </a>
+            <a href="servicios.html" class="active">
+                <i class="bi bi-shop"></i>
+                Servicios
+            </a>
 
-                <a href="/PetCare/Client/salud/salud.html" class="menu-item">
-                    <i class="bi bi-heart-pulse"></i>
-                    <span>Salud</span>
-                </a>
+            <a href="../mapa/mapa.html">
+                <i class="bi bi-geo-alt"></i>
+                Mapa Pet Friendly
+            </a>
 
-                <a href="/PetCare/Client/salud/alimentacion.html" class="menu-item">
-                    <i class="bi bi-cup-hot"></i>
-                    <span>Alimentación</span>
-                </a>
+            <a href="../Nosotros/nosotros.html">
+                <i class="bi bi-people"></i>
+                Nosotros
+            </a>
 
-                <a href="/PetCare/Client/actividadfisica/actividadfisica.html" class="menu-item">
-                    <i class="bi bi-person-walking"></i>
-                    <span>Actividad Física</span>
-                </a>
+            <a href="../Contacto/contacto.html">
+                <i class="bi bi-envelope"></i>
+                Contacto
+            </a>
 
-                <a href="/PetCare/Client/salud/recordatorios.html" class="menu-item">
-                    <i class="bi bi-bell"></i>
-                    <span>Recordatorios</span>
-                </a>
+        </nav>
 
-                <a href="/PetCare/Client/mapa/mapa.html" class="menu-item">
-                    <i class="bi bi-geo-alt"></i>
-                    <span>Mapa Pet Friendly</span>
-                </a>
+        <a href="../login/login.html" class="login-link" id="enlaceLogin">
+            <i class="bi bi-box-arrow-in-right"></i>
+            Iniciar sesión
+        </a>
 
-                <a href="/PetCare/Client/servicios/servicios.html" class="menu-item active">
+    </aside>
+
+
+    <!-- ================= CONTENIDO ================= -->
+
+    <main class="main-content">
+
+        <header class="top-header">
+            <div>
+                <h1>
                     <i class="bi bi-shop"></i>
-                    <span>Servicios</span>
-                </a>
-
-                <a href="/PetCare/Client/finanzas/finanzas.html" class="menu-item">
-                    <i class="bi bi-wallet2"></i>
-                    <span>Finanzas</span>
-                </a>
-
-                <a href="/PetCare/Client/asistente/asistente.html" class="menu-item ">
-                    <i class="bi bi-robot"></i>
-                    <span>Asistente IA</span>
-                </a>
-
-                <a href="/PetCare/Client/perfil/perfil.html" class="menu-item">
-                    <i class="bi bi-person"></i>
-                    <span>Perfil</span>
-                </a>
-
-                <a href="/PetCare/Client/configuracion/configuracion.html" class="menu-item">
-                    <i class="bi bi-gear"></i>
-                    <span>Configuración</span>
-                </a>
-
-            </nav>
+                    Servicios para tu mascota
+                </h1>
+                <p>Veterinarias, urgencias, peluquerías, tiendas, guarderías y más, cerca de ti.</p>
+            </div>
+        </header>
 
 
-        </aside>
+        <!-- ================= DÓNDE BUSCAR ================= -->
+
+        <section class="where">
+
+            <form class="where-form" id="formCiudad" novalidate>
+                <i class="bi bi-geo-alt"></i>
+                <label for="ciudad" class="visually-hidden">Ciudad o barrio</label>
+                <input type="text" id="ciudad" value="Medellín" placeholder="Ciudad o barrio. Ej: Envigado, Laureles..." autocomplete="address-level2">
+                <button type="submit">Buscar</button>
+            </form>
+
+            <button type="button" class="near-button" id="cercaDeMi">
+                <i class="bi bi-crosshair"></i>
+                Cerca de mí
+            </button>
+
+        </section>
+
+        <p class="where-text" id="textoZona"></p>
 
 
-        <!-- CONTENIDO -->
-        <main class="main-content">
+        <!-- ================= CATEGORÍAS ================= -->
 
-            <!-- HEADER -->
-            <header class="topbar">
-
-                <div class="welcome">
-
-                    <h4>Servicios 🐾</h4>
-
-                    <p>
-                        Encuentra todo lo que tu mascota necesita
-                    </p>
-
-                </div>
-
-                <div class="user-area">
-
-                    <div class="user-info">
-
-                        <div class="user-avatar">
-                            MP
-                        </div>
-
-                        <div>
-                            <strong>Manuela P.</strong>
-                            <small>Dueña de mascotas</small>
-                        </div>
-
-                    </div>
-
-                    <i class="bi bi-chevron-down"></i>
-
-                </div>
-
-            </header>
+        <section class="service-categories" id="categorias" aria-label="Tipos de servicio"></section>
 
 
-            <!-- BUSCADOR -->
-            <section class="search-section">
+        <!-- ================= RESULTADOS ================= -->
 
-                <div class="search-box">
+        <section class="results">
 
-                    <i class="bi bi-search"></i>
-
-                    <input
-                        type="text"
-                        id="buscarServicio"
-                        placeholder="Busca un servicio, lugar o categoría..."
-                    >
-
-                </div>
-
-                <button class="filter-btn" id="btnFiltros">
-
-                    <i class="bi bi-sliders"></i>
-                    Filtros
-
-                </button>
-
-            </section>
-
-
-            <!-- CATEGORÍAS -->
-            <section class="categories">
-
-                <button class="category active" data-category="todos">
-
-                    <i class="bi bi-grid"></i>
-
-                    <span>Todos</span>
-
-                </button>
-
-                <button class="category" data-category="veterinaria">
-
-                    <i class="bi bi-hospital"></i>
-
-                    <span>Veterinaria</span>
-
-                </button>
-
-                <button class="category" data-category="peluqueria">
-
-                    <i class="bi bi-scissors"></i>
-
-                    <span>Peluquería</span>
-
-                </button>
-
-                <button class="category" data-category="paseo">
-
-                    <i class="bi bi-person-walking"></i>
-
-                    <span>Paseadores</span>
-
-                </button>
-
-                <button class="category" data-category="guarderia">
-
-                    <i class="bi bi-house-heart"></i>
-
-                    <span>Guardería</span>
-
-                </button>
-
-                <button class="category" data-category="tienda">
-
-                    <i class="bi bi-bag"></i>
-
-                    <span>Tiendas</span>
-
-                </button>
-
-            </section>
-
-
-            <!-- TÍTULO -->
-            <div class="section-title">
-
+            <div class="results-head">
                 <div>
-
-                    <h2>Servicios recomendados</h2>
-
-                    <p>
-                        Lugares y profesionales para cuidar a tu mascota
-                    </p>
-
+                    <h2 id="tituloResultados">Veterinarias</h2>
+                    <p id="detalleResultados"></p>
                 </div>
 
-                <div class="view-buttons">
+                <div class="results-tools">
+                    <label for="filtroNombre" class="visually-hidden">Filtrar por nombre</label>
+                    <input type="search" id="filtroNombre" placeholder="Filtrar por nombre o dirección">
 
-                    <button class="view-btn active">
-                        <i class="bi bi-grid-3x3-gap"></i>
-                    </button>
-
-                    <button class="view-btn">
-                        <i class="bi bi-list"></i>
-                    </button>
-
+                    <label for="orden" class="visually-hidden">Ordenar</label>
+                    <select id="orden">
+                        <option value="distancia">Más cercanos</option>
+                        <option value="nombre">Nombre (A-Z)</option>
+                        <option value="datos">Con teléfono u horario primero</option>
+                    </select>
                 </div>
-
             </div>
 
+            <div class="results-note d-none" id="nota"></div>
 
-            <!-- SERVICIOS -->
-            <section class="services-grid" id="servicesGrid">
+            <div class="service-list" id="resultados" aria-live="polite"></div>
 
+            <p class="results-source">
+                <i class="bi bi-info-circle"></i>
+                Datos de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>.
+                Los horarios y teléfonos pueden cambiar: confirma antes de ir, sobre todo en una urgencia.
+            </p>
 
-                <!-- VETERINARIA -->
-                <article
-                    class="service-card"
-                    data-category="veterinaria"
-                    data-name="Veterinaria Pet Salud">
+        </section>
 
-                    <div class="service-image veterinary">
+    </main>
 
-                        <i class="bi bi-hospital"></i>
+</div>
 
-                        <span class="favorite">
-                            <i class="bi bi-heart"></i>
-                        </span>
 
-                    </div>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-                    <div class="service-content">
+<script src="servicios.js"></script>
 
-                        <span class="service-type">
-                            Veterinaria
-                        </span>
-
-                        <h3>Pet Salud</h3>
-
-                        <div class="rating">
-
-                            <i class="bi bi-star-fill"></i>
-                            <strong>4.9</strong>
-                            <span>(128)</span>
-
-                        </div>
-
-                        <p>
-                            Atención veterinaria, vacunas,
-                            controles y consultas.
-                        </p>
-
-                        <div class="location">
-
-                            <i class="bi bi-geo-alt"></i>
-
-                            <span>
-                                Medellín · Cerca de ti
-                            </span>
-
-                        </div>
-
-                        <button
-                            class="service-button"
-                            onclick="abrirServicio('Pet Salud')">
-
-                            Ver servicio
-                            <i class="bi bi-arrow-right"></i>
-
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PELUQUERÍA -->
-                <article
-                    class="service-card"
-                    data-category="peluqueria"
-                    data-name="Pet Style">
-
-                    <div class="service-image grooming">
-
-                        <i class="bi bi-scissors"></i>
-
-                        <span class="favorite">
-                            <i class="bi bi-heart"></i>
-                        </span>
-
-                    </div>
-
-                    <div class="service-content">
-
-                        <span class="service-type">
-                            Peluquería
-                        </span>
-
-                        <h3>Pet Style</h3>
-
-                        <div class="rating">
-
-                            <i class="bi bi-star-fill"></i>
-                            <strong>4.8</strong>
-                            <span>(96)</span>
-
-                        </div>
-
-                        <p>
-                            Baño, corte de pelo y cuidado
-                            especial para tu mascota.
-                        </p>
-
-                        <div class="location">
-
-                            <i class="bi bi-geo-alt"></i>
-
-                            <span>
-                                Medellín · El Poblado
-                            </span>
-
-                        </div>
-
-                        <button
-                            class="service-button"
-                            onclick="abrirServicio('Pet Style')">
-
-                            Ver servicio
-                            <i class="bi bi-arrow-right"></i>
-
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PASEADOR -->
-                <article
-                    class="service-card"
-                    data-category="paseo"
-                    data-name="Paseo Feliz">
-
-                    <div class="service-image walker">
-
-                        <i class="bi bi-person-walking"></i>
-
-                        <span class="favorite">
-                            <i class="bi bi-heart"></i>
-                        </span>
-
-                    </div>
-
-                    <div class="service-content">
-
-                        <span class="service-type">
-                            Paseadores
-                        </span>
-
-                        <h3>Paseo Feliz</h3>
-
-                        <div class="rating">
-
-                            <i class="bi bi-star-fill"></i>
-                            <strong>4.9</strong>
-                            <span>(74)</span>
-
-                        </div>
-
-                        <p>
-                            Paseos individuales y grupales
-                            para perros.
-                        </p>
-
-                        <div class="location">
-
-                            <i class="bi bi-geo-alt"></i>
-
-                            <span>
-                                Medellín · Laureles
-                            </span>
-
-                        </div>
-
-                        <button
-                            class="service-button"
-                            onclick="abrirServicio('Paseo Feliz')">
-
-                            Ver servicio
-                            <i class="bi bi-arrow-right"></i>
-
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-                <!-- GUARDERÍA -->
-                <article
-                    class="service-card"
-                    data-category="guarderia"
-                    data-name="Huellitas Guardería">
-
-                    <div class="service-image daycare">
-
-                        <i class="bi bi-house-heart"></i>
-
-                        <span class="favorite">
-                            <i class="bi bi-heart"></i>
-                        </span>
-
-                    </div>
-
-                    <div class="service-content">
-
-                        <span class="service-type">
-                            Guardería
-                        </span>
-
-                        <h3>Huellitas</h3>
-
-                        <div class="rating">
-
-                            <i class="bi bi-star-fill"></i>
-                            <strong>4.7</strong>
-                            <span>(52)</span>
-
-                        </div>
-
-                        <p>
-                            Cuidado diario y hospedaje
-                            para mascotas.
-                        </p>
-
-                        <div class="location">
-
-                            <i class="bi bi-geo-alt"></i>
-
-                            <span>
-                                Medellín · Envigado
-                            </span>
-
-                        </div>
-
-                        <button
-                            class="service-button"
-                            onclick="abrirServicio('Huellitas')">
-
-                            Ver servicio
-                            <i class="bi bi-arrow-right"></i>
-
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-                <!-- TIENDA -->
-                <article
-                    class="service-card"
-                    data-category="tienda"
-                    data-name="Pet Market">
-
-                    <div class="service-image store">
-
-                        <i class="bi bi-bag-heart"></i>
-
-                        <span class="favorite">
-                            <i class="bi bi-heart"></i>
-                        </span>
-
-                    </div>
-
-                    <div class="service-content">
-
-                        <span class="service-type">
-                            Tienda
-                        </span>
-
-                        <h3>Pet Market</h3>
-
-                        <div class="rating">
-
-                            <i class="bi bi-star-fill"></i>
-                            <strong>4.8</strong>
-                            <span>(143)</span>
-
-                        </div>
-
-                        <p>
-                            Alimentos, juguetes y accesorios
-                            para mascotas.
-                        </p>
-
-                        <div class="location">
-
-                            <i class="bi bi-geo-alt"></i>
-
-                            <span>
-                                Medellín · Belén
-                            </span>
-
-                        </div>
-
-                        <button
-                            class="service-button"
-                            onclick="abrirServicio('Pet Market')">
-
-                            Ver servicio
-                            <i class="bi bi-arrow-right"></i>
-
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-                <!-- BAÑO -->
-                <article
-                    class="service-card"
-                    data-category="peluqueria"
-                    data-name="Spa Huellitas">
-
-                    <div class="service-image spa">
-
-                        <i class="bi bi-droplet"></i>
-
-                        <span class="favorite">
-                            <i class="bi bi-heart"></i>
-                        </span>
-
-                    </div>
-
-                    <div class="service-content">
-
-                        <span class="service-type">
-                            Peluquería
-                        </span>
-
-                        <h3>Spa Huellitas</h3>
-
-                        <div class="rating">
-
-                            <i class="bi bi-star-fill"></i>
-                            <strong>4.9</strong>
-                            <span>(87)</span>
-
-                        </div>
-
-                        <p>
-                            Baño, limpieza y spa
-                            para perros y gatos.
-                        </p>
-
-                        <div class="location">
-
-                            <i class="bi bi-geo-alt"></i>
-
-                            <span>
-                                Medellín · Sabaneta
-                            </span>
-
-                        </div>
-
-                        <button
-                            class="service-button"
-                            onclick="abrirServicio('Spa Huellitas')">
-
-                            Ver servicio
-                            <i class="bi bi-arrow-right"></i>
-
-                        </button>
-
-                    </div>
-
-                </article>
-
-            </section>
-
-        </main>
-
-    </div>
-
-
-    <!-- MODAL -->
-    <div
-        class="modal fade"
-        id="servicioModal"
-        tabindex="-1">
-
-        <div class="modal-dialog modal-dialog-centered">
-
-            <div class="modal-content">
-
-                <div class="modal-header">
-
-                    <h5 class="modal-title">
-                        <i class="bi bi-shop"></i>
-                        Información del servicio
-                    </h5>
-
-                    <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal">
-                    </button>
-
-                </div>
-
-                <div class="modal-body">
-
-                    <div class="modal-service-icon">
-                        <i class="bi bi-heart-fill"></i>
-                    </div>
-
-                    <h3 id="nombreServicio">
-                        Servicio
-                    </h3>
-
-                    <p>
-                        Aquí podrás encontrar información,
-                        horarios, ubicación y formas de contacto
-                        del servicio seleccionado.
-                    </p>
-
-                    <div class="modal-info">
-
-                        <div>
-                            <i class="bi bi-geo-alt"></i>
-                            <span>Medellín, Colombia</span>
-                        </div>
-
-                        <div>
-                            <i class="bi bi-clock"></i>
-                            <span>Lunes a sábado · 8:00 AM - 6:00 PM</span>
-                        </div>
-
-                        <div>
-                            <i class="bi bi-star-fill"></i>
-                            <span>Servicio recomendado por PetCare</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="modal-footer">
-
-                    <button
-                        class="btn-secondary-custom"
-                        data-bs-dismiss="modal">
-
-                        Cerrar
-
-                    </button>
-
-                    <button
-                        class="btn-primary-custom"
-                        onclick="solicitarServicio()">
-
-                        <i class="bi bi-calendar-check"></i>
-                        Solicitar servicio
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- JS -->
-    <script src="/PetCare/Client/servicios/servicios.js"></script>
+<!-- Sesión (opcional): con sesión iniciada se muestra el menú del usuario -->
+<script src="../auth/sesion.js"></script>
+<script src="../comun/menu-sesion.js"></script>
 
 </body>
 

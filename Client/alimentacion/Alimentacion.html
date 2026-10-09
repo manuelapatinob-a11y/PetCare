@@ -3,9 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>PetCare | Alimentación</title>
 
@@ -19,173 +17,112 @@
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/PetCare/Client/alimentacion/alimentacion.css">
+    <!-- CSS: diseño general, el de los apartados (Salud) y el de esta página -->
+    <link rel="stylesheet" href="../mismascotas/mismascotas.css">
+    <link rel="stylesheet" href="../salud/salud.css">
+    <link rel="stylesheet" href="Alimentacion.css">
+
+    <!-- Sesión: si no hay sesión iniciada, va al login -->
+    <script src="../auth/sesion.js"></script>
+    <script>requiereSesion();</script>
 </head>
 
 <body>
 
-<div class="app-container">
+<div class="app">
 
-    <!-- =========================
-         BARRA LATERAL
-    ========================== -->
+    <!-- ================= SIDEBAR ================= -->
 
     <aside class="sidebar">
 
-        <!-- LOGO -->
+        <a href="../inicio/inicio.html" class="logo-area">
+            <img src="../../Recursos/logo.png" class="logo" alt="PetCare">
+        </a>
 
-        <div class="logo-area">
+        <nav class="main-menu">
 
-            <img
-                src="/PetCare/Recursos/Logo.png"
-                alt="Logo PetCare">
-
-        </div>
-
-
-        <!-- MENÚ -->
-
-        <nav class="menu">
-
-            <a href="/PetCare/index.html">
+            <a href="../inicio/inicio.html" class="sin-subrayado">
                 <i class="bi bi-house"></i>
-                <span>Inicio</span>
+                Inicio
             </a>
 
-
-            <a href="/PetCare/Client/mascotas/mascotas.html">
-                <i class="bi bi-heart"></i>
-                <span>Mis Mascotas</span>
+            <a href="../mismascotas/mismascotas.html" class="sin-subrayado">
+                <i class="bi bi-people"></i>
+                Mis Mascotas
             </a>
 
-
-            <a href="/PetCare/Client/salud/salud.html">
+            <a href="../salud/salud.html" class="sin-subrayado">
                 <i class="bi bi-heart-pulse"></i>
-                <span>Salud</span>
+                Salud
             </a>
 
-
-            <a href="/PetCare/Client/alimentacion/alimentacion.html"
-               class="active">
-
+            <a href="Alimentacion.html" class="sin-subrayado active">
                 <i class="bi bi-cup-hot"></i>
-
-                <span>
-                    Alimentación
-                </span>
-
+                Alimentación
             </a>
 
-
-            <a href="/PetCare/Client/actividadfisica/actividadfisica.html">
+            <a href="../actividadfisica/actividadfisica.html" class="sin-subrayado">
                 <i class="bi bi-person-walking"></i>
-                <span>Actividad Física</span>
+                Actividad Física
             </a>
 
+            <a href="../entrenamiento/entrenamiento.html" class="sin-subrayado">
+                <i class="bi bi-award"></i>
+                Entrenamiento y comportamiento
+            </a>
 
-            <a href="/PetCare/Client/recordatorios/recordatorios.html">
+            <a href="../recordatorios/recordatorios.html" class="sin-subrayado">
                 <i class="bi bi-bell"></i>
-                <span>Recordatorios</span>
+                Recordatorios
             </a>
 
-
-            <a href="/PetCare/Client/mapa/mapa.html">
+            <a href="../mapa/mapa.html" class="sin-subrayado">
                 <i class="bi bi-geo-alt"></i>
-                <span>Mapa Pet Friendly</span>
+                Mapa Pet Friendly
             </a>
 
-
-            <a href="/PetCare/Client/servicios/servicios.html">
-                <i class="bi bi-shop"></i>
-                <span>Servicios</span>
-            </a>
-
-
-            <a href="/PetCare/Client/finanzas/finanzas.html">
+            <a href="../finanzas/finanzas.html" class="sin-subrayado">
                 <i class="bi bi-wallet2"></i>
-                <span>Finanzas</span>
+                Finanzas
             </a>
 
-
-            <a href="/PetCare/Client/asistente/asistente.html">
+            <a href="../asistente/asistente.html" class="sin-subrayado">
                 <i class="bi bi-robot"></i>
-                <span>Asistente IA</span>
+                Asistente IA
             </a>
 
-
-            <a href="/PetCare/Client/perfil del usuario/perfildelusuario.html">
+            <a href="../perfil/perfil.html" class="sin-subrayado">
                 <i class="bi bi-person"></i>
-                <span>Perfil</span>
+                Perfil
             </a>
 
-
-            <a href="/PetCare/Client/configuracion/configuracion.html">
+            <a href="../configuracion/configuracion.html" class="sin-subrayado">
                 <i class="bi bi-gear"></i>
-                <span>Configuración</span>
+                Configuración
             </a>
 
         </nav>
 
-
-        <!-- TARJETA DE AYUDA -->
-
-        <div class="help-card">
-
-            <h5>
-                ¿Necesitas ayuda?
-            </h5>
-
-            <p>
-                Nuestro asistente virtual
-                puede ayudarte con el cuidado
-                de tu mascota.
-            </p>
-
-            <button onclick="irAsistente()">
-
-                Ir al asistente
-
-            </button>
-
-        </div>
-
     </aside>
 
 
-    <!-- =========================
-         CONTENIDO
-    ========================== -->
+    <!-- ================= CONTENIDO ================= -->
 
-    <main class="main-content">
-
+    <main class="content">
 
         <!-- HEADER -->
 
-        <header class="topbar">
+        <header class="top-header">
 
             <div class="page-title">
 
-                <a
-                    href="/PetCare/index.html"
-                    class="back-button">
-
+                <a href="../inicio/inicio.html" class="back" aria-label="Volver al inicio">
                     <i class="bi bi-arrow-left"></i>
-
                 </a>
 
-
                 <div>
-
-                    <h1>
-                        Alimentación
-                    </h1>
-
-                    <p>
-                        Organiza y controla la alimentación
-                        de tus mascotas.
-                    </p>
-
+                    <h2>Alimentación</h2>
+                    <p>Lo que come, cuánto, cuándo, cuánta agua toma y cómo evoluciona.</p>
                 </div>
 
             </div>
@@ -195,32 +132,39 @@
 
             <div class="user-area">
 
-                <button class="notification">
+                <div class="dropdown">
 
-                    <i class="bi bi-bell"></i>
+                    <button
+                        class="user-button dropdown-toggle"
+                        data-bs-toggle="dropdown">
 
-                </button>
+                        <span class="avatar" data-usuario-avatar></span>
 
+                        <strong data-usuario-nombre></strong>
 
-                <div class="user-info">
+                    </button>
 
-                    <div class="avatar">
-                        MP
-                    </div>
+                    <ul class="dropdown-menu dropdown-menu-end">
 
-                    <div>
+                        <li>
+                            <a class="dropdown-item" href="../perfil/perfil.html">
+                                <i class="bi bi-person"></i>
+                                Mi perfil
+                            </a>
+                        </li>
 
-                        <strong>
-                            Manuela P.
-                        </strong>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
 
-                        <small>
-                            Dueña
-                        </small>
+                        <li>
+                            <a class="dropdown-item text-danger" href="../login/login.html" data-cerrar-sesion>
+                                <i class="bi bi-box-arrow-right"></i>
+                                Cerrar sesión
+                            </a>
+                        </li>
 
-                    </div>
-
-                    <i class="bi bi-chevron-down"></i>
+                    </ul>
 
                 </div>
 
@@ -229,729 +173,200 @@
         </header>
 
 
-        <!-- =========================
-             SELECCIONAR MASCOTA
-        ========================== -->
-
-        <section class="card-section">
-
-            <div class="section-header">
-
-                <div>
-
-                    <h2>
-                        Selecciona una mascota
-                    </h2>
-
-                    <p>
-                        Elige la mascota para consultar
-                        su alimentación.
-                    </p>
-
-                </div>
+        <div id="mensaje" class="alert d-none" role="alert"></div>
 
 
-                <a
-                    href="/PetCare/Client/mismascotas/mismascotas.html"
-                    class="outline-button">
+        <!-- ================= ELEGIR MASCOTA ================= -->
 
-                    Ver mis mascotas
-                    <i class="bi bi-arrow-right"></i>
-
-                </a>
-
-            </div>
-
-
-            <div class="pets-selector">
-
-
-                <!-- TOBY -->
-
-                <button
-                    class="pet-option selected"
-                    onclick="seleccionarMascota('Toby', this)">
-
-                    <div class="pet-icon">
-
-                        <i class="bi bi-heart-fill"></i>
-
-                    </div>
-
-                    <div class="pet-data">
-
-                        <strong>
-                            Toby
-                        </strong>
-
-                        <span>
-                            Golden Retriever
-                        </span>
-
-                    </div>
-
-                    <i class="bi bi-check-circle-fill check"></i>
-
-                </button>
-
-
-                <!-- LUNA -->
-
-                <button
-                    class="pet-option"
-                    onclick="seleccionarMascota('Luna', this)">
-
-                    <div class="pet-icon">
-
-                        <i class="bi bi-heart-fill"></i>
-
-                    </div>
-
-                    <div class="pet-data">
-
-                        <strong>
-                            Luna
-                        </strong>
-
-                        <span>
-                            Gato
-                        </span>
-
-                    </div>
-
-                </button>
-
-
-                <!-- NUBE -->
-
-                <button
-                    class="pet-option"
-                    onclick="seleccionarMascota('Nube', this)">
-
-                    <div class="pet-icon">
-
-                        <i class="bi bi-heart-fill"></i>
-
-                    </div>
-
-                    <div class="pet-data">
-
-                        <strong>
-                            Nube
-                        </strong>
-
-                        <span>
-                            Conejo
-                        </span>
-
-                    </div>
-
-                </button>
-
-            </div>
-
+        <section class="pet-picker" id="selectorMascotas">
+            <span class="text-muted small">Cargando tus mascotas...</span>
         </section>
 
 
-        <!-- =========================
-             PLAN ALIMENTICIO
-        ========================== -->
+        <!-- Si no tiene mascotas -->
 
-        <section class="card-section">
-
-            <div class="section-header">
-
-                <div>
-
-                    <h2>
-                        Plan alimenticio de
-                        <span id="petName">
-                            Toby
-                        </span>
-                    </h2>
-
-                    <p>
-                        Consulta y organiza las comidas
-                        de tu mascota.
-                    </p>
-
-                </div>
-
-
-                <button
-                    class="primary-button"
-                    onclick="registrarComida()">
-
-                    <i class="bi bi-plus-lg"></i>
-
-                    Registrar comida
-
-                </button>
-
-            </div>
-
-
-            <!-- RESUMEN -->
-
-            <div class="food-stats">
-
-
-                <div class="food-stat">
-
-                    <div class="stat-icon purple">
-
-                        <i class="bi bi-cup-hot"></i>
-
-                    </div>
-
-                    <div>
-
-                        <span>
-                            Comidas hoy
-                        </span>
-
-                        <strong>
-                            2 / 3
-                        </strong>
-
-                        <small>
-                            Próxima: 6:00 PM
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <div class="food-stat">
-
-                    <div class="stat-icon blue">
-
-                        <i class="bi bi-droplet"></i>
-
-                    </div>
-
-                    <div>
-
-                        <span>
-                            Agua
-                        </span>
-
-                        <strong>
-                            750 ml
-                        </strong>
-
-                        <small>
-                            Meta: 1.000 ml
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <div class="food-stat">
-
-                    <div class="stat-icon green">
-
-                        <i class="bi bi-check-circle"></i>
-
-                    </div>
-
-                    <div>
-
-                        <span>
-                            Seguimiento
-                        </span>
-
-                        <strong>
-                            85%
-                        </strong>
-
-                        <small>
-                            Esta semana
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <div class="food-stat">
-
-                    <div class="stat-icon orange">
-
-                        <i class="bi bi-basket"></i>
-
-                    </div>
-
-                    <div>
-
-                        <span>
-                            Concentrado
-                        </span>
-
-                        <strong>
-                            Premium
-                        </strong>
-
-                        <small>
-                            Para perros adultos
-                        </small>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+        <section class="empty-health d-none" id="sinMascotas">
+            <div class="empty-emoji">🍽️</div>
+            <h4>Primero registra una mascota</h4>
+            <p>Para llevar el control de su alimentación necesitas agregarla en Mis Mascotas.</p>
+            <a href="../mismascotas/mismascotas.html" class="btn-add">
+                <i class="bi bi-plus-lg"></i>
+                Ir a Mis Mascotas
+            </a>
         </section>
 
 
-        <!-- =========================
-             PARTE INFERIOR
-        ========================== -->
+        <div id="contenidoApartado" class="d-none">
 
-        <div class="bottom-grid">
+            <!-- ================= FICHA ================= -->
 
-
-            <!-- HORARIOS -->
-
-            <section class="content-card">
-
-                <div class="content-card-header">
-
-                    <div>
-
-                        <h3>
-
-                            <i class="bi bi-clock"></i>
-
-                            Horarios de comida
-
-                        </h3>
-
-                        <p>
-                            Rutina diaria de alimentación.
-                        </p>
-
-                    </div>
-
-
-                    <button
-                        class="small-add"
-                        onclick="agregarHorario()">
-
-                        <i class="bi bi-plus"></i>
-
-                    </button>
-
-                </div>
-
-
-                <div class="meal-list">
-
-
-                    <!-- DESAYUNO -->
-
-                    <div class="meal-item">
-
-                        <div class="meal-time">
-
-                            <strong>
-                                08:00
-                            </strong>
-
-                            <span>
-                                AM
-                            </span>
-
-                        </div>
-
-
-                        <div class="meal-icon">
-
-                            <i class="bi bi-sun"></i>
-
-                        </div>
-
-
-                        <div class="meal-info">
-
-                            <strong>
-                                Desayuno
-                            </strong>
-
-                            <span>
-                                120 g · Concentrado
-                            </span>
-
-                        </div>
-
-
-                        <span class="meal-status">
-                            Completado
-                        </span>
-
-                    </div>
-
-
-                    <!-- ALMUERZO -->
-
-                    <div class="meal-item">
-
-                        <div class="meal-time">
-
-                            <strong>
-                                01:00
-                            </strong>
-
-                            <span>
-                                PM
-                            </span>
-
-                        </div>
-
-
-                        <div class="meal-icon">
-
-                            <i class="bi bi-cloud-sun"></i>
-
-                        </div>
-
-
-                        <div class="meal-info">
-
-                            <strong>
-                                Almuerzo
-                            </strong>
-
-                            <span>
-                                100 g · Concentrado
-                            </span>
-
-                        </div>
-
-
-                        <span class="meal-status pending">
-                            Pendiente
-                        </span>
-
-                    </div>
-
-
-                    <!-- CENA -->
-
-                    <div class="meal-item">
-
-                        <div class="meal-time">
-
-                            <strong>
-                                06:00
-                            </strong>
-
-                            <span>
-                                PM
-                            </span>
-
-                        </div>
-
-
-                        <div class="meal-icon">
-
-                            <i class="bi bi-moon-stars"></i>
-
-                        </div>
-
-
-                        <div class="meal-info">
-
-                            <strong>
-                                Cena
-                            </strong>
-
-                            <span>
-                                120 g · Concentrado
-                            </span>
-
-                        </div>
-
-
-                        <span class="meal-status pending">
-                            Pendiente
-                        </span>
-
-                    </div>
-
-                </div>
-
+            <section class="health-card" id="ficha">
+                <!-- Se llena con JS -->
             </section>
 
 
-            <!-- SEGUIMIENTO -->
+            <!-- ================= PESTAÑAS (en orden de pasos) ================= -->
 
-            <section class="content-card">
+            <nav class="health-tabs" role="tablist">
 
-                <div class="content-card-header">
+                <button class="tab active" data-tab="paso1" type="button">
+                    <span class="step-number">1</span>
+                    <span>Alimentación, plan y horario</span>
+                </button>
 
-                    <div>
+                <button class="tab" data-tab="comidas" type="button">
+                    <span class="step-number">2</span>
+                    <span>Comidas y cantidades</span>
+                </button>
 
-                        <h3>
+                <button class="tab" data-tab="agua" type="button">
+                    <span class="step-number">3</span>
+                    <span>Agua</span>
+                </button>
 
-                            <i class="bi bi-bar-chart"></i>
+                <button class="tab" data-tab="fisica" type="button">
+                    <span class="step-number">4</span>
+                    <span>Evolución física</span>
+                </button>
 
-                            Seguimiento de alimentación
+                <button class="tab" data-tab="existencias" type="button">
+                    <i class="bi bi-box-seam"></i>
+                    <span>Existencias y compras</span>
+                </button>
 
-                        </h3>
+                <button class="tab" data-tab="seguimiento" type="button">
+                    <i class="bi bi-clipboard2-heart"></i>
+                    <span>Seguimiento nutricional</span>
+                </button>
 
-                        <p>
-                            Alimentación de esta semana.
-                        </p>
+                <button class="tab" data-tab="resumen" type="button">
+                    <i class="bi bi-speedometer"></i>
+                    <span>Resumen</span>
+                </button>
 
-                    </div>
+            </nav>
 
-                    <span class="week-label">
-                        Esta semana
-                    </span>
 
+            <!-- PASO 1: ALIMENTACIÓN, PLAN Y HORARIO -->
+            <section class="tab-panel" data-panel="paso1">
+
+                <h4 class="step-title"><span>1.1</span> Alimentos que come</h4>
+                <div class="lists-grid">
+                    <div data-lista="alimentos"></div>
+                    <div data-lista="extras"></div>
+                    <div data-lista="restricciones" class="full"></div>
                 </div>
 
+                <h4 class="step-title"><span>1.2</span> Plan de alimentación</h4>
+                <div data-lista="planes"></div>
 
-                <div class="progress-container">
+                <h4 class="step-title"><span>1.3</span> Horarios</h4>
+                <div class="panel-box mb-3" id="regularidad"></div>
+                <div data-lista="horarios"></div>
 
-                    <div class="progress-row">
+            </section>
 
-                        <div class="progress-label">
-
-                            <span>
-                                Lunes
-                            </span>
-
-                            <strong>
-                                100%
-                            </strong>
-
+            <!-- PASO 2: COMIDAS Y CANTIDADES -->
+            <section class="tab-panel d-none" data-panel="comidas">
+                <div class="panel-box mb-3">
+                    <div class="list-header">
+                        <div>
+                            <h3><i class="bi bi-calendar-week"></i> Total diario: últimos 7 días</h3>
+                            <p>Lo servido frente a lo que realmente comió.</p>
                         </div>
-
-                        <div class="progress">
-                            <div
-                                class="progress-bar"
-                                style="width:100%">
-                            </div>
-                        </div>
-
                     </div>
-
-
-                    <div class="progress-row">
-
-                        <div class="progress-label">
-
-                            <span>
-                                Martes
-                            </span>
-
-                            <strong>
-                                85%
-                            </strong>
-
-                        </div>
-
-                        <div class="progress">
-                            <div
-                                class="progress-bar"
-                                style="width:85%">
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <div class="progress-row">
-
-                        <div class="progress-label">
-
-                            <span>
-                                Miércoles
-                            </span>
-
-                            <strong>
-                                90%
-                            </strong>
-
-                        </div>
-
-                        <div class="progress">
-                            <div
-                                class="progress-bar"
-                                style="width:90%">
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <div class="progress-row">
-
-                        <div class="progress-label">
-
-                            <span>
-                                Jueves
-                            </span>
-
-                            <strong>
-                                80%
-                            </strong>
-
-                        </div>
-
-                        <div class="progress">
-                            <div
-                                class="progress-bar"
-                                style="width:80%">
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <div class="progress-row">
-
-                        <div class="progress-label">
-
-                            <span>
-                                Viernes
-                            </span>
-
-                            <strong>
-                                75%
-                            </strong>
-
-                        </div>
-
-                        <div class="progress">
-                            <div
-                                class="progress-bar"
-                                style="width:75%">
-                            </div>
-                        </div>
-
-                    </div>
-
+                    <div id="totalesDiarios"></div>
                 </div>
+                <div data-lista="comidas"></div>
+            </section>
 
+            <!-- PASO 3: AGUA -->
+            <section class="tab-panel d-none" data-panel="agua">
+                <div data-lista="agua"></div>
+            </section>
+
+            <!-- PASO 4: EVOLUCIÓN FÍSICA -->
+            <section class="tab-panel d-none" data-panel="fisica">
+                <div data-lista="pesos"></div>
+            </section>
+
+            <!-- EXISTENCIAS Y COMPRAS -->
+            <section class="tab-panel d-none" data-panel="existencias">
+                <div class="panel-box mb-3">
+                    <div class="list-header">
+                        <div>
+                            <h3><i class="bi bi-box-seam"></i> Existencias en casa</h3>
+                            <p>Cantidad inicial + compras − lo servido. Cuando se esté acabando te avisamos al correo.</p>
+                        </div>
+                    </div>
+                    <div id="existencias"></div>
+                </div>
+                <div data-lista="compras"></div>
+            </section>
+
+            <!-- SEGUIMIENTO NUTRICIONAL -->
+            <section class="tab-panel d-none" data-panel="seguimiento">
+                <div data-lista="recomendaciones"></div>
+            </section>
+
+            <!-- RESUMEN DE CONTROLES -->
+            <section class="tab-panel d-none" data-panel="resumen">
+                <div class="controls-grid" id="controles"></div>
             </section>
 
         </div>
-
-
-        <!-- =========================
-             RECOMENDACIONES
-        ========================== -->
-
-        <section class="recommendations">
-
-            <div class="recommendation-title">
-
-                <div class="recommendation-icon">
-
-                    <i class="bi bi-lightbulb"></i>
-
-                </div>
-
-                <div>
-
-                    <h3>
-                        Recomendaciones
-                    </h3>
-
-                    <p>
-                        Consejos para mejorar la alimentación
-                        de tu mascota.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="recommendation-grid">
-
-
-                <div class="recommendation-item">
-
-                    <i class="bi bi-droplet-fill"></i>
-
-                    <div>
-
-                        <strong>
-                            Mantén agua fresca
-                        </strong>
-
-                        <p>
-                            Asegúrate de que Toby tenga
-                            agua limpia disponible durante
-                            todo el día.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="recommendation-item">
-
-                    <i class="bi bi-clock-fill"></i>
-
-                    <div>
-
-                        <strong>
-                            Mantén horarios
-                        </strong>
-
-                        <p>
-                            Intenta mantener horarios
-                            regulares para sus comidas.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="recommendation-item">
-
-                    <i class="bi bi-heart-pulse-fill"></i>
-
-                    <div>
-
-                        <strong>
-                            Controla su peso
-                        </strong>
-
-                        <p>
-                            Registra periódicamente el peso
-                            de tu mascota.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
 
     </main>
 
 </div>
 
 
-<!-- =========================
-     JAVASCRIPT
-========================== -->
+<!-- ================= MODAL: AGREGAR / EDITAR ================= -->
 
-<script src="/PetCare/Client/alimentacion/Alimentacion.js"></script>
+<div class="modal fade" id="modalRegistro" tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="tituloRegistro"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <div id="errorRegistro" class="alert alert-danger d-none" role="alert"></div>
+
+                <form id="formRegistro" novalidate>
+
+                    <div id="camposRegistro">
+                        <!-- Campos generados con JS -->
+                    </div>
+
+                    <button type="submit" class="btn-save" id="botonGuardarRegistro">
+                        <i class="bi bi-check-lg"></i>
+                        Guardar
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Bootstrap JS -->
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<script src="../comun/apartado.js"></script>
+<script src="Alimentacion.js"></script>
 
 </body>
 

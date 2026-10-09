@@ -13,8 +13,12 @@
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Leaflet (mapa de OpenStreetMap) -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
     <!-- CSS -->
-    <link rel="stylesheet" href="/PetCare/Client/mapa/mapa.css">
+    <link rel="stylesheet" href="mapa.css">
 </head>
 <body>
 <div class="app-container">
@@ -23,73 +27,37 @@
          SIDEBAR
     =================================== -->
     <aside class="sidebar">
-        <div class="logo-area">
+        <a href="../../index.html" class="logo-area">
             <img
-                src="/PetCare/Recursos/logo.png"
+                src="../../Recursos/logo.png"
                 alt="PetCare"
                 class="logo">
-        </div>
+        </a>
 
-        <nav class="menu">
-            <a href="/PetCare/index.html">
+        <nav class="menu" data-activo="mapa">
+            <a href="../../index.html">
                 <i class="bi bi-house"></i>
                 Inicio
             </a>
 
-            <a href="/PetCare/Client/mismascotas/mismascotas.html">
-                <i class="bi bi-people"></i>
-                Mis Mascotas
-            </a>
-
-            <a href="/PetCare/Client/salud/salud.html">
-                <i class="bi bi-heart-pulse"></i>
-                Salud y Bienestar
-            </a>
-
-            <a href="/PetCare/Client/alimentacion/Alimentacion.html">
-                <i class="bi bi-cup-hot"></i>
-                Alimentación
-            </a>
-
-            <a href="/PetCare/Client/actividadfisica/actividadfisica.html">
-                <i class="bi bi-person-walking"></i>
-                Actividad Física
-            </a>  
-
-            <a href="/PetCare/Client/recordatorios/recordatorios.html">
-                <i class="bi bi-bell"></i>
-                Recordatorios
-            </a>
-
-            <a href="/PetCare/Client/mapa/mapa.html" class="active">
-                <i class="bi bi-geo-alt-fill"></i>
-                Mapa Pet Friendly
-            </a>
-
-            <a href="/PetCare/Client/servicios/servicios.html">
+            <a href="../servicios/servicios.html">
                 <i class="bi bi-shop"></i>
                 Servicios
             </a>
 
-            <a href="/PetCare/Client/finanzas/finanzas.html">
-                <i class="bi bi-wallet2"></i>
-                Finanzas
+            <a href="mapa.html" class="active">
+                <i class="bi bi-geo-alt"></i>
+                Mapa Pet Friendly
             </a>
 
-            <a href="/PetCare/Client/asistente/asistente.html" class="menu-item ">
-                    <i class="bi bi-robot"></i>
-                    <span>Asistente IA</span>
-                </a>
-
-
-            <a href="/PetCare/Client/perfil/perfil.html">
-                <i class="bi bi-person"></i>
-                Perfil
+            <a href="../Nosotros/nosotros.html">
+                <i class="bi bi-people"></i>
+                Nosotros
             </a>
 
-            <a href="/PetCare/Client/configuracion/configuracion.html">
-                <i class="bi bi-gear"></i>
-                Configuración
+            <a href="../Contacto/contacto.html">
+                <i class="bi bi-envelope"></i>
+                Contacto
             </a>
         </nav>
 
@@ -111,53 +79,6 @@
                     Encuentra lugares donde tu mascota siempre será bienvenida.
                 </p>
             </div>
-
-            <!-- USUARIO -->
-            <div class="dropdown">
-                <button
-                    class="user-dropdown"
-                    type="button"
-                    data-bs-toggle="dropdown">
-                    <i class="bi bi-bell notification"></i>
-                    <div class="user-avatar">
-                        MP
-                    </div>
-
-                    <strong>
-                        Manuela P.
-                    </strong>
-                    <i class="bi bi-chevron-down"></i>
-                </button>
-
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <i class="bi bi-person"></i>
-                            Mi perfil
-                        </a>
-                    </li>
-
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <i class="bi bi-gear"></i>
-                            Configuración
-                        </a>
-                    </li>
-
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-
-                    <li>
-                        <a
-                            class="dropdown-item text-danger"
-                            href="/PetCare/Client/login/login.html">
-                            <i class="bi bi-box-arrow-right"></i>
-                            Cerrar sesión
-                        </a>
-                    </li>
-                </ul>
-            </div>
         </header>
         <!-- ==================================
              BUSCADOR
@@ -176,6 +97,7 @@
 
             <button
                 class="location-button"
+                id="botonUbicacion"
                 onclick="miUbicacion()">
                 <i class="bi bi-crosshair"></i>
                 Mi ubicación
@@ -218,7 +140,7 @@
                 class="filter"
                 onclick="filtrarLugar('tienda', this)">
                 <i class="bi bi-shop"></i>
-                Tiendas
+                Tiendas de mascotas
             </button>
 
             <button
@@ -226,7 +148,7 @@
                 onclick="filtrarLugar('restaurante', this)">
                 <i class="bi bi-egg-fried"></i>
                 Restaurantes
-
+            </button>
 
             <button
                 class="filter"
@@ -235,44 +157,73 @@
                 Hoteles
             </button>
         </section>
+
+        <!-- ==================================
+             ESTADO DE LA BÚSQUEDA
+        =================================== -->
+        <section class="map-info">
+            <div>
+                <strong id="tituloBusqueda">
+                    Lugares para mascotas
+                </strong>
+
+                <small id="zonaBusqueda">
+                    Medellín, Colombia
+                </small>
+            </div>
+
+            <!-- LEYENDA -->
+            <div class="legend">
+                <span>
+                    <span class="legend-dot pet"></span>
+                    Pet friendly
+                </span>
+
+                <span>
+                    <span class="legend-dot normal"></span>
+                    Otros lugares
+                </span>
+
+                <span>
+                    <span class="legend-dot user"></span>
+                    Tu ubicación
+                </span>
+            </div>
+        </section>
+
         <!-- ==================================
              MAPA
         =================================== -->
-        <section class="map-container">
-            <div id="map"></div>
+        <section class="map-layout">
+            <div class="map-container">
+                <div id="map"></div>
 
-            <!-- PANEL SOBRE EL MAPA -->
-            <div class="map-info">
-                <div class="map-info-header">
-                    <div>
-                        <strong>
-                            Lugares cercanos
-                        </strong>
+                <button
+                    id="buscarZona"
+                    class="search-area"
+                    onclick="buscarEnZona()"
+                    hidden>
+                    <i class="bi bi-arrow-clockwise"></i>
+                    Buscar en esta zona
+                </button>
 
-                        <small>
-                            Medellín, Colombia
-                        </small>
+                <div id="cargando" class="map-loading" hidden>
+                    <span class="spinner-border spinner-border-sm"></span>
+                    Buscando lugares...
+                </div>
+            </div>
 
-                    </div>
-                    <span id="cantidadLugares">
-                        5 lugares
-                    </span>
-
+            <!-- LISTA DE LUGARES -->
+            <aside class="places-panel">
+                <div class="places-header">
+                    <strong>Lugares encontrados</strong>
+                    <span id="cantidadLugares">0</span>
                 </div>
 
                 <div id="lugaresLista">
                     <!-- Los lugares se generan con JS -->
                 </div>
-
-            </div>
-
-            <!-- BOTÓN UBICACIÓN -->
-            <button
-                class="map-location"
-                onclick="miUbicacion()">
-                <i class="bi bi-crosshair"></i>
-            </button>
-
+            </aside>
         </section>
 
         <!-- ==================================
@@ -337,14 +288,17 @@
 src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 </script>
 
-<!-- JavaScript -->
-<script src="/PetCare/Client/mapa/mapa.js"></script>
-
-<!-- GOOGLE MAPS -->
+<!-- Leaflet -->
 <script
-src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=iniciarMapa"
-async
-defer>
+src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js">
 </script>
+
+<!-- JavaScript -->
+<script src="mapa.js"></script>
+<!-- Sesión: con sesión iniciada, "Inicio" lleva al inicio del usuario -->
+<script src="../auth/sesion.js"></script>
+<!-- Con sesión iniciada: el menú del usuario -->
+<script src="../comun/menu-sesion.js"></script>
+
 </body>
 </html>

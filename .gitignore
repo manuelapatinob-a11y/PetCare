@@ -1,0 +1,14 @@
+# Dependencias: cada quien las instala con "npm install" en backend/
+node_modules/
+
+# Claves y contraseñas: NUNCA se suben (ver backend/.env.example)
+.env
+backend/.env
+
+# Fotos y documentos que suben los usuarios (datos privados)
+backend/uploads/
+
+# Archivos del sistema y registros
+*.log
+.DS_Store
+Thumbs.db

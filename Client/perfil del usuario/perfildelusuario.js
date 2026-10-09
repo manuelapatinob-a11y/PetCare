@@ -47,7 +47,7 @@ function editarPerfil() {
 
 function agregarMascota() {
 
-    window.location.href = "crear-mascota.html";
+    window.location.href = "../mismascotas/mismascotas.html";
 
 }
 
@@ -69,6 +69,6 @@ function verActividad() {
 
 function abrirAsistente() {
 
-    window.location.href = "asistente.html";
+    window.location.href = "../asistente/asistente.html";
 
 }

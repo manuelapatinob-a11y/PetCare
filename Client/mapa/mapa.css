@@ -44,6 +44,8 @@ body {
 
 .logo-area {
 
+    display: block;
+
     text-align: center;
 
     margin-bottom: 30px;
@@ -213,60 +215,6 @@ body {
     margin: 5px 0 0 35px;
 
     font-size: 14px;
-}
-
-
-/* ==================================
-   USUARIO
-================================== */
-
-.user-dropdown {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    background: transparent;
-
-    border: none;
-
-    color: #17183d;
-}
-
-
-.notification {
-
-    font-size: 22px;
-
-    color: #7046e8;
-}
-
-
-.user-avatar {
-
-    width: 42px;
-
-    height: 42px;
-
-    border-radius: 50%;
-
-    background: linear-gradient(
-        135deg,
-        #7046e8,
-        #a56bea
-    );
-
-    color: white;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-weight: bold;
 }
 
 
@@ -446,40 +394,16 @@ body {
     width: 100%;
 
     height: 100%;
+
+    border: 0;
 }
 
 
 /* ==================================
-   PANEL DEL MAPA
+   PANEL DE BÚSQUEDA
 ================================== */
 
 .map-info {
-
-    position: absolute;
-
-    top: 15px;
-
-    left: 15px;
-
-    width: 300px;
-
-    max-height: 530px;
-
-    overflow-y: auto;
-
-    background: rgba(255,255,255,.97);
-
-    border-radius: 17px;
-
-    padding: 15px;
-
-    box-shadow:
-        0 8px 25px
-        rgba(40,30,80,.15);
-}
-
-
-.map-info-header {
 
     display: flex;
 
@@ -487,13 +411,21 @@ body {
 
     align-items: center;
 
-    padding-bottom: 12px;
+    gap: 15px;
 
-    border-bottom: 1px solid #eee;
+    background: white;
+
+    border: 1px solid #e9e3f8;
+
+    border-radius: 17px;
+
+    padding: 14px 18px;
+
+    margin-bottom: 15px;
 }
 
 
-.map-info-header strong {
+.map-info strong {
 
     display: block;
 
@@ -501,39 +433,345 @@ body {
 }
 
 
-.map-info-header small {
+.map-info small {
 
     color: #777;
 
-    font-size: 11px;
-}
-
-
-.map-info-header span {
-
-    color: #7046e8;
-
-    background: #f0eaff;
-
-    padding: 5px 8px;
-
-    border-radius: 10px;
-
-    font-size: 10px;
+    font-size: 12px;
 }
 
 
 /* ==================================
-   TARJETAS LUGARES
+   LEYENDA DE COLORES
 ================================== */
+
+.legend {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    font-size: 13px;
+
+    color: #4a3c7c;
+}
+
+
+.legend > span {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+
+.legend-dot {
+
+    display: inline-block;
+
+    min-width: 13px;
+
+    height: 13px;
+
+    border-radius: 50%;
+
+    border: 2px solid white;
+
+    box-shadow: 0 0 0 1px rgba(0,0,0,.15);
+}
+
+
+.legend-dot.pet {
+
+    background: #1fa463;
+
+}
+
+
+.legend-dot.normal {
+
+    background: #8b93a7;
+
+}
+
+
+.legend-dot.user {
+
+    background: #2f7cf6;
+
+}
+
+
+/* ==================================
+   MAPA + LISTA
+================================== */
+
+.map-layout {
+
+    display: grid;
+
+    grid-template-columns: 1fr 300px;
+
+    gap: 15px;
+}
+
+
+.map-container {
+
+    isolation: isolate;
+
+}
+
+
+/* ==================================
+   MARCADORES
+================================== */
+
+.pin {
+
+    width: 34px;
+
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50% 50% 50% 0;
+
+    transform: rotate(-45deg);
+
+    border: 2px solid white;
+
+    box-shadow: 0 3px 8px rgba(0,0,0,.3);
+}
+
+
+.pin i {
+
+    transform: rotate(45deg);
+
+    color: white;
+
+    font-size: 15px;
+}
+
+
+.pin-pet {
+
+    background: #1fa463;
+
+}
+
+
+.pin-normal {
+
+    background: #8b93a7;
+
+    width: 28px;
+
+    height: 28px;
+
+    margin: 3px;
+}
+
+
+.pin-normal i {
+
+    font-size: 12px;
+
+}
+
+
+/* ==================================
+   VENTANA DEL MARCADOR
+================================== */
+
+.popup-place strong {
+
+    display: block;
+
+    font-size: 14px;
+
+    color: #21165f;
+}
+
+
+.popup-place small {
+
+    display: block;
+
+    color: #777;
+}
+
+
+.popup-place p {
+
+    margin: 6px 0 !important;
+
+    font-size: 12px;
+}
+
+
+.popup-links {
+
+    display: flex;
+
+    gap: 10px;
+}
+
+
+.popup-links a {
+
+    color: #7046e8;
+
+    font-weight: 600;
+
+    font-size: 12px;
+}
+
+
+.badge-pet {
+
+    display: inline-block;
+
+    margin-top: 4px;
+
+    padding: 2px 8px;
+
+    border-radius: 10px;
+
+    background: #e3f6ec;
+
+    color: #137a48;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+/* ==================================
+   BOTÓN Y CARGANDO SOBRE EL MAPA
+================================== */
+
+.search-area,
+.map-loading {
+
+    position: absolute;
+
+    top: 15px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 16px;
+
+    border-radius: 20px;
+
+    border: none;
+
+    background: white;
+
+    color: #7046e8;
+
+    font-size: 13px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.18);
+}
+
+
+.search-area[hidden],
+.map-loading[hidden] {
+
+    display: none;
+
+}
+
+
+/* ==================================
+   LISTA DE LUGARES
+================================== */
+
+.places-panel {
+
+    height: 560px;
+
+    overflow-y: auto;
+
+    background: white;
+
+    border: 1px solid #e9e3f8;
+
+    border-radius: 17px;
+
+    padding: 15px;
+}
+
+
+.places-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid #eee;
+}
+
+
+.places-header strong {
+
+    font-size: 15px;
+
+}
+
+
+.places-header span {
+
+    color: #137a48;
+
+    background: #e3f6ec;
+
+    padding: 4px 8px;
+
+    border-radius: 10px;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+}
+
 
 .place-card {
 
     display: flex;
 
-    gap: 12px;
+    align-items: flex-start;
 
-    padding: 12px 5px;
+    gap: 10px;
+
+    padding: 11px 5px;
 
     border-bottom: 1px solid #eee;
 
@@ -550,56 +788,9 @@ body {
 }
 
 
-.place-icon {
+.place-card .legend-dot {
 
-    min-width: 40px;
-
-    height: 40px;
-
-    border-radius: 10px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    color: white;
-
-}
-
-
-.place-icon.veterinaria {
-
-    background: #4c7ff0;
-
-}
-
-
-.place-icon.parque {
-
-    background: #5abf7a;
-
-}
-
-
-.place-icon.cafeteria {
-
-    background: #9560df;
-
-}
-
-
-.place-icon.tienda {
-
-    background: #ee65a2;
-
-}
-
-
-.place-icon.hotel {
-
-    background: #f29b45;
+    margin-top: 4px;
 
 }
 
@@ -607,6 +798,7 @@ body {
 .place-info {
 
     min-width: 0;
+
 }
 
 
@@ -615,7 +807,6 @@ body {
     display: block;
 
     font-size: 13px;
-
 }
 
 
@@ -626,55 +817,16 @@ body {
     color: #777;
 
     font-size: 11px;
-
-    margin-top: 2px;
 }
 
 
-.stars {
+.places-empty {
 
-    color: #f5a623;
+    margin-top: 15px;
 
-    font-size: 11px;
+    color: #777;
 
-}
-
-
-/* ==================================
-   BOTÓN UBICACIÓN
-================================== */
-
-.map-location {
-
-    position: absolute;
-
-    right: 20px;
-
-    bottom: 20px;
-
-    width: 48px;
-
-    height: 48px;
-
-    border-radius: 50%;
-
-    border: none;
-
-    background: white;
-
-    color: #7046e8;
-
-    font-size: 20px;
-
-    box-shadow:
-        0 5px 20px
-        rgba(0,0,0,.18);
-}
-
-
-.map-location:hover {
-
-    background: #f0eaff;
+    font-size: 13px;
 }
 
 
@@ -783,6 +935,22 @@ body {
     }
 
 
+    .map-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .places-panel {
+
+        height: auto;
+
+        max-height: 350px;
+
+    }
+
+
     .main-content {
 
         width: calc(100% - 210px);
@@ -855,13 +1023,6 @@ body {
     }
 
 
-    .user-dropdown strong {
-
-        display: none;
-
-    }
-
-
     .map-header {
 
         flex-direction: column;
@@ -876,13 +1037,17 @@ body {
     }
 
 
-    .map-container {
-        height: 600px;
+    .map-info {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
     }
 
-    .map-info {
-        width: calc(100% - 30px);
-        max-height: 250px;
+
+    .map-container {
+        height: 450px;
     }
 
 }
@@ -907,6 +1072,21 @@ body {
         width: 100px;
     }
     .map-container {
-        height: 650px;
+        height: 400px;
     }
+}
+
+/* Con sesión iniciada el menú es más largo: se puede desplazar */
+.sidebar.con-sesion {
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar.con-sesion .logo-area {
+    margin-bottom: 18px;
+}
+
+.sidebar.con-sesion .menu a {
+    padding: 10px 12px;
+    margin-bottom: 3px;
 }

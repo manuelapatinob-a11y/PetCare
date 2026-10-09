@@ -1,0 +1,209 @@
+/* =========================================
+   PETCARE - IDEAS CON IA (comun/ideas.js)
+   Las usan Actividad física y Entrenamiento y comportamiento
+========================================= */
+
+.ai-box {
+    margin-bottom: 18px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #ddd3f7;
+    background: linear-gradient(160deg, #f6f1ff, #ffffff 55%);
+}
+
+.ai-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.ai-header h3 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.ai-header h3 i {
+    color: #7046e8;
+}
+
+.ai-header p {
+    margin: 3px 0 0;
+    color: #777b8c;
+    font-size: 13px;
+}
+
+.btn-ai {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #7b48d8, #9859e3);
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.btn-ai:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+}
+
+.ai-note {
+    margin: 0 0 10px;
+    color: #8a879c;
+    font-size: 13px;
+}
+
+.ideas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+}
+
+.idea-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 14px;
+    background: white;
+    border: 1px solid #ece7f8;
+    border-radius: 16px;
+}
+
+.idea-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.idea-top strong {
+    font-size: 15px;
+    color: #1f1a3d;
+}
+
+.idea-card p {
+    margin: 0;
+    color: #4a4760;
+    font-size: 13px;
+}
+
+.idea-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.idea-meta span {
+    padding: 4px 9px;
+    border-radius: 10px;
+    background: #f7f5fe;
+    color: #4a3c7c;
+    font-size: 12px;
+}
+
+.idea-card .idea-why {
+    padding: 8px 10px;
+    border-radius: 10px;
+    background: #eef6ff;
+    color: #1f4f8f;
+    font-size: 12px;
+}
+
+.idea-card .idea-warning {
+    padding: 8px 10px;
+    border-radius: 10px;
+    background: #fff4e5;
+    color: #8a4b00;
+    font-size: 12px;
+}
+
+.idea-add {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+}
+
+.idea-add span {
+    color: #777b8c;
+    font-size: 12px;
+}
+
+.idea-add button {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 9px;
+    border: 1px solid #e3dcf5;
+    border-radius: 20px;
+    background: white;
+    color: #7046e8;
+    font-size: 12px;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.idea-add button:hover {
+    background: #7046e8;
+    border-color: #7046e8;
+    color: white;
+}
+
+.idea-added {
+    color: #137a48;
+    font-weight: 600;
+}
+
+.idea-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 6px;
+    border-top: 1px solid #f3f0fa;
+}
+
+.idea-actions small {
+    color: #8a879c;
+    font-size: 12px;
+}
+
+.idea-actions button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #8a879c;
+}
+
+.idea-actions button:hover,
+.idea-actions button.active {
+    background: #f1ebff;
+    color: #7046e8;
+}
+
+.idea-actions button.danger:hover {
+    background: #fdebef;
+    color: #d63b5c;
+}
+
+.ai-disclaimer {
+    margin: 12px 0 0;
+    color: #8a879c;
+    font-size: 12px;
+}
+
+@media (max-width: 650px) {
+
+    .ai-header {
+        flex-direction: column;
+    }
+}

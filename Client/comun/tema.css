@@ -1,0 +1,28 @@
+/* =========================================
+   PETCARE - TEMA OSCURO
+   Lo activa ../auth/sesion.js con <html data-tema="oscuro">
+   según lo elegido en Configuración.
+   Invierte los colores de toda la página y vuelve a invertir
+   las fotos y el mapa para que se vean normales.
+========================================= */
+
+html[data-tema="oscuro"] {
+    background: #121212;
+    filter: invert(.9) hue-rotate(180deg);
+}
+
+/* Fotos, videos, mapas y fotos de fondo se ven con sus colores reales */
+html[data-tema="oscuro"] img,
+html[data-tema="oscuro"] video,
+html[data-tema="oscuro"] iframe,
+html[data-tema="oscuro"] .leaflet-tile-pane,
+html[data-tema="oscuro"] .avatar.con-foto,
+html[data-tema="oscuro"] .photo-preview.has-photo,
+html[data-tema="oscuro"] .profile-photo.has-photo {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+/* Las sombras se verían como un brillo claro */
+html[data-tema="oscuro"] * {
+    box-shadow: none !important;
+}

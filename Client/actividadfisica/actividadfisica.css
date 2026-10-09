@@ -1,1249 +1,317 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --purple: #7046e8;
-    --purple-light: #a16cf2;
-    --lilac: #eee8ff;
-    --blue: #4d8eea;
-    --blue-light: #eaf3ff;
-    --green: #46b982;
-    --green-light: #e8f8f0;
-    --orange: #f39b45;
-    --orange-light: #fff1e3;
-    --text: #29253d;
-    --gray: #858092;
-    --border: #ece9f5;
-    --background: #f8f7fc;
-    --white: #ffffff;
-}
-
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: var(--background);
-    color: var(--text);
-    min-height: 100vh;
-}
-
-
-/* ============================
-   ESTRUCTURA
-============================ */
-
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-
-    width: 250px;
-
-    padding: 25px 17px;
-
-    background: white;
-
-    border-right: 1px solid var(--border);
-
-    z-index: 1000;
-
-    overflow-y: auto;
-}
-
-.main-content {
-    margin-left: 250px;
-
-    width: calc(100% - 250px);
-
-    max-width: 1600px;
-
-    padding: 28px 35px;
-}
-
-
-/* ============================
-   LOGO
-============================ */
-
-.logo-area {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    margin-bottom: 35px;
-
-    text-decoration: none;
-}
-
-.logo-petcare {
-    width: 135px;
-    height: auto;
-}
-
-
-/* ============================
-   MENÚ
-============================ */
-
-.menu {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 5px;
-}
-
-.menu-item {
-    display: flex;
-
-    align-items: center;
-
-    gap: 13px;
-
-    padding: 12px 13px;
-
-    color: #77738a;
-
-    text-decoration: none;
-
-    border-radius: 11px;
-
-    font-size: 13px;
-
-    transition: .25s;
-}
-
-.menu-item i {
-    width: 21px;
-
-    text-align: center;
-
-    font-size: 17px;
-}
-
-.menu-item:hover {
-    background: var(--lilac);
-
-    color: var(--purple);
-}
-
-.menu-item.active {
-    color: white;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--purple),
-            var(--purple-light)
-        );
-
-    box-shadow:
-        0 7px 18px rgba(112,70,232,.18);
-}
-
-
-/* ============================
-   TOPBAR
-============================ */
-
-.topbar {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    margin-bottom: 25px;
-}
-
-.title-area {
-    display: flex;
-
-    align-items: center;
-
-    gap: 13px;
-}
-
-.back-button {
-    width: 38px;
-    height: 38px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background: white;
-
-    border: 1px solid var(--border);
-
-    border-radius: 10px;
-
-    color: var(--purple);
-
-    text-decoration: none;
-}
-
-.title-area h1 {
-    margin: 0;
-
-    color: #211b49;
-
-    font-size: 25px;
-}
-
-.title-area p {
-    margin: 4px 0 0;
-
-    color: var(--gray);
-
-    font-size: 13px;
-}
-
-
-/* ============================
-   USUARIO
-============================ */
-
-.user-area {
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-}
-
-.notification-btn {
-    border: none;
-
-    background: transparent;
-
-    color: var(--purple);
-
-    font-size: 20px;
-
-    cursor: pointer;
-}
-
-.avatar {
-    width: 39px;
-    height: 39px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--purple),
-            var(--purple-light)
-        );
-
-    color: white;
-
-    font-size: 12px;
-
-    font-weight: bold;
-}
-
-.user-name {
-    display: flex;
-
-    flex-direction: column;
-}
-
-.user-name strong {
-    font-size: 12px;
-}
-
-.user-name small {
-    color: var(--gray);
-
-    font-size: 10px;
-}
-
-.arrow-user {
-    color: var(--purple);
-
-    font-size: 12px;
-}
-
-
-/* ============================
-   TARJETAS
-============================ */
-
-.pet-selector,
-.activity-summary,
-.info-card {
-
-    background: white;
-
-    border: 1px solid var(--border);
-
+/* =========================================
+   PETCARE - ACTIVIDAD FÍSICA
+   (el diseño general viene de mismascotas.css y el de
+   los apartados por mascota de salud/salud.css)
+========================================= */
+
+
+/* =========================================
+   ACTIVIDAD DE HOY (barra de progreso)
+========================================= */
+
+.today-meter {
+    align-self: center;
+    padding: 16px 18px;
     border-radius: 18px;
+    background: #faf9fd;
+}
 
-    padding: 21px;
+.today-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 10px;
+}
 
-    margin-bottom: 20px;
+.today-head span {
+    color: #777b8c;
+    font-size: 13px;
+    font-weight: 600;
+}
 
-    box-shadow:
-        0 5px 20px rgba(70,50,120,.035);
+.today-head strong {
+    font-size: 22px;
+    color: #1f1a3d;
+}
+
+.today-head small {
+    color: #777b8c;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* El fondo es un tono más claro del mismo color de la barra */
+.meter {
+    height: 12px;
+    border-radius: 12px;
+    background: #ebe4fd;
+    overflow: hidden;
+}
+
+.meter-fill {
+    height: 100%;
+    border-radius: 12px;
+    background: #7046e8;
+    transition: width .4s;
+}
+
+.meter-fill.done {
+    background: #1fa463;
+}
+
+.today-status {
+    display: block;
+    margin-top: 8px;
+    color: #4a4760;
+    font-size: 13px;
+}
+
+.today-status .bi-check-circle-fill {
+    color: #1fa463;
 }
 
 
-/* ============================
-   ENCABEZADOS
-============================ */
+/* =========================================
+   INDICADORES DE LA SEMANA
+========================================= */
 
-.section-heading {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
+.kpi-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
     margin-bottom: 18px;
 }
 
-.section-heading h2 {
-    margin: 0 0 4px;
-
-    color: #211b49;
-
-    font-size: 18px;
-}
-
-.section-heading p {
-    margin: 0;
-
-    color: var(--gray);
-
-    font-size: 12px;
-}
-
-
-/* ============================
-   BOTONES
-============================ */
-
-.primary-btn {
-    border: none;
-
-    border-radius: 10px;
-
-    padding: 10px 15px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--purple),
-            var(--purple-light)
-        );
-
-    color: white;
-
-    font-size: 12px;
-
-    cursor: pointer;
-}
-
-.secondary-btn {
-    border: 1px solid #ded7f1;
-
-    background: white;
-
-    color: var(--purple);
-
-    border-radius: 9px;
-
-    padding: 8px 13px;
-
-    font-size: 11px;
-
-    text-decoration: none;
-
-    cursor: pointer;
-}
-
-
-/* ============================
-   MASCOTAS
-============================ */
-
-.pet-options {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 14px;
-}
-
-.pet-option {
-    position: relative;
-
+.kpi-tile {
     display: flex;
-
-    align-items: center;
-
-    gap: 13px;
-
-    width: 100%;
-
-    padding: 13px;
-
-    border: 1px solid var(--border);
-
-    background: white;
-
-    border-radius: 14px;
-
-    text-align: left;
-
-    cursor: pointer;
-}
-
-.pet-option.selected {
-    background:
-        linear-gradient(
-            135deg,
-            #eee1ff,
-            #f8f3ff
-        );
-
-    border-color: var(--purple);
-}
-
-.pet-avatar {
-    width: 48px;
-    height: 48px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    color: var(--purple);
-
-    background: white;
-
-    font-size: 20px;
-}
-
-.pet-data {
-    display: flex;
-
     flex-direction: column;
+    gap: 4px;
+    padding: 16px 18px;
+    background: white;
+    border: 1px solid #e6e3f3;
+    border-radius: 18px;
 }
 
-.pet-data strong {
+.kpi-label {
+    color: #777b8c;
+    font-size: 13px;
+}
+
+.kpi-label i {
+    color: #7046e8;
+}
+
+.kpi-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1f1a3d;
+    line-height: 1.15;
+}
+
+.kpi-delta {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.kpi-delta.up {
+    color: #137a48;
+}
+
+.kpi-delta.down {
+    color: #b45309;
+}
+
+.kpi-delta.neutral {
+    color: #8a879c;
+    font-weight: 500;
+}
+
+
+/* =========================================
+   MONITOR: COLUMNAS DE MINUTOS POR DÍA
+========================================= */
+
+.column-chart {
+    padding: 22px 6px 0;
+}
+
+.chart-plot {
+    position: relative;
+    height: 190px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    align-items: end;
+    border-bottom: 1px solid #e6e3f3;
+}
+
+/* Línea de referencia de la meta: fina y discreta */
+.goal-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 0;
+    border-top: 1px solid #b8b3cc;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.goal-line span {
+    position: absolute;
+    right: 0;
+    bottom: 3px;
+    padding: 0 4px;
+    background: white;
+    color: #777b8c;
+    font-size: 11px;
+}
+
+.chart-column {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    outline: none;
+    cursor: default;
+}
+
+.column-bar {
+    width: 24px;
+    max-width: 60%;
+    min-height: 0;
+    border-radius: 4px 4px 0 0;
+    background: #7046e8;
+    transition: height .4s;
+}
+
+.column-value {
+    margin-bottom: 4px;
+    color: #4a4760;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Detalle al pasar el mouse o al enfocar con el teclado */
+.chart-column::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: #1f1a3d;
+    color: white;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .15s;
+}
+
+.chart-column:hover::after,
+.chart-column:focus-visible::after {
+    opacity: 1;
+}
+
+.chart-column:hover .column-bar,
+.chart-column:focus-visible .column-bar {
+    background: #5a33cf;
+}
+
+.chart-labels {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-top: 6px;
+    text-align: center;
+    color: #777b8c;
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+.chart-labels .today {
+    color: #1f1a3d;
+    font-weight: 700;
+}
+
+.chart-labels i {
+    display: block;
+    margin-top: 2px;
+    color: #1fa463;
+}
+
+.monitor-message {
+    margin: 16px 0 10px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: #f7f5fe;
+    color: #4a4760;
     font-size: 14px;
 }
 
-.pet-data span {
-    color: var(--gray);
-
-    font-size: 11px;
+.monitor-message i {
+    color: #7046e8;
+    margin-right: 4px;
 }
 
-.check-icon {
-    margin-left: auto;
-
-    color: transparent;
-}
-
-.pet-option.selected .check-icon {
-    color: var(--purple);
-}
-
-
-/* ============================
-   TARJETAS DE ACTIVIDAD
-============================ */
-
-.activity-cards {
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 14px;
-}
-
-.activity-card {
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    padding: 16px;
-
-    border: 1px solid var(--border);
-
-    border-radius: 14px;
-}
-
-.activity-icon {
-    width: 43px;
-    height: 43px;
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 12px;
-
-    font-size: 19px;
-}
-
-.activity-icon.blue {
-    background: var(--blue-light);
-
-    color: var(--blue);
-}
-
-.activity-icon.purple {
-    background: var(--lilac);
-
-    color: var(--purple);
-}
-
-.activity-icon.orange {
-    background: var(--orange-light);
-
-    color: var(--orange);
-}
-
-.activity-icon.green {
-    background: var(--green-light);
-
-    color: var(--green);
-}
-
-.activity-info {
-    display: flex;
-
-    flex-direction: column;
-}
-
-.activity-info span {
-    color: var(--gray);
-
-    font-size: 10px;
-}
-
-.activity-info strong {
-    color: #211b49;
-
-    font-size: 16px;
-}
-
-.activity-info small {
-    color: var(--gray);
-
-    font-size: 9px;
-}
-
-
-/* ============================
-   GRID
-============================ */
-
-.content-grid {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 20px;
-}
-
-
-/* ============================
-   HEADER TARJETAS
-============================ */
-
-.card-header {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    margin-bottom: 20px;
-}
-
-.card-title {
-    display: flex;
-
-    align-items: center;
-
-    gap: 11px;
-}
-
-.title-icon {
-    width: 39px;
-    height: 39px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 11px;
-
-    background: var(--lilac);
-
-    color: var(--purple);
-}
-
-.card-title h3 {
-    margin: 0;
-
-    font-size: 15px;
-
-    color: #211b49;
-}
-
-.card-title p {
-    margin: 2px 0 0;
-
-    color: var(--gray);
-
-    font-size: 10px;
-}
-
-.icon-btn {
-    width: 33px;
-    height: 33px;
-
-    border: none;
-
-    border-radius: 9px;
-
-    background: var(--lilac);
-
-    color: var(--purple);
-
+.monitor-table summary {
+    color: #7046e8;
+    font-size: 13px;
+    font-weight: 600;
     cursor: pointer;
 }
 
-.week-label {
-    color: var(--gray);
+.monitor-data {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+}
 
-    font-size: 10px;
+.monitor-data th {
+    padding: 6px 8px;
+    color: #777b8c;
+    font-weight: 600;
+    text-align: left;
+    border-bottom: 1px solid #f0eef7;
+}
+
+.monitor-data td {
+    padding: 7px 8px;
+    border-bottom: 1px solid #f6f4fb;
 }
 
 
-/* ============================
-   PASEOS
-============================ */
-
-.walk {
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    padding: 12px 0;
-
-    border-bottom: 1px solid var(--border);
-}
-
-.walk:last-child {
-    border-bottom: none;
-}
-
-.walk-date {
-    width: 45px;
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    padding: 6px;
-
-    border-radius: 9px;
-
-    background: var(--lilac);
-
-    color: var(--purple);
-}
-
-.walk-date strong {
-    font-size: 16px;
-}
-
-.walk-date span {
-    font-size: 8px;
-}
-
-.walk-info {
-    display: flex;
-
-    flex-direction: column;
-
-    flex: 1;
-}
-
-.walk-info strong {
-    font-size: 12px;
-}
-
-.walk-info span {
-    color: var(--gray);
-
-    font-size: 9px;
-
-    margin-top: 2px;
-}
-
-.walk-info i {
-    color: var(--purple);
-}
-
-.walk-status {
-    padding: 5px 8px;
-
-    border-radius: 8px;
-
-    background: var(--lilac);
-
-    color: var(--purple);
-
-    font-size: 8px;
-}
-
-
-/* ============================
-   PROGRESO
-============================ */
-
-.progress-section {
-    display: flex;
-
-    align-items: center;
-
-    gap: 25px;
-}
-
-.progress-circle {
-    width: 110px;
-    height: 110px;
-
-    flex-shrink: 0;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border: 9px solid #eee8ff;
-
-    outline: 4px solid var(--purple);
-}
-
-.progress-circle span {
-    color: #211b49;
-
-    font-size: 20px;
-
-    font-weight: bold;
-}
-
-.progress-circle small {
-    color: var(--gray);
-
-    font-size: 8px;
-}
-
-.progress-data {
-    flex: 1;
-}
-
-.progress-data > div {
-    margin-bottom: 9px;
-}
-
-.progress-data span {
-    display: block;
-
-    margin-bottom: 4px;
-
-    color: var(--gray);
-
-    font-size: 9px;
-}
-
-.progress {
-    height: 6px;
-
-    background: #eeeaf5;
-
-    border-radius: 10px;
-}
-
-.progress-bar {
-    background:
-        linear-gradient(
-            90deg,
-            var(--purple),
-            var(--purple-light)
-        );
-
-    border-radius: 10px;
-}
-
-.activity-message {
-    display: flex;
-
-    align-items: center;
-
-    gap: 7px;
-
-    margin-top: 18px;
-
-    padding: 10px;
-
-    border-radius: 10px;
-
-    background: var(--green-light);
-
-    color: var(--green);
-
-    font-size: 10px;
-}
-
-
-/* ============================
-   PESO
-============================ */
-
-.weight-content {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 20px;
-}
-
-.weight-number {
-    display: flex;
-
-    flex-direction: column;
-}
-
-.weight-number span {
-    color: var(--gray);
-
-    font-size: 10px;
-}
-
-.weight-number strong {
-    color: #211b49;
-
-    font-size: 30px;
-}
-
-.weight-number small {
-    color: var(--gray);
-
-    font-size: 9px;
-}
-
-.weight-status {
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding: 12px;
-
-    border-radius: 11px;
-
-    background: var(--green-light);
-}
-
-.weight-status i {
-    color: var(--green);
-
-    font-size: 20px;
-}
-
-.weight-status div {
-    display: flex;
-
-    flex-direction: column;
-}
-
-.weight-status strong {
-    color: var(--green);
-
-    font-size: 11px;
-}
-
-.weight-status span {
-    color: var(--gray);
-
-    font-size: 9px;
-}
-
-
-/* ============================
-   HISTORIAL
-============================ */
-
-.history-list {
-    display: flex;
-
-    flex-direction: column;
-}
-
-.history-item {
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    padding: 11px 0;
-
-    border-bottom: 1px solid var(--border);
-}
-
-.history-item:last-child {
-    border-bottom: none;
-}
-
-.history-icon {
-    width: 38px;
-    height: 38px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 10px;
-
-    background: var(--lilac);
-
-    color: var(--purple);
-}
-
-.history-item div:last-child {
-    display: flex;
-
-    flex-direction: column;
-}
-
-.history-item strong {
-    font-size: 12px;
-}
-
-.history-item span {
-    color: var(--gray);
-
-    font-size: 9px;
-}
-
-.history-item small {
-    color: var(--purple);
-
-    font-size: 8px;
-
-    margin-top: 3px;
-}
-
-
-/* ============================
-   NOTIFICACIÓN
-============================ */
-
-.activity-message-popup {
-    position: fixed;
-
-    right: 25px;
-    bottom: 25px;
-
-    display: none;
-
-    align-items: center;
-
-    gap: 8px;
-
-    padding: 12px 16px;
-
-    border-radius: 11px;
-
-    background: #29253d;
-
-    color: white;
-
-    font-size: 11px;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.15);
-
-    z-index: 2000;
-}
-
-.activity-message-popup.show {
-    display: flex;
-}
-
-
-/* ============================
-   TABLET
-============================ */
+/* =========================================
+   RESPONSIVE
+========================================= */
 
 @media (max-width: 1100px) {
 
-    .activity-cards {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-    .content-grid {
-        grid-template-columns: 1fr;
+    .kpi-row {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
+@media (max-width: 650px) {
 
-/* ============================
-   TABLET PEQUEÑA
-============================ */
-
-@media (max-width: 800px) {
-
-    .sidebar {
-        width: 75px;
-
-        padding: 20px 9px;
+    .kpi-value {
+        font-size: 22px;
     }
 
-    .logo-petcare {
-        width: 52px;
+    .column-bar {
+        width: 16px;
     }
 
-    .menu-item {
-        justify-content: center;
-
-        padding: 12px 8px;
+    .column-value {
+        font-size: 10px;
     }
 
-    .menu-item span {
-        display: none;
-    }
-
-    .main-content {
-        margin-left: 75px;
-
-        width: calc(100% - 75px);
-
-        padding: 22px;
-    }
-
-    .pet-options {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-/* ============================
-   CELULAR
-============================ */
-
-@media (max-width: 600px) {
-
-    body {
-        padding-bottom: 70px;
-    }
-
-    .sidebar {
-        top: auto;
-
-        left: 0;
-
-        bottom: 0;
-
-        width: 100%;
-
-        height: 65px;
-
-        padding: 5px 8px;
-
-        border-right: none;
-
-        border-top: 1px solid var(--border);
-
-        overflow: hidden;
-    }
-
-    .logo-area {
-        display: none;
-    }
-
-    .menu {
-        height: 100%;
-
-        flex-direction: row;
-
-        justify-content: space-around;
-
-        align-items: center;
-    }
-
-    .menu-item {
-        width: 45px;
-
-        height: 50px;
-
-        justify-content: center;
-
-        padding: 5px;
-    }
-
-    .menu-item span {
-        display: none;
-    }
-
-    .main-content {
-        width: 100%;
-
-        margin-left: 0;
-
-        padding: 15px;
-    }
-
-    .topbar {
-        align-items: flex-start;
-    }
-
-    .title-area h1 {
-        font-size: 21px;
-    }
-
-    .title-area p {
-        font-size: 11px;
-    }
-
-    .user-name,
-    .notification-btn,
-    .arrow-user {
-        display: none;
-    }
-
-    .section-heading {
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 10px;
-    }
-
-    .activity-cards {
-        grid-template-columns: 1fr;
-    }
-
-    .pet-selector,
-    .activity-summary,
-    .info-card {
-        padding: 16px;
-
-        border-radius: 15px;
-    }
-
-    .primary-btn,
-    .secondary-btn {
-        width: 100%;
-
-        text-align: center;
-    }
-
-    .weight-content {
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
-
-    .progress-section {
-        flex-direction: column;
-    }
-
-    .progress-data {
-        width: 100%;
-    }
-
-    .activity-message-popup {
-        left: 15px;
-
-        right: 15px;
-
-        bottom: 80px;
-    }
-}
-
-
-/* ============================
-   CELULAR PEQUEÑO
-============================ */
-
-@media (max-width: 400px) {
-
-    .main-content {
-        padding: 12px;
-    }
-
-    .title-area h1 {
-        font-size: 19px;
-    }
-
-    .back-button {
-        width: 33px;
-        height: 33px;
-    }
-
-    .avatar {
-        width: 34px;
-        height: 34px;
-    }
-
-    .pet-option {
-        padding: 10px;
-    }
-
-    .pet-avatar {
-        width: 42px;
-        height: 42px;
-    }
-
-    .walk-status {
-        display: none;
+    .goal-line span {
+        font-size: 10px;
     }
 }

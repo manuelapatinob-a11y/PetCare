@@ -2,7 +2,6 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -18,89 +17,86 @@
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/PetCare/Client/recordatorios/recordatorios.css">
+    <!-- CSS: diseño general, el de los apartados (Salud) y el de esta página -->
+    <link rel="stylesheet" href="../mismascotas/mismascotas.css">
+    <link rel="stylesheet" href="../salud/salud.css">
+    <link rel="stylesheet" href="recordatorios.css">
 
+    <!-- Sesión: si no hay sesión iniciada, va al login -->
+    <script src="../auth/sesion.js"></script>
+    <script>requiereSesion();</script>
 </head>
 
 <body>
 
 <div class="app">
 
-    <!-- =================================
-         BARRA LATERAL
-    ================================== -->
+    <!-- ================= SIDEBAR ================= -->
 
     <aside class="sidebar">
 
-        <div class="logo-area">
-
-            <img
-                src="/PetCare/Recursos/logo.png"
-                class="logo"
-                alt="PetCare">
-
-        </div>
-
+        <a href="../inicio/inicio.html" class="logo-area">
+            <img src="../../Recursos/logo.png" class="logo" alt="PetCare">
+        </a>
 
         <nav class="main-menu">
 
-            <a href="/PetCare/index.html">
+            <a href="../inicio/inicio.html" class="sin-subrayado">
                 <i class="bi bi-house"></i>
                 Inicio
             </a>
 
-            <a href="/PetCare/Client/mismascotas/mismascotas.html">
+            <a href="../mismascotas/mismascotas.html" class="sin-subrayado">
                 <i class="bi bi-people"></i>
                 Mis Mascotas
             </a>
 
-            <a href="/PetCare/Client/salud/salud.html">
+            <a href="../salud/salud.html" class="sin-subrayado">
                 <i class="bi bi-heart-pulse"></i>
                 Salud
             </a>
 
-            <a href="/PetCare/Client/alimentacion/Alimentacion.html">
+            <a href="../alimentacion/Alimentacion.html" class="sin-subrayado">
                 <i class="bi bi-cup-hot"></i>
                 Alimentación
             </a>
 
-            <a href="/PetCare/Client/actividadfisica/actividadfisica.html" class="menu-item">
-                    <i class="bi bi-person-walking"></i>
-                    <span>Actividad Física</span>
-                </a>
+            <a href="../actividadfisica/actividadfisica.html" class="sin-subrayado">
+                <i class="bi bi-person-walking"></i>
+                Actividad Física
+            </a>
 
-            <a href="/PetCare/Client/recordatorios/recordatorios.html" class="active">
+            <a href="../entrenamiento/entrenamiento.html" class="sin-subrayado">
+                <i class="bi bi-award"></i>
+                Entrenamiento y comportamiento
+            </a>
+
+            <a href="recordatorios.html" class="sin-subrayado active">
                 <i class="bi bi-bell"></i>
                 Recordatorios
             </a>
 
-            <a href="/PetCare/Client/mapa/mapa.html">
+            <a href="../mapa/mapa.html" class="sin-subrayado">
                 <i class="bi bi-geo-alt"></i>
                 Mapa Pet Friendly
             </a>
 
-            <a href="/PetCare/Client/servicios/servicios.html">
-                <i class="bi bi-shop"></i>
-                Servicios
-            </a>
-
-            <a href="/PetCare/Client/finanzas/finanzas.html">
+            <a href="../finanzas/finanzas.html" class="sin-subrayado">
                 <i class="bi bi-wallet2"></i>
                 Finanzas
             </a>
 
-            <a href="/PetCare/Client/asistente/asistente.html" class="menu-item ">
-                    <i class="bi bi-robot"></i>
-                    <span>Asistente IA</span>
-                </a>
+            <a href="../asistente/asistente.html" class="sin-subrayado">
+                <i class="bi bi-robot"></i>
+                Asistente IA
+            </a>
 
-            <a href="/PetCare/Client/perfil/perfil.html">
+            <a href="../perfil/perfil.html" class="sin-subrayado">
                 <i class="bi bi-person"></i>
                 Perfil
             </a>
 
-            <a href="/PetCare/Client/configuracion/configuracion.html">
+            <a href="../configuracion/configuracion.html" class="sin-subrayado">
                 <i class="bi bi-gear"></i>
                 Configuración
             </a>
@@ -110,101 +106,48 @@
     </aside>
 
 
-    <!-- =================================
-         CONTENIDO
-    ================================== -->
+    <!-- ================= CONTENIDO ================= -->
 
     <main class="content">
-
-
-        <!-- HEADER -->
 
         <header class="top-header">
 
             <div class="page-title">
 
-                <a href="/PetCare/index.html" class="back">
-
+                <a href="../inicio/inicio.html" class="back" aria-label="Volver al inicio">
                     <i class="bi bi-arrow-left"></i>
-
                 </a>
 
                 <div>
-
                     <h2>Recordatorios</h2>
-
+                    <p>Tu agenda: lo que tú programas y lo que viene de Salud.</p>
                 </div>
 
             </div>
 
-
-            <!-- USUARIO -->
-
             <div class="user-area">
-
-                <button class="notification-btn">
-
-                    <i class="bi bi-bell"></i>
-
-                </button>
-
 
                 <div class="dropdown">
 
-                    <button
-                        class="user-button dropdown-toggle"
-                        data-bs-toggle="dropdown">
-
-                        <span class="avatar">
-                            MP
-                        </span>
-
-                        <strong>
-                            Manuela P.
-                        </strong>
-
+                    <button class="user-button dropdown-toggle" data-bs-toggle="dropdown">
+                        <span class="avatar" data-usuario-avatar></span>
+                        <strong data-usuario-nombre></strong>
                     </button>
 
-
                     <ul class="dropdown-menu dropdown-menu-end">
-
                         <li>
-                            <a
-                                class="dropdown-item"
-                                href="/PetCare/Client/perfil del usuario/perfildelusuario.html">
-
+                            <a class="dropdown-item" href="../perfil/perfil.html">
                                 <i class="bi bi-person"></i>
                                 Mi perfil
-
                             </a>
                         </li>
-
+                        <li><hr class="dropdown-divider"></li>
                         <li>
-                            <a
-                                class="dropdown-item"
-                                href="/PetCare/Client/configuracion/configuracion.html">
-
-                                <i class="bi bi-gear"></i>
-                                Configuración
-
-                            </a>
-                        </li>
-
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li>
-                            <a
-                                class="dropdown-item"
-                                href="/PetCare/Client/login/login.html">
-
+                            <a class="dropdown-item text-danger" href="../login/login.html" data-cerrar-sesion>
                                 <i class="bi bi-box-arrow-right"></i>
                                 Cerrar sesión
-
                             </a>
                         </li>
-
                     </ul>
 
                 </div>
@@ -214,728 +157,145 @@
         </header>
 
 
-        <!-- =================================
-             ENCABEZADO
-        ================================== -->
-
-        <section class="reminder-intro">
-
-            <div>
-
-                <h3>
-                    Mis recordatorios 🔔
-                </h3>
-
-                <p>
-                    No olvides ninguna actividad importante
-                    de tus mascotas.
-                </p>
-
-            </div>
+        <div id="mensaje" class="alert d-none" role="alert"></div>
 
 
-            <button
-                class="btn-add"
-                data-bs-toggle="modal"
-                data-bs-target="#modalRecordatorio">
-
-                <i class="bi bi-plus-lg"></i>
-
-                Nuevo recordatorio
-
-            </button>
-
+        <!-- RESUMEN -->
+        <section class="reminder-kpis" id="resumen">
+            <span class="text-muted small">Cargando tu agenda...</span>
         </section>
 
 
-        <!-- =================================
-             RESUMEN
-        ================================== -->
+        <!-- FILTRO POR MASCOTA -->
+        <section class="pet-picker" id="filtroMascotas"></section>
 
-        <section class="summary-grid">
 
+        <div class="reminders-layout">
 
-            <div class="summary-card">
+            <!-- RECORDATORIOS DEL USUARIO -->
+            <section class="panel-box">
 
-                <div class="summary-icon purple">
+                <div class="list-header">
+                    <div>
+                        <h3><i class="bi bi-alarm"></i> Tus recordatorios</h3>
+                        <p>Te avisamos en la campanita y por correo el día antes.</p>
+                    </div>
 
-                    <i class="bi bi-calendar-event"></i>
-
-                </div>
-
-                <div>
-
-                    <span>
-                        Próximos
-                    </span>
-
-                    <strong>
-                        4
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-            <div class="summary-card">
-
-                <div class="summary-icon blue">
-
-                    <i class="bi bi-check-circle"></i>
-
-                </div>
-
-                <div>
-
-                    <span>
-                        Completados
-                    </span>
-
-                    <strong>
-                        8
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-            <div class="summary-card">
-
-                <div class="summary-icon lilac">
-
-                    <i class="bi bi-bell"></i>
-
-                </div>
-
-                <div>
-
-                    <span>
-                        Esta semana
-                    </span>
-
-                    <strong>
-                        6
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-            <div class="summary-card">
-
-                <div class="summary-icon pink">
-
-                    <i class="bi bi-exclamation-circle"></i>
-
-                </div>
-
-                <div>
-
-                    <span>
-                        Pendientes
-                    </span>
-
-                    <strong>
-                        3
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================
-             FILTROS
-        ================================== -->
-
-        <section class="filters">
-
-            <div>
-
-                <label>
-                    Mascota
-                </label>
-
-                <select class="form-select">
-
-                    <option>
-                        Todas las mascotas
-                    </option>
-
-                    <option>
-                        🐶 Toby
-                    </option>
-
-                    <option>
-                        🐱 Luna
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <div>
-
-                <label>
-                    Tipo
-                </label>
-
-                <select class="form-select">
-
-                    <option>
-                        Todos
-                    </option>
-
-                    <option>
-                        Veterinario
-                    </option>
-
-                    <option>
-                        Vacuna
-                    </option>
-
-                    <option>
-                        Alimentación
-                    </option>
-
-                    <option>
-                        Actividad física
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <div>
-
-                <label>
-                    Fecha
-                </label>
-
-                <select class="form-select">
-
-                    <option>
-                        Todos
-                    </option>
-
-                    <option>
-                        Hoy
-                    </option>
-
-                    <option>
-                        Esta semana
-                    </option>
-
-                    <option>
-                        Este mes
-                    </option>
-
-                </select>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================
-             RECORDATORIOS
-        ================================== -->
-
-        <section class="reminders-container">
-
-            <div class="section-title">
-
-                <h3>
-                    Próximos recordatorios
-                </h3>
-
-                <a href="#">
-                    Ver todos
-                </a>
-
-            </div>
-
-
-            <!-- RECORDATORIO 1 -->
-
-            <article class="reminder-card">
-
-                <div class="reminder-icon vaccine">
-
-                    <i class="bi bi-shield-plus"></i>
-
-                </div>
-
-
-                <div class="reminder-info">
-
-                    <h4>
-                        Vacuna anual
-                    </h4>
-
-                    <p>
-                        🐶 Toby
-                    </p>
-
-                    <span>
-                        <i class="bi bi-calendar3"></i>
-                        12 de septiembre de 2026
-                    </span>
-
-                </div>
-
-
-                <div class="reminder-status">
-
-                    <span class="status upcoming">
-                        Próximo
-                    </span>
-
-                    <strong>
-                        En 11 días
-                    </strong>
-
-                </div>
-
-
-                <button class="more-btn">
-
-                    <i class="bi bi-three-dots"></i>
-
-                </button>
-
-            </article>
-
-
-            <!-- RECORDATORIO 2 -->
-
-            <article class="reminder-card">
-
-                <div class="reminder-icon vet">
-
-                    <i class="bi bi-heart-pulse"></i>
-
-                </div>
-
-
-                <div class="reminder-info">
-
-                    <h4>
-                        Cita veterinaria
-                    </h4>
-
-                    <p>
-                        🐱 Luna
-                    </p>
-
-                    <span>
-                        <i class="bi bi-calendar3"></i>
-                        15 de septiembre de 2026
-                    </span>
-
-                </div>
-
-
-                <div class="reminder-status">
-
-                    <span class="status upcoming">
-                        Próximo
-                    </span>
-
-                    <strong>
-                        En 14 días
-                    </strong>
-
-                </div>
-
-
-                <button class="more-btn">
-
-                    <i class="bi bi-three-dots"></i>
-
-                </button>
-
-            </article>
-
-
-            <!-- RECORDATORIO 3 -->
-
-            <article class="reminder-card">
-
-                <div class="reminder-icon food">
-
-                    <i class="bi bi-cup-hot"></i>
-
-                </div>
-
-
-                <div class="reminder-info">
-
-                    <h4>
-                        Comprar concentrado
-                    </h4>
-
-                    <p>
-                        🐶 Toby
-                    </p>
-
-                    <span>
-                        <i class="bi bi-calendar3"></i>
-                        18 de septiembre de 2026
-                    </span>
-
-                </div>
-
-
-                <div class="reminder-status">
-
-                    <span class="status pending">
-                        Pendiente
-                    </span>
-
-                    <strong>
-                        En 17 días
-                    </strong>
-
-                </div>
-
-
-                <button class="more-btn">
-
-                    <i class="bi bi-three-dots"></i>
-
-                </button>
-
-            </article>
-
-
-            <!-- RECORDATORIO 4 -->
-
-            <article class="reminder-card">
-
-                <div class="reminder-icon walk">
-
-                    <i class="bi bi-person-walking"></i>
-
-                </div>
-
-
-                <div class="reminder-info">
-
-                    <h4>
-                        Paseo de la tarde
-                    </h4>
-
-                    <p>
-                        🐶 Toby
-                    </p>
-
-                    <span>
-                        <i class="bi bi-clock"></i>
-                        Todos los días · 5:00 PM
-                    </span>
-
-                </div>
-
-
-                <div class="reminder-status">
-
-                    <span class="status daily">
-                        Diario
-                    </span>
-
-                    <strong>
-                        Hoy
-                    </strong>
-
-                </div>
-
-
-                <button class="more-btn">
-
-                    <i class="bi bi-three-dots"></i>
-
-                </button>
-
-            </article>
-
-        </section>
-
-
-        <!-- =================================
-             CALENDARIO
-        ================================== -->
-
-        <section class="calendar-card">
-
-            <div class="calendar-header">
-
-                <div>
-
-                    <h3>
-                        Calendario
-                    </h3>
-
-                    <p>
-                        Septiembre 2026
-                    </p>
-
-                </div>
-
-                <div class="calendar-buttons">
-
-                    <button>
-                        <i class="bi bi-chevron-left"></i>
+                    <button type="button" class="btn-add-small" id="botonNuevo">
+                        <i class="bi bi-plus-lg"></i>
+                        <span>Nuevo recordatorio</span>
                     </button>
-
-                    <button>
-                        <i class="bi bi-chevron-right"></i>
-                    </button>
-
                 </div>
 
-            </div>
+                <nav class="view-tabs" id="vistas" aria-label="Qué recordatorios ver">
+                    <button type="button" class="active" data-vista="pendientes">Pendientes</button>
+                    <button type="button" data-vista="hoy">Hoy</button>
+                    <button type="button" data-vista="semana">Próximos 7 días</button>
+                    <button type="button" data-vista="completados">Completados</button>
+                </nav>
+
+                <div id="lista"></div>
+
+            </section>
 
 
-            <div class="calendar">
+            <!-- LO QUE VIENE DE SALUD -->
+            <aside class="panel-box">
 
-                <div class="day-name">Lun</div>
-                <div class="day-name">Mar</div>
-                <div class="day-name">Mié</div>
-                <div class="day-name">Jue</div>
-                <div class="day-name">Vie</div>
-                <div class="day-name">Sáb</div>
-                <div class="day-name">Dom</div>
-
-
-                <div class="day empty"></div>
-                <div class="day">1</div>
-                <div class="day">2</div>
-                <div class="day">3</div>
-                <div class="day">4</div>
-                <div class="day">5</div>
-                <div class="day">6</div>
-
-                <div class="day">7</div>
-                <div class="day">8</div>
-                <div class="day">9</div>
-                <div class="day">10</div>
-                <div class="day">11</div>
-
-                <div class="day event">
-                    12
-                    <span></span>
+                <div class="list-header">
+                    <div>
+                        <h3><i class="bi bi-heart-pulse"></i> De Salud</h3>
+                        <p>Vacunas, desparasitaciones, citas y medicamentos. Se editan en Salud.</p>
+                    </div>
                 </div>
 
-                <div class="day">13</div>
+                <div id="salud"></div>
 
-                <div class="day">14</div>
+            </aside>
 
-                <div class="day event">
-                    15
-                    <span></span>
-                </div>
-
-                <div class="day">16</div>
-                <div class="day">17</div>
-
-                <div class="day event">
-                    18
-                    <span></span>
-                </div>
-
-                <div class="day">19</div>
-                <div class="day">20</div>
-
-                <div class="day">21</div>
-                <div class="day">22</div>
-                <div class="day">23</div>
-                <div class="day">24</div>
-                <div class="day">25</div>
-                <div class="day">26</div>
-                <div class="day">27</div>
-
-                <div class="day">28</div>
-                <div class="day">29</div>
-                <div class="day">30</div>
-
-            </div>
-
-        </section>
+        </div>
 
     </main>
 
 </div>
 
 
-<!-- =================================
-     MODAL
-================================== -->
+<!-- ================= MODAL: NUEVO / EDITAR ================= -->
 
-<div
-    class="modal fade"
-    id="modalRecordatorio"
-    tabindex="-1">
+<div class="modal fade" id="modalRecordatorio" tabindex="-1">
 
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
 
         <div class="modal-content">
 
             <div class="modal-header">
-
-                <h5 class="modal-title">
-
-                    <i class="bi bi-bell"></i>
-
-                    Nuevo recordatorio
-
-                </h5>
-
-                <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal">
-                </button>
-
+                <h5 class="modal-title" id="tituloModal">Nuevo recordatorio</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
-
 
             <div class="modal-body">
 
-                <form>
+                <div id="errorRecordatorio" class="alert alert-danger d-none" role="alert"></div>
 
-                    <div class="mb-3">
+                <div class="quick-ideas" id="ideasRapidas">
+                    <span>Ideas rápidas:</span>
+                    <button type="button" data-rapido="otro|Baño">🛁 Baño</button>
+                    <button type="button" data-rapido="comida|Comprar comida">🛒 Comprar comida</button>
+                    <button type="button" data-rapido="otro|Peluquería">✂️ Peluquería</button>
+                    <button type="button" data-rapido="otro|Cortar uñas">💅 Cortar uñas</button>
+                    <button type="button" data-rapido="otro|Limpiar arenero">🧹 Limpiar arenero</button>
+                </div>
 
-                        <label>
-                            Título
-                        </label>
+                <form id="formRecordatorio" novalidate>
 
-                        <input
-                            type="text"
-                            class="form-control"
-                            placeholder="Ej: Vacuna anual">
+                    <div class="row g-3">
 
-                    </div>
-
-
-                    <div class="mb-3">
-
-                        <label>
-                            Mascota
-                        </label>
-
-                        <select class="form-select">
-
-                            <option>
-                                Selecciona una mascota
-                            </option>
-
-                            <option>
-                                🐶 Toby
-                            </option>
-
-                            <option>
-                                🐱 Luna
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="mb-3">
-
-                        <label>
-                            Tipo de recordatorio
-                        </label>
-
-                        <select class="form-select">
-
-                            <option>
-                                Selecciona el tipo
-                            </option>
-
-                            <option>
-                                Vacuna
-                            </option>
-
-                            <option>
-                                Veterinario
-                            </option>
-
-                            <option>
-                                Alimentación
-                            </option>
-
-                            <option>
-                                Actividad física
-                            </option>
-
-                            <option>
-                                Otro
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="row">
-
-                        <div class="col-md-6 mb-3">
-
-                            <label>
-                                Fecha
-                            </label>
-
-                            <input
-                                type="date"
-                                class="form-control">
-
+                        <div class="col-md-6">
+                            <label for="campoTitulo">¿Qué hay que recordar? *</label>
+                            <input type="text" id="campoTitulo" name="titulo" class="form-control" maxlength="150" required placeholder="Ej: Darle la pastilla">
                         </div>
 
+                        <div class="col-md-6">
+                            <label for="campoTipo">Tipo *</label>
+                            <select id="campoTipo" name="tipo" class="form-select" required></select>
+                        </div>
 
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-6">
+                            <label for="campoMascota">Mascota</label>
+                            <select id="campoMascota" name="id_mascota" class="form-select"></select>
+                        </div>
 
-                            <label>
-                                Hora
-                            </label>
+                        <div class="col-md-6">
+                            <label for="campoRepeticion">Se repite</label>
+                            <select id="campoRepeticion" name="repeticion" class="form-select">
+                                <option value="ninguna">No se repite</option>
+                                <option value="diaria">Todos los días</option>
+                                <option value="semanal">Cada semana</option>
+                                <option value="mensual">Cada mes</option>
+                                <option value="anual">Cada año</option>
+                            </select>
+                        </div>
 
-                            <input
-                                type="time"
-                                class="form-control">
+                        <div class="col-md-6">
+                            <label for="campoFecha">Fecha *</label>
+                            <input type="date" id="campoFecha" class="form-control" required>
+                        </div>
 
+                        <div class="col-md-6">
+                            <label for="campoHora">Hora *</label>
+                            <input type="time" id="campoHora" class="form-control" required>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="campoDescripcion">Notas</label>
+                            <input type="text" id="campoDescripcion" name="descripcion" class="form-control" maxlength="255" placeholder="Ej: Media pastilla con la comida">
                         </div>
 
                     </div>
 
-                    <div class="mb-3">
-
-                        <label>
-                            Notas
-                        </label>
-
-                        <textarea
-                            class="form-control"
-                            rows="3"
-                            placeholder="Agrega información adicional...">
-                        </textarea>
-
-                    </div>
-
-                    <button
-                        type="submit"
-                        class="btn-save">
-
-                        Guardar recordatorio
-
+                    <button type="submit" class="btn-save" id="botonGuardar">
+                        <i class="bi bi-check-lg"></i>
+                        Guardar
                     </button>
 
                 </form>
@@ -949,11 +309,10 @@
 </div>
 
 
-<!-- Bootstrap -->
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-</script>
+<script src="recordatorios.js"></script>
 
 </body>
 

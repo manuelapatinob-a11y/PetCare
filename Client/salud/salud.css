@@ -1,1527 +1,848 @@
 /* =========================================
    PETCARE - SALUD
+   (el sidebar, el encabezado y los formularios
+   vienen de mismascotas.css)
 ========================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-:root {
-
-    --purple: #7046e8;
-
-    --purple-light: #9b6df2;
-
-    --lilac: #eee8ff;
-
-    --blue: #4d8eea;
-
-    --blue-light: #eaf3ff;
-
-    --green: #46b982;
-
-    --green-light: #e8f8f0;
-
-    --text: #29253d;
-
-    --gray: #858092;
-
-    --border: #ece9f5;
-
-    --background: #f8f7fc;
-
-    --white: #ffffff;
-}
-
-
-body {
-
-    font-family:
-        "Segoe UI",
-        Arial,
-        sans-serif;
-
-    background: var(--background);
-
-    color: var(--text);
-
-    min-height: 100vh;
-}
 
 
 /* =========================================
-   ESTRUCTURA
+   COLORES
 ========================================= */
 
-.app-container {
-
-    min-height: 100vh;
-}
+.purple { background: #eee7ff; color: #7046e8; }
+.blue   { background: #e5efff; color: #2b62c9; }
+.green  { background: #e3f6ec; color: #137a48; }
+.orange { background: #fff1df; color: #c66a00; }
+.red    { background: #fdebef; color: #b02a4a; }
+.gray   { background: #f0eff5; color: #5f5b73; }
 
 
 /* =========================================
-   SIDEBAR
+   ELEGIR MASCOTA
 ========================================= */
 
-.sidebar {
-
-    position: fixed;
-
-    top: 0;
-    left: 0;
-    bottom: 0;
-
-    width: 250px;
-
-    padding: 25px 17px;
-
-    background: var(--white);
-
-    border-right: 1px solid var(--border);
-
-    overflow-y: auto;
-
-    z-index: 1000;
-}
-
-
-/* =========================================
-   LOGO
-========================================= */
-
-.logo-area {
-
+.pet-picker {
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 22px 0 18px;
+}
 
+.pet-chip {
+    display: flex;
     align-items: center;
-
-    justify-content: center;
-
-    width: 100%;
-
-    text-decoration: none;
-
-    margin-bottom: 35px;
-}
-
-
-.logo-petcare {
-
-    width: 135px;
-
-    height: auto;
-
-    object-fit: contain;
-
-    display: block;
-}
-
-
-/* =========================================
-   MENÚ
-========================================= */
-
-.menu {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 5px;
-}
-
-
-.menu-item {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 13px;
-
-    padding: 12px 13px;
-
-    color: #77738a;
-
-    text-decoration: none;
-
-    border-radius: 11px;
-
-    font-size: 13px;
-
-    transition: .25s;
-}
-
-
-.menu-item i {
-
-    width: 21px;
-
-    text-align: center;
-
-    font-size: 17px;
-}
-
-
-.menu-item:hover {
-
-    background: var(--lilac);
-
-    color: var(--purple);
-}
-
-
-.menu-item.active {
-
-    color: white;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--purple),
-            var(--purple-light)
-        );
-
-    box-shadow:
-        0 7px 18px
-        rgba(112, 70, 232, .18);
-}
-
-
-/* =========================================
-   CONTENIDO PRINCIPAL
-========================================= */
-
-.main-content {
-
-    margin-left: 250px;
-
-    width: calc(100% - 250px);
-
-    padding: 28px 35px;
-
-    max-width: 1600px;
-}
-
-
-/* =========================================
-   TOPBAR
-========================================= */
-
-.topbar {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    margin-bottom: 27px;
-}
-
-
-.title-area {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 13px;
-}
-
-
-.back-button {
-
-    width: 38px;
-    height: 38px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
+    gap: 9px;
+    padding: 6px 16px 6px 6px;
+    border: 1px solid #e3dcf5;
+    border-radius: 40px;
     background: white;
-
-    border: 1px solid var(--border);
-
-    border-radius: 10px;
-
-    color: var(--purple);
-
-    text-decoration: none;
-
+    color: #3b2f6b;
+    font-weight: 600;
+    font-size: 14px;
     transition: .2s;
 }
 
+.pet-chip:hover {
+    border-color: #7046e8;
+}
 
-.back-button:hover {
+.pet-chip.active {
+    background: linear-gradient(90deg, #7b48d8, #9859e3);
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 6px 16px rgba(112,70,232,.25);
+}
 
-    background: var(--lilac);
+.pet-chip-photo {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #f3ecff;
+    font-size: 20px;
+}
 
-    transform: translateX(-2px);
+.pet-chip-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.empty-health {
+    padding: 50px 20px;
+    text-align: center;
+    background: white;
+    border: 2px dashed #d7d0ef;
+    border-radius: 22px;
+    margin-top: 22px;
+}
+
+.empty-health .empty-emoji {
+    font-size: 54px;
+}
+
+.empty-health p {
+    color: #777b8c;
+}
+
+.empty-health .btn-add {
+    display: inline-block;
+    text-decoration: none;
 }
 
 
-.title-area h1 {
+/* =========================================
+   FICHA DE LA MASCOTA
+========================================= */
 
-    font-size: 25px;
-
-    margin: 0 0 3px;
-
-    color: #211b49;
+.health-card {
+    display: grid;
+    grid-template-columns: 1.1fr 1.4fr;
+    gap: 18px 24px;
+    padding: 22px;
+    background: white;
+    border: 1px solid #e6e3f3;
+    border-radius: 22px;
 }
 
+.health-pet {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
 
-.title-area p {
+.health-photo {
+    width: 96px;
+    height: 96px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f3ecff, #e8f0ff);
+    font-size: 52px;
+}
 
+.health-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.health-pet h3 {
     margin: 0;
+    font-size: 24px;
+    font-weight: 800;
+}
 
-    color: var(--gray);
+.health-pet p {
+    margin: 2px 0 10px;
+    color: #777b8c;
+    font-size: 14px;
+}
 
+.health-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.health-facts span {
+    padding: 4px 10px;
+    border-radius: 10px;
+    background: #f7f5fe;
+    color: #4a3c7c;
+    font-size: 12px;
+}
+
+.health-facts i {
+    color: #7046e8;
+}
+
+.health-alerts {
+    display: grid;
+    gap: 8px;
+}
+
+.alert-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 14px;
+}
+
+.alert-item.ok {
+    background: #f4fbf7;
+    color: #137a48;
+}
+
+.alert-item i {
+    font-size: 18px;
+    margin-top: 1px;
+}
+
+.alert-item span {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    opacity: .8;
+}
+
+.alert-item strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1f1a3d;
+}
+
+.health-next {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding-top: 16px;
+    border-top: 1px solid #f0eef7;
+}
+
+.health-next span {
+    display: block;
+    color: #777b8c;
+    font-size: 12px;
+}
+
+.health-next span i {
+    color: #7046e8;
+}
+
+.health-next strong {
+    font-size: 15px;
+}
+
+
+/* =========================================
+   PESTAÑAS
+========================================= */
+
+.health-tabs {
+    display: flex;
+    gap: 6px;
+    margin: 20px 0 16px;
+    padding: 6px;
+    overflow-x: auto;
+    background: white;
+    border: 1px solid #e6e3f3;
+    border-radius: 16px;
+}
+
+.tab {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 11px;
+    background: transparent;
+    color: #5f5b73;
+    font-size: 13px;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.tab:hover {
+    background: #f6f2ff;
+    color: #7046e8;
+}
+
+.tab.active {
+    background: linear-gradient(90deg, #7b48d8, #9859e3);
+    color: white;
+}
+
+
+/* =========================================
+   LISTAS
+========================================= */
+
+.lists-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    align-items: start;
+}
+
+.lists-grid .full {
+    grid-column: 1 / -1;
+}
+
+.panel-box {
+    padding: 20px;
+    background: white;
+    border: 1px solid #e6e3f3;
+    border-radius: 20px;
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.list-header h3 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.list-header h3 i {
+    color: #7046e8;
+    margin-right: 4px;
+}
+
+.list-header p {
+    margin: 3px 0 0;
+    color: #777b8c;
     font-size: 13px;
 }
 
-
-/* =========================================
-   USUARIO
-========================================= */
-
-.user-area {
-
-    display: flex;
-
+.btn-add-small,
+.btn-light-action {
+    flex-shrink: 0;
+    display: inline-flex;
     align-items: center;
+    gap: 5px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 10px;
+    background: #f1ebff;
+    color: #7046e8;
+    font-size: 13px;
+    font-weight: 600;
+    transition: .2s;
+}
 
+.btn-add-small:hover,
+.btn-light-action:hover {
+    background: #7046e8;
+    color: white;
+}
+
+.records {
+    display: grid;
     gap: 10px;
 }
 
-
-.notification-btn {
-
-    border: none;
-
-    background: transparent;
-
-    color: var(--purple);
-
-    font-size: 20px;
-
-    cursor: pointer;
+.records-empty {
+    margin: 0;
+    padding: 18px;
+    border-radius: 14px;
+    background: #faf9fd;
+    color: #8a879c;
+    font-size: 14px;
+    text-align: center;
 }
 
-
-.avatar {
-
-    width: 39px;
-    height: 39px;
-
+.record {
     display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid #f0eef7;
+    border-radius: 16px;
+    transition: .2s;
+}
 
+.record:hover {
+    border-color: #ddd3f7;
+    background: #fdfcff;
+}
+
+.record-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: flex;
     align-items: center;
-
     justify-content: center;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--purple),
-            var(--purple-light)
-        );
-
-    color: white;
-
-    font-size: 12px;
-
-    font-weight: bold;
+    border-radius: 12px;
+    font-size: 17px;
 }
 
-
-.user-name {
-
+.thumb {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
     display: flex;
-
-    flex-direction: column;
-}
-
-
-.user-name strong {
-
-    font-size: 12px;
-}
-
-
-.user-name small {
-
-    color: var(--gray);
-
-    font-size: 10px;
-}
-
-
-.arrow-user {
-
-    color: var(--purple);
-
-    font-size: 12px;
-}
-
-
-/* =========================================
-   TARJETAS PRINCIPALES
-========================================= */
-
-.pet-selector,
-.health-summary,
-.info-card {
-
-    background: white;
-
-    border: 1px solid var(--border);
-
-    border-radius: 18px;
-
-    padding: 21px;
-
-    margin-bottom: 20px;
-
-    box-shadow:
-        0 5px 20px
-        rgba(70, 50, 120, .035);
-}
-
-
-/* =========================================
-   ENCABEZADOS
-========================================= */
-
-.section-heading {
-
-    display: flex;
-
-    justify-content: space-between;
-
     align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f3f1f8;
+}
 
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumb.pdf {
+    color: #d63b5c;
+    font-size: 30px;
+}
+
+.record-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.record-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.record-top strong {
+    font-size: 15px;
+    color: #1f1a3d;
+}
+
+.record-value {
+    color: #137a48;
+    font-weight: 700;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.record-sub {
+    display: block;
+    color: #777b8c;
+    font-size: 12px;
+}
+
+.record-body p {
+    margin: 4px 0 0;
+    color: #4a4760;
+    font-size: 13px;
+    white-space: pre-line;
+}
+
+.record-body p i {
+    color: #7046e8;
+}
+
+.record-body a {
+    color: #7046e8;
+    font-weight: 600;
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 7px;
+}
+
+.badges:empty {
+    display: none;
+}
+
+.badge-soft {
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.record-actions {
+    display: flex;
+    gap: 2px;
+}
+
+.record-actions button {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 9px;
+    background: transparent;
+    color: #8a879c;
+    transition: .2s;
+}
+
+.record-actions button:hover {
+    background: #f1ebff;
+    color: #7046e8;
+}
+
+.record-actions button.danger:hover {
+    background: #fdebef;
+    color: #d63b5c;
+}
+
+
+/* =========================================
+   HISTORIAL MÉDICO
+========================================= */
+
+.history-tools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
     margin-bottom: 18px;
 }
 
-
-.section-heading h2 {
-
-    font-size: 18px;
-
-    margin: 0 0 4px;
-
-    color: #211b49;
+.history-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
 }
 
-
-.section-heading p {
-
-    margin: 0;
-
-    color: var(--gray);
-
-    font-size: 12px;
-}
-
-
-/* =========================================
-   BOTONES
-========================================= */
-
-.primary-btn {
-
-    border: none;
-
-    border-radius: 10px;
-
-    padding: 10px 15px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--purple),
-            var(--purple-light)
-        );
-
-    color: white;
-
-    font-size: 12px;
-
-    cursor: pointer;
-
-    transition: .2s;
-}
-
-
-.primary-btn:hover {
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 7px 16px
-        rgba(112, 70, 232, .2);
-}
-
-
-.secondary-btn {
-
-    border: 1px solid #ded7f1;
-
+.chip {
+    padding: 6px 12px;
+    border: 1px solid #e3dcf5;
+    border-radius: 20px;
     background: white;
-
-    color: var(--purple);
-
-    border-radius: 9px;
-
-    padding: 8px 13px;
-
-    font-size: 11px;
-
-    text-decoration: none;
-
-    cursor: pointer;
-
-    transition: .2s;
+    color: #4a3c7c;
+    font-size: 12px;
+    font-weight: 600;
 }
 
-
-.secondary-btn:hover {
-
-    background: var(--lilac);
+.chip.active {
+    background: #7046e8;
+    border-color: #7046e8;
+    color: white;
 }
 
-
-/* =========================================
-   MASCOTAS
-========================================= */
-
-.pet-options {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 14px;
-}
-
-
-.pet-option {
-
+.history-search {
     position: relative;
+    min-width: 230px;
+}
 
-    display: flex;
+.history-search i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a39cc0;
+}
 
-    align-items: center;
-
-    gap: 13px;
-
+.history-search input {
     width: 100%;
-
-    padding: 13px;
-
-    border: 1px solid var(--border);
-
-    background: white;
-
-    border-radius: 14px;
-
-    text-align: left;
-
-    cursor: pointer;
-
-    transition: .25s;
-}
-
-
-.pet-option:hover {
-
-    border-color:
-        var(--purple-light);
-
-    transform: translateY(-2px);
-}
-
-
-.pet-option.selected {
-
-    background:
-        linear-gradient(
-            135deg,
-            #eee1ff,
-            #f8f3ff
-        );
-
-    border-color:
-        var(--purple);
-}
-
-
-.pet-avatar {
-
-    width: 48px;
-    height: 48px;
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 50%;
-
-    color: var(--purple);
-
-    background: white;
-
-    font-size: 20px;
-}
-
-
-.pet-data {
-
-    display: flex;
-
-    flex-direction: column;
-
-    min-width: 0;
-}
-
-
-.pet-data strong {
-
-    font-size: 14px;
-
-    color: var(--text);
-}
-
-
-.pet-data span {
-
-    font-size: 11px;
-
-    color: var(--gray);
-}
-
-
-.check-icon {
-
-    margin-left: auto;
-
-    color: transparent;
-}
-
-
-.pet-option.selected
-.check-icon {
-
-    color: var(--purple);
-}
-
-
-/* =========================================
-   TARJETAS DE SALUD
-========================================= */
-
-.health-cards {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 14px;
-}
-
-
-.health-card {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    padding: 16px;
-
-    border: 1px solid var(--border);
-
-    border-radius: 14px;
-
-    background: white;
-
-    transition: .2s;
-}
-
-
-.health-card:hover {
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 7px 20px
-        rgba(70, 50, 120, .07);
-}
-
-
-.health-icon {
-
-    width: 43px;
-    height: 43px;
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
+    padding: 8px 12px 8px 34px;
+    border: 1px solid #e3dcf5;
     border-radius: 12px;
-
-    font-size: 19px;
+    font-size: 13px;
 }
 
-
-.health-icon.blue {
-
-    background:
-        var(--blue-light);
-
-    color: var(--blue);
+.history-search input:focus {
+    outline: none;
+    border-color: #7046e8;
 }
 
-
-.health-icon.purple {
-
-    background:
-        var(--lilac);
-
-    color: var(--purple);
-}
-
-
-.health-icon.lilac {
-
-    background: #f4eaff;
-
-    color: #9b59d6;
-}
-
-
-.health-icon.green {
-
-    background:
-        var(--green-light);
-
-    color: var(--green);
-}
-
-
-.health-info {
-
+.export-buttons {
     display: flex;
+    gap: 6px;
+}
 
+.history-dates {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 10px;
+    width: 100%;
+}
+
+.history-dates label {
+    display: flex;
     flex-direction: column;
-
-    min-width: 0;
+    gap: 3px;
+    color: #777b8c;
+    font-size: 12px;
+    font-weight: 600;
 }
 
-
-.health-info span {
-
-    color: var(--gray);
-
-    font-size: 10px;
+.history-dates input {
+    padding: 6px 10px;
+    border: 1px solid #e3dcf5;
+    border-radius: 10px;
+    color: #1f1a3d;
+    font-size: 13px;
 }
 
-
-.health-info strong {
-
-    font-size: 16px;
-
-    color: #211b49;
+.history-dates input:focus {
+    outline: none;
+    border-color: #7046e8;
 }
 
-
-.health-info small {
-
-    font-size: 9px;
-
-    color: var(--gray);
-}
-
-
-.health-info small i {
-
-    color: var(--blue);
-}
-
-
-.health-info .success {
-
-    color: var(--green);
-}
-
-
-/* =========================================
-   DOS COLUMNAS
-========================================= */
-
-.content-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 20px;
-}
-
-
-/* =========================================
-   CABECERA DE TARJETAS
-========================================= */
-
-.card-header {
-
+.date-shortcuts {
     display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
 
-    align-items: center;
+.history-count {
+    margin: -6px 0 14px;
+    color: #777b8c;
+    font-size: 13px;
+}
 
-    justify-content: space-between;
-
-    margin-bottom: 20px;
+.history-count:empty {
+    display: none;
 }
 
 
-.card-title {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 11px;
+.timeline {
+    position: relative;
+    padding-left: 4px;
 }
 
+.timeline-month {
+    margin: 18px 0 10px;
+    color: #7046e8;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
 
-.title-icon {
+.timeline-month:first-child {
+    margin-top: 0;
+}
 
-    width: 39px;
-    height: 39px;
-
+.timeline-item {
+    position: relative;
     display: flex;
+    gap: 14px;
+    padding-bottom: 14px;
+}
 
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: 19px;
+    top: 40px;
+    bottom: 0;
+    width: 2px;
+    background: #efebf8;
+}
+
+.timeline-icon {
+    position: relative;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: flex;
     align-items: center;
-
     justify-content: center;
-
-    border-radius: 11px;
-
-    background: var(--lilac);
-
-    color: var(--purple);
-
-    font-size: 17px;
+    border-radius: 50%;
+    font-size: 16px;
 }
 
-
-.card-title h3 {
-
-    margin: 0;
-
-    font-size: 15px;
-
-    color: #211b49;
-}
-
-
-.card-title p {
-
-    margin: 2px 0 0;
-
-    color: var(--gray);
-
-    font-size: 10px;
-}
-
-
-.icon-btn {
-
-    width: 33px;
-    height: 33px;
-
-    border: none;
-
-    border-radius: 9px;
-
-    background: var(--lilac);
-
-    color: var(--purple);
-
-    cursor: pointer;
-
-    transition: .2s;
-}
-
-
-.icon-btn:hover {
-
-    background: var(--purple);
-
-    color: white;
-}
-
-
-/* =========================================
-   VACUNAS
-========================================= */
-
-.record-list {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 10px;
-}
-
-
-.record {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding: 10px;
-
-    border-radius: 11px;
-
+.timeline-body {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 14px;
+    border-radius: 14px;
     background: #faf9fd;
 }
 
-
-.record-icon {
-
-    width: 30px;
-    height: 30px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background:
-        var(--green-light);
-
-    color: var(--green);
-
+.timeline-date {
+    display: block;
+    color: #8a879c;
     font-size: 12px;
 }
 
-
-.record > div:nth-child(2) {
-
-    display: flex;
-
-    flex-direction: column;
-
-    flex: 1;
-
-    min-width: 0;
+.timeline-body strong {
+    font-size: 14px;
 }
 
-
-.record strong {
-
-    font-size: 12px;
-}
-
-
-.record span {
-
-    color: var(--gray);
-
-    font-size: 9px;
-}
-
-
-.record-status {
-
-    padding: 5px 8px;
-
-    border-radius: 8px;
-
-    background:
-        var(--green-light);
-
-    color: var(--green) !important;
-
-    font-size: 8px !important;
+.timeline-body p {
+    margin: 2px 0 0;
+    color: #4a4760;
+    font-size: 13px;
 }
 
 
 /* =========================================
-   CITAS
+   FORMULARIO Y DETALLE
 ========================================= */
 
-.appointment {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    padding: 12px 0;
-
-    border-bottom:
-        1px solid var(--border);
-}
-
-
-.appointment:last-child {
-
-    border-bottom: none;
-}
-
-
-.appointment-date {
-
-    width: 45px;
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    padding: 6px;
-
-    border-radius: 9px;
-
-    background:
-        var(--lilac);
-
-    color: var(--purple);
-}
-
-
-.appointment-date strong {
-
-    font-size: 16px;
-}
-
-
-.appointment-date span {
-
-    font-size: 8px;
-}
-
-
-.appointment-info {
-
-    display: flex;
-
-    flex-direction: column;
-
-    flex: 1;
-
-    min-width: 0;
-}
-
-
-.appointment-info strong {
-
+.form-help {
+    display: block;
+    margin-top: 4px;
+    color: #8a879c;
     font-size: 12px;
 }
 
-
-.appointment-info span {
-
-    color: var(--gray);
-
-    font-size: 9px;
-
-    margin-top: 2px;
+#camposRegistro .form-section {
+    margin: 10px 0 0;
+    padding-top: 14px;
+    border-top: 1px solid #f0eef7;
 }
 
-
-.appointment-info i {
-
-    color: var(--purple);
+#camposRegistro .col-12:first-child .form-section {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
 }
 
-
-.more-btn {
-
-    border: none;
-
-    background: transparent;
-
-    color: var(--gray);
-
-    cursor: pointer;
+.detail-section {
+    margin-bottom: 16px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: #faf9fd;
 }
 
-
-/* =========================================
-   HISTORIAL
-========================================= */
-
-.history-list {
-
-    display: flex;
-
-    flex-direction: column;
+.detail-section h6 {
+    margin: 0 0 8px;
+    color: #7046e8;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .04em;
 }
 
-
-.history-item {
-
-    position: relative;
-
-    display: flex;
-
-    gap: 13px;
-
-    padding: 10px 0;
+.detail-item + .detail-item {
+    margin-top: 8px;
 }
 
-
-.history-item:not(:last-child)::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 5px;
-
-    top: 22px;
-
-    bottom: -10px;
-
-    width: 1px;
-
-    background:
-        #e6e0f5;
-}
-
-
-.history-dot {
-
-    width: 11px;
-    height: 11px;
-
-    flex-shrink: 0;
-
-    margin-top: 5px;
-
-    border-radius: 50%;
-
-    background:
-        var(--purple);
-
-    border:
-        3px solid var(--lilac);
-}
-
-
-.history-item div:last-child {
-
-    display: flex;
-
-    flex-direction: column;
-}
-
-
-.history-item strong {
-
+.detail-item span {
+    display: block;
+    color: #8a879c;
     font-size: 12px;
 }
 
-
-.history-item span {
-
-    color: var(--gray);
-
-    font-size: 10px;
+.detail-item p {
+    margin: 0;
+    font-size: 14px;
+    white-space: pre-line;
 }
 
-
-.history-item small {
-
-    color: var(--purple);
-
-    font-size: 9px;
-
-    margin-top: 3px;
-}
-
-
-/* =========================================
-   MENSAJE
-========================================= */
-
-.health-message {
-
-    position: fixed;
-
-    right: 25px;
-
-    bottom: 25px;
-
-    display: none;
-
-    align-items: center;
-
+.detail-docs {
+    display: flex;
+    flex-wrap: wrap;
     gap: 8px;
-
-    padding: 12px 16px;
-
-    border-radius: 11px;
-
-    background: #29253d;
-
-    color: white;
-
-    font-size: 11px;
-
-    box-shadow:
-        0 8px 25px
-        rgba(0,0,0,.15);
-
-    z-index: 2000;
 }
 
-
-.health-message.show {
-
-    display: flex;
+.detail-docs a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    border-radius: 10px;
+    background: white;
+    border: 1px solid #e3dcf5;
+    color: #7046e8;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
 }
 
 
 /* =========================================
-   TABLET
+   RESPONSIVE
 ========================================= */
 
 @media (max-width: 1100px) {
 
-    .health-cards {
-
-        grid-template-columns:
-            repeat(2, 1fr);
+    .health-card {
+        grid-template-columns: 1fr;
     }
 
-    .content-grid {
-
-        grid-template-columns:
-            1fr;
+    .lists-grid {
+        grid-template-columns: 1fr;
     }
 }
 
+@media (max-width: 650px) {
 
-/* =========================================
-   TABLET PEQUEÑA
-========================================= */
-
-@media (max-width: 800px) {
-
-    .sidebar {
-
-        width: 75px;
-
-        padding:
-            20px 9px;
+    .health-pet {
+        align-items: flex-start;
     }
 
-
-    .logo-petcare {
-
-        width: 52px;
+    .health-photo {
+        width: 72px;
+        height: 72px;
+        font-size: 38px;
     }
 
-
-    .menu-item {
-
-        justify-content: center;
-
-        padding:
-            12px 8px;
+    .health-next {
+        grid-template-columns: 1fr;
     }
 
-
-    .menu-item span {
-
+    .tab span {
         display: none;
     }
 
-
-    .main-content {
-
-        margin-left: 75px;
-
-        width:
-            calc(100% - 75px);
-
-        padding: 22px;
+    .tab.active span {
+        display: inline;
     }
 
+    .btn-add-small span {
+        display: none;
+    }
 
-    .pet-options {
-
-        grid-template-columns:
-            1fr;
+    .history-search {
+        min-width: 100%;
     }
 }
 
 
 /* =========================================
-   CELULAR
+   IMPRIMIR EL HISTORIAL
 ========================================= */
 
-@media (max-width: 600px) {
+@media print {
+
+    .sidebar,
+    .top-header,
+    .pet-picker,
+    .health-tabs,
+    .history-tools,
+    .export-buttons,
+    .history-count,
+    .health-next,
+    .tab-panel:not([data-panel="historial"]) {
+        display: none !important;
+    }
+
+    .tab-panel[data-panel="historial"] {
+        display: block !important;
+    }
+
+
+    .list-header {
+        display: none;
+    }
+
+    .content {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
 
     body {
-
-        padding-bottom: 70px;
+        background: white;
     }
 
-
-    .sidebar {
-
-        position: fixed;
-
-        top: auto;
-
-        left: 0;
-
-        bottom: 0;
-
-        width: 100%;
-
-        height: 65px;
-
-        padding:
-            5px 8px;
-
-        border-right: none;
-
-        border-top:
-            1px solid var(--border);
-
-        overflow: hidden;
+    .health-card,
+    .panel-box {
+        border: none;
+        padding: 0 0 16px;
     }
 
-
-    .logo-area {
-
-        display: none;
-    }
-
-
-    .menu {
-
-        height: 100%;
-
-        flex-direction: row;
-
-        justify-content:
-            space-around;
-
-        align-items: center;
-
-        gap: 2px;
-    }
-
-
-    .menu-item {
-
-        width: 45px;
-
-        height: 50px;
-
-        padding: 5px;
-
-        justify-content: center;
-
-        border-radius: 10px;
-    }
-
-
-    .menu-item i {
-
-        font-size: 18px;
-    }
-
-
-    .main-content {
-
-        width: 100%;
-
-        margin-left: 0;
-
-        padding: 15px;
-
-        padding-bottom: 20px;
-    }
-
-
-    .topbar {
-
-        align-items:
-            flex-start;
-    }
-
-
-    .title-area h1 {
-
-        font-size: 21px;
-    }
-
-
-    .title-area p {
-
-        font-size: 11px;
-    }
-
-
-    .user-name,
-    .notification-btn,
-    .arrow-user {
-
-        display: none;
-    }
-
-
-    .section-heading {
-
-        align-items:
-            flex-start;
-
-        gap: 10px;
-
-        flex-direction:
-            column;
-    }
-
-
-    .health-cards {
-
-        grid-template-columns:
-            1fr;
-    }
-
-
-    .health-card {
-
-        padding: 14px;
-    }
-
-
-    .pet-selector,
-    .health-summary,
-    .info-card {
-
-        padding: 16px;
-
-        border-radius: 15px;
-    }
-
-
-    .primary-btn,
-    .secondary-btn {
-
-        width: 100%;
-
-        text-align: center;
-    }
-
-
-    .health-message {
-
-        left: 15px;
-
-        right: 15px;
-
-        bottom: 80px;
-    }
-}
-
-
-/* =========================================
-   CELULAR PEQUEÑO
-========================================= */
-
-@media (max-width: 400px) {
-
-    .main-content {
-
-        padding: 12px;
-    }
-
-
-    .title-area {
-
-        gap: 8px;
-    }
-
-
-    .back-button {
-
-        width: 33px;
-
-        height: 33px;
-    }
-
-
-    .avatar {
-
-        width: 34px;
-
-        height: 34px;
-    }
-
-
-    .pet-option {
-
-        padding: 10px;
-    }
-
-
-    .pet-avatar {
-
-        width: 42px;
-
-        height: 42px;
-    }
-
-
-    .record-status {
-
-        display: none;
-    }
-
-
-    .health-info strong {
-
-        font-size: 14px;
+    .timeline-item {
+        break-inside: avoid;
     }
 }

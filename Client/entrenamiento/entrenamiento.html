@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PetCare | Entrenamiento y comportamiento</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- CSS: diseño general, el de los apartados (Salud), el de las ideas con IA y el de esta página -->
+    <link rel="stylesheet" href="../mismascotas/mismascotas.css">
+    <link rel="stylesheet" href="../salud/salud.css">
+    <link rel="stylesheet" href="../comun/ideas.css">
+    <link rel="stylesheet" href="entrenamiento.css">
+
+    <!-- Sesión: si no hay sesión iniciada, va al login -->
+    <script src="../auth/sesion.js"></script>
+    <script>requiereSesion();</script>
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <a href="../inicio/inicio.html" class="logo-area">
+            <img src="../../Recursos/logo.png" class="logo" alt="PetCare">
+        </a>
+
+        <nav class="main-menu">
+
+            <a href="../inicio/inicio.html" class="sin-subrayado">
+                <i class="bi bi-house"></i>
+                Inicio
+            </a>
+
+            <a href="../mismascotas/mismascotas.html" class="sin-subrayado">
+                <i class="bi bi-people"></i>
+                Mis Mascotas
+            </a>
+
+            <a href="../salud/salud.html" class="sin-subrayado">
+                <i class="bi bi-heart-pulse"></i>
+                Salud
+            </a>
+
+            <a href="../alimentacion/Alimentacion.html" class="sin-subrayado">
+                <i class="bi bi-cup-hot"></i>
+                Alimentación
+            </a>
+
+            <a href="../actividadfisica/actividadfisica.html" class="sin-subrayado">
+                <i class="bi bi-person-walking"></i>
+                Actividad Física
+            </a>
+
+            <a href="entrenamiento.html" class="sin-subrayado active">
+                <i class="bi bi-award"></i>
+                Entrenamiento y comportamiento
+            </a>
+
+            <a href="../recordatorios/recordatorios.html" class="sin-subrayado">
+                <i class="bi bi-bell"></i>
+                Recordatorios
+            </a>
+
+            <a href="../mapa/mapa.html" class="sin-subrayado">
+                <i class="bi bi-geo-alt"></i>
+                Mapa Pet Friendly
+            </a>
+
+            <a href="../finanzas/finanzas.html" class="sin-subrayado">
+                <i class="bi bi-wallet2"></i>
+                Finanzas
+            </a>
+
+            <a href="../asistente/asistente.html" class="sin-subrayado">
+                <i class="bi bi-robot"></i>
+                Asistente IA
+            </a>
+
+            <a href="../perfil/perfil.html" class="sin-subrayado">
+                <i class="bi bi-person"></i>
+                Perfil
+            </a>
+
+            <a href="../configuracion/configuracion.html" class="sin-subrayado">
+                <i class="bi bi-gear"></i>
+                Configuración
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ================= CONTENIDO ================= -->
+
+    <main class="content">
+
+        <!-- HEADER -->
+
+        <header class="top-header">
+
+            <div class="page-title">
+
+                <a href="../inicio/inicio.html" class="back" aria-label="Volver al inicio">
+                    <i class="bi bi-arrow-left"></i>
+                </a>
+
+                <div>
+                    <h2>Entrenamiento y comportamiento</h2>
+                    <p>Comandos, conducta, consejos y rutinas diarias de tus mascotas.</p>
+                </div>
+
+            </div>
+
+
+            <!-- USUARIO -->
+
+            <div class="user-area">
+
+                <div class="dropdown">
+
+                    <button
+                        class="user-button dropdown-toggle"
+                        data-bs-toggle="dropdown">
+
+                        <span class="avatar" data-usuario-avatar></span>
+
+                        <strong data-usuario-nombre></strong>
+
+                    </button>
+
+                    <ul class="dropdown-menu dropdown-menu-end">
+
+                        <li>
+                            <a class="dropdown-item" href="../perfil/perfil.html">
+                                <i class="bi bi-person"></i>
+                                Mi perfil
+                            </a>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item text-danger" href="../login/login.html" data-cerrar-sesion>
+                                <i class="bi bi-box-arrow-right"></i>
+                                Cerrar sesión
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <div id="mensaje" class="alert d-none" role="alert"></div>
+
+
+        <!-- ================= ELEGIR MASCOTA ================= -->
+
+        <section class="pet-picker" id="selectorMascotas">
+            <span class="text-muted small">Cargando tus mascotas...</span>
+        </section>
+
+
+        <!-- Si no tiene mascotas -->
+
+        <section class="empty-health d-none" id="sinMascotas">
+            <div class="empty-emoji">🎓</div>
+            <h4>Primero registra una mascota</h4>
+            <p>Para llevar su entrenamiento y su comportamiento necesitas agregarla en Mis Mascotas.</p>
+            <a href="../mismascotas/mismascotas.html" class="btn-add">
+                <i class="bi bi-plus-lg"></i>
+                Ir a Mis Mascotas
+            </a>
+        </section>
+
+
+        <div id="contenidoApartado" class="d-none">
+
+            <!-- ================= FICHA Y RUTINA DE HOY ================= -->
+
+            <section class="health-card" id="ficha">
+                <!-- Se llena con JS -->
+            </section>
+
+
+            <!-- ================= PESTAÑAS ================= -->
+
+            <nav class="health-tabs" role="tablist">
+
+                <button class="tab active" data-tab="entrenamiento" type="button">
+                    <i class="bi bi-trophy"></i>
+                    <span>Ideas de entrenamiento</span>
+                </button>
+
+                <button class="tab" data-tab="consejos" type="button">
+                    <i class="bi bi-lightbulb"></i>
+                    <span>Consejos y guías</span>
+                </button>
+
+                <button class="tab" data-tab="diario" type="button">
+                    <i class="bi bi-journal-text"></i>
+                    <span>Diario de comportamiento</span>
+                </button>
+
+                <button class="tab" data-tab="rutinas" type="button">
+                    <i class="bi bi-calendar2-week"></i>
+                    <span>Generador de rutinas</span>
+                </button>
+
+            </nav>
+
+
+            <!-- IDEAS DE ENTRENAMIENTO -->
+            <section class="tab-panel" data-panel="entrenamiento">
+                <div class="ai-box" data-ideas="entrenamiento"></div>
+                <div data-lista="entrenamientos"></div>
+            </section>
+
+            <!-- CONSEJOS Y GUÍAS -->
+            <section class="tab-panel d-none" data-panel="consejos">
+                <div class="ai-box" data-ideas="comportamiento"></div>
+                <div class="panel-box" id="guias"></div>
+            </section>
+
+            <!-- DIARIO DE COMPORTAMIENTO -->
+            <section class="tab-panel d-none" data-panel="diario">
+                <div class="panel-box" id="resumenDiario"></div>
+                <div data-lista="diario"></div>
+            </section>
+
+            <!-- GENERADOR DE RUTINAS -->
+            <section class="tab-panel d-none" data-panel="rutinas">
+
+                <div class="ai-box">
+
+                    <div class="ai-header">
+                        <div>
+                            <h3><i class="bi bi-stars"></i> Generar una rutina con IA</h3>
+                            <p id="textoGenerador">Una rutina semanal hecha a la medida de tu mascota y de tu tiempo.</p>
+                        </div>
+                    </div>
+
+                    <p class="ai-note d-none" id="notaIA"><i class="bi bi-info-circle"></i>
+                        La IA todavía no está configurada en el servidor (falta la clave gratuita GROQ_API_KEY).
+                        Mientras tanto puedes crear rutinas a mano.</p>
+
+                    <form id="formRutinaIA" class="routine-form" novalidate>
+
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+                                <label for="rutinaObjetivo">Objetivo *</label>
+                                <select id="rutinaObjetivo" name="objetivo" class="form-select" required></select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="rutinaMinutos">Minutos al día para entrenar y jugar *</label>
+                                <input type="number" id="rutinaMinutos" name="minutos" class="form-control" min="5" max="300" step="5" value="30" required>
+                            </div>
+
+                            <div class="col-6 col-md-3">
+                                <label for="rutinaDesde">El día empieza a las</label>
+                                <input type="time" id="rutinaDesde" name="desde" class="form-control" value="06:00">
+                            </div>
+
+                            <div class="col-6 col-md-3">
+                                <label for="rutinaHasta">y termina a las</label>
+                                <input type="time" id="rutinaHasta" name="hasta" class="form-control" value="22:00">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="rutinaOcupados">Días con menos tiempo</label>
+                                <input type="text" id="rutinaOcupados" name="dias_ocupados" class="form-control" maxlength="100" placeholder="Ej: lunes a viernes trabajo de 8 a 5">
+                            </div>
+
+                            <div class="col-12">
+                                <label for="rutinaNotas">Algo más que deba saber la IA</label>
+                                <input type="text" id="rutinaNotas" name="notas" class="form-control" maxlength="300" placeholder="Ej: vive en apartamento, le dan miedo las motos">
+                            </div>
+
+                        </div>
+
+                        <div class="routine-actions">
+                            <button type="submit" class="btn-ai" id="botonRutinaIA">
+                                <i class="bi bi-magic"></i>
+                                Generar rutina con IA
+                            </button>
+
+                            <button type="button" class="btn-add-small" data-agregar="rutinas">
+                                <i class="bi bi-plus-lg"></i>
+                                <span>Crear rutina a mano</span>
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <div id="rutinas"></div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- ================= MODAL: AGREGAR / EDITAR ================= -->
+
+<div class="modal fade" id="modalRegistro" tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="tituloRegistro"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <div id="errorRegistro" class="alert alert-danger d-none" role="alert"></div>
+
+                <form id="formRegistro" novalidate>
+
+                    <div id="camposRegistro">
+                        <!-- Campos generados con JS -->
+                    </div>
+
+                    <button type="submit" class="btn-save" id="botonGuardarRegistro">
+                        <i class="bi bi-check-lg"></i>
+                        Guardar
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Bootstrap JS -->
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<script src="../comun/apartado.js"></script>
+<script src="../comun/ideas.js"></script>
+<script src="entrenamiento.js"></script>
+
+</body>
+
+</html>

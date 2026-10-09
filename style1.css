@@ -322,3 +322,42 @@ max-height:280px;
 
 }
 
+
+
+/* ============================
+   EXPLORA LUGARES PET FRIENDLY
+================================ */
+
+.map-section .filter-box {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+}
+
+.map-section .place {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.map-section .place p {
+    margin: 0;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.map-section .filter-box .btn {
+    margin-top: auto !important;
+}
+
+.map-section .map-container {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+}
+
+.map-section .map-container iframe {
+    display: block;
+}

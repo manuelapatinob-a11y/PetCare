@@ -6,723 +6,356 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>PetCare | Finanzas</title>
-    </title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet"
+    <link
+        rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/PetCare/Client/finanzas/finanzas.css">
+    <!-- CSS: diseño general, el de los apartados (Salud) y el de esta página -->
+    <link rel="stylesheet" href="../mismascotas/mismascotas.css">
+    <link rel="stylesheet" href="../salud/salud.css">
+    <link rel="stylesheet" href="finanzas.css">
+
+    <!-- Sesión: si no hay sesión iniciada, va al login -->
+    <script src="../auth/sesion.js"></script>
+    <script>requiereSesion();</script>
 </head>
 
 <body>
 
-    <div class="dashboard">
+<div class="app">
 
-        <!-- ================= SIDEBAR ================= -->
-        <aside class="sidebar">
+    <!-- ================= SIDEBAR ================= -->
 
-            <div class="logo">
-                <div class="logo-area">
-                    <img src="/PetCare/Recursos/logo.png" alt="" class="PetCare">
-                </div>
+    <aside class="sidebar">
 
-                
-            </div>
+        <a href="../inicio/inicio.html" class="logo-area">
+            <img src="../../Recursos/logo.png" class="logo" alt="PetCare">
+        </a>
 
-            <nav class="menu">
+        <nav class="main-menu">
 
-                <a href="/PetCare/index.html" class="menu-item">
-                    <i class="bi bi-house-door"></i>
-                    <span>Inicio</span>
-                </a>
+            <a href="../inicio/inicio.html" class="sin-subrayado">
+                <i class="bi bi-house"></i>
+                Inicio
+            </a>
 
-                <a href="/PetCare/Client/mismascotas/mismascotas.html" class="menu-item">
-                    <i class="bi bi-heart"></i>
-                    <span>Mis Mascotas</span>
-                </a>
+            <a href="../mismascotas/mismascotas.html" class="sin-subrayado">
+                <i class="bi bi-people"></i>
+                Mis Mascotas
+            </a>
 
-                <a href="/PetCare/Client/salud/salud.html" class="menu-item">
-                    <i class="bi bi-heart-pulse"></i>
-                    <span>Salud</span>
-                </a>
+            <a href="../salud/salud.html" class="sin-subrayado">
+                <i class="bi bi-heart-pulse"></i>
+                Salud
+            </a>
 
-                <a href="/PetCare/Client/alimentacion/Alimentacion.html" class="menu-item">
-                    <i class="bi bi-cup-hot"></i>
-                    <span>Alimentación</span>
-                </a>
+            <a href="../alimentacion/Alimentacion.html" class="sin-subrayado">
+                <i class="bi bi-cup-hot"></i>
+                Alimentación
+            </a>
 
-                <a href="/PetCare/Client/actividadfisica/actividadfisica.html" class="menu-item">
-                    <i class="bi bi-person-walking"></i>
-                    <span>Actividad Física</span>
-                </a>
+            <a href="../actividadfisica/actividadfisica.html" class="sin-subrayado">
+                <i class="bi bi-person-walking"></i>
+                Actividad Física
+            </a>
 
-                <a href="/PetCare/Client/recordatorios/recordatorios.html" class="menu-item">
-                    <i class="bi bi-bell"></i>
-                    <span>Recordatorios</span>
-                </a>
+            <a href="../entrenamiento/entrenamiento.html" class="sin-subrayado">
+                <i class="bi bi-award"></i>
+                Entrenamiento y comportamiento
+            </a>
 
-                <a href="/PetCare/Client/mapa/mapa.html" class="menu-item">
-                    <i class="bi bi-geo-alt"></i>
-                    <span>Mapa Pet Friendly</span>
-                </a>
+            <a href="../recordatorios/recordatorios.html" class="sin-subrayado">
+                <i class="bi bi-bell"></i>
+                Recordatorios
+            </a>
 
-                <a href="/PetCare/Client/servicios/servicios.html" class="menu-item">
-                    <i class="bi bi-shop"></i>
-                    <span>Servicios</span>
-                </a>
+            <a href="../mapa/mapa.html" class="sin-subrayado">
+                <i class="bi bi-geo-alt"></i>
+                Mapa Pet Friendly
+            </a>
 
-                <a href="/PetCare/Client/finanzas/finanzas.html" class="menu-item active">
-                    <i class="bi bi-wallet2"></i>
-                    <span>Finanzas</span>
-                </a>
+            <a href="finanzas.html" class="sin-subrayado active">
+                <i class="bi bi-wallet2"></i>
+                Finanzas
+            </a>
 
-                <a href="/PetCare/Client/asistente/asistente.html" class="menu-item ">
-                    <i class="bi bi-robot"></i>
-                    <span>Asistente IA</span>
-                </a>
+            <a href="../asistente/asistente.html" class="sin-subrayado">
+                <i class="bi bi-robot"></i>
+                Asistente IA
+            </a>
 
-                <a href="/PetCare/Client/perfil/perfil.html" class="menu-item">
-                    <i class="bi bi-person-circle"></i>
-                    <span>Perfil</span>
-                </a>
+            <a href="../perfil/perfil.html" class="sin-subrayado">
+                <i class="bi bi-person"></i>
+                Perfil
+            </a>
 
-                <a href="/PetCare/Client/configuracion/configuracion.html" class="menu-item">
-                    <i class="bi bi-gear"></i>
-                    <span>Configuración</span>
-                </a>
+            <a href="../configuracion/configuracion.html" class="sin-subrayado">
+                <i class="bi bi-gear"></i>
+                Configuración
+            </a>
 
-            </nav>
+        </nav>
 
-
-        </aside>
+    </aside>
 
 
-        <!-- ================= CONTENIDO ================= -->
+    <!-- ================= CONTENIDO ================= -->
 
-        <main class="main-content">
+    <main class="content">
 
-            <!-- HEADER -->
-            <header class="topbar">
+        <header class="top-header">
 
-                <div class="back-button">
+            <div class="page-title">
+
+                <a href="../inicio/inicio.html" class="back" aria-label="Volver al inicio">
                     <i class="bi bi-arrow-left"></i>
-                </div>
-
-                <div class="user-area">
-
-                    <div class="notification">
-                        <i class="bi bi-bell"></i>
-                        <span>2</span>
-                    </div>
-
-                    <div class="user-info">
-
-                        <div class="user-avatar">
-                            MP
-                        </div>
-
-                        <div>
-                            <strong>Manuela P.</strong>
-                            <small>Dueña de mascota</small>
-                        </div>
-
-                    </div>
-
-                    <i class="bi bi-chevron-down"></i>
-
-                </div>
-
-            </header>
-
-
-            <!-- INTRO -->
-            <section class="page-header">
+                </a>
 
                 <div>
+                    <h2>Finanzas</h2>
+                    <p>Lo que gastas en cada mascota y en total: consultas, vacunas, medicamentos, comida y más.</p>
+                </div>
 
-                    <span class="section-label">
-                        CONTROL DE GASTOS
-                    </span>
+            </div>
 
-                    <h1>
-                        Mis finanzas 💰
-                    </h1>
+            <div class="user-area">
 
-                    <p>
-                        Lleva un control sencillo de los gastos de tus mascotas.
-                    </p>
+                <div class="dropdown">
+
+                    <button class="user-button dropdown-toggle" data-bs-toggle="dropdown">
+                        <span class="avatar" data-usuario-avatar></span>
+                        <strong data-usuario-nombre></strong>
+                    </button>
+
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="../perfil/perfil.html">
+                                <i class="bi bi-person"></i>
+                                Mi perfil
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item text-danger" href="../login/login.html" data-cerrar-sesion>
+                                <i class="bi bi-box-arrow-right"></i>
+                                Cerrar sesión
+                            </a>
+                        </li>
+                    </ul>
 
                 </div>
 
-                <button class="btn-primary-custom"
-                    data-bs-toggle="modal"
-                    data-bs-target="#modalGasto">
+            </div>
 
+        </header>
+
+
+        <div id="mensaje" class="alert d-none" role="alert"></div>
+
+
+        <!-- Si no tiene mascotas -->
+        <section class="empty-health d-none" id="sinMascotas">
+            <div class="empty-emoji">💰</div>
+            <h4>Primero registra una mascota</h4>
+            <p>Los gastos se llevan por mascota. Agrégala en Mis Mascotas.</p>
+            <a href="../mismascotas/mismascotas.html" class="btn-add">
+                <i class="bi bi-plus-lg"></i>
+                Ir a Mis Mascotas
+            </a>
+        </section>
+
+
+        <div id="contenido" class="d-none">
+
+            <!-- FILTROS: MASCOTA Y PERIODO -->
+            <section class="pet-picker" id="filtroMascotas"></section>
+
+            <section class="finance-toolbar">
+
+                <div class="period">
+                    <label for="periodo"><i class="bi bi-calendar3"></i> Periodo</label>
+                    <select id="periodo" class="form-select">
+                        <option value="mes">Este mes</option>
+                        <option value="mesAnterior">Mes anterior</option>
+                        <option value="3m">Últimos 3 meses</option>
+                        <option value="6m">Últimos 6 meses</option>
+                        <option value="anio">Este año</option>
+                        <option value="12m">Últimos 12 meses</option>
+                        <option value="rango">Elegir fechas</option>
+                    </select>
+
+                    <span class="custom-range d-none" id="rango">
+                        <input type="date" id="desde" class="form-control" aria-label="Desde">
+                        <span>a</span>
+                        <input type="date" id="hasta" class="form-control" aria-label="Hasta">
+                    </span>
+                </div>
+
+                <button type="button" class="btn-add-small" id="botonGasto">
                     <i class="bi bi-plus-lg"></i>
-                    Registrar gasto
-
+                    <span>Registrar gasto</span>
                 </button>
 
             </section>
 
 
-            <!-- ================= RESUMEN ================= -->
-
-            <section class="summary-grid">
-
-                <div class="summary-card purple">
-
-                    <div class="summary-icon">
-                        <i class="bi bi-cash-stack"></i>
-                    </div>
-
-                    <div>
-                        <span>Gastos este mes</span>
-                        <h2>$285.000</h2>
-                        <small>
-                            <i class="bi bi-arrow-up"></i>
-                            8% respecto al mes anterior
-                        </small>
-                    </div>
-
-                </div>
+            <!-- INDICADORES -->
+            <section class="finance-kpis" id="indicadores"></section>
 
 
-                <div class="summary-card blue">
+            <div class="finance-grid">
 
-                    <div class="summary-icon">
-                        <i class="bi bi-calendar-check"></i>
-                    </div>
+                <!-- POR MASCOTA (solo en "Todas") -->
+                <section class="panel-box" id="porMascota"></section>
 
-                    <div>
-                        <span>Gastos esta semana</span>
-                        <h2>$72.000</h2>
-                        <small>
-                            3 gastos registrados
-                        </small>
-                    </div>
+                <!-- POR CATEGORÍA -->
+                <section class="panel-box" id="porCategoria"></section>
 
-                </div>
+                <!-- EVOLUCIÓN MENSUAL -->
+                <section class="panel-box wide" id="evolucion"></section>
 
+                <!-- PRESUPUESTO DEL MES -->
+                <section class="panel-box" id="presupuesto"></section>
 
-                <div class="summary-card pink">
+                <!-- REGISTROS SIN COSTO -->
+                <section class="panel-box" id="pendientes"></section>
 
-                    <div class="summary-icon">
-                        <i class="bi bi-piggy-bank"></i>
-                    </div>
+                <!-- MOVIMIENTOS -->
+                <section class="panel-box wide">
 
-                    <div>
-                        <span>Presupuesto mensual</span>
-                        <h2>$400.000</h2>
-                        <small>
-                            $115.000 disponibles
-                        </small>
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- ================= CONTENIDO PRINCIPAL ================= -->
-
-            <section class="finance-layout">
-
-
-                <!-- GASTOS RECIENTES -->
-
-                <div class="expenses-card">
-
-                    <div class="card-header-custom">
-
+                    <div class="list-header">
                         <div>
-                            <h3>Gastos recientes</h3>
-                            <p>Últimos gastos registrados</p>
+                            <h3><i class="bi bi-list-ul"></i> Movimientos</h3>
+                            <p id="textoMovimientos"></p>
                         </div>
 
-                        <button class="view-all">
-                            Ver todos
-                            <i class="bi bi-arrow-right"></i>
+                        <button type="button" class="btn-light-action" id="botonExportar">
+                            <i class="bi bi-file-earmark-spreadsheet"></i>
+                            Descargar Excel (CSV)
                         </button>
-
                     </div>
 
+                    <div class="movement-filters">
+                        <input type="search" id="buscar" class="form-control" placeholder="Buscar por descripción o notas">
+                        <select id="filtroCategoria" class="form-select" aria-label="Categoría"></select>
+                    </div>
 
-                    <div class="expense-list">
+                    <div class="table-responsive">
+                        <table class="movements">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Mascota</th>
+                                    <th>Categoría</th>
+                                    <th>Descripción</th>
+                                    <th>Pago</th>
+                                    <th class="text-end">Valor</th>
+                                    <th><span class="visually-hidden">Acciones</span></th>
+                                </tr>
+                            </thead>
+                            <tbody id="tablaMovimientos"></tbody>
+                        </table>
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
 
 
-                        <!-- GASTO 1 -->
+<!-- ================= MODAL: GASTO ================= -->
 
-                        <div class="expense-item">
+<div class="modal fade" id="modalGasto" tabindex="-1">
 
-                            <div class="expense-icon veterinary">
-                                <i class="bi bi-heart-pulse"></i>
-                            </div>
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
 
-                            <div class="expense-info">
+        <div class="modal-content">
 
-                                <strong>
-                                    Consulta veterinaria
-                                </strong>
+            <div class="modal-header">
+                <h5 class="modal-title" id="tituloGasto">Registrar gasto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
 
-                                <span>
-                                    Toby · 28 Ago 2026
-                                </span>
+            <div class="modal-body">
 
-                            </div>
+                <div id="errorGasto" class="alert alert-danger d-none" role="alert"></div>
 
-                            <div class="expense-price">
-                                -$65.000
-                            </div>
+                <form id="formGasto" novalidate>
 
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+                            <label for="gMascota">Mascota *</label>
+                            <select id="gMascota" name="id_mascota" class="form-select" required></select>
                         </div>
 
-
-                        <!-- GASTO 2 -->
-
-                        <div class="expense-item">
-
-                            <div class="expense-icon food">
-                                <i class="bi bi-basket"></i>
-                            </div>
-
-                            <div class="expense-info">
-
-                                <strong>
-                                    Concentrado
-                                </strong>
-
-                                <span>
-                                    Toby · 26 Ago 2026
-                                </span>
-
-                            </div>
-
-                            <div class="expense-price">
-                                -$85.000
-                            </div>
-
+                        <div class="col-md-6">
+                            <label for="gCategoria">Categoría *</label>
+                            <select id="gCategoria" name="id_categoria" class="form-select" required></select>
                         </div>
 
-
-                        <!-- GASTO 3 -->
-
-                        <div class="expense-item">
-
-                            <div class="expense-icon grooming">
-                                <i class="bi bi-scissors"></i>
-                            </div>
-
-                            <div class="expense-info">
-
-                                <strong>
-                                    Baño y peluquería
-                                </strong>
-
-                                <span>
-                                    Luna · 24 Ago 2026
-                                </span>
-
-                            </div>
-
-                            <div class="expense-price">
-                                -$45.000
-                            </div>
-
+                        <div class="col-12">
+                            <label for="gVinculo">¿Qué pagaste? (de lo registrado en Salud y Alimentación)</label>
+                            <select id="gVinculo" name="vinculo" class="form-select"></select>
+                            <small class="form-help">Así el gasto queda unido a la consulta, vacuna, medicamento o compra de comida.</small>
                         </div>
 
+                        <div class="col-md-6">
+                            <label for="gDescripcion">Descripción *</label>
+                            <input type="text" id="gDescripcion" name="descripcion" class="form-control" maxlength="200" required placeholder="Ej: Bulto de concentrado 8 kg">
+                        </div>
 
-                        <!-- GASTO 4 -->
+                        <div class="col-md-6">
+                            <label for="gMonto">Valor (COP) *</label>
+                            <input type="number" id="gMonto" name="monto" class="form-control" min="1" step="1" required placeholder="Ej: 85000">
+                        </div>
 
-                        <div class="expense-item">
+                        <div class="col-md-6">
+                            <label for="gFecha">Fecha *</label>
+                            <input type="date" id="gFecha" name="fecha" class="form-control" required>
+                        </div>
 
-                            <div class="expense-icon accessories">
-                                <i class="bi bi-bag-heart"></i>
-                            </div>
+                        <div class="col-md-6">
+                            <label for="gMetodo">Método de pago</label>
+                            <select id="gMetodo" name="metodo_pago" class="form-select">
+                                <option value="efectivo">Efectivo</option>
+                                <option value="tarjeta">Tarjeta</option>
+                                <option value="transferencia">Transferencia</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
 
-                            <div class="expense-info">
+                        <div class="col-md-6">
+                            <label for="gComprobante">Comprobante (foto o PDF)</label>
+                            <input type="file" id="gComprobante" name="comprobante" class="form-control" accept="image/*,application/pdf">
+                            <small class="form-help d-none" id="comprobanteActual"></small>
+                        </div>
 
-                                <strong>
-                                    Juguete para mascota
-                                </strong>
-
-                                <span>
-                                    Luna · 20 Ago 2026
-                                </span>
-
-                            </div>
-
-                            <div class="expense-price">
-                                -$35.000
-                            </div>
-
+                        <div class="col-md-6">
+                            <label for="gNotas">Notas</label>
+                            <input type="text" id="gNotas" name="notas" class="form-control" maxlength="255">
                         </div>
 
                     </div>
 
-                </div>
-
-
-                <!-- ================= CATEGORÍAS ================= -->
-
-                <div class="categories-card">
-
-                    <div class="card-header-custom">
-
-                        <div>
-                            <h3>Gastos por categoría</h3>
-                            <p>Este mes</p>
-                        </div>
-
-                        <i class="bi bi-three-dots"></i>
-
-                    </div>
-
-
-                    <div class="category">
-
-                        <div class="category-top">
-
-                            <div>
-                                <i class="bi bi-heart-pulse"></i>
-                                Salud
-                            </div>
-
-                            <strong>$95.000</strong>
-
-                        </div>
-
-                        <div class="progress">
-                            <div class="progress-bar"
-                                style="width: 75%;">
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <div class="category">
-
-                        <div class="category-top">
-
-                            <div>
-                                <i class="bi bi-basket"></i>
-                                Alimentación
-                            </div>
-
-                            <strong>$85.000</strong>
-
-                        </div>
-
-                        <div class="progress">
-                            <div class="progress-bar"
-                                style="width: 65%;">
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <div class="category">
-
-                        <div class="category-top">
-
-                            <div>
-                                <i class="bi bi-scissors"></i>
-                                Cuidado
-                            </div>
-
-                            <strong>$60.000</strong>
-
-                        </div>
-
-                        <div class="progress">
-                            <div class="progress-bar"
-                                style="width: 48%;">
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <div class="category">
-
-                        <div class="category-top">
-
-                            <div>
-                                <i class="bi bi-bag-heart"></i>
-                                Accesorios
-                            </div>
-
-                            <strong>$45.000</strong>
-
-                        </div>
-
-                        <div class="progress">
-                            <div class="progress-bar"
-                                style="width: 35%;">
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- ================= MASCOTAS ================= -->
-
-            <section class="pets-finance">
-
-                <div class="card-header-custom">
-
-                    <div>
-                        <h3>Gastos por mascota</h3>
-                        <p>Resumen del mes actual</p>
-                    </div>
-
-                </div>
-
-
-                <div class="pets-grid">
-
-
-                    <div class="pet-finance-card">
-
-                        <div class="pet-avatar">
-                            🐶
-                        </div>
-
-                        <div class="pet-finance-info">
-
-                            <h4>Toby</h4>
-
-                            <span>
-                                3 gastos este mes
-                            </span>
-
-                        </div>
-
-                        <strong>
-                            $185.000
-                        </strong>
-
-                    </div>
-
-
-                    <div class="pet-finance-card">
-
-                        <div class="pet-avatar">
-                            🐱
-                        </div>
-
-                        <div class="pet-finance-info">
-
-                            <h4>Luna</h4>
-
-                            <span>
-                                4 gastos este mes
-                            </span>
-
-                        </div>
-
-                        <strong>
-                            $100.000
-                        </strong>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-        </main>
-
-    </div>
-
-
-    <!-- ================= MODAL REGISTRAR GASTO ================= -->
-
-    <div class="modal fade" id="modalGasto" tabindex="-1">
-
-        <div class="modal-dialog modal-dialog-centered">
-
-            <div class="modal-content custom-modal">
-
-                <div class="modal-header">
-
-                    <div>
-
-                        <h4>
-                            Registrar nuevo gasto
-                        </h4>
-
-                        <p>
-                            Agrega un gasto para llevar el control de tus finanzas.
-                        </p>
-
-                    </div>
-
-                    <button type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal">
+                    <button type="submit" class="btn-save" id="botonGuardarGasto">
+                        <i class="bi bi-check-lg"></i>
+                        Guardar
                     </button>
 
-                </div>
-
-
-                <div class="modal-body">
-
-                    <form id="gastoForm">
-
-                        <div class="mb-3">
-
-                            <label>
-                                Mascota
-                            </label>
-
-                            <select class="form-select" id="mascota">
-
-                                <option value="">
-                                    Selecciona una mascota
-                                </option>
-
-                                <option>
-                                    Toby
-                                </option>
-
-                                <option>
-                                    Luna
-                                </option>
-
-                            </select>
-
-                        </div>
-
-
-                        <div class="mb-3">
-
-                            <label>
-                                Categoría
-                            </label>
-
-                            <select class="form-select" id="categoria">
-
-                                <option value="">
-                                    Selecciona una categoría
-                                </option>
-
-                                <option>
-                                    Salud
-                                </option>
-
-                                <option>
-                                    Alimentación
-                                </option>
-
-                                <option>
-                                    Cuidado
-                                </option>
-
-                                <option>
-                                    Accesorios
-                                </option>
-
-                                <option>
-                                    Otros
-                                </option>
-
-                            </select>
-
-                        </div>
-
-
-                        <div class="mb-3">
-
-                            <label>
-                                Descripción
-                            </label>
-
-                            <input type="text"
-                                class="form-control"
-                                id="descripcion"
-                                placeholder="Ej. Consulta veterinaria">
-
-                        </div>
-
-
-                        <div class="row">
-
-                            <div class="col-md-6 mb-3">
-
-                                <label>
-                                    Valor
-                                </label>
-
-                                <div class="input-group">
-
-                                    <span class="input-group-text">
-                                        $
-                                    </span>
-
-                                    <input type="number"
-                                        class="form-control"
-                                        id="valor"
-                                        placeholder="0">
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="col-md-6 mb-3">
-
-                                <label>
-                                    Fecha
-                                </label>
-
-                                <input type="date"
-                                    class="form-control"
-                                    id="fecha">
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="mb-3">
-
-                            <label>
-                                Notas
-                            </label>
-
-                            <textarea
-                                class="form-control"
-                                id="notas"
-                                rows="3"
-                                placeholder="Agrega una nota opcional">
-                            </textarea>
-
-                        </div>
-
-
-                        <button type="submit"
-                            class="btn-save">
-
-                            <i class="bi bi-check-lg"></i>
-                            Guardar gasto
-
-                        </button>
-
-                    </form>
-
-                </div>
+                </form>
 
             </div>
 
@@ -730,12 +363,63 @@
 
     </div>
 
+</div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- JavaScript -->
-    <script src="/PetCare/Client/finanzas/finanzas.js"></script>
+<!-- ================= MODAL: PRESUPUESTO ================= -->
+
+<div class="modal fade" id="modalPresupuesto" tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-piggy-bank"></i> Presupuesto de este mes</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <div id="errorPresupuesto" class="alert alert-danger d-none" role="alert"></div>
+
+                <form id="formPresupuesto" novalidate>
+
+                    <div class="row g-3">
+
+                        <div class="col-12">
+                            <label for="pCategoria">¿Para qué?</label>
+                            <select id="pCategoria" name="id_categoria" class="form-select"></select>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="pMonto">Máximo a gastar (COP)</label>
+                            <input type="number" id="pMonto" name="monto" class="form-control" min="0" step="1000" placeholder="Ej: 300000">
+                            <small class="form-help">Pon 0 para quitar el presupuesto.</small>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="btn-save">
+                        <i class="bi bi-check-lg"></i>
+                        Guardar
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="finanzas.js"></script>
 
 </body>
 
